@@ -1,0 +1,21 @@
+PODS:
+  - Facebook-iOS-SDK (3.11.0)
+  - ReactiveCocoa (2.1.8):
+    - ReactiveCocoa/Core
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/Core (2.1.8):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.1.8)
+  - RMErrorRecoveryAttempter (0.0.1)
+
+DEPENDENCIES:
+  - Facebook-iOS-SDK (~> 3.11.0)
+  - ReactiveCocoa (~> 2.1.8)
+  - RMErrorRecoveryAttempter (~> 0.0.1)
+
+SPEC CHECKSUMS:
+  Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
+  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
+  RMErrorRecoveryAttempter: 1a876e414a4091afe5a71d5d8fbdf07bffc852e8
+
+COCOAPODS: 0.29.0
