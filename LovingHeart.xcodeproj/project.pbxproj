@@ -32,6 +32,10 @@
 		1801F655188263830024A832 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F654188263830024A832 /* Security.framework */; };
 		1801F657188263890024A832 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F656188263890024A832 /* StoreKit.framework */; };
 		1801F659188263900024A832 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F658188263900024A832 /* SystemConfiguration.framework */; };
+		1867AE9D188BA86500E4F42D /* pics.png in Resources */ = {isa = PBXBuildFile; fileRef = 1867AE9C188BA86500E4F42D /* pics.png */; };
+		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
+		18F78B1D188B6D2F001491D5 /* StoryTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* StoryTimelineViewController.m */; };
+		18F78B1F188B837C001491D5 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F78B1E188B837C001491D5 /* wallpaper.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,12 @@
 		1801F654188263830024A832 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1801F656188263890024A832 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1801F658188263900024A832 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1867AE9C188BA86500E4F42D /* pics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pics.png; sourceTree = "<group>"; };
+		18F78B18188B6C68001491D5 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
+		18F78B19188B6C68001491D5 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
+		18F78B1B188B6D2F001491D5 /* StoryTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryTimelineViewController.h; sourceTree = "<group>"; };
+		18F78B1C188B6D2F001491D5 /* StoryTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTimelineViewController.m; sourceTree = "<group>"; };
+		18F78B1E188B837C001491D5 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
 		C1BC32F6787D481EA0D6CE9A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F5EF3ACBF21347BDB08409B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,6 +173,9 @@
 				1801F623188259080024A832 /* Main.storyboard */,
 				1801F626188259080024A832 /* ViewController.h */,
 				1801F627188259080024A832 /* ViewController.m */,
+				18F78B1B188B6D2F001491D5 /* StoryTimelineViewController.h */,
+				18F78B1C188B6D2F001491D5 /* StoryTimelineViewController.m */,
+				18F78B17188B6C52001491D5 /* View */,
 				1801F629188259080024A832 /* Images.xcassets */,
 				1801F618188259080024A832 /* Supporting Files */,
 			);
@@ -172,6 +185,8 @@
 		1801F618188259080024A832 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1867AE9C188BA86500E4F42D /* pics.png */,
+				18F78B1E188B837C001491D5 /* wallpaper.jpg */,
 				1801F619188259080024A832 /* LovingHeart-Info.plist */,
 				1801F61A188259080024A832 /* InfoPlist.strings */,
 				1801F61D188259080024A832 /* main.m */,
@@ -196,6 +211,15 @@
 				1801F639188259080024A832 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18F78B17188B6C52001491D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18F78B18188B6C68001491D5 /* StoryCell.h */,
+				18F78B19188B6C68001491D5 /* StoryCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F78B1F188B837C001491D5 /* wallpaper.jpg in Resources */,
+				1867AE9D188BA86500E4F42D /* pics.png in Resources */,
 				1801F62A188259080024A832 /* Images.xcassets in Resources */,
 				1801F61C188259080024A832 /* InfoPlist.strings in Resources */,
 				1801F625188259080024A832 /* Main.storyboard in Resources */,
@@ -333,6 +359,8 @@
 				1801F628188259080024A832 /* ViewController.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
+				18F78B1D188B6D2F001491D5 /* StoryTimelineViewController.m in Sources */,
+				18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
