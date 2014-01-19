@@ -18,6 +18,7 @@ PODS:
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - Facebook-iOS-SDK (3.11.0)
+  - NSDate+TimeAgo (1.0.2)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
@@ -29,12 +30,14 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
   - Facebook-iOS-SDK (~> 3.11.0)
+  - NSDate+TimeAgo (~> 1.0.2)
   - ReactiveCocoa (~> 2.1.8)
   - RMErrorRecoveryAttempter (~> 0.0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
+  NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
   RMErrorRecoveryAttempter: 1a876e414a4091afe5a71d5d8fbdf07bffc852e8
 

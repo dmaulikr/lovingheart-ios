@@ -9,6 +9,7 @@
 #import "StoryTimelineViewController.h"
 #import "StoryCell.h"
 #import <AFNetworking/AFNetworking.h>
+#import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 
 @interface StoryTimelineViewController ()
 
@@ -27,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = @"最新故事";
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +99,7 @@
     }
     
     cell.locationLabel.text = object[@"areaName"];
-    cell.timeLabel.text = object[@"createdAt"];
+    cell.timeLabel.text = [object.createdAt timeAgo];
 
     
     [cell setNeedsUpdateConstraints];
