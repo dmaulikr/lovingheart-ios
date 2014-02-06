@@ -86,7 +86,7 @@
     }
     
     if (object[@"graphicPointer"]) {
-        cell.pictureView.image = [UIImage imageNamed:@"pics.png"];
+        cell.pictureView.image = nil;
         PFFile* file = (PFFile*) object[@"graphicPointer"][@"imageFile"];
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
@@ -100,10 +100,6 @@
     
     cell.locationLabel.text = object[@"areaName"];
     cell.timeLabel.text = [object.createdAt timeAgo];
-
-    
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
     
     return cell;
 }
@@ -124,33 +120,24 @@
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == self.objects.count) {
-        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.objects.count) return 44;
+    else {
+        StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"storyImageCell"];
+        PFObject* object = self.objects[indexPath.row];
+        CGFloat labelWidth = 294;
+        CGRect r = [object[@"Content"] boundingRectWithSize:CGSizeMake(labelWidth, 0)
+                                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:@{NSFontAttributeName: cell.contentLabel.font}
+                                                     context:nil];
+        
+        if (object[@"graphicPointer"]) {
+            return CGRectGetHeight(r) + 450;
+        } else {
+            return CGRectGetHeight(r) + 110;
+        }
     }
-    
-    PFObject* object = [self objectAtIndexPath:indexPath];
-    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath object:object];
-    
-    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
-    
-    // Do the layout pass on the cell, which will calculate the frames for all the views based on the constraints.
-    // (Note that you must set the preferredMaxLayoutWidth on multi-line UILabels inside the -[layoutSubviews] method
-    // of the UITableViewCell subclass, or do it manually at this point before the below 2 lines!)
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
-    
-    // Get the actual height required for the cell's contentView
-    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    
-    // Add an extra point to the height to account for the cell separator, which is added between the bottom
-    // of the cell's contentView and the bottom of the table view cell.
-    height += 1.0f;
-    
-    return height;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

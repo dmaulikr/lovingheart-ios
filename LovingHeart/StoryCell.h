@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StoryCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
