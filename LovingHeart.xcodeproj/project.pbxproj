@@ -271,6 +271,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = LovineHeart;
 				TargetAttributes = {
+					1801F60D188259080024A832 = {
+						DevelopmentTeam = 7B993ML5ZL;
+					};
 					1801F62E188259080024A832 = {
 						TestTargetID = 1801F60D188259080024A832;
 					};
@@ -488,6 +491,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -496,6 +501,7 @@
 				GCC_PREFIX_HEADER = "LovingHeart/LovingHeart-Prefix.pch";
 				INFOPLIST_FILE = "LovingHeart/LovingHeart-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -506,6 +512,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -514,6 +522,7 @@
 				GCC_PREFIX_HEADER = "LovingHeart/LovingHeart-Prefix.pch";
 				INFOPLIST_FILE = "LovingHeart/LovingHeart-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
