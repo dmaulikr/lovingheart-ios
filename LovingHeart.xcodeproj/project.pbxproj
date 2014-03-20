@@ -168,13 +168,10 @@
 		1801F617188259080024A832 /* LovingHeart */ = {
 			isa = PBXGroup;
 			children = (
+				1CEF80F718DAE6E90011F412 /* ViewController */,
 				1801F620188259080024A832 /* AppDelegate.h */,
 				1801F621188259080024A832 /* AppDelegate.m */,
 				1801F623188259080024A832 /* Main.storyboard */,
-				1801F626188259080024A832 /* ViewController.h */,
-				1801F627188259080024A832 /* ViewController.m */,
-				18F78B1B188B6D2F001491D5 /* StoryTimelineViewController.h */,
-				18F78B1C188B6D2F001491D5 /* StoryTimelineViewController.m */,
 				18F78B17188B6C52001491D5 /* View */,
 				1801F629188259080024A832 /* Images.xcassets */,
 				1801F618188259080024A832 /* Supporting Files */,
@@ -220,6 +217,17 @@
 				18F78B19188B6C68001491D5 /* StoryCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		1CEF80F718DAE6E90011F412 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1801F626188259080024A832 /* ViewController.h */,
+				1801F627188259080024A832 /* ViewController.m */,
+				18F78B1B188B6D2F001491D5 /* StoryTimelineViewController.h */,
+				18F78B1C188B6D2F001491D5 /* StoryTimelineViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
