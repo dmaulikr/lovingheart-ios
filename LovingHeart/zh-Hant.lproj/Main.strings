@@ -1,0 +1,30 @@
+
+/* Class = "IBUINavigationItem"; title = "友善推薦"; ObjectID = "029-am-01m"; */
+"029-am-01m.title" = "友善推薦";
+
+/* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "6Kz-KK-zea"; */
+"6Kz-KK-zea.text" = "我今天遇到了認真小天使，謝謝他";
+
+/* Class = "IBUITableViewController"; title = "最新故事"; ObjectID = "9Pk-5c-ho6"; */
+"9Pk-5c-ho6.title" = "最新故事";
+
+/* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "PpX-rU-caR"; */
+"PpX-rU-caR.text" = "我今天遇到了認真小天使，謝謝他";
+
+/* Class = "IBUILabel"; text = "新北市, 汐止區"; ObjectID = "Scw-Az-FNP"; */
+"Scw-Az-FNP.text" = "新北市, 汐止區";
+
+/* Class = "IBUILabel"; text = "一週前"; ObjectID = "aBp-sZ-kbR"; */
+"aBp-sZ-kbR.text" = "一週前";
+
+/* Class = "IBUILabel"; text = "新北市, 汐止區"; ObjectID = "bBj-Yu-TGH"; */
+"bBj-Yu-TGH.text" = "新北市, 汐止區";
+
+/* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "ohH-q6-peZ"; */
+"ohH-q6-peZ.text" = "Edward Chiang";
+
+/* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "wTL-oP-jic"; */
+"wTL-oP-jic.text" = "Edward Chiang";
+
+/* Class = "IBUILabel"; text = "一週前"; ObjectID = "zJe-q4-oEo"; */
+"zJe-q4-oEo.text" = "一週前";

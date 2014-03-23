@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.title = @"友善推薦";
+    self.title = NSLocalizedString(@"Today", @"Show today");
 }
 
 - (void)didReceiveMemoryWarning
