@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "StoryTimelineLatestViewController.h"
+#import "MostRecentStoriesViewController.h"
 
-@interface StoryTimelineLatestViewController ()
+@interface MostRecentStoriesViewController ()
 
 @end
 
-@implementation StoryTimelineLatestViewController
+@implementation MostRecentStoriesViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

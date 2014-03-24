@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface StoryTimelineViewController : PFQueryTableViewController
+@interface StoriesViewController : PFQueryTableViewController
 
 @end

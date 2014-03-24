@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "StoryTimelineViewController.h"
+#import "StoriesViewController.h"
 
-@interface StoryTimelineMostReviewsViewController : StoryTimelineViewController
+@interface MostReviewsStoriesViewController : StoriesViewController
 
 @end

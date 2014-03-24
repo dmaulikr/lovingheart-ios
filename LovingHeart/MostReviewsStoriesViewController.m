@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "StoryTimelineMostReviewsViewController.h"
+#import "MostReviewsStoriesViewController.h"
 
-@implementation StoryTimelineMostReviewsViewController
+@implementation MostReviewsStoriesViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
