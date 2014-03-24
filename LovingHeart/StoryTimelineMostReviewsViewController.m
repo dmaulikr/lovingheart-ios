@@ -10,6 +10,12 @@
 
 @implementation StoryTimelineMostReviewsViewController
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  self.title = NSLocalizedString(@"Most Rated", @"Most Rated");
+}
+
 - (PFQuery *)queryForTable {
   PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
   

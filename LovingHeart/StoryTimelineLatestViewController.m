@@ -14,6 +14,12 @@
 
 @implementation StoryTimelineLatestViewController
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
+}
+
 - (PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     

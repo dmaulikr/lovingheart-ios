@@ -24,13 +24,6 @@
   self.objectsPerPage = 10;
 }
 
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-  // Do any additional setup after loading the view.
-  self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
-}
-
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
