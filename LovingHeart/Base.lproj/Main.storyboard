@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Today-->
+        <!--Features View Controller - Today-->
         <scene sceneID="Uol-q2-dH8">
             <objects>
-                <viewController id="bWh-zo-wmo" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="bWh-zo-wmo" customClass="FeaturesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XOM-6f-tv6"/>
                         <viewControllerLayoutGuide type="bottom" id="wLV-ho-dgo"/>
@@ -15,11 +15,23 @@
                     <view key="view" contentMode="scaleToFill" id="xdM-lU-q6b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-96-dcX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="RNn-25-ZRm"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="029-am-01m">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="G5s-uk-5f1"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="qCS-96-dcX" id="hUr-zl-0h8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWQ-7C-g47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

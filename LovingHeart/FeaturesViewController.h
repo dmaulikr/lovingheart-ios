@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface ViewController : UIViewController
+@interface FeaturesViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

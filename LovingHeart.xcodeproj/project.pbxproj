@@ -14,7 +14,7 @@
 		1801F61E188259080024A832 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801F61D188259080024A832 /* main.m */; };
 		1801F622188259080024A832 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801F621188259080024A832 /* AppDelegate.m */; };
 		1801F625188259080024A832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1801F623188259080024A832 /* Main.storyboard */; };
-		1801F628188259080024A832 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801F627188259080024A832 /* ViewController.m */; };
+		1801F628188259080024A832 /* FeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801F627188259080024A832 /* FeaturesViewController.m */; };
 		1801F62A188259080024A832 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1801F629188259080024A832 /* Images.xcassets */; };
 		1801F631188259080024A832 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F630188259080024A832 /* XCTest.framework */; };
 		1801F632188259080024A832 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F611188259080024A832 /* Foundation.framework */; };
@@ -35,6 +35,8 @@
 		18F78B1D188B6D2F001491D5 /* MostRecentStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */; };
 		18F78B1F188B837C001491D5 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F78B1E188B837C001491D5 /* wallpaper.jpg */; };
 		1CD9F5D818E01A2A0089CB4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5D718E01A2A0089CB4F /* Default@2x.png */; };
+		1CD9F5DD18E02CDD0089CB4F /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* Idea.m */; };
+		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
 		1CEF810118DEAD120011F412 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF810318DEAD120011F412 /* Localizable.strings */; };
 		1CEF810D18DEB23C0011F412 /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF810C18DEB23C0011F412 /* StoriesViewController.m */; };
 		1CEF811018DEB34F0011F412 /* MostReviewsStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF810F18DEB34F0011F412 /* MostReviewsStoriesViewController.m */; };
@@ -61,8 +63,8 @@
 		1801F620188259080024A832 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1801F621188259080024A832 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1801F624188259080024A832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1801F626188259080024A832 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = ViewController.h; sourceTree = "<group>"; };
-		1801F627188259080024A832 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1801F626188259080024A832 /* FeaturesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeaturesViewController.h; sourceTree = "<group>"; };
+		1801F627188259080024A832 /* FeaturesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeaturesViewController.m; sourceTree = "<group>"; };
 		1801F629188259080024A832 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1801F62F188259080024A832 /* LovingHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LovingHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1801F630188259080024A832 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -85,6 +87,10 @@
 		18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentStoriesViewController.m; sourceTree = "<group>"; };
 		18F78B1E188B837C001491D5 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
 		1CD9F5D718E01A2A0089CB4F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		1CD9F5DB18E02CDD0089CB4F /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Idea.h; sourceTree = "<group>"; };
+		1CD9F5DC18E02CDD0089CB4F /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
+		1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardView.h; sourceTree = "<group>"; };
+		1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaCardView.m; sourceTree = "<group>"; };
 		1CEF810218DEAD120011F412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CEF810A18DEB0B00011F412 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1CEF810B18DEB23C0011F412 /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesViewController.h; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		1801F617188259080024A832 /* LovingHeart */ = {
 			isa = PBXGroup;
 			children = (
+				1CD9F5DA18E02CC50089CB4F /* Objects */,
 				1CEF80F718DAE6E90011F412 /* ViewController */,
 				18F78B17188B6C52001491D5 /* View */,
 				1801F620188259080024A832 /* AppDelegate.h */,
@@ -220,6 +227,8 @@
 			children = (
 				18F78B18188B6C68001491D5 /* StoryCell.h */,
 				18F78B19188B6C68001491D5 /* StoryCell.m */,
+				1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */,
+				1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -234,11 +243,20 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		1CD9F5DA18E02CC50089CB4F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1CD9F5DB18E02CDD0089CB4F /* Idea.h */,
+				1CD9F5DC18E02CDD0089CB4F /* Idea.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		1CEF80F718DAE6E90011F412 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1801F626188259080024A832 /* ViewController.h */,
-				1801F627188259080024A832 /* ViewController.m */,
+				1801F626188259080024A832 /* FeaturesViewController.h */,
+				1801F627188259080024A832 /* FeaturesViewController.m */,
 				18F78B1B188B6D2F001491D5 /* MostRecentStoriesViewController.h */,
 				18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */,
 				1CEF810B18DEB23C0011F412 /* StoriesViewController.h */,
@@ -387,10 +405,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1801F628188259080024A832 /* ViewController.m in Sources */,
+				1801F628188259080024A832 /* FeaturesViewController.m in Sources */,
 				1CEF810D18DEB23C0011F412 /* StoriesViewController.m in Sources */,
 				1CEF811018DEB34F0011F412 /* MostReviewsStoriesViewController.m in Sources */,
+				1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
+				1CD9F5DD18E02CDD0089CB4F /* Idea.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
 				18F78B1D188B6D2F001491D5 /* MostRecentStoriesViewController.m in Sources */,
 				18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */,

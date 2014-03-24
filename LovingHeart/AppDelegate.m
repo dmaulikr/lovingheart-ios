@@ -7,13 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "Idea.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
+  [Idea registerSubclass];
     [Parse setApplicationId:@"5mqwxaAsD0xCUb8dh9HgFu4FM6bQOycBqx4XrdFL"
                   clientKey:@"SX6e4Gd86Fq3vil6XOT4UHvrsfaBqvIJJ99vPkDV"];
     
