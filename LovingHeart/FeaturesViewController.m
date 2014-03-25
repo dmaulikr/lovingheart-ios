@@ -19,9 +19,9 @@
 @implementation FeaturesViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.title = NSLocalizedString(@"Today", @"Show today");
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
+  self.title = NSLocalizedString(@"Today", @"Show today");
   
   PFQuery *query = [Idea query];
   [query whereKey:@"status" notContainedIn:[NSArray arrayWithObjects:@"close", nil]];
@@ -45,6 +45,7 @@
         latestIdeaTextView.frame = CGRectMake(latestIdeaTextView.frame.origin.x, frameTop, latestIdeaTextView.frame.size.width, latestIdeaTextView.frame.size.height);
         frameTop += latestIdeaTextView.frame.size.height;
         [self.scrollView addSubview:latestIdeaTextView];
+        [self.scrollView setContentSize:self.scrollView.bounds.size];
       });
       
       dispatch_async(dispatch_get_main_queue(), ^{
@@ -57,6 +58,7 @@
         ideaTextView.frame = CGRectMake(ideaTextView.frame.origin.x, frameTop, ideaTextView.frame.size.width, ideaTextView.frame.size.height);
         frameTop += ideaTextView.frame.size.height;
         [self.scrollView addSubview:ideaTextView];
+        [self.scrollView setContentSize:self.scrollView.bounds.size];
       });
       
       [self.scrollView setPagingEnabled:YES];
@@ -73,8 +75,8 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end

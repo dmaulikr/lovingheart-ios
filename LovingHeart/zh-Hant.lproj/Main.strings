@@ -1,15 +1,18 @@
 
 /* Class = "IBUINavigationItem"; title = "Today"; ObjectID = "029-am-01m"; */
-"029-am-01m.title" = "本日精選";
+"029-am-01m.title" = "Today";
 
 /* Class = "IBUITabBarItem"; title = "My Profile"; ObjectID = "50j-K1-3YD"; */
-"50j-K1-3YD.title" = "個人檔案";
+"50j-K1-3YD.title" = "我的檔案";
 
 /* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "6Kz-KK-zea"; */
 "6Kz-KK-zea.text" = "我今天遇到了認真小天使，謝謝他";
 
 /* Class = "IBUITableViewController"; title = "最新故事"; ObjectID = "9Pk-5c-ho6"; */
 "9Pk-5c-ho6.title" = "最新故事";
+
+/* Class = "IBUITabBarItem"; title = "Today"; ObjectID = "CoX-8r-0Vl"; */
+"CoX-8r-0Vl.title" = "本日精選";
 
 /* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "PpX-rU-caR"; */
 "PpX-rU-caR.text" = "我今天遇到了認真小天使，謝謝他";
@@ -23,13 +26,17 @@
 /* Class = "IBUILabel"; text = "新北市, 汐止區"; ObjectID = "bBj-Yu-TGH"; */
 "bBj-Yu-TGH.text" = "新北市, 汐止區";
 
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "c1Z-cJ-tv7"; */
+"c1Z-cJ-tv7.title" = "Root View Controller";
+
 /* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "ohH-q6-peZ"; */
 "ohH-q6-peZ.text" = "Edward Chiang";
+
+/* Class = "IBUITabBarItem"; title = "Action Cards"; ObjectID = "s6D-AR-qJc"; */
+"s6D-AR-qJc.title" = "友善行動卡";
 
 /* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "wTL-oP-jic"; */
 "wTL-oP-jic.text" = "Edward Chiang";
 
 /* Class = "IBUILabel"; text = "一週前"; ObjectID = "zJe-q4-oEo"; */
 "zJe-q4-oEo.text" = "一週前";
-
-"CoX-8r-0Vl.text" = "本日精選";
