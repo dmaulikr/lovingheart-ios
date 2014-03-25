@@ -23,9 +23,8 @@
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-    
+    [[UITabBar appearance] setTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
+  
     return YES;
 }
 							

@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wLV-ho-dgo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xdM-lU-q6b">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-96-dcX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-96-dcX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="RNn-25-ZRm"/>
@@ -25,6 +25,11 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qCS-96-dcX" firstAttribute="leading" secondItem="xdM-lU-q6b" secondAttribute="leading" id="JuO-t8-2M6"/>
+                            <constraint firstAttribute="bottom" secondItem="qCS-96-dcX" secondAttribute="bottom" id="aMd-hy-Wdk"/>
+                            <constraint firstItem="qCS-96-dcX" firstAttribute="top" secondItem="xdM-lU-q6b" secondAttribute="top" id="y3m-TL-cIY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="029-am-01m">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="G5s-uk-5f1"/>
@@ -42,8 +47,8 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="W5g-T2-O6Q" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="uTx-E5-Q0w"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="MBI-v7-P8i">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="MBI-v7-P8i">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -58,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="270" y="14"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - My Profile-->
         <scene sceneID="Ya8-fb-KIC">
             <objects>
                 <viewController id="TEY-GE-g7y" sceneMemberID="viewController">
@@ -67,11 +72,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zmF-UI-GTQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Evo-xm-tCE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="50j-K1-3YD"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="973-user.png" id="50j-K1-3YD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWj-br-upi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,6 +299,9 @@
             <point key="canvasLocation" x="1169" y="633"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="973-user.png" width="28" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -30,13 +30,13 @@
 		1801F655188263830024A832 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F654188263830024A832 /* Security.framework */; };
 		1801F657188263890024A832 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F656188263890024A832 /* StoreKit.framework */; };
 		1801F659188263900024A832 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F658188263900024A832 /* SystemConfiguration.framework */; };
-		1867AE9D188BA86500E4F42D /* pics.png in Resources */ = {isa = PBXBuildFile; fileRef = 1867AE9C188BA86500E4F42D /* pics.png */; };
 		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
 		18F78B1D188B6D2F001491D5 /* MostRecentStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */; };
-		18F78B1F188B837C001491D5 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F78B1E188B837C001491D5 /* wallpaper.jpg */; };
-		1CD9F5D818E01A2A0089CB4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5D718E01A2A0089CB4F /* Default@2x.png */; };
 		1CD9F5DD18E02CDD0089CB4F /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* Idea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
+		1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5E718E134C40089CB4F /* 973-user.png */; };
+		1CD9F5EB18E134C40089CB4F /* 973-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5E818E134C40089CB4F /* 973-user@2x.png */; };
+		1CD9F5EC18E134C40089CB4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5E918E134C40089CB4F /* Default@2x.png */; };
 		1CEF810118DEAD120011F412 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF810318DEAD120011F412 /* Localizable.strings */; };
 		1CEF810D18DEB23C0011F412 /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF810C18DEB23C0011F412 /* StoriesViewController.m */; };
 		1CEF811018DEB34F0011F412 /* MostReviewsStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF810F18DEB34F0011F412 /* MostReviewsStoriesViewController.m */; };
@@ -80,17 +80,17 @@
 		1801F654188263830024A832 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1801F656188263890024A832 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1801F658188263900024A832 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		1867AE9C188BA86500E4F42D /* pics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pics.png; sourceTree = "<group>"; };
 		18F78B18188B6C68001491D5 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		18F78B19188B6C68001491D5 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		18F78B1B188B6D2F001491D5 /* MostRecentStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostRecentStoriesViewController.h; sourceTree = "<group>"; };
 		18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentStoriesViewController.m; sourceTree = "<group>"; };
-		18F78B1E188B837C001491D5 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
-		1CD9F5D718E01A2A0089CB4F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Idea.h; sourceTree = "<group>"; };
 		1CD9F5DC18E02CDD0089CB4F /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
 		1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardView.h; sourceTree = "<group>"; };
 		1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaCardView.m; sourceTree = "<group>"; };
+		1CD9F5E718E134C40089CB4F /* 973-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "973-user.png"; sourceTree = "<group>"; };
+		1CD9F5E818E134C40089CB4F /* 973-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "973-user@2x.png"; sourceTree = "<group>"; };
+		1CD9F5E918E134C40089CB4F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1CEF810218DEAD120011F412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CEF810A18DEB0B00011F412 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1CEF810B18DEB23C0011F412 /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesViewController.h; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		1801F618188259080024A832 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1CD9F5D918E01A430089CB4F /* Images */,
+				1CD9F5E618E134C40089CB4F /* Images */,
 				1801F619188259080024A832 /* LovingHeart-Info.plist */,
 				1801F61D188259080024A832 /* main.m */,
 				1801F61F188259080024A832 /* LovingHeart-Prefix.pch */,
@@ -233,16 +233,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		1CD9F5D918E01A430089CB4F /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				1CD9F5D718E01A2A0089CB4F /* Default@2x.png */,
-				1867AE9C188BA86500E4F42D /* pics.png */,
-				18F78B1E188B837C001491D5 /* wallpaper.jpg */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		1CD9F5DA18E02CC50089CB4F /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +240,16 @@
 				1CD9F5DC18E02CDD0089CB4F /* Idea.m */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		1CD9F5E618E134C40089CB4F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1CD9F5E718E134C40089CB4F /* 973-user.png */,
+				1CD9F5E818E134C40089CB4F /* 973-user@2x.png */,
+				1CD9F5E918E134C40089CB4F /* Default@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		1CEF80F718DAE6E90011F412 /* ViewController */ = {
@@ -349,11 +349,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CD9F5D818E01A2A0089CB4F /* Default@2x.png in Resources */,
-				18F78B1F188B837C001491D5 /* wallpaper.jpg in Resources */,
+				1CD9F5EC18E134C40089CB4F /* Default@2x.png in Resources */,
+				1CD9F5EB18E134C40089CB4F /* 973-user@2x.png in Resources */,
 				1CEF810118DEAD120011F412 /* Localizable.strings in Resources */,
-				1867AE9D188BA86500E4F42D /* pics.png in Resources */,
 				1801F62A188259080024A832 /* Images.xcassets in Resources */,
+				1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */,
 				1801F625188259080024A832 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
