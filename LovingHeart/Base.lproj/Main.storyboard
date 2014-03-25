@@ -92,7 +92,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="storyImageCell" rowHeight="460" id="2Uz-ef-ONF" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" tableViewCell="2Uz-ef-ONF" id="MxA-zd-4Hl">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="459"/>
@@ -176,7 +176,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="storyCell" rowHeight="134" id="VDe-lg-4Xb" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="482" width="320" height="134"/>
+                                <rect key="frame" x="0.0" y="546" width="320" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" tableViewCell="VDe-lg-4Xb" id="xPL-xg-Yrd">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
@@ -252,9 +252,15 @@
                             <outlet property="delegate" destination="9Pk-5c-ho6" id="I38-i2-f46"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="u1X-jO-kby"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jjG-06-JKx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="KfI-wf-2Y7" userLabel="Bar Button Item - Item"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="composeBarButtonItem" destination="KfI-wf-2Y7" id="ExV-kG-Xt7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNZ-vE-cCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

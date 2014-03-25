@@ -10,4 +10,6 @@
 
 @interface MostRecentStoriesViewController : StoriesViewController
 
+@property (nonatomic, assign) IBOutlet UIBarButtonItem *composeBarButtonItem;
+
 @end

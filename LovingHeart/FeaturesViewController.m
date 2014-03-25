@@ -30,7 +30,7 @@
     if (!error) {
       // The find succeeded.
       srandom(time(NULL));
-      int randomIndex = random() % objects.count;
+      int randomIndex = (int)(random() % objects.count);
       Idea *randomIdea = [objects objectAtIndex:randomIndex];
       dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"Random idea name: %@", randomIdea.Name);
@@ -40,7 +40,7 @@
 
       });
       
-      NSLog(@"Successfully retrieved %d idea.", objects.count);
+      NSLog(@"Successfully retrieved %lu idea.", (unsigned long)objects.count);
       for (Idea* eachIdea in objects) {
         NSLog(@"Each idea name: %@", eachIdea.Name);
         NSLog(@"Each idea done Count: %i", [eachIdea.doneCount intValue]);

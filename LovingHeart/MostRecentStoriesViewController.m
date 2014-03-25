@@ -18,24 +18,31 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
+  
+  [_composeBarButtonItem setTarget:self];
+  [_composeBarButtonItem setAction:@selector(composePressed:)];
+}
+
+- (void)composePressed:(id)buttonItem {
+  NSLog(@"Compose button pressed.");
 }
 
 - (PFQuery *)queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
-    [query includeKey:@"StoryTeller"];
-    [query includeKey:@"StoryTeller.avatar"];
-    [query includeKey:@"graphicPointer"];
-    
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
-    if (self.objects.count == 0) {
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    }
-    
-    [query orderByDescending:@"createdAt"];
-    
-    return query;
+  PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+  
+  [query includeKey:@"StoryTeller"];
+  [query includeKey:@"StoryTeller.avatar"];
+  [query includeKey:@"graphicPointer"];
+  
+  // If no objects are loaded in memory, we look to the cache first to fill the table
+  // and then subsequently do a query against the network.
+  if (self.objects.count == 0) {
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+  }
+  
+  [query orderByDescending:@"createdAt"];
+  
+  return query;
 }
 
 
