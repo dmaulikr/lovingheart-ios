@@ -15,7 +15,7 @@
     self.contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     self.avatarView.layer.cornerRadius = 25;
     self.avatarView.layer.masksToBounds = YES;
-  self.pictureView.clipsToBounds = YES;
+    self.pictureView.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

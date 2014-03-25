@@ -10,6 +10,7 @@
 #import "StoryCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
+#import "LHStoryViewController.h"
 
 @interface StoriesViewController ()
 
@@ -60,7 +61,7 @@
     [operation start];
   }
   
-  if (object[@"graphicPointer"]) {
+  if (object.graphicPointer) {
     cell.pictureView.image = nil;
     PFFile* file = (PFFile*)object.graphicPointer.imageFile;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -119,5 +120,11 @@
   return 150.0f;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  LHStoryViewController *storyViewController = segue.destinationViewController;
+  NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+  LHStory *story = (LHStory *)[self objectAtIndexPath:selectedPath];
+  [storyViewController setStory:story];
+}
 
 @end
