@@ -7,6 +7,8 @@
 //
 
 #import "MostRecentStoriesViewController.h"
+#import <BlocksKit/BlocksKit.h>
+#import <UIBarButtonItem+BlocksKit.h>
 
 @interface MostRecentStoriesViewController ()
 
@@ -21,6 +23,11 @@
   
   [_composeBarButtonItem setTarget:self];
   [_composeBarButtonItem setAction:@selector(composePressed:)];
+  
+  UIBarButtonItem *composeItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCompose handler:^(id sender) {
+    NSLog(@"Compose button blocksKit pressed.");
+  }];
+  [self.navigationItem setRightBarButtonItem:composeItem];
 }
 
 - (void)composePressed:(id)buttonItem {
