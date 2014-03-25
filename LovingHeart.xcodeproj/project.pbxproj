@@ -32,6 +32,9 @@
 		1801F659188263900024A832 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F658188263900024A832 /* SystemConfiguration.framework */; };
 		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
 		18F78B1D188B6D2F001491D5 /* MostRecentStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */; };
+		1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */; };
+		1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */; };
+		1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */; };
 		1CD9F5DD18E02CDD0089CB4F /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* Idea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
 		1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5E718E134C40089CB4F /* 973-user.png */; };
@@ -85,6 +88,9 @@
 		18F78B1B188B6D2F001491D5 /* MostRecentStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostRecentStoriesViewController.h; sourceTree = "<group>"; };
 		18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentStoriesViewController.m; sourceTree = "<group>"; };
 		1C670D6818E157F200D422CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
+		1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note@2x.png"; sourceTree = "<group>"; };
+		1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHIdeaCardView.xib; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Idea.h; sourceTree = "<group>"; };
 		1CD9F5DC18E02CDD0089CB4F /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
 		1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardView.h; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				18F78B19188B6C68001491D5 /* StoryCell.m */,
 				1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */,
 				1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */,
+				1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -246,6 +253,8 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */,
+				1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */,
 				1CD9F5E718E134C40089CB4F /* 973-user.png */,
 				1CD9F5E818E134C40089CB4F /* 973-user@2x.png */,
 				1CD9F5E918E134C40089CB4F /* Default@2x.png */,
@@ -355,7 +364,10 @@
 				1CEF810118DEAD120011F412 /* Localizable.strings in Resources */,
 				1801F62A188259080024A832 /* Images.xcassets in Resources */,
 				1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */,
+				1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */,
+				1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */,
 				1801F625188259080024A832 /* Main.storyboard in Resources */,
+				1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

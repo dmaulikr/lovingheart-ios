@@ -16,9 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-96-dcX">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-96-dcX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="RNn-25-ZRm"/>
                                 </constraints>
@@ -266,11 +267,11 @@
             </objects>
             <point key="canvasLocation" x="1714" y="626"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Today-->
         <scene sceneID="lhj-fH-UFG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XTl-51-7c7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="CoX-8r-0Vl"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="1012-sticky-note.png" id="CoX-8r-0Vl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNd-Ei-bpu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -306,6 +307,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1012-sticky-note.png" width="28" height="28"/>
         <image name="973-user.png" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

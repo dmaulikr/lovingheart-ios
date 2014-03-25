@@ -10,6 +10,8 @@
 
 @interface LHIdeaCardView : UIView
 
-@property (weak, nonatomic) IBOutlet UITextView *ideaNameTextView;
+@property (weak, nonatomic) IBOutlet UILabel *ideaNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ideaDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cardTitleLabel;
 
 @end
