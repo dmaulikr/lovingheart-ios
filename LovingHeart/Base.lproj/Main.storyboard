@@ -61,7 +61,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6P-l0-GrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="14"/>
+            <point key="canvasLocation" x="320" y="-72"/>
         </scene>
         <!--View Controller - My Profile-->
         <scene sceneID="Ya8-fb-KIC">

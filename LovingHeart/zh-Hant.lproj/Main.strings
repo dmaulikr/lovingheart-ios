@@ -1,6 +1,9 @@
 
-/* Class = "IBUINavigationItem"; title = "友善推薦"; ObjectID = "029-am-01m"; */
-"029-am-01m.title" = "友善推薦";
+/* Class = "IBUINavigationItem"; title = "Today"; ObjectID = "029-am-01m"; */
+"029-am-01m.title" = "本日精選";
+
+/* Class = "IBUITabBarItem"; title = "My Profile"; ObjectID = "50j-K1-3YD"; */
+"50j-K1-3YD.title" = "個人檔案";
 
 /* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "6Kz-KK-zea"; */
 "6Kz-KK-zea.text" = "我今天遇到了認真小天使，謝謝他";
