@@ -30,28 +30,10 @@
   // Dispose of any resources that can be recreated.
 }
 
-- (PFQuery *)queryForTable {
-  PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-  
-  [query includeKey:@"StoryTeller"];
-  [query includeKey:@"StoryTeller.avatar"];
-  [query includeKey:@"graphicPointer"];
-  
-  // If no objects are loaded in memory, we look to the cache first to fill the table
-  // and then subsequently do a query against the network.
-  if (self.objects.count == 0) {
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-  }
-  
-  [query orderByDescending:@"createdAt"];
-  
-  return query;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
-                        object:(PFObject *)object
-{
+                        object:(LHStory *)object {
+  
   StoryCell *cell;
   if (object[@"graphicPointer"]) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"storyImageCell"];
@@ -59,12 +41,12 @@
     cell = [tableView dequeueReusableCellWithIdentifier:@"storyCell"];
   }
   
-  cell.nameLabel.text = object[@"StoryTeller"][@"name"];
-  cell.contentLabel.text = object[@"Content"];
+  cell.nameLabel.text = object.StoryTeller.name;
+  cell.contentLabel.text = object.Content;
   cell.avatarView.image = [UIImage imageNamed:@"defaultAvatar"];
   
-  if (object[@"StoryTeller"][@"avatar"]) {
-    NSURL* imageUrl = [NSURL URLWithString:object[@"StoryTeller"][@"avatar"][@"imageUrl"]];
+  if (object.StoryTeller.avatar) {
+    NSURL* imageUrl = [NSURL URLWithString:object.StoryTeller.avatar.imageUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
     AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFImageResponseSerializer serializer];
@@ -80,7 +62,7 @@
   
   if (object[@"graphicPointer"]) {
     cell.pictureView.image = nil;
-    PFFile* file = (PFFile*) object[@"graphicPointer"][@"imageFile"];
+    PFFile* file = (PFFile*)object.graphicPointer.imageFile;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
       if (!error) {
         UIImage *image = [UIImage imageWithData:data];
@@ -91,7 +73,7 @@
     }];
   }
   
-  cell.locationLabel.text = object[@"areaName"];
+  cell.locationLabel.text = object.areaName;
   cell.timeLabel.text = [object.createdAt timeAgo];
   
   return cell;

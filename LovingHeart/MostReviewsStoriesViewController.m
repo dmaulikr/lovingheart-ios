@@ -17,7 +17,7 @@
 }
 
 - (PFQuery *)queryForTable {
-  PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+  PFQuery *query = [LHStory query];
   
   [query includeKey:@"StoryTeller"];
   [query includeKey:@"StoryTeller.avatar"];

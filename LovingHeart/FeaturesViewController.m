@@ -35,27 +35,25 @@
       Idea *randomIdea = [objects objectAtIndex:randomIndex];
       
       __block int frameTop = 0;
-      dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"Random idea name: %@", randomIdea.Name);
-        
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"LHIdeaCardView" owner:self options:nil];
-        LHIdeaCardView *ideaTextView = [nibArray objectAtIndex:0];
-        [ideaTextView.ideaNameLabel setText:randomIdea.Name];
-        [ideaTextView.ideaDescriptionLabel setText:randomIdea.Description];
-        [ideaTextView.cardTitleLabel setText:NSLocalizedString(@"Random Idea", @"Random Idea")];
-        ideaTextView.frame = CGRectMake(ideaTextView.frame.origin.x, frameTop, ideaTextView.frame.size.width, ideaTextView.frame.size.height);
-        frameTop += ideaTextView.frame.size.height;
-        [self.scrollView addSubview:ideaTextView];
-
-      });
       
       Idea *latestIdea = [objects objectAtIndex:objects.count - 1];
       dispatch_async(dispatch_get_main_queue(), ^{
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"LHIdeaCardView" owner:self options:nil];
-        LHIdeaCardView *ideaTextView = [nibArray objectAtIndex:0];
-        [ideaTextView.ideaNameLabel setText:latestIdea.Name];
-        [ideaTextView.ideaDescriptionLabel setText:latestIdea.Description];
-        [ideaTextView.cardTitleLabel setText:NSLocalizedString(@"Latest Idea", @"Latest Idea")];
+        LHIdeaCardView *latestIdeaTextView = [[LHIdeaCardView alloc] init];
+        [latestIdeaTextView.ideaNameLabel setText:latestIdea.Name];
+        [latestIdeaTextView.ideaDescriptionLabel setText:latestIdea.Description];
+        [latestIdeaTextView.cardTitleLabel setText:NSLocalizedString(@"Latest Idea", @"Latest Idea")];
+        latestIdeaTextView.frame = CGRectMake(latestIdeaTextView.frame.origin.x, frameTop, latestIdeaTextView.frame.size.width, latestIdeaTextView.frame.size.height);
+        frameTop += latestIdeaTextView.frame.size.height;
+        [self.scrollView addSubview:latestIdeaTextView];
+      });
+      
+      dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"Random idea name: %@", randomIdea.Name);
+        
+        LHIdeaCardView *ideaTextView = [[LHIdeaCardView alloc] init];
+        [ideaTextView.ideaNameLabel setText:randomIdea.Name];
+        [ideaTextView.ideaDescriptionLabel setText:randomIdea.Description];
+        [ideaTextView.cardTitleLabel setText:NSLocalizedString(@"Random Idea", @"Random Idea")];
         ideaTextView.frame = CGRectMake(ideaTextView.frame.origin.x, frameTop, ideaTextView.frame.size.width, ideaTextView.frame.size.height);
         frameTop += ideaTextView.frame.size.height;
         [self.scrollView addSubview:ideaTextView];
