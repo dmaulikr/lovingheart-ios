@@ -124,7 +124,7 @@
                                                 <constraint firstAttribute="height" constant="50" id="q5U-Lh-jkQ"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="301" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evf-2X-clp">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="301" misplaced="YES" image="card_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="evf-2X-clp">
                                             <rect key="frame" x="0.0" y="129" width="320" height="320"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -290,7 +290,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD9-Hx-jaS" userLabel="Image View - Story Photo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="card_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="dD9-Hx-jaS" userLabel="Image View - Story Photo">
                                         <rect key="frame" x="-3" y="196" width="320" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -576,6 +576,7 @@
         <image name="1039-files-box.png" width="28" height="26"/>
         <image name="912-gears.png" width="28" height="28"/>
         <image name="973-user.png" width="28" height="24"/>
+        <image name="card_default.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

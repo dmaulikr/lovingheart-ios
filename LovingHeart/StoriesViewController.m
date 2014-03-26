@@ -62,7 +62,7 @@
   }
   
   if (object.graphicPointer) {
-    cell.pictureView.image = nil;
+    cell.pictureView.image = [UIImage imageNamed:@"card_default"];
     PFFile* file = (PFFile*)object.graphicPointer.imageFile;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
       if (!error) {
