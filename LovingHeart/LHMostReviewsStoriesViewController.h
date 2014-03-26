@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "StoriesViewController.h"
+#import "LHStoriesViewController.h"
 
-@interface MostReviewsStoriesViewController : StoriesViewController
+@interface LHMostReviewsStoriesViewController : LHStoriesViewController
 
 @property (nonatomic, assign) IBOutlet UIBarButtonItem *composeBarButtonItem;
 

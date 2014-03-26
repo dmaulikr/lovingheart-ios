@@ -1,19 +1,25 @@
 //
-//  StoryTimelineMostReviewsViewController.m
+//  StoryTimelineViewController.m
 //  LovingHeart
 //
-//  Created by Edward Chiang on 2014/3/23.
+//  Created by zeta on 2014/1/19.
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "MostReviewsStoriesViewController.h"
+#import "LHMostRecentStoriesViewController.h"
+#import <BlocksKit/BlocksKit.h>
+#import <UIBarButtonItem+BlocksKit.h>
 
-@implementation MostReviewsStoriesViewController
+@interface LHMostRecentStoriesViewController ()
+
+@end
+
+@implementation LHMostRecentStoriesViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
-  self.title = NSLocalizedString(@"Most Rated", @"Most Rated");
+  self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
 }
 
 - (PFQuery *)queryForTable {
@@ -29,7 +35,7 @@
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
   }
   
-  [query orderByDescending:@"reviewImpact"];
+  [query orderByDescending:@"createdAt"];
   
   return query;
 }

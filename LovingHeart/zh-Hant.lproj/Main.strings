@@ -1,9 +1,12 @@
 
-/* Class = "IBUINavigationItem"; title = "Today"; ObjectID = "029-am-01m"; */
-"029-am-01m.title" = "今日";
+/* Class = "IBUITabBarItem"; title = "My Profile"; ObjectID = "27K-x7-Zr8"; */
+"27K-x7-Zr8.title" = "我的檔案";
 
-/* Class = "IBUITabBarItem"; title = "My Profile"; ObjectID = "50j-K1-3YD"; */
-"50j-K1-3YD.title" = "我的檔案";
+/* Class = "IBUILabel"; text = "Idea Content"; ObjectID = "31l-SN-4gN"; */
+"31l-SN-4gN.text" = "Idea Content";
+
+/* Class = "IBUILabel"; text = "Location, Area"; ObjectID = "5UI-Hp-AqS"; */
+"5UI-Hp-AqS.text" = "Location, Area";
 
 /* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "6Kz-KK-zea"; */
 "6Kz-KK-zea.text" = "我今天遇到了認真小天使，謝謝他";
@@ -11,23 +14,38 @@
 /* Class = "IBUITableViewController"; title = "最新故事"; ObjectID = "9Pk-5c-ho6"; */
 "9Pk-5c-ho6.title" = "最新故事";
 
-/* Class = "IBUITabBarItem"; title = "Today"; ObjectID = "CoX-8r-0Vl"; */
-"CoX-8r-0Vl.title" = "本日精選";
+/* Class = "IBUILabel"; text = "Idea Card Title"; ObjectID = "C1d-Rv-zpu"; */
+"C1d-Rv-zpu.text" = "Idea Card Title";
 
 /* Class = "IBUINavigationItem"; title = "Story"; ObjectID = "Gfq-pS-rnB"; */
-"Gfq-pS-rnB.title" = "故事內容";
+"Gfq-pS-rnB.title" = "Story";
+
+/* Class = "IBUILabel"; text = "Category"; ObjectID = "HEw-my-uT1"; */
+"HEw-my-uT1.text" = "Category";
+
+/* Class = "IBUINavigationItem"; title = "Idea Card"; ObjectID = "KJ9-NI-3rq"; */
+"KJ9-NI-3rq.title" = "友善行動卡";
 
 /* Class = "IBUILabel"; text = "User Name"; ObjectID = "PHN-g8-DDD"; */
 "PHN-g8-DDD.text" = "User Name";
 
-/* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "PpX-rU-caR"; */
-"PpX-rU-caR.text" = "我今天遇到了認真小天使，謝謝他";
+/* Class = "IBUILabel"; text = "Story Image Content"; ObjectID = "PpX-rU-caR"; */
+"PpX-rU-caR.text" = "Story Image Content";
 
-/* Class = "IBUILabel"; text = "新北市, 汐止區"; ObjectID = "Scw-Az-FNP"; */
-"Scw-Az-FNP.text" = "新北市, 汐止區";
+/* Class = "IBUILabel"; text = "Location, Area"; ObjectID = "Scw-Az-FNP"; */
+"Scw-Az-FNP.text" = "Location, Area";
 
-/* Class = "IBUILabel"; text = "一週前"; ObjectID = "aBp-sZ-kbR"; */
-"aBp-sZ-kbR.text" = "一週前";
+/* Class = "IBUILabel"; text = "Date ago"; ObjectID = "Yg2-M7-8Ur"; */
+"Yg2-M7-8Ur.text" = "Date ago";
+
+/* Class = "IBUINavigationItem"; title = "Post Story"; ObjectID = "Ypa-bz-CI5"; */
+"Ypa-bz-CI5.title" = "Post Story";
+
+/* Class = "IBUILabel"; text = "Idea Title"; ObjectID = "a3g-pg-gbz"; */
+"a3g-pg-gbz.text" = "Idea Title";
+
+/* Class = "IBUILabel"; text = "Days ago"; ObjectID = "aBp-sZ-kbR"; */
+"aBp-sZ-kbR.text" = "Days ago";
 
 /* Class = "IBUILabel"; text = "新北市, 汐止區"; ObjectID = "bBj-Yu-TGH"; */
 "bBj-Yu-TGH.text" = "新北市, 汐止區";
@@ -38,14 +56,23 @@
 /* Class = "IBUILabel"; text = "Story Content"; ObjectID = "h0G-O5-Pp4"; */
 "h0G-O5-Pp4.text" = "Story Content";
 
-/* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "ohH-q6-peZ"; */
-"ohH-q6-peZ.text" = "Edward Chiang";
+/* Class = "IBUILabel"; text = "Story Content User Name"; ObjectID = "ohH-q6-peZ"; */
+"ohH-q6-peZ.text" = "Story Content User Name";
+
+/* Class = "IBUINavigationItem"; title = "My Profile"; ObjectID = "pEx-2o-rcz"; */
+"pEx-2o-rcz.title" = "My Profile";
+
+/* Class = "IBUINavigationItem"; title = "Today"; ObjectID = "qT4-d9-efv"; */
+"qT4-d9-efv.title" = "本日推薦";
 
 /* Class = "IBUITabBarItem"; title = "Action Cards"; ObjectID = "s6D-AR-qJc"; */
-"s6D-AR-qJc.title" = "友善行動卡";
+"s6D-AR-qJc.title" = "Action Cards";
 
-/* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "wTL-oP-jic"; */
-"wTL-oP-jic.text" = "Edward Chiang";
+/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "wQb-Ee-9m6"; */
+"wQb-Ee-9m6.title" = "設定";
+
+/* Class = "IBUILabel"; text = "Story Image User Name"; ObjectID = "wTL-oP-jic"; */
+"wTL-oP-jic.text" = "Story Image User Name";
 
 /* Class = "IBUILabel"; text = "一週前"; ObjectID = "zJe-q4-oEo"; */
 "zJe-q4-oEo.text" = "一週前";

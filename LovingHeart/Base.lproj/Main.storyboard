@@ -29,7 +29,7 @@
         <!--Most Recent Stories View Controller - 最新故事-->
         <scene sceneID="lut-kr-uCV">
             <objects>
-                <tableViewController title="最新故事" id="9Pk-5c-ho6" customClass="MostRecentStoriesViewController" sceneMemberID="viewController">
+                <tableViewController title="最新故事" id="9Pk-5c-ho6" customClass="LHMostRecentStoriesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="485" sectionHeaderHeight="22" sectionFooterHeight="22" id="8mj-Vy-DLX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +407,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Card Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-Rv-zpu">
-                                            <rect key="frame" x="76" y="33" width="222" height="21"/>
+                                            <rect key="frame" x="76" y="33" width="224" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.90980398654937744" green="0.0039215688593685627" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
@@ -433,7 +433,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-pg-gbz">
-                                            <rect key="frame" x="21" y="446" width="280" height="21"/>
+                                            <rect key="frame" x="21" y="446" width="279" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -450,16 +450,16 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="31l-SN-4gN" firstAttribute="leading" secondItem="tee-5a-jfS" secondAttribute="leading" id="27M-A8-2SM"/>
-                                        <constraint firstItem="HEw-my-uT1" firstAttribute="top" secondItem="Fx4-Cj-ai9" secondAttribute="bottom" constant="8" symbolic="YES" id="2n0-60-TIx"/>
+                                        <constraint firstItem="HEw-my-uT1" firstAttribute="top" secondItem="Fx4-Cj-ai9" secondAttribute="bottom" constant="8" id="2n0-60-TIx"/>
                                         <constraint firstItem="tee-5a-jfS" firstAttribute="top" secondItem="AvF-uT-9df" secondAttribute="top" constant="20" symbolic="YES" id="5yt-1e-ATA"/>
                                         <constraint firstItem="a3g-pg-gbz" firstAttribute="leading" secondItem="AvF-uT-9df" secondAttribute="leading" constant="21" id="B1d-tv-6MX"/>
                                         <constraint firstItem="Fx4-Cj-ai9" firstAttribute="leading" secondItem="HEw-my-uT1" secondAttribute="leading" id="DHW-Hw-nDo"/>
                                         <constraint firstItem="31l-SN-4gN" firstAttribute="top" secondItem="a3g-pg-gbz" secondAttribute="bottom" constant="2" id="F7a-Km-YCz"/>
-                                        <constraint firstItem="31l-SN-4gN" firstAttribute="trailing" secondItem="C1d-Rv-zpu" secondAttribute="trailing" constant="2" id="IwP-4O-qZq"/>
+                                        <constraint firstItem="31l-SN-4gN" firstAttribute="trailing" secondItem="C1d-Rv-zpu" secondAttribute="trailing" id="IwP-4O-qZq"/>
                                         <constraint firstItem="Fx4-Cj-ai9" firstAttribute="top" secondItem="AvF-uT-9df" secondAttribute="top" constant="78" id="KMo-dO-PEl"/>
                                         <constraint firstItem="a3g-pg-gbz" firstAttribute="top" secondItem="HEw-my-uT1" secondAttribute="bottom" constant="8" symbolic="YES" id="Rm4-E8-v44"/>
                                         <constraint firstItem="31l-SN-4gN" firstAttribute="leading" secondItem="AvF-uT-9df" secondAttribute="leading" constant="20" symbolic="YES" id="SBX-c0-jPz"/>
-                                        <constraint firstAttribute="trailing" secondItem="a3g-pg-gbz" secondAttribute="trailing" constant="19" id="ScD-si-pdt"/>
+                                        <constraint firstAttribute="trailing" secondItem="a3g-pg-gbz" secondAttribute="trailing" constant="20" id="ScD-si-pdt"/>
                                         <constraint firstAttribute="trailing" secondItem="Fx4-Cj-ai9" secondAttribute="trailing" id="ati-5J-dLE"/>
                                         <constraint firstItem="Fx4-Cj-ai9" firstAttribute="top" secondItem="tee-5a-jfS" secondAttribute="bottom" constant="10" id="dqp-Nw-gkw"/>
                                         <constraint firstItem="Fx4-Cj-ai9" firstAttribute="top" secondItem="C1d-Rv-zpu" secondAttribute="bottom" constant="24" id="hBX-fp-emv"/>
@@ -476,6 +476,7 @@
                                     <outlet property="ideaContentLabel" destination="31l-SN-4gN" id="guO-Yd-wI6"/>
                                     <outlet property="ideaImageView" destination="Fx4-Cj-ai9" id="kSb-D2-0VR"/>
                                     <outlet property="ideaTitleLabel" destination="a3g-pg-gbz" id="CWO-ud-Qfg"/>
+                                    <segue destination="TMd-Mt-9q4" kind="push" id="yFf-jA-AlC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -489,6 +490,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELk-aO-cUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1574" y="-952"/>
+        </scene>
+        <!--View Controller - Idea Card-->
+        <scene sceneID="usc-Ac-GtF">
+            <objects>
+                <viewController id="TMd-Mt-9q4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="peP-eh-T05"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fr9-27-g9M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cOr-cw-er8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Idea Card" id="KJ9-NI-3rq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vB5-Ny-4ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2056" y="-952"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oqq-R3-Rwu">

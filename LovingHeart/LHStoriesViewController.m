@@ -6,17 +6,17 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "StoriesViewController.h"
+#import "LHStoriesViewController.h"
 #import "StoryCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 #import "LHStoryViewController.h"
 
-@interface StoriesViewController ()
+@interface LHStoriesViewController ()
 
 @end
 
-@implementation StoriesViewController
+@implementation LHStoriesViewController
 
 - (void)awakeFromNib {
   self.parseClassName = @"Story";
