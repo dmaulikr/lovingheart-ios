@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Idea.h"
-#import "LHStory.h"
-#import "LHGraphicImage.h"
+#import "LHParseObject.h"
 
 @implementation AppDelegate
 
@@ -18,8 +16,11 @@
   // Override point for customization after application launch.
   [LHUser registerSubclass];
   [LHStory registerSubclass];
-  [Idea registerSubclass];
+  [LHToday registerSubclass];
+  [LHIdea registerSubclass];
+  [LHCategory registerSubclass];
   [LHGraphicImage registerSubclass];
+  
   [Parse setApplicationId:@"5mqwxaAsD0xCUb8dh9HgFu4FM6bQOycBqx4XrdFL"
                 clientKey:@"SX6e4Gd86Fq3vil6XOT4UHvrsfaBqvIJJ99vPkDV"];
   

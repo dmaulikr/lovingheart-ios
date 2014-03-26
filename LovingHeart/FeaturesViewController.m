@@ -7,7 +7,7 @@
 //
 
 #import "FeaturesViewController.h"
-#import "Idea.h"
+#import "LHIdea.h"
 #import <stdlib.h>
 #import <time.h>
 #import "LHIdeaCardView.h"
@@ -23,7 +23,7 @@
   // Do any additional setup after loading the view, typically from a nib.
   self.title = NSLocalizedString(@"Today", @"Show today");
   
-  PFQuery *query = [Idea query];
+  PFQuery *query = [LHIdea query];
   [query whereKey:@"status" notContainedIn:[NSArray arrayWithObjects:@"close", nil]];
   [query orderByDescending:@"doneCount"];
   [query setCachePolicy:kPFCachePolicyCacheThenNetwork];
@@ -32,11 +32,11 @@
       // The find succeeded.
       srandom(time(nil));
       int randomIndex = (int)(random() % objects.count);
-      Idea *randomIdea = [objects objectAtIndex:randomIndex];
+      LHIdea *randomIdea = [objects objectAtIndex:randomIndex];
       
       __block int frameTop = 0;
       
-      Idea *latestIdea = [objects objectAtIndex:objects.count - 1];
+      LHIdea *latestIdea = [objects objectAtIndex:objects.count - 1];
       dispatch_async(dispatch_get_main_queue(), ^{
         LHIdeaCardView *latestIdeaTextView = [[LHIdeaCardView alloc] init];
         [latestIdeaTextView.ideaNameLabel setText:latestIdea.Name];
@@ -63,7 +63,7 @@
       
       [self.scrollView setPagingEnabled:YES];
       NSLog(@"Successfully retrieved %lu idea.", (unsigned long)objects.count);
-      for (Idea* eachIdea in objects) {
+      for (LHIdea* eachIdea in objects) {
         NSLog(@"Each idea name: %@", eachIdea.Name);
         NSLog(@"Each idea done Count: %i", [eachIdea.doneCount intValue]);
       }

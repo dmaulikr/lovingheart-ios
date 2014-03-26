@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "Idea.h"
+#import "LHIdea.h"
 
-@implementation Idea
+@implementation LHIdea
 
 @dynamic Name;
 @dynamic Description;
