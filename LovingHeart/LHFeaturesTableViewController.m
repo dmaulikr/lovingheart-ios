@@ -9,6 +9,7 @@
 #import "LHFeaturesTableViewController.h"
 #import "LHParseObject.h"
 #import "LHIdeaViewCell.h"
+#import "LHIdeaCardViewController.h"
 
 @interface LHFeaturesTableViewController ()
 
@@ -94,6 +95,16 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   return 540.0f;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    LHIdeaCardViewController *viewController = segue.destinationViewController;
+    NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+    LHToday *today = (LHToday *)[self objectAtIndexPath:selectedPath];
+    [viewController setIdea:today.ideaPointer];
+
+  
 }
 
 @end
