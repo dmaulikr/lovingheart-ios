@@ -477,7 +477,7 @@
                                     <outlet property="ideaContentLabel" destination="31l-SN-4gN" id="guO-Yd-wI6"/>
                                     <outlet property="ideaImageView" destination="Fx4-Cj-ai9" id="kSb-D2-0VR"/>
                                     <outlet property="ideaTitleLabel" destination="a3g-pg-gbz" id="CWO-ud-Qfg"/>
-                                    <segue destination="TMd-Mt-9q4" kind="push" id="yFf-jA-AlC"/>
+                                    <segue destination="TMd-Mt-9q4" kind="push" identifier="pushIdeaCardViewController" id="yFf-jA-AlC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -486,7 +486,13 @@
                             <outlet property="delegate" destination="or2-rD-V4I" id="X0C-bs-bYk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Today" id="qT4-d9-efv"/>
+                    <navigationItem key="navigationItem" title="Today" id="qT4-d9-efv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="9zf-bA-0Tu">
+                            <connections>
+                                <segue destination="DO8-TA-zFz" kind="modal" id="V2X-uk-Tst"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELk-aO-cUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -759,7 +765,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="o51-Ne-ShS"/>
+        <segue reference="V2X-uk-Tst"/>
         <segue reference="dna-LH-9MD"/>
     </inferredMetricsTieBreakers>
 </document>

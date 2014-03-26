@@ -99,11 +99,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+  if ([segue.identifier isEqual:@"pushIdeaCardViewController"]) {
     LHIdeaCardViewController *viewController = segue.destinationViewController;
     NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
     LHToday *today = (LHToday *)[self objectAtIndexPath:selectedPath];
     [viewController setIdea:today.ideaPointer];
-
+  }
   
 }
 

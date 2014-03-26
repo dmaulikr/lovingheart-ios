@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 #import "LHStoryViewController.h"
+#import <UIAlertView+BlocksKit.h>
 
 @interface LHStoriesViewController ()
 
@@ -127,7 +128,37 @@
     LHStory *story = (LHStory *)[self objectAtIndexPath:selectedPath];
     [storyViewController setStory:story];
   }
+  
+  if ([segue.identifier isEqual:@"presentPostViewController"]) {
+    
+    if (![PFUser currentUser]) {
+      
+      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share story"];
+      [alertView bk_addButtonWithTitle:@"Go" handler:^{
+        [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
+          PFLogInViewController *loginViewController =[[PFLogInViewController alloc] init];
+          loginViewController.delegate = self;
+          loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+          [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+        }];
+        
+      }];
+      [alertView bk_setCancelBlock:^{
+        [segue.destinationViewController dismissModalViewControllerAnimated:YES];
+      }];
+      [alertView show];
+    } else {
+      NSLog(@"Login User Name: %@", [[PFUser currentUser] username]);
+    }
+    
+  }
+  
+}
 
+#pragma mark - PFLogInViewControllerDelegate
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+  [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

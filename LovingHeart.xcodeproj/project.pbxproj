@@ -307,10 +307,10 @@
 		1C3D7DAA18E2C5D200696BBE /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				18F78B1B188B6D2F001491D5 /* LHMostRecentStoriesViewController.h */,
-				18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */,
 				1CEF810B18DEB23C0011F412 /* LHStoriesViewController.h */,
 				1CEF810C18DEB23C0011F412 /* LHStoriesViewController.m */,
+				18F78B1B188B6D2F001491D5 /* LHMostRecentStoriesViewController.h */,
+				18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */,
 				1CEF810E18DEB34F0011F412 /* LHMostReviewsStoriesViewController.h */,
 				1CEF810F18DEB34F0011F412 /* LHMostReviewsStoriesViewController.m */,
 			);
