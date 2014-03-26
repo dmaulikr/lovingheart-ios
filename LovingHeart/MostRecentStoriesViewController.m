@@ -20,18 +20,6 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
-  
-  [_composeBarButtonItem setTarget:self];
-  [_composeBarButtonItem setAction:@selector(composePressed:)];
-  
-  UIBarButtonItem *composeItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCompose handler:^(id sender) {
-    NSLog(@"Compose button blocksKit pressed.");
-  }];
-  [self.navigationItem setRightBarButtonItem:composeItem];
-}
-
-- (void)composePressed:(id)buttonItem {
-  NSLog(@"Compose button pressed.");
 }
 
 - (PFQuery *)queryForTable {

@@ -36,6 +36,7 @@
 		1C3D7D8518E2A44100696BBE /* 912-gears.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8318E2A44100696BBE /* 912-gears.png */; };
 		1C3D7D8618E2A44100696BBE /* 912-gears@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8418E2A44100696BBE /* 912-gears@2x.png */; };
 		1C3D7D8A18E2A66C00696BBE /* LHSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8818E2A66C00696BBE /* LHSettingsTableViewController.m */; };
+		1C3D7D9018E2AB4100696BBE /* LHPostStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8F18E2AB4100696BBE /* LHPostStoryViewController.m */; };
 		1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */; };
 		1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */; };
 		1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */; };
@@ -107,6 +108,10 @@
 		1C3D7D8418E2A44100696BBE /* 912-gears@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "912-gears@2x.png"; sourceTree = "<group>"; };
 		1C3D7D8718E2A66C00696BBE /* LHSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsTableViewController.h; sourceTree = "<group>"; };
 		1C3D7D8818E2A66C00696BBE /* LHSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsTableViewController.m; sourceTree = "<group>"; };
+		1C3D7D8C18E2AA3E00696BBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1C3D7D8D18E2AA3E00696BBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1C3D7D8E18E2AB4100696BBE /* LHPostStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPostStoryViewController.h; sourceTree = "<group>"; };
+		1C3D7D8F18E2AB4100696BBE /* LHPostStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHPostStoryViewController.m; sourceTree = "<group>"; };
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
 		1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note@2x.png"; sourceTree = "<group>"; };
 		1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHIdeaCardView.xib; sourceTree = "<group>"; };
@@ -326,6 +331,8 @@
 				1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */,
 				1C3D7D8718E2A66C00696BBE /* LHSettingsTableViewController.h */,
 				1C3D7D8818E2A66C00696BBE /* LHSettingsTableViewController.m */,
+				1C3D7D8E18E2AB4100696BBE /* LHPostStoryViewController.h */,
+				1C3D7D8F18E2AB4100696BBE /* LHPostStoryViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -492,6 +499,7 @@
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,
 				1C670D7718E1C45100D422CA /* LHUser.m in Sources */,
 				1C670D7D18E1CA7000D422CA /* LHKICardsViewController.m in Sources */,
+				1C3D7D9018E2AB4100696BBE /* LHPostStoryViewController.m in Sources */,
 				18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +528,7 @@
 			children = (
 				1801F624188259080024A832 /* Base */,
 				1C3D7D8218E1EB8100696BBE /* zh-Hant */,
+				1C3D7D8C18E2AA3E00696BBE /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -529,6 +538,7 @@
 			children = (
 				1CEF810218DEAD120011F412 /* Base */,
 				1CEF810A18DEB0B00011F412 /* zh-Hant */,
+				1C3D7D8D18E2AA3E00696BBE /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -33,7 +33,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="029-am-01m">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="G5s-uk-5f1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="G5s-uk-5f1">
+                            <connections>
+                                <segue destination="DO8-TA-zFz" kind="modal" id="xKN-W5-G1w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="qCS-96-dcX" id="hUr-zl-0h8"/>
@@ -81,27 +85,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" text="Edward Chiang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTL-oP-jic">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" text="Story Image User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTL-oP-jic">
                                             <rect key="frame" x="73" y="31" width="227" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="我今天遇到了認真小天使，謝謝他" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="PpX-rU-caR">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Story Image Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="PpX-rU-caR">
                                             <rect key="frame" x="15" y="75" width="294" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="18" text="新北市, 汐止區" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="Scw-Az-FNP">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="18" text="Location, Area" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="Scw-Az-FNP">
                                             <rect key="frame" x="15" y="104" width="186" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="一週前" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="aBp-sZ-kbR">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Days ago" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="aBp-sZ-kbR">
                                             <rect key="frame" x="200" y="105" width="100" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -152,7 +156,7 @@
                                     <outlet property="nameLabel" destination="wTL-oP-jic" id="m0H-KZ-bVU"/>
                                     <outlet property="pictureView" destination="evf-2X-clp" id="SHd-Se-GZY"/>
                                     <outlet property="timeLabel" destination="aBp-sZ-kbR" id="BkB-kr-2yG"/>
-                                    <segue destination="mHz-Pj-HrP" kind="push" id="al5-kD-ker"/>
+                                    <segue destination="mHz-Pj-HrP" kind="push" identifier="pushStoryImageContent" id="al5-kD-ker"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="storyCell" rowHeight="143" id="VDe-lg-4Xb" customClass="StoryCell">
@@ -162,7 +166,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" fixedFrame="YES" text="Edward Chiang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohH-q6-peZ">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" fixedFrame="YES" text="Story Content User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohH-q6-peZ">
                                             <rect key="frame" x="73" y="31" width="227" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -224,7 +228,7 @@
                                     <outlet property="locationLabel" destination="bBj-Yu-TGH" id="hm7-ne-RqC"/>
                                     <outlet property="nameLabel" destination="ohH-q6-peZ" id="IzP-2s-4Ep"/>
                                     <outlet property="timeLabel" destination="zJe-q4-oEo" id="qxL-kT-6GX"/>
-                                    <segue destination="mHz-Pj-HrP" kind="push" id="dna-LH-9MD"/>
+                                    <segue destination="mHz-Pj-HrP" kind="push" identifier="pushStoryContent" id="dna-LH-9MD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -235,13 +239,14 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jjG-06-JKx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="KfI-wf-2Y7" userLabel="Bar Button Item - Item"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iqy-jG-jds">
+                            <connections>
+                                <segue destination="DO8-TA-zFz" kind="modal" identifier="presentPostViewController" id="nje-1x-q1U"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="composeBarButtonItem" destination="KfI-wf-2Y7" id="ExV-kG-Xt7"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNZ-vE-cCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,6 +355,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5w-O7-i8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2015" y="481"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ssp-DK-5wy">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="DO8-TA-zFz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uus-mf-KN1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="y8X-3w-Nva" kind="relationship" relationship="rootViewController" id="9Pe-J3-Eq5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2k-0t-lcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2440" y="-242"/>
+        </scene>
+        <!--Post Story View Controller - Post Story-->
+        <scene sceneID="6Ei-qG-XtQ">
+            <objects>
+                <viewController id="y8X-3w-Nva" customClass="LHPostStoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="inl-Kh-KaY"/>
+                        <viewControllerLayoutGuide type="bottom" id="SgJ-lR-T2m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TDm-1u-VAK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post Story" id="Ypa-bz-CI5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hpZ-ud-37w"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3De-xd-K0M"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButtonItem" destination="hpZ-ud-37w" id="BvJ-qv-dSE"/>
+                        <outlet property="doneButtonItem" destination="3De-xd-K0M" id="I7R-AI-fyE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxB-Ip-lNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2871" y="-242"/>
         </scene>
         <!--Navigation Controller - Today-->
         <scene sceneID="lhj-fH-UFG">
@@ -537,6 +583,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="al5-kD-ker"/>
+        <segue reference="dna-LH-9MD"/>
+        <segue reference="nje-1x-q1U"/>
     </inferredMetricsTieBreakers>
 </document>

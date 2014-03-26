@@ -121,10 +121,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  LHStoryViewController *storyViewController = segue.destinationViewController;
-  NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
-  LHStory *story = (LHStory *)[self objectAtIndexPath:selectedPath];
-  [storyViewController setStory:story];
+  if ([segue.identifier isEqual:@"pushStoryContent"] || [segue.identifier isEqual:@"pushStoryImageContent"]) {
+    LHStoryViewController *storyViewController = segue.destinationViewController;
+    NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+    LHStory *story = (LHStory *)[self objectAtIndexPath:selectedPath];
+    [storyViewController setStory:story];
+  }
+
 }
 
 @end
