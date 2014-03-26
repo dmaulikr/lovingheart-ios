@@ -99,6 +99,7 @@
 		18F78B1C188B6D2F001491D5 /* MostRecentStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentStoriesViewController.m; sourceTree = "<group>"; };
 		1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryViewController.h; sourceTree = "<group>"; };
 		1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryViewController.m; sourceTree = "<group>"; };
+		1C3D7D8218E1EB8100696BBE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
 		1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note@2x.png"; sourceTree = "<group>"; };
 		1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHIdeaCardView.xib; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		1C670D7F18E1CAE300D422CA /* 1039-files-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1039-files-box@2x.png"; sourceTree = "<group>"; };
 		1C670D8018E1CAE300D422CA /* 1055-ticket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1055-ticket.png"; sourceTree = "<group>"; };
 		1C670D8118E1CAE300D422CA /* 1055-ticket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1055-ticket@2x.png"; sourceTree = "<group>"; };
-		1C670D8918E1CDDC00D422CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Idea.h; sourceTree = "<group>"; };
 		1CD9F5DC18E02CDD0089CB4F /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
 		1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardView.h; sourceTree = "<group>"; };
@@ -505,7 +505,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1801F624188259080024A832 /* Base */,
-				1C670D8918E1CDDC00D422CA /* zh-Hant */,
+				1C3D7D8218E1EB8100696BBE /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

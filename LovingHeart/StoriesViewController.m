@@ -108,7 +108,7 @@
                                                 context:nil];
     
     if (object[@"graphicPointer"]) {
-      return CGRectGetHeight(r) + 450;
+      return CGRectGetHeight(r) + 420;
     } else {
       return CGRectGetHeight(r) + 110;
     }

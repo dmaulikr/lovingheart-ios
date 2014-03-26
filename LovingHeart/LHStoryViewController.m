@@ -7,6 +7,7 @@
 //
 
 #import "LHStoryViewController.h"
+#import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 #import <AFNetworking/AFNetworking.h>
 
 @interface LHStoryViewController ()
@@ -64,6 +65,9 @@
   [self.storyContentLabel setText:self.story.Content];
   [self.storyContentLabel setNumberOfLines:0];
   [self.storyContentLabel sizeToFit];
+  
+  self.storyLocationLabel.text = self.story.areaName;
+  self.storyDateLabel.text = [self.story.createdAt timeAgo];
   
 }
 

@@ -1,6 +1,6 @@
 
 /* Class = "IBUINavigationItem"; title = "Today"; ObjectID = "029-am-01m"; */
-"029-am-01m.title" = "Today";
+"029-am-01m.title" = "今日";
 
 /* Class = "IBUITabBarItem"; title = "My Profile"; ObjectID = "50j-K1-3YD"; */
 "50j-K1-3YD.title" = "我的檔案";
@@ -13,6 +13,12 @@
 
 /* Class = "IBUITabBarItem"; title = "Today"; ObjectID = "CoX-8r-0Vl"; */
 "CoX-8r-0Vl.title" = "本日精選";
+
+/* Class = "IBUINavigationItem"; title = "Story"; ObjectID = "Gfq-pS-rnB"; */
+"Gfq-pS-rnB.title" = "故事內容";
+
+/* Class = "IBUILabel"; text = "User Name"; ObjectID = "PHN-g8-DDD"; */
+"PHN-g8-DDD.text" = "User Name";
 
 /* Class = "IBUILabel"; text = "我今天遇到了認真小天使，謝謝他"; ObjectID = "PpX-rU-caR"; */
 "PpX-rU-caR.text" = "我今天遇到了認真小天使，謝謝他";
@@ -28,6 +34,9 @@
 
 /* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "c1Z-cJ-tv7"; */
 "c1Z-cJ-tv7.title" = "Root View Controller";
+
+/* Class = "IBUILabel"; text = "Story Content"; ObjectID = "h0G-O5-Pp4"; */
+"h0G-O5-Pp4.text" = "Story Content";
 
 /* Class = "IBUILabel"; text = "Edward Chiang"; ObjectID = "ohH-q6-peZ"; */
 "ohH-q6-peZ.text" = "Edward Chiang";

@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *storyContentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *storyImageView;
+@property (weak, nonatomic) IBOutlet UILabel *storyLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *storyDateLabel;
 
 
 
