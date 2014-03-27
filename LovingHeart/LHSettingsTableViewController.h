@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LHSettingsTableViewController : UITableViewController
+@interface LHSettingsTableViewController : UITableViewController <PFLogInViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButtonItem;
 

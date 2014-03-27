@@ -9,6 +9,7 @@
 #import "LHSettingsTableViewController.h"
 #import <NIWebController.h>
 #import "LHLoginViewController.h"
+#import <SVProgressHUD.h>
 
 @interface LHSettingsTableViewController ()
 
@@ -80,7 +81,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"settingsInfo"];
       }
       if ([PFUser currentUser]) {
-        [cell.textLabel setText:[NSString stringWithFormat:@"Logout %@", [PFUser currentUser].username]];
+        [cell.textLabel setText:[NSString stringWithFormat:@"Logout: %@", [PFUser currentUser].email]];
       } else {
         [cell.textLabel setText:@"Login"];
       }
@@ -171,6 +172,7 @@
   if (indexPath.section == 0 && indexPath.row == 0) {
     if ([PFUser currentUser] == nil) {
       LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
+      loginViewController.delegate = self;
       loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
       [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
     } else {
@@ -200,6 +202,30 @@ static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowled
       [webController openURL:[NSURL URLWithString:kPrivacyPolicyUrl]];
     }
   }
+}
+
+#pragma mark - PFLogInViewControllerDelegate
+
+/*! @name Responding to Actions */
+/// Sent to the delegate when a PFUser is logged in.
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+  [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Login Success. %@", user.email]];
+  
+  __block UITableView *tempTableView = self.tableView;
+  [logInController dismissViewControllerAnimated:YES completion:^{
+    [tempTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+  }];
+}
+
+/// Sent to the delegate when the log in attempt fails.
+- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
+  NSLog(@"didFailToLogInWithError: %@", error);
+  
+  [SVProgressHUD showErrorWithStatus:[error.userInfo objectForKey:@"error"]];
+}
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+  [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

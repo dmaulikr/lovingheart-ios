@@ -26,8 +26,9 @@
   
   UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wordpress-logo-red-text"]];
   self.logInView.logo = imageView;
-  
-  self.delegate = self;
+  if (!self.delegate) {
+      self.delegate = self;
+  }
 }
 
 #pragma mark - PFLogInViewControllerDelegate
@@ -35,7 +36,8 @@
 /*! @name Responding to Actions */
 /// Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-  
+  [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Login Success. %@", user.email]];
+  [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /// Sent to the delegate when the log in attempt fails.
