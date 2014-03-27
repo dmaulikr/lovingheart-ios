@@ -79,7 +79,11 @@
       if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"settingsInfo"];
       }
-      [cell.textLabel setText:@"Login"];
+      if ([PFUser currentUser]) {
+        [cell.textLabel setText:[NSString stringWithFormat:@"Logout %@", [PFUser currentUser].username]];
+      } else {
+        [cell.textLabel setText:@"Login"];
+      }
     }
   }
   else if (indexPath.section == 1) {
@@ -165,9 +169,14 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.section == 0 && indexPath.row == 0) {
-    LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
-    loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
-    [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+    if ([PFUser currentUser] == nil) {
+      LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
+      loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+      [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+    } else {
+      [PFUser logOut];
+      [self.tableView reloadData];
+    }
   }
 }
 

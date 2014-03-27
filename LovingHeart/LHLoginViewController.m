@@ -7,6 +7,7 @@
 //
 
 #import "LHLoginViewController.h"
+#import <SVProgressHUD.h>
 
 @implementation LHLoginViewController
 
@@ -39,7 +40,9 @@
 
 /// Sent to the delegate when the log in attempt fails.
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
+  NSLog(@"didFailToLogInWithError: %@", error);
   
+  [SVProgressHUD showErrorWithStatus:[error.userInfo objectForKey:@"error"]];
 }
 
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {

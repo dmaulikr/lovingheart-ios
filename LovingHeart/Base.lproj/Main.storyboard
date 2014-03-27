@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="2085" y="481"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Post Story-->
         <scene sceneID="Ssp-DK-5wy">
             <objects>
-                <navigationController definesPresentationContext="YES" id="DO8-TA-zFz" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="DO8-TA-zFz" userLabel="Navigation Controller - Post Story" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uus-mf-KN1">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -478,7 +478,7 @@
                     <navigationItem key="navigationItem" title="Today" id="qT4-d9-efv">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="9zf-bA-0Tu">
                             <connections>
-                                <segue destination="DO8-TA-zFz" kind="modal" id="V2X-uk-Tst"/>
+                                <segue destination="DO8-TA-zFz" kind="modal" identifier="presentPostViewController" id="rPm-lU-hyR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -832,7 +832,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="o51-Ne-ShS"/>
+        <segue reference="rPm-lU-hyR"/>
         <segue reference="dna-LH-9MD"/>
     </inferredMetricsTieBreakers>
 </document>

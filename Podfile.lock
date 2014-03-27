@@ -34,6 +34,7 @@ PODS:
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.8)
   - RMErrorRecoveryAttempter (0.0.1)
+  - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - NSDate+TimeAgo (~> 1.0.2)
   - ReactiveCocoa (~> 2.1.8)
   - RMErrorRecoveryAttempter (~> 0.0.1)
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
@@ -53,5 +55,6 @@ SPEC CHECKSUMS:
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
   RMErrorRecoveryAttempter: 6e71707a9c7c7b44adbf3585cf37054d38fcbed9
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0

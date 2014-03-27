@@ -10,6 +10,8 @@
 #import "LHParseObject.h"
 #import "LHIdeaViewCell.h"
 #import "LHIdeaCardViewController.h"
+#import <UIAlertView+BlocksKit.h>
+#import "LHLoginViewController.h"
 
 @interface LHFeaturesTableViewController ()
 
@@ -105,6 +107,30 @@
     LHToday *today = (LHToday *)[self objectAtIndexPath:selectedPath];
     [viewController setIdea:today.ideaPointer];
   }
+  
+  if ([segue.identifier isEqual:@"presentPostViewController"]) {
+      
+      if (![PFUser currentUser]) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share a story"];
+        [alertView bk_addButtonWithTitle:@"Go" handler:^{
+          [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
+            LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
+            loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+            [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+          }];
+          
+        }];
+        [alertView bk_setCancelBlock:^{
+          [segue.destinationViewController dismissModalViewControllerAnimated:YES];
+        }];
+        [alertView show];
+      } else {
+        NSLog(@"Login User Name: %@", [[PFUser currentUser] username]);
+      }
+      
+    }
+  
   
 }
 

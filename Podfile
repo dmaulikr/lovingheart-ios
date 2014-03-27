@@ -4,6 +4,7 @@ pod 'Facebook-iOS-SDK', '~> 3.11.0'
 pod 'RMErrorRecoveryAttempter', '~> 0.0.1'
 
 pod 'Nimbus/WebController'
+pod 'SVProgressHUD'
 
 # Basics
 pod 'AFNetworking', '~> 2.1.0'

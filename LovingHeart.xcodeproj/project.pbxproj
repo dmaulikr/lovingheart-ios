@@ -52,7 +52,6 @@
 		1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */; };
 		1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */; };
 		1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */; };
-		1C670D7118E1C23B00D422CA /* LHTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C670D7018E1C23B00D422CA /* LHTodayViewController.m */; };
 		1C670D7418E1C2D400D422CA /* LHStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C670D7318E1C2D400D422CA /* LHStory.m */; };
 		1C670D7718E1C45100D422CA /* LHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C670D7618E1C45100D422CA /* LHUser.m */; };
 		1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C670D7918E1C57600D422CA /* LHGraphicImage.m */; };
@@ -147,8 +146,6 @@
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
 		1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note@2x.png"; sourceTree = "<group>"; };
 		1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHIdeaCardView.xib; sourceTree = "<group>"; };
-		1C670D6F18E1C23B00D422CA /* LHTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTodayViewController.h; sourceTree = "<group>"; };
-		1C670D7018E1C23B00D422CA /* LHTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTodayViewController.m; sourceTree = "<group>"; };
 		1C670D7218E1C2D400D422CA /* LHStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStory.h; sourceTree = "<group>"; };
 		1C670D7318E1C2D400D422CA /* LHStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStory.m; sourceTree = "<group>"; };
 		1C670D7518E1C45100D422CA /* LHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUser.h; sourceTree = "<group>"; };
@@ -379,8 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				1C3D7DAA18E2C5D200696BBE /* Stories */,
-				1C670D6F18E1C23B00D422CA /* LHTodayViewController.h */,
-				1C670D7018E1C23B00D422CA /* LHTodayViewController.m */,
 				1C670D7B18E1CA7000D422CA /* LHKICardsViewController.h */,
 				1C670D7C18E1CA7000D422CA /* LHKICardsViewController.m */,
 				1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */,
@@ -570,7 +565,6 @@
 				18F78B1D188B6D2F001491D5 /* LHMostRecentStoriesViewController.m in Sources */,
 				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,
 				1C3D7D9718E2B18A00696BBE /* LHIdeaViewCell.m in Sources */,
-				1C670D7118E1C23B00D422CA /* LHTodayViewController.m in Sources */,
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,
 				1C670D7718E1C45100D422CA /* LHUser.m in Sources */,
 				1C3D7D9A18E2B65F00696BBE /* LHFeaturesTableViewController.m in Sources */,
