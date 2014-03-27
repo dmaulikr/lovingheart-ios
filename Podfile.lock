@@ -35,6 +35,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.1.8)
   - RMErrorRecoveryAttempter (0.0.1)
   - SVProgressHUD (1.0)
+  - uservoice-iphone-sdk (3.0.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - ReactiveCocoa (~> 2.1.8)
   - RMErrorRecoveryAttempter (~> 0.0.1)
   - SVProgressHUD
+  - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
@@ -56,5 +58,6 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
   RMErrorRecoveryAttempter: 6e71707a9c7c7b44adbf3585cf37054d38fcbed9
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  uservoice-iphone-sdk: 547ef35f8db7ad9975cada6f39e39dc972d87c33
 
 COCOAPODS: 0.29.0

@@ -10,12 +10,24 @@
 #import <NIWebController.h>
 #import "LHLoginViewController.h"
 #import <SVProgressHUD.h>
+#import "LHSettingsSwitcherTableViewCell.h"
+#import <UserVoice.h>
+#import <BlocksKit+UIKit.h>
 
 @interface LHSettingsTableViewController ()
 
 @end
 
 @implementation LHSettingsTableViewController
+
+static const int kIndextOfSectionAbout = 3;
+
+static NSString *kWebAcknowledgementUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333115-acknowledgement#anchor";
+static NSString *kWebTermsOfUseUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/334311-terms-and-conditions-of-use#anchor";
+static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333113-privacy-policy#anchor";
+
+static NSString *kUserDefaultSupportEnglish = @"kUserDefaultSupportEnglish";
+static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -47,28 +59,46 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   // Return the number of sections.
-  return 2;
+  return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   // Return the number of rows in the section.
-  if (section == 0) {
-    return 1;
+  switch (section) {
+    case 0:
+      return 1;
+      break;
+    case 1:
+      return 2;
+    case 2:
+      return 1;
+    case kIndextOfSectionAbout:
+      return 4;
+    default:
+      return 0;
+      break;
   }
-  if (section == 1) {
-    return 4;
-  }
-  return 0;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  if (section == 0) {
-    return @"Account";
+  NSString *title;
+  switch (section) {
+    case 0:
+      title = @"Account";
+      break;
+    case 1:
+      title = @"Support Language";
+      break;
+    case 2:
+      title = @"Feedback";
+      break;
+    case 3:
+      title = @"About";
+      break;
+    default:
+      break;
   }
-  else if (section == 1) {
-    return @"About";
-  }
-  return nil;
+  return title;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,6 +118,68 @@
     }
   }
   else if (indexPath.section == 1) {
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:@"settingsSwitcher" forIndexPath:indexPath];
+    if (cell == nil) {
+      cell = [[LHSettingsSwitcherTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"settingsSwitcher"];
+    }
+    LHSettingsSwitcherTableViewCell *switcherCell = (LHSettingsSwitcherTableViewCell*)cell;
+
+    NSString *userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if (indexPath.row == 0) {
+      [switcherCell.titleLabel setText:@"English"];
+      
+      BOOL isSupportEnglish = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportEnglish];
+
+      if (([[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultSupportEnglish] == nil &&[userLanguage hasPrefix:@"en"])
+          || isSupportEnglish) {
+        [switcherCell.switcher setOn:YES animated:YES];
+      } else {
+        [switcherCell.switcher setOn:NO animated:YES];
+      }
+      
+      [switcherCell.switcher bk_addEventHandler:^(id sender) {
+        UISwitch *switcher = (UISwitch *)sender;
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:switcher.on forKey:kUserDefaultSupportEnglish];
+        [userDefaults synchronize];
+        
+      } forControlEvents:UIControlEventValueChanged];
+    }
+    else if (indexPath.row == 1) {
+      
+      [switcherCell.titleLabel setText:@"支援中文"];
+      
+      BOOL isSupportChinese = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportChinese];
+      
+      if (([[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultSupportChinese] == nil &&[userLanguage hasPrefix:@"zh"])
+          || isSupportChinese) {
+        [switcherCell.switcher setOn:YES animated:YES];
+      } else {
+        [switcherCell.switcher setOn:NO animated:YES];
+      }
+      
+      [switcherCell.switcher bk_addEventHandler:^(id sender) {
+        UISwitch *switcher = (UISwitch *)sender;
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:switcher.on forKey:kUserDefaultSupportChinese];
+        [userDefaults synchronize];
+        
+      } forControlEvents:UIControlEventValueChanged];
+    }
+  }
+  else if (indexPath.section == 2) {
+    if (indexPath.row == 0) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"settingsPlain" forIndexPath:indexPath];
+      if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsPlain"];
+      }
+      [cell.textLabel setText:@"Support center"];
+    }
+  }
+  else if (indexPath.section == kIndextOfSectionAbout) {
     if (indexPath.row == 0) {
       cell = [tableView dequeueReusableCellWithIdentifier:@"settingsInfo" forIndexPath:indexPath];
       if (cell == nil) {
@@ -180,25 +272,26 @@
       [self.tableView reloadData];
     }
   }
+  else if (indexPath.section == 2 && indexPath.row == 0) {
+    // Call this wherever you want to launch UserVoice
+    [UserVoice presentUserVoiceInterfaceForParentViewController:self];
+  }
 }
-
-static NSString *kWebAcknowledgementUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333115-acknowledgement";
-static NSString *kWebTermsOfUseUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/334311-terms-and-conditions-of-use";
-static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333113-privacy-policy";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"pushWebController"]) {
+    
+    NIWebController *webController = segue.destinationViewController;
+    webController.edgesForExtendedLayout = UIRectEdgeNone;
+
     NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
-    if (selectedPath.section == 1 && selectedPath.row == 1) {
-      NIWebController *webController = segue.destinationViewController;
+    if (selectedPath.section == kIndextOfSectionAbout && selectedPath.row == 1) {
       [webController openURL:[NSURL URLWithString:kWebAcknowledgementUrl]];
     }
-    if (selectedPath.section == 1 && selectedPath.row == 2) {
-      NIWebController *webController = segue.destinationViewController;
+    if (selectedPath.section == kIndextOfSectionAbout && selectedPath.row == 2) {
       [webController openURL:[NSURL URLWithString:kWebTermsOfUseUrl]];
     }
-    if (selectedPath.section == 1 && selectedPath.row == 3) {
-      NIWebController *webController = segue.destinationViewController;
+    if (selectedPath.section == kIndextOfSectionAbout && selectedPath.row == 3) {
       [webController openURL:[NSURL URLWithString:kPrivacyPolicyUrl]];
     }
   }

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LHParseObject.h"
+#import <UVConfig.h>
+#import <uservoice-iphone-sdk/UserVoice.h>
 
 @implementation AppDelegate
 
@@ -31,6 +33,13 @@
   [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
   [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
   [[UITabBar appearance] setTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
+  
+  // Set this up once when your application launches
+  UVConfig *config = [UVConfig configWithSite:@"lovingheart.uservoice.com"];
+  config.topicId = 51969;
+  config.forumId = 244037;
+  // [config identifyUserWithEmail:@"email@example.com" name:@"User Name", guid:@"USER_ID");
+  [UserVoice initialize:config];
   
   return YES;
 }
