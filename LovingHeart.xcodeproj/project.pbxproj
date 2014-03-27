@@ -46,6 +46,9 @@
 		1C3D7DA618E2C03400696BBE /* ic_action_emo_basic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7DA418E2C03400696BBE /* ic_action_emo_basic.png */; };
 		1C3D7DA718E2C03400696BBE /* ic_action_emo_basic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7DA518E2C03400696BBE /* ic_action_emo_basic@2x.png */; };
 		1C3D7DAD18E2C60F00696BBE /* LHIdeaCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7DAC18E2C60F00696BBE /* LHIdeaCardViewController.m */; };
+		1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */; };
+		1C3D7DB518E3BA8100696BBE /* background-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7DB318E3BA8100696BBE /* background-red.png */; };
+		1C3D7DB618E3BA8100696BBE /* background-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7DB418E3BA8100696BBE /* background-red@2x.png */; };
 		1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */; };
 		1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */; };
 		1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */; };
@@ -135,6 +138,10 @@
 		1C3D7DAB18E2C60F00696BBE /* LHIdeaCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardViewController.h; sourceTree = "<group>"; };
 		1C3D7DAC18E2C60F00696BBE /* LHIdeaCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaCardViewController.m; sourceTree = "<group>"; };
 		1C3D7DAF18E2CD8300696BBE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		1C3D7DB018E3B79700696BBE /* LHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLoginViewController.h; sourceTree = "<group>"; };
+		1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLoginViewController.m; sourceTree = "<group>"; };
+		1C3D7DB318E3BA8100696BBE /* background-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red.png"; sourceTree = "<group>"; };
+		1C3D7DB418E3BA8100696BBE /* background-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red@2x.png"; sourceTree = "<group>"; };
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
 		1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note@2x.png"; sourceTree = "<group>"; };
 		1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHIdeaCardView.xib; sourceTree = "<group>"; };
@@ -341,6 +348,8 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C3D7DB318E3BA8100696BBE /* background-red.png */,
+				1C3D7DB418E3BA8100696BBE /* background-red@2x.png */,
 				1C3D7DA418E2C03400696BBE /* ic_action_emo_basic.png */,
 				1C3D7DA518E2C03400696BBE /* ic_action_emo_basic@2x.png */,
 				1C3D7D9118E2B03000696BBE /* card_default.png */,
@@ -378,6 +387,8 @@
 				1C3D7D9918E2B65F00696BBE /* LHFeaturesTableViewController.m */,
 				1C3D7DAB18E2C60F00696BBE /* LHIdeaCardViewController.h */,
 				1C3D7DAC18E2C60F00696BBE /* LHIdeaCardViewController.m */,
+				1C3D7DB018E3B79700696BBE /* LHLoginViewController.h */,
+				1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -476,8 +487,10 @@
 				1C670D8518E1CAE300D422CA /* 1055-ticket@2x.png in Resources */,
 				1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */,
 				1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */,
+				1C3D7DB618E3BA8100696BBE /* background-red@2x.png in Resources */,
 				1C3D7D9418E2B03000696BBE /* card_default@2x.png in Resources */,
 				1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */,
+				1C3D7DB518E3BA8100696BBE /* background-red.png in Resources */,
 				1801F625188259080024A832 /* Main.storyboard in Resources */,
 				1C3D7DA718E2C03400696BBE /* ic_action_emo_basic@2x.png in Resources */,
 				1C3D7D8518E2A44100696BBE /* 912-gears.png in Resources */,
@@ -547,6 +560,7 @@
 				1C670D7418E1C2D400D422CA /* LHStory.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
 				18F78B1D188B6D2F001491D5 /* LHMostRecentStoriesViewController.m in Sources */,
+				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,
 				1C3D7D9718E2B18A00696BBE /* LHIdeaViewCell.m in Sources */,
 				1C670D7118E1C23B00D422CA /* LHTodayViewController.m in Sources */,
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,

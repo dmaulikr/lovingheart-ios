@@ -12,6 +12,7 @@
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 #import "LHStoryViewController.h"
 #import <UIAlertView+BlocksKit.h>
+#import "LHLoginViewController.h"
 
 @interface LHStoriesViewController ()
 
@@ -133,11 +134,10 @@
     
     if (![PFUser currentUser]) {
       
-      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share story"];
+      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share a story"];
       [alertView bk_addButtonWithTitle:@"Go" handler:^{
         [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
-          PFLogInViewController *loginViewController =[[PFLogInViewController alloc] init];
-          loginViewController.delegate = self;
+          LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
           loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
           [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
         }];
@@ -153,12 +153,6 @@
     
   }
   
-}
-
-#pragma mark - PFLogInViewControllerDelegate
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-  [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

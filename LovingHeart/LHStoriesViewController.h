@@ -9,6 +9,6 @@
 #import <Parse/Parse.h>
 #import "LHStory.h"
 
-@interface LHStoriesViewController : PFQueryTableViewController <PFLogInViewControllerDelegate>
+@interface LHStoriesViewController : PFQueryTableViewController
 
 @end
