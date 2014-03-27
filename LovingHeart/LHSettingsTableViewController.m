@@ -7,6 +7,8 @@
 //
 
 #import "LHSettingsTableViewController.h"
+#import <NIWebController.h>
+#import "LHLoginViewController.h"
 
 @interface LHSettingsTableViewController ()
 
@@ -53,7 +55,7 @@
     return 1;
   }
   if (section == 1) {
-    return 2;
+    return 4;
   }
   return 0;
 }
@@ -95,7 +97,23 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsWebInfo"];
       }
       [cell.textLabel setText:@"Acknowledgement"];
-      [cell.detailTextLabel setText:@"Tanks to the communitites for helping us."];
+      [cell.detailTextLabel setText:@"Thanks to the communitites for helping us."];
+    }
+    if (indexPath.row == 2) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"settingsWebInfo" forIndexPath:indexPath];
+      if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsWebInfo"];
+      }
+      [cell.textLabel setText:@"Terms of Use"];
+      [cell.detailTextLabel setText:@"Read the terms of use."];
+    }
+    if (indexPath.row == 3) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"settingsWebInfo" forIndexPath:indexPath];
+      if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsWebInfo"];
+      }
+      [cell.textLabel setText:@"Pricacy Policy"];
+      [cell.detailTextLabel setText:@"Read the privacy policy."];
     }
   }
   
@@ -141,21 +159,38 @@
  }
  */
 
-/*
- #pragma mark - Table view delegate
- 
- // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Navigation logic may go here, for example:
- // Create the next view controller.
- <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
- 
- // Pass the selected object to the new view controller.
- 
- // Push the view controller.
- [self.navigationController pushViewController:detailViewController animated:YES];
- }
- */
+
+#pragma mark - Table view delegate
+
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section == 0 && indexPath.row == 0) {
+    LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
+    loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+    [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+  }
+}
+
+static NSString *kWebAcknowledgementUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333115-acknowledgement";
+static NSString *kWebTermsOfUseUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/334311-terms-and-conditions-of-use";
+static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333113-privacy-policy";
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"pushWebController"]) {
+    NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+    if (selectedPath.section == 1 && selectedPath.row == 1) {
+      NIWebController *webController = segue.destinationViewController;
+      [webController openURL:[NSURL URLWithString:kWebAcknowledgementUrl]];
+    }
+    if (selectedPath.section == 1 && selectedPath.row == 2) {
+      NIWebController *webController = segue.destinationViewController;
+      [webController openURL:[NSURL URLWithString:kWebTermsOfUseUrl]];
+    }
+    if (selectedPath.section == 1 && selectedPath.row == 3) {
+      NIWebController *webController = segue.destinationViewController;
+      [webController openURL:[NSURL URLWithString:kPrivacyPolicyUrl]];
+    }
+  }
+}
 
 @end

@@ -14,14 +14,17 @@
   [super viewDidLoad];
   
 //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red"]];
-  UILabel *logoLabel = [[UILabel alloc] init];
-  [logoLabel setText:@"LovingHeart"];
-  [logoLabel setFont:[UIFont boldSystemFontOfSize:44]];
-  logoLabel.shadowOffset = CGSizeMake(1, 1);
-  logoLabel.shadowColor = [UIColor grayColor];
-  [logoLabel sizeToFit];
-  [logoLabel setTextColor:[UIColor colorWithHue:0.026 saturation:0.966 brightness:0.922 alpha:1]];
-  self.logInView.logo = logoLabel;
+//  UILabel *logoLabel = [[UILabel alloc] init];
+//  [logoLabel setText:@"LovingHeart"];
+//  [logoLabel setFont:[UIFont boldSystemFontOfSize:44]];
+//  logoLabel.shadowOffset = CGSizeMake(1, 1);
+//  logoLabel.shadowColor = [UIColor grayColor];
+//  [logoLabel sizeToFit];
+//  [logoLabel setTextColor:[UIColor colorWithHue:0.026 saturation:0.966 brightness:0.922 alpha:1]];
+//  self.logInView.logo = logoLabel;
+  
+  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wordpress-logo-red-text"]];
+  self.logInView.logo = imageView;
   
   self.delegate = self;
 }

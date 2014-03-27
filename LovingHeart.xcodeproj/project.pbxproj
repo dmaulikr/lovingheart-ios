@@ -61,6 +61,8 @@
 		1C670D8318E1CAE300D422CA /* 1039-files-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D7F18E1CAE300D422CA /* 1039-files-box@2x.png */; };
 		1C670D8418E1CAE300D422CA /* 1055-ticket.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D8018E1CAE300D422CA /* 1055-ticket.png */; };
 		1C670D8518E1CAE300D422CA /* 1055-ticket@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D8118E1CAE300D422CA /* 1055-ticket@2x.png */; };
+		1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */; };
+		1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
 		1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5E718E134C40089CB4F /* 973-user.png */; };
@@ -159,6 +161,8 @@
 		1C670D7F18E1CAE300D422CA /* 1039-files-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1039-files-box@2x.png"; sourceTree = "<group>"; };
 		1C670D8018E1CAE300D422CA /* 1055-ticket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1055-ticket.png"; sourceTree = "<group>"; };
 		1C670D8118E1CAE300D422CA /* 1055-ticket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1055-ticket@2x.png"; sourceTree = "<group>"; };
+		1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text.png"; sourceTree = "<group>"; };
+		1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text@2x.png"; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
 		1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdea.m; sourceTree = "<group>"; };
 		1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardView.h; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */,
+				1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */,
 				1C3D7DB318E3BA8100696BBE /* background-red.png */,
 				1C3D7DB418E3BA8100696BBE /* background-red@2x.png */,
 				1C3D7DA418E2C03400696BBE /* ic_action_emo_basic.png */,
@@ -479,10 +485,12 @@
 				1C670D8218E1CAE300D422CA /* 1039-files-box.png in Resources */,
 				1C3D7D9318E2B03000696BBE /* card_default.png in Resources */,
 				1C3D7DA618E2C03400696BBE /* ic_action_emo_basic.png in Resources */,
+				1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */,
 				1CD9F5EC18E134C40089CB4F /* Default@2x.png in Resources */,
 				1C670D8418E1CAE300D422CA /* 1055-ticket.png in Resources */,
 				1CD9F5EB18E134C40089CB4F /* 973-user@2x.png in Resources */,
 				1CEF810118DEAD120011F412 /* Localizable.strings in Resources */,
+				1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */,
 				1801F62A188259080024A832 /* Images.xcassets in Resources */,
 				1C670D8518E1CAE300D422CA /* 1055-ticket@2x.png in Resources */,
 				1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */,
