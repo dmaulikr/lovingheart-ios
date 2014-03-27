@@ -149,7 +149,7 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
     }
     else if (indexPath.row == 1) {
       
-      [switcherCell.titleLabel setText:@"支援中文"];
+      [switcherCell.titleLabel setText:@"中文"];
       
       BOOL isSupportChinese = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportChinese];
       
