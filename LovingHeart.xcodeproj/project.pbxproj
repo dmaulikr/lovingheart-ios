@@ -30,7 +30,7 @@
 		1801F657188263890024A832 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F656188263890024A832 /* StoreKit.framework */; };
 		1801F659188263900024A832 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F658188263900024A832 /* SystemConfiguration.framework */; };
 		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
-		18F78B1D188B6D2F001491D5 /* LHMostRecentStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */; };
+		18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */; };
 		1C2D1A6B18E41B22007323B1 /* Default_R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6918E41B22007323B1 /* Default_R4.png */; };
 		1C2D1A6C18E41B22007323B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6A18E41B22007323B1 /* Default@2x.png */; };
 		1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C35813B18E94B750025E259 /* UIView+Frame.m */; };
@@ -67,6 +67,12 @@
 		1C670D8518E1CAE300D422CA /* 1055-ticket@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D8118E1CAE300D422CA /* 1055-ticket@2x.png */; };
 		1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */; };
 		1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */; };
+		1C8A96E518E9A7D40093469C /* LHStoryPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */; };
+		1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */; };
+		1C8A96EC18E9B7DD0093469C /* 1099-list-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EA18E9B7DD0093469C /* 1099-list-1.png */; };
+		1C8A96ED18E9B7DD0093469C /* 1099-list-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EB18E9B7DD0093469C /* 1099-list-1@2x.png */; };
+		1C8A96F018E9B8230093469C /* 1100-list-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EE18E9B8230093469C /* 1100-list-2.png */; };
+		1C8A96F118E9B8230093469C /* 1100-list-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EF18E9B8230093469C /* 1100-list-2@2x.png */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -75,7 +81,6 @@
 		1CD9F5EC18E134C40089CB4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9F5E918E134C40089CB4F /* Default@2x.png */; };
 		1CEF810118DEAD120011F412 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF810318DEAD120011F412 /* Localizable.strings */; };
 		1CEF810D18DEB23C0011F412 /* LHStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF810C18DEB23C0011F412 /* LHStoriesViewController.m */; };
-		1CEF811018DEB34F0011F412 /* LHMostReviewsStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF810F18DEB34F0011F412 /* LHMostReviewsStoriesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,8 +121,8 @@
 		1801F658188263900024A832 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		18F78B18188B6C68001491D5 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		18F78B19188B6C68001491D5 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
-		18F78B1B188B6D2F001491D5 /* LHMostRecentStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMostRecentStoriesViewController.h; sourceTree = "<group>"; };
-		18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMostRecentStoriesViewController.m; sourceTree = "<group>"; };
+		18F78B1B188B6D2F001491D5 /* LHMostTypeStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMostTypeStoriesViewController.h; sourceTree = "<group>"; };
+		18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMostTypeStoriesViewController.m; sourceTree = "<group>"; };
 		1C2D1A6918E41B22007323B1 /* Default_R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_R4.png; sourceTree = "<group>"; };
 		1C2D1A6A18E41B22007323B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1C35813A18E94B750025E259 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -172,6 +177,14 @@
 		1C670D8118E1CAE300D422CA /* 1055-ticket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1055-ticket@2x.png"; sourceTree = "<group>"; };
 		1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text.png"; sourceTree = "<group>"; };
 		1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text@2x.png"; sourceTree = "<group>"; };
+		1C8A96E218E9A7D40093469C /* LHStoryPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryPickViewController.h; sourceTree = "<group>"; };
+		1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryPickViewController.m; sourceTree = "<group>"; };
+		1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPickerTableViewCell.h; sourceTree = "<group>"; };
+		1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHPickerTableViewCell.m; sourceTree = "<group>"; };
+		1C8A96EA18E9B7DD0093469C /* 1099-list-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1.png"; sourceTree = "<group>"; };
+		1C8A96EB18E9B7DD0093469C /* 1099-list-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1@2x.png"; sourceTree = "<group>"; };
+		1C8A96EE18E9B8230093469C /* 1100-list-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1100-list-2.png"; sourceTree = "<group>"; };
+		1C8A96EF18E9B8230093469C /* 1100-list-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1100-list-2@2x.png"; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -185,8 +198,6 @@
 		1CEF810A18DEB0B00011F412 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1CEF810B18DEB23C0011F412 /* LHStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoriesViewController.h; sourceTree = "<group>"; };
 		1CEF810C18DEB23C0011F412 /* LHStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoriesViewController.m; sourceTree = "<group>"; };
-		1CEF810E18DEB34F0011F412 /* LHMostReviewsStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMostReviewsStoriesViewController.h; sourceTree = "<group>"; };
-		1CEF810F18DEB34F0011F412 /* LHMostReviewsStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMostReviewsStoriesViewController.m; sourceTree = "<group>"; };
 		C1BC32F6787D481EA0D6CE9A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F5EF3ACBF21347BDB08409B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -327,6 +338,8 @@
 				1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */,
 				1C5FB47B18E95ADA004F7FCE /* LHIdeaActionCardCell.h */,
 				1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */,
+				1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */,
+				1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -345,10 +358,8 @@
 			children = (
 				1CEF810B18DEB23C0011F412 /* LHStoriesViewController.h */,
 				1CEF810C18DEB23C0011F412 /* LHStoriesViewController.m */,
-				18F78B1B188B6D2F001491D5 /* LHMostRecentStoriesViewController.h */,
-				18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */,
-				1CEF810E18DEB34F0011F412 /* LHMostReviewsStoriesViewController.h */,
-				1CEF810F18DEB34F0011F412 /* LHMostReviewsStoriesViewController.m */,
+				18F78B1B188B6D2F001491D5 /* LHMostTypeStoriesViewController.h */,
+				18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */,
 			);
 			name = Stories;
 			sourceTree = "<group>";
@@ -377,6 +388,10 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C8A96EE18E9B8230093469C /* 1100-list-2.png */,
+				1C8A96EF18E9B8230093469C /* 1100-list-2@2x.png */,
+				1C8A96EA18E9B7DD0093469C /* 1099-list-1.png */,
+				1C8A96EB18E9B7DD0093469C /* 1099-list-1@2x.png */,
 				1C2D1A6918E41B22007323B1 /* Default_R4.png */,
 				1C2D1A6A18E41B22007323B1 /* Default@2x.png */,
 				1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */,
@@ -422,6 +437,8 @@
 				1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */,
 				1C35813E18E94D3E0025E259 /* LHIdeaListViewController.h */,
 				1C35813F18E94D3E0025E259 /* LHIdeaListViewController.m */,
+				1C8A96E218E9A7D40093469C /* LHStoryPickViewController.h */,
+				1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -509,12 +526,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8A96F018E9B8230093469C /* 1100-list-2.png in Resources */,
+				1C8A96F118E9B8230093469C /* 1100-list-2@2x.png in Resources */,
 				1C670D8218E1CAE300D422CA /* 1039-files-box.png in Resources */,
 				1C3D7D9318E2B03000696BBE /* card_default.png in Resources */,
 				1C3D7DA618E2C03400696BBE /* ic_action_emo_basic.png in Resources */,
 				1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */,
 				1CD9F5EC18E134C40089CB4F /* Default@2x.png in Resources */,
 				1C670D8418E1CAE300D422CA /* 1055-ticket.png in Resources */,
+				1C8A96EC18E9B7DD0093469C /* 1099-list-1.png in Resources */,
 				1CD9F5EB18E134C40089CB4F /* 973-user@2x.png in Resources */,
 				1CEF810118DEAD120011F412 /* Localizable.strings in Resources */,
 				1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */,
@@ -526,6 +546,7 @@
 				1C3D7DB618E3BA8100696BBE /* background-red@2x.png in Resources */,
 				1C3D7D9418E2B03000696BBE /* card_default@2x.png in Resources */,
 				1C670D6E18E1B54C00D422CA /* LHIdeaCardView.xib in Resources */,
+				1C8A96ED18E9B7DD0093469C /* 1099-list-1@2x.png in Resources */,
 				1C3D7DB518E3BA8100696BBE /* background-red.png in Resources */,
 				1801F625188259080024A832 /* Main.storyboard in Resources */,
 				1C3D7DA718E2C03400696BBE /* ic_action_emo_basic@2x.png in Resources */,
@@ -587,7 +608,8 @@
 				1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */,
 				1C3D7D9D18E2B6DC00696BBE /* LHToday.m in Sources */,
 				1CEF810D18DEB23C0011F412 /* LHStoriesViewController.m in Sources */,
-				1CEF811018DEB34F0011F412 /* LHMostReviewsStoriesViewController.m in Sources */,
+				1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */,
+				1C8A96E518E9A7D40093469C /* LHStoryPickViewController.m in Sources */,
 				1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
@@ -598,7 +620,7 @@
 				1C3D7DAD18E2C60F00696BBE /* LHIdeaCardViewController.m in Sources */,
 				1C670D7418E1C2D400D422CA /* LHStory.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
-				18F78B1D188B6D2F001491D5 /* LHMostRecentStoriesViewController.m in Sources */,
+				18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */,
 				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,
 				1C3D7D9718E2B18A00696BBE /* LHIdeaFeatureViewCell.m in Sources */,
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,
