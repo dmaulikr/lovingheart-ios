@@ -8,7 +8,7 @@
 
 #import "LHFeaturesTableViewController.h"
 #import "LHParseObject.h"
-#import "LHIdeaViewCell.h"
+#import "LHIdeaFeatureViewCell.h"
 #import "LHIdeaCardViewController.h"
 #import <UIAlertView+BlocksKit.h>
 #import "LHLoginViewController.h"
@@ -50,7 +50,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
                         object:(LHToday *)todayObject {
   
-  LHIdeaViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ideaCardViewCell"];
+  LHIdeaFeatureViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ideaCardViewCell"];
   
   if (todayObject.ideaPointer.graphicPointer) {
     
@@ -61,7 +61,7 @@
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
       if (!error) {
         UIImage *image = [UIImage imageWithData:data];
-        LHIdeaViewCell* cell = (LHIdeaViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+        LHIdeaFeatureViewCell* cell = (LHIdeaFeatureViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
         cell.ideaImageView.image = image;
         [cell setNeedsDisplay];
       }

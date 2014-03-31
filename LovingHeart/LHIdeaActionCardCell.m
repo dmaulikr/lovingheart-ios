@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "LHIdeaCardCell.h"
+#import "LHIdeaActionCardCell.h"
 
-@implementation LHIdeaCardCell
+@implementation LHIdeaActionCardCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

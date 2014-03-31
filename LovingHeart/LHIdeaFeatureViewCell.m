@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "LHIdeaViewCell.h"
+#import "LHIdeaFeatureViewCell.h"
 
-@implementation LHIdeaViewCell
+@implementation LHIdeaFeatureViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

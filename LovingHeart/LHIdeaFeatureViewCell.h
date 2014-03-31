@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DAProgressOverlayView.h"
 
-@interface LHIdeaViewCell : UITableViewCell
+@interface LHIdeaFeatureViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *ideaCardTitleImageView;
 @property (weak, nonatomic) IBOutlet UILabel *ideaCardTitleLabel;
