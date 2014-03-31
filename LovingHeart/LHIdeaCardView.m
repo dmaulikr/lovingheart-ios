@@ -33,6 +33,11 @@
 
 - (void)layoutSubviews {
   [super layoutSubviews];
+  
+  if (self.cardTitleLabel.text == nil || self.cardTitleLabel.text.length <= 0) {
+    self.cardTitleLabel.hidden = YES;
+  }
+  
   [self.ideaDescriptionLabel setNumberOfLines:0];
   [self.ideaDescriptionLabel sizeToFit];
   

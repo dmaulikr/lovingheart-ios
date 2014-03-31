@@ -1,14 +1,14 @@
 //
-//  LHIdeaViewCell.m
+//  LHIdeaSmallCell.m
 //  LovingHeart
 //
-//  Created by Edward Chiang on 2014/3/26.
+//  Created by Edward Chiang on 2014/3/31.
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "LHIdeaViewCell.h"
+#import "LHIdeaCardCell.h"
 
-@implementation LHIdeaViewCell
+@implementation LHIdeaCardCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -23,20 +23,6 @@
   self.ideaImageView.clipsToBounds = YES;
   _progressOverlayView = [[DAProgressOverlayView alloc] init];
   [self.ideaImageView addSubview:_progressOverlayView];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-- (void)layoutSubviews {
-  [super layoutSubviews];
-  if (self.ideaCardTitleLabel.text == nil || self.ideaCardTitleLabel.text.length <= 0) {
-    self.ideaCardTitleLabel.hidden = YES;
-  }
 }
 
 @end
