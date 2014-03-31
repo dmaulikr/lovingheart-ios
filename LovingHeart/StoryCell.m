@@ -16,6 +16,10 @@
     self.avatarView.layer.cornerRadius = 25;
     self.avatarView.layer.masksToBounds = YES;
     self.pictureView.clipsToBounds = YES;
+  
+  _progressOverlayView = [[DAProgressOverlayView alloc] init];
+  [self.pictureView addSubview:_progressOverlayView];
+  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -21,6 +21,8 @@
 
 - (void)awakeFromNib {
   self.ideaImageView.clipsToBounds = YES;
+  _progressOverlayView = [[DAProgressOverlayView alloc] init];
+  [self.ideaImageView addSubview:_progressOverlayView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

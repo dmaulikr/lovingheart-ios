@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DAProgressOverlayView.h"
 
 @interface LHIdeaViewCell : UITableViewCell
 
@@ -17,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *ideaTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ideaContentLabel;
 
+@property (nonatomic, strong) DAProgressOverlayView *progressOverlayView;
 
 @end

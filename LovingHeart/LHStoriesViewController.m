@@ -13,6 +13,7 @@
 #import "LHStoryViewController.h"
 #import <UIAlertView+BlocksKit.h>
 #import "LHLoginViewController.h"
+#import "DAProgressOverlayView.h"
 
 @interface LHStoriesViewController ()
 
@@ -53,10 +54,10 @@
     NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
     AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFImageResponseSerializer serializer];
-    
+    [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {     
+    }];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
       StoryCell* cell = (StoryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
-      
       cell.avatarView.image = responseObject;
     } failure:nil];
     
@@ -65,6 +66,8 @@
   
   if (object.graphicPointer) {
     cell.pictureView.image = [UIImage imageNamed:@"card_default"];
+    cell.progressOverlayView.frame = cell.pictureView.bounds;
+    
     PFFile* file = (PFFile*)object.graphicPointer.imageFile;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
       if (!error) {
@@ -72,6 +75,25 @@
         StoryCell* cell = (StoryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
         cell.pictureView.image = image;
         [cell setNeedsDisplay];
+      }
+    } progressBlock:^(int percentDone) {
+      float perenctDownFloat = (float)percentDone / 100.f;
+      NSLog(@"Download %@ progress: %f", file.url, perenctDownFloat);
+      if (perenctDownFloat == 0) {
+        [cell.progressOverlayView displayOperationWillTriggerAnimation];
+        cell.progressOverlayView.hidden = NO;
+      }
+      if (perenctDownFloat < 1) {
+        cell.progressOverlayView.progress = perenctDownFloat;
+      } else {
+        [cell.progressOverlayView displayOperationDidFinishAnimation];
+        double delayInSeconds = cell.progressOverlayView.stateChangeAnimationDuration;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+          cell.progressOverlayView.progress = 0.;
+          cell.progressOverlayView.hidden = YES;
+        });
+        
       }
     }];
   }

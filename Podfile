@@ -6,6 +6,7 @@ pod 'RMErrorRecoveryAttempter', '~> 0.0.1'
 pod 'Nimbus/WebController'
 pod 'SVProgressHUD'
 pod 'uservoice-iphone-sdk'
+pod 'DAProgressOverlayView'
 
 # Basics
 pod 'AFNetworking', '~> 2.1.0'
