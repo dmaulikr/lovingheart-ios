@@ -33,6 +33,7 @@
 		18F78B1D188B6D2F001491D5 /* LHMostRecentStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */; };
 		1C2D1A6B18E41B22007323B1 /* Default_R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6918E41B22007323B1 /* Default_R4.png */; };
 		1C2D1A6C18E41B22007323B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6A18E41B22007323B1 /* Default@2x.png */; };
+		1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C35813B18E94B750025E259 /* UIView+Frame.m */; };
 		1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */; };
 		1C3D7D8518E2A44100696BBE /* 912-gears.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8318E2A44100696BBE /* 912-gears.png */; };
 		1C3D7D8618E2A44100696BBE /* 912-gears@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8418E2A44100696BBE /* 912-gears@2x.png */; };
@@ -117,6 +118,8 @@
 		18F78B1C188B6D2F001491D5 /* LHMostRecentStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMostRecentStoriesViewController.m; sourceTree = "<group>"; };
 		1C2D1A6918E41B22007323B1 /* Default_R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_R4.png; sourceTree = "<group>"; };
 		1C2D1A6A18E41B22007323B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1C35813A18E94B750025E259 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		1C35813B18E94B750025E259 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryViewController.h; sourceTree = "<group>"; };
 		1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryViewController.m; sourceTree = "<group>"; };
 		1C3D7D8318E2A44100696BBE /* 912-gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "912-gears.png"; sourceTree = "<group>"; };
@@ -264,6 +267,7 @@
 		1801F617188259080024A832 /* LovingHeart */ = {
 			isa = PBXGroup;
 			children = (
+				1C35813D18E94CB40025E259 /* Category */,
 				1CD9F5DA18E02CC50089CB4F /* Objects */,
 				1CEF80F718DAE6E90011F412 /* ViewController */,
 				18F78B17188B6C52001491D5 /* View */,
@@ -319,6 +323,15 @@
 				1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		1C35813D18E94CB40025E259 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1C35813A18E94B750025E259 /* UIView+Frame.h */,
+				1C35813B18E94B750025E259 /* UIView+Frame.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		1C3D7DAA18E2C5D200696BBE /* Stories */ = {
@@ -563,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */,
 				1C3D7D9D18E2B6DC00696BBE /* LHToday.m in Sources */,
 				1CEF810D18DEB23C0011F412 /* LHStoriesViewController.m in Sources */,
 				1CEF811018DEB34F0011F412 /* LHMostReviewsStoriesViewController.m in Sources */,

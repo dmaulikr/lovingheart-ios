@@ -94,7 +94,6 @@
   [cell.ideaCardTitleLabel setText:NSLocalizedString(todayObject.type, @"Feature")
    ];
   [cell.ideaContentLabel setText:todayObject.ideaPointer.Description];
-  [cell.ideaContentLabel setNumberOfLines:0];
   [cell.ideaContentLabel sizeToFit];
   [cell.categoryTitleLabel setText:todayObject.ideaPointer.categoryPointer.Name];
   return cell;
@@ -117,12 +116,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 540.f;
+  return 620.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 540.0f;
+  return 620.0f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

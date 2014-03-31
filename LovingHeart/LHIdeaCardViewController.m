@@ -7,6 +7,7 @@
 //
 
 #import "LHIdeaCardViewController.h"
+#import "UIView+Frame.h"
 
 @interface LHIdeaCardViewController ()
 
@@ -51,7 +52,22 @@
 }
 
 - (void)viewDidLayoutSubviews {
-  [_contentScrollView setContentSize:CGSizeMake(320, 540)];
+  
+  // Adjust height depending on the text
+  
+  //Calculate the expected size based on the font and linebreak mode of your label
+  CGSize maximumIdeaContentLabelSize = CGSizeMake(self.ideaContentLabel.frame.size.width, FLT_MAX);
+  
+  NSDictionary *stringArrtibutes = [NSDictionary dictionaryWithObject:self.ideaContentLabel.font forKey:NSFontAttributeName];
+  
+  CGSize expectedIdeaContentLabelSize = [self.ideaContentLabel.text boundingRectWithSize:maximumIdeaContentLabelSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:stringArrtibutes context:nil].size;
+  
+  // Adjust the label to the new height
+  self.ideaContentLabel.frame = CGRectMake(self.ideaContentLabel.frame.origin.x, self.ideaContentLabel.frame.origin.y, expectedIdeaContentLabelSize.width, expectedIdeaContentLabelSize.height);
+  
+  [_contentScrollView setContentSize:CGSizeMake(_contentScrollView.frame.size.width,
+                             self.readStoriesButton.bottom + 20
+                                                )];
 }
 
 - (void)didReceiveMemoryWarning

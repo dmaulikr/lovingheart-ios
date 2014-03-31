@@ -17,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ideaTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ideaContentLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
+@property (weak, nonatomic) IBOutlet UIButton *readStoriesButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareStoryButton;
 
 @end

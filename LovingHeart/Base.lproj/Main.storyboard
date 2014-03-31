@@ -431,7 +431,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Content" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="31l-SN-4gN">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Content" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="31l-SN-4gN">
                                             <rect key="frame" x="20" y="469" width="280" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -593,6 +593,8 @@
                         <outlet property="ideaCardImageView" destination="5ys-NS-FJ4" id="Vdw-Ku-bY2"/>
                         <outlet property="ideaContentLabel" destination="LGX-U8-wK6" id="CPy-DI-Hb5"/>
                         <outlet property="ideaTitleLabel" destination="bEI-LO-YEe" id="ql1-Ro-v8V"/>
+                        <outlet property="readStoriesButton" destination="RXo-df-RKU" id="etu-z0-k6i"/>
+                        <outlet property="shareStoryButton" destination="kZV-Td-Fre" id="ojD-dD-dxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vB5-Ny-4ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -858,7 +860,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="o51-Ne-ShS"/>
         <segue reference="dna-LH-9MD"/>
-        <segue reference="nje-1x-q1U"/>
     </inferredMetricsTieBreakers>
 </document>
