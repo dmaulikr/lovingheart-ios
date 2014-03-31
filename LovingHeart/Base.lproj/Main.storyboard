@@ -354,7 +354,7 @@
             </objects>
             <point key="canvasLocation" x="3065" y="-240"/>
         </scene>
-        <!--Idea List View Controller - Action Cards-->
+        <!--Idea List View Controller - All-->
         <scene sceneID="mbh-rg-ytH">
             <objects>
                 <tableViewController id="TFU-Zf-pim" customClass="LHIdeaListViewController" sceneMemberID="viewController">
@@ -378,31 +378,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="539"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eke-cA-2nD">
-                                            <rect key="frame" x="20" y="348" width="280" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eke-cA-2nD">
+                                            <rect key="frame" x="0.0" y="348" width="108" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ySL-XE-z1p">
-                                            <rect key="frame" x="20" y="377" width="280" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Idea title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ySL-XE-z1p">
+                                            <rect key="frame" x="20" y="388" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="mzx-qU-0gZ">
-                                            <rect key="frame" x="20" y="406" width="280" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Idea description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="mzx-qU-0gZ">
+                                            <rect key="frame" x="20" y="417" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Idea done count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-aB-oZz">
-                                            <rect key="frame" x="20" y="435" width="280" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-f5-CRe">
@@ -412,21 +406,28 @@
                                                 <constraint firstAttribute="height" constant="320" id="3Qi-rU-FfL"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Idea done count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-aB-oZz">
+                                            <rect key="frame" x="20" y="446" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mzx-qU-0gZ" firstAttribute="leading" secondItem="JCZ-aB-oZz" secondAttribute="leading" id="2Tc-ZD-Df9"/>
-                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="leading" secondItem="Eke-cA-2nD" secondAttribute="leading" id="7lM-ug-pOn"/>
+                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="leading" secondItem="Eke-cA-2nD" secondAttribute="leading" constant="20" id="7lM-ug-pOn"/>
                                         <constraint firstItem="mzx-qU-0gZ" firstAttribute="top" secondItem="ySL-XE-z1p" secondAttribute="bottom" constant="8" symbolic="YES" id="A9k-1z-5II"/>
-                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="trailing" secondItem="Eke-cA-2nD" secondAttribute="trailing" id="AjJ-nh-foc"/>
+                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="trailing" secondItem="Eke-cA-2nD" secondAttribute="trailing" constant="192" id="AjJ-nh-foc"/>
                                         <constraint firstItem="mzx-qU-0gZ" firstAttribute="trailing" secondItem="JCZ-aB-oZz" secondAttribute="trailing" id="EDe-yc-45h"/>
                                         <constraint firstItem="Eke-cA-2nD" firstAttribute="top" secondItem="4mZ-f5-CRe" secondAttribute="bottom" constant="8" symbolic="YES" id="F0O-qd-6Bs"/>
-                                        <constraint firstItem="4mZ-f5-CRe" firstAttribute="centerX" secondItem="Eke-cA-2nD" secondAttribute="centerX" id="FbH-nK-hjb"/>
-                                        <constraint firstAttribute="trailing" secondItem="Eke-cA-2nD" secondAttribute="trailing" constant="20" symbolic="YES" id="ItU-TU-MZP"/>
+                                        <constraint firstItem="4mZ-f5-CRe" firstAttribute="centerX" secondItem="Eke-cA-2nD" secondAttribute="centerX" constant="106" id="FbH-nK-hjb"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eke-cA-2nD" secondAttribute="trailing" constant="212" id="ItU-TU-MZP"/>
                                         <constraint firstItem="mzx-qU-0gZ" firstAttribute="trailing" secondItem="ySL-XE-z1p" secondAttribute="trailing" id="Md2-He-Egf"/>
                                         <constraint firstItem="ySL-XE-z1p" firstAttribute="leading" secondItem="mzx-qU-0gZ" secondAttribute="leading" id="US1-ME-imP"/>
-                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="top" secondItem="Eke-cA-2nD" secondAttribute="bottom" constant="8" symbolic="YES" id="XAv-Xe-gc8"/>
+                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="top" secondItem="Eke-cA-2nD" secondAttribute="bottom" constant="8" id="XAv-Xe-gc8"/>
                                         <constraint firstItem="4mZ-f5-CRe" firstAttribute="leading" secondItem="sMp-TZ-0jG" secondAttribute="leading" id="kzw-oR-HrM"/>
-                                        <constraint firstItem="Eke-cA-2nD" firstAttribute="leading" secondItem="sMp-TZ-0jG" secondAttribute="leading" constant="20" symbolic="YES" id="rYY-fJ-scP"/>
+                                        <constraint firstItem="Eke-cA-2nD" firstAttribute="leading" secondItem="sMp-TZ-0jG" secondAttribute="leading" id="rYY-fJ-scP"/>
                                         <constraint firstItem="JCZ-aB-oZz" firstAttribute="top" secondItem="mzx-qU-0gZ" secondAttribute="bottom" constant="8" symbolic="YES" id="u0G-NP-jz8"/>
                                         <constraint firstItem="4mZ-f5-CRe" firstAttribute="top" secondItem="sMp-TZ-0jG" secondAttribute="top" constant="20" symbolic="YES" id="wos-Qi-kmK"/>
                                     </constraints>
@@ -446,7 +447,7 @@
                             <outlet property="delegate" destination="TFU-Zf-pim" id="arG-7J-mC1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Action Cards" id="c1Z-cJ-tv7"/>
+                    <navigationItem key="navigationItem" title="All" id="c1Z-cJ-tv7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdX-2Z-j1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -501,10 +502,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Content" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="31l-SN-4gN">
-                                            <rect key="frame" x="20" y="469" width="280" height="27"/>
+                                            <rect key="frame" x="20" y="475" width="280" height="134"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="27" id="vKk-AN-Pqi"/>
+                                                <constraint firstAttribute="height" constant="134" id="vKk-AN-Pqi"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -515,7 +516,7 @@
                                         <constraint firstItem="C1d-Rv-zpu" firstAttribute="top" secondItem="AvF-uT-9df" secondAttribute="top" constant="20" symbolic="YES" id="1Ec-Ng-EgS"/>
                                         <constraint firstItem="HEw-my-uT1" firstAttribute="top" secondItem="Fx4-Cj-ai9" secondAttribute="bottom" constant="8" symbolic="YES" id="2Ok-Wl-ggi"/>
                                         <constraint firstItem="a3g-pg-gbz" firstAttribute="leading" secondItem="AvF-uT-9df" secondAttribute="leading" constant="21" id="B1d-tv-6MX"/>
-                                        <constraint firstItem="31l-SN-4gN" firstAttribute="top" secondItem="a3g-pg-gbz" secondAttribute="bottom" constant="2" id="F7a-Km-YCz"/>
+                                        <constraint firstItem="31l-SN-4gN" firstAttribute="top" secondItem="a3g-pg-gbz" secondAttribute="bottom" constant="8" id="F7a-Km-YCz"/>
                                         <constraint firstItem="C1d-Rv-zpu" firstAttribute="leading" secondItem="31l-SN-4gN" secondAttribute="leading" id="IGj-v3-Uyp"/>
                                         <constraint firstItem="a3g-pg-gbz" firstAttribute="top" secondItem="HEw-my-uT1" secondAttribute="bottom" constant="8" symbolic="YES" id="Rm4-E8-v44"/>
                                         <constraint firstItem="31l-SN-4gN" firstAttribute="leading" secondItem="AvF-uT-9df" secondAttribute="leading" constant="20" symbolic="YES" id="SBX-c0-jPz"/>
@@ -556,7 +557,7 @@
             </objects>
             <point key="canvasLocation" x="1588" y="-952"/>
         </scene>
-        <!--Idea Card View Controller - Idea Card-->
+        <!--Idea Card View Controller - Action Card-->
         <scene sceneID="usc-Ac-GtF">
             <objects>
                 <viewController id="TMd-Mt-9q4" customClass="LHIdeaCardViewController" sceneMemberID="viewController">
@@ -655,7 +656,7 @@
                             <constraint firstItem="Rj3-m5-53F" firstAttribute="leading" secondItem="cOr-cw-er8" secondAttribute="leading" id="cMf-DH-ntn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Idea Card" id="KJ9-NI-3rq"/>
+                    <navigationItem key="navigationItem" title="Action Card" id="KJ9-NI-3rq"/>
                     <connections>
                         <outlet property="categoryTitleLabel" destination="yww-c0-d9d" id="rgm-0y-UgY"/>
                         <outlet property="contentScrollView" destination="Rj3-m5-53F" id="EoD-vW-zyP"/>
@@ -930,7 +931,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="SmJ-FX-iAz"/>
+        <segue reference="o51-Ne-ShS"/>
         <segue reference="dna-LH-9MD"/>
-        <segue reference="rPm-lU-hyR"/>
     </inferredMetricsTieBreakers>
 </document>

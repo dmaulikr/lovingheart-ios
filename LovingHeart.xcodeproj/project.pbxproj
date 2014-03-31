@@ -155,8 +155,6 @@
 		1C3D7DB418E3BA8100696BBE /* background-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red@2x.png"; sourceTree = "<group>"; };
 		1C5FB47B18E95ADA004F7FCE /* LHIdeaCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaCardCell.h; sourceTree = "<group>"; };
 		1C5FB47C18E95ADA004F7FCE /* LHIdeaCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaCardCell.m; sourceTree = "<group>"; };
-		1C5FB47F18E963DD004F7FCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		1C5FB48018E963E0004F7FCE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
 		1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note@2x.png"; sourceTree = "<group>"; };
 		1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHIdeaCardView.xib; sourceTree = "<group>"; };
@@ -638,8 +636,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				1801F624188259080024A832 /* Base */,
-				1C5FB47F18E963DD004F7FCE /* en */,
-				1C5FB48018E963E0004F7FCE /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

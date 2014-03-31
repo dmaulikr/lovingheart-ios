@@ -37,6 +37,7 @@
   if (self.ideaCardTitleLabel.text == nil || self.ideaCardTitleLabel.text.length <= 0) {
     self.ideaCardTitleLabel.hidden = YES;
   }
+  [self.ideaContentLabel sizeToFit];
 }
 
 @end
