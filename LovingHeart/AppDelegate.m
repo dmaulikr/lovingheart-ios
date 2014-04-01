@@ -29,6 +29,11 @@
                 clientKey:@"SX6e4Gd86Fq3vil6XOT4UHvrsfaBqvIJJ99vPkDV"];
   [PFFacebookUtils initializeFacebook];
   
+  PFACL *defaultACL = [PFACL ACL];
+  [defaultACL setPublicReadAccess:YES];
+  [defaultACL setPublicWriteAccess:NO];
+  [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+  
   [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
   
   [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
