@@ -73,6 +73,8 @@
 		1C8A96ED18E9B7DD0093469C /* 1099-list-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EB18E9B7DD0093469C /* 1099-list-1@2x.png */; };
 		1C8A96F018E9B8230093469C /* 1100-list-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EE18E9B8230093469C /* 1100-list-2.png */; };
 		1C8A96F118E9B8230093469C /* 1100-list-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EF18E9B8230093469C /* 1100-list-2@2x.png */; };
+		1C8A96F418EA24990093469C /* LHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96F318EA24990093469C /* LHUserViewController.m */; };
+		1C8A96F718EA2B860093469C /* LHUserImpact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96F618EA2B860093469C /* LHUserImpact.m */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -185,6 +187,10 @@
 		1C8A96EB18E9B7DD0093469C /* 1099-list-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1@2x.png"; sourceTree = "<group>"; };
 		1C8A96EE18E9B8230093469C /* 1100-list-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1100-list-2.png"; sourceTree = "<group>"; };
 		1C8A96EF18E9B8230093469C /* 1100-list-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1100-list-2@2x.png"; sourceTree = "<group>"; };
+		1C8A96F218EA24990093469C /* LHUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserViewController.h; sourceTree = "<group>"; };
+		1C8A96F318EA24990093469C /* LHUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserViewController.m; sourceTree = "<group>"; };
+		1C8A96F518EA2B860093469C /* LHUserImpact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserImpact.h; sourceTree = "<group>"; };
+		1C8A96F618EA2B860093469C /* LHUserImpact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserImpact.m; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -381,6 +387,8 @@
 				1C3D7D9F18E2B8F700696BBE /* LHParseObject.m */,
 				1C3D7DA118E2BEA000696BBE /* LHCategory.h */,
 				1C3D7DA218E2BEA000696BBE /* LHCategory.m */,
+				1C8A96F518EA2B860093469C /* LHUserImpact.h */,
+				1C8A96F618EA2B860093469C /* LHUserImpact.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -420,6 +428,8 @@
 		1CEF80F718DAE6E90011F412 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1C8A96F218EA24990093469C /* LHUserViewController.h */,
+				1C8A96F318EA24990093469C /* LHUserViewController.m */,
 				1C3D7DAA18E2C5D200696BBE /* Stories */,
 				1C670D7B18E1CA7000D422CA /* LHKICardsViewController.h */,
 				1C670D7C18E1CA7000D422CA /* LHKICardsViewController.m */,
@@ -612,6 +622,7 @@
 				1C8A96E518E9A7D40093469C /* LHStoryPickViewController.m in Sources */,
 				1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
+				1C8A96F418EA24990093469C /* LHUserViewController.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
 				1C3D7D8A18E2A66C00696BBE /* LHSettingsTableViewController.m in Sources */,
 				1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */,
@@ -619,6 +630,7 @@
 				1C3D7DA318E2BEA000696BBE /* LHCategory.m in Sources */,
 				1C3D7DAD18E2C60F00696BBE /* LHIdeaCardViewController.m in Sources */,
 				1C670D7418E1C2D400D422CA /* LHStory.m in Sources */,
+				1C8A96F718EA2B860093469C /* LHUserImpact.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
 				18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */,
 				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,

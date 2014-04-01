@@ -16,7 +16,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Override point for customization after application launch.
+  [PFUser registerSubclass];
   [LHUser registerSubclass];
+  [LHUserImpact registerSubclass];
   [LHStory registerSubclass];
   [LHToday registerSubclass];
   [LHIdea registerSubclass];
