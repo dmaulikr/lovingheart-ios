@@ -21,5 +21,6 @@
 @property (nonatomic, strong) LHUser *StoryTeller;
 @property (nonatomic, strong) NSString *areaName;
 @property (nonatomic, strong) LHGraphicImage *graphicPointer;
+@property (nonatomic, strong) PFGeoPoint *geoPoint;
 
 @end

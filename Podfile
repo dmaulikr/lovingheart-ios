@@ -7,7 +7,7 @@ pod 'Nimbus/WebController'
 pod 'SVProgressHUD'
 pod 'uservoice-iphone-sdk'
 pod 'DAProgressOverlayView'
-pod 'MJPopupViewController'
+pod 'GCPlaceholderTextView'
 
 # Basics
 pod 'AFNetworking', '~> 2.1.0'

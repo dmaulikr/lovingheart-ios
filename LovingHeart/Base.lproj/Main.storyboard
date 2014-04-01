@@ -347,15 +347,63 @@
                     <view key="view" contentMode="scaleToFill" id="TDm-1u-VAK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Share your best moment." translatesAutoresizingMaskIntoConstraints="NO" id="ynq-l3-TkV">
+                                <rect key="frame" x="20" y="0.0" width="280" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gq-dx-A0y">
+                                <rect key="frame" x="20" y="493" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cXp-Cm-5LZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqS-8l-h0l">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="714-camera.png" id="ako-nr-46l">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5Yw-Oh-Z4o"/>
+                                    <barButtonItem image="723-location-arrow.png" id="W2t-7M-4U8">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mqS-8l-h0l" firstAttribute="top" secondItem="3gq-dx-A0y" secondAttribute="bottom" constant="10" id="CP9-me-1Jy"/>
+                            <constraint firstItem="mqS-8l-h0l" firstAttribute="leading" secondItem="TDm-1u-VAK" secondAttribute="leading" id="JP5-q2-E6a"/>
+                            <constraint firstItem="3gq-dx-A0y" firstAttribute="leading" secondItem="ynq-l3-TkV" secondAttribute="leading" id="Lh9-Zc-P9M"/>
+                            <constraint firstAttribute="bottom" secondItem="mqS-8l-h0l" secondAttribute="bottom" id="Owu-tc-QN6"/>
+                            <constraint firstAttribute="trailing" secondItem="mqS-8l-h0l" secondAttribute="trailing" id="RNV-mI-xad"/>
+                            <constraint firstItem="3gq-dx-A0y" firstAttribute="leading" secondItem="TDm-1u-VAK" secondAttribute="leading" constant="20" symbolic="YES" id="cmN-9d-cX1"/>
+                            <constraint firstItem="3gq-dx-A0y" firstAttribute="centerX" secondItem="mqS-8l-h0l" secondAttribute="centerX" id="gNB-WZ-BgX"/>
+                            <constraint firstItem="3gq-dx-A0y" firstAttribute="trailing" secondItem="ynq-l3-TkV" secondAttribute="trailing" id="i8r-ji-3SV"/>
+                            <constraint firstItem="ynq-l3-TkV" firstAttribute="bottom" secondItem="mqS-8l-h0l" secondAttribute="top" id="mvG-gp-Vz7"/>
+                            <constraint firstItem="ynq-l3-TkV" firstAttribute="top" secondItem="TDm-1u-VAK" secondAttribute="top" id="nyK-81-l7D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post Story" id="Ypa-bz-CI5">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hpZ-ud-37w"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="3De-xd-K0M"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="additionalToolbar" destination="mqS-8l-h0l" id="uYU-y1-qBR"/>
                         <outlet property="cancelButtonItem" destination="hpZ-ud-37w" id="BvJ-qv-dSE"/>
                         <outlet property="doneButtonItem" destination="3De-xd-K0M" id="I7R-AI-fyE"/>
+                        <outlet property="locationButtonItem" destination="W2t-7M-4U8" id="9OO-Ik-Ocu"/>
+                        <outlet property="locationLabel" destination="3gq-dx-A0y" id="P48-0O-cin"/>
+                        <outlet property="userInputTextView" destination="ynq-l3-TkV" id="gI3-4z-T5e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxB-Ip-lNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1094,6 +1142,8 @@
     <resources>
         <image name="1039-files-box.png" width="28" height="26"/>
         <image name="1100-list-2.png" width="28" height="22"/>
+        <image name="714-camera.png" width="28" height="21"/>
+        <image name="723-location-arrow.png" width="28" height="28"/>
         <image name="912-gears.png" width="28" height="28"/>
         <image name="973-user.png" width="28" height="24"/>
         <image name="card_default.png" width="512" height="512"/>

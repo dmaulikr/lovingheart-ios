@@ -24,7 +24,7 @@ PODS:
     - BlocksKit/DynamicDelegate
   - DAProgressOverlayView (1.0.2)
   - Facebook-iOS-SDK (3.11.0)
-  - MJPopupViewController (0.4)
+  - GCPlaceholderTextView (1.0.1)
   - Nimbus/Core (1.2.0)
   - Nimbus/WebController (1.2.0):
     - Nimbus/Core
@@ -45,7 +45,7 @@ DEPENDENCIES:
   - BlocksKit/UIKit
   - DAProgressOverlayView
   - Facebook-iOS-SDK (~> 3.11.0)
-  - MJPopupViewController
+  - GCPlaceholderTextView
   - Nimbus/WebController
   - NSDate+TimeAgo (~> 1.0.2)
   - ReactiveCocoa (~> 2.1.8)
@@ -58,7 +58,7 @@ SPEC CHECKSUMS:
   BlocksKit: 125e4e69a62e3b85bacc5175737dae000b00b9fb
   DAProgressOverlayView: abfd16f70476496e34176eeb94b139fc5e6d5f6b
   Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
-  MJPopupViewController: 4cd0badf3dae541017e0e16e2d2c7578d9224052
+  GCPlaceholderTextView: 5eeef8d07a1dece8fdcd7762dfc21b8e89800838
   Nimbus: bbde56c7e845d3c38c1f484018ef1bb3259c0507
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae

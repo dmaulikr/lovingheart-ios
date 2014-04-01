@@ -59,6 +59,8 @@
         [__storyImageView setNeedsDisplay];
       }
     }];
+  } else {
+    self.storyImageView.hidden = YES;
   }
   
   [self.userNameLabel setText:self.story.StoryTeller.name];
