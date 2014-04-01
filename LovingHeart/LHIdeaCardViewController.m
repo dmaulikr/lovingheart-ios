@@ -8,6 +8,7 @@
 
 #import "LHIdeaCardViewController.h"
 #import "UIView+Frame.h"
+#import "LHPostStoryViewController.h"
 
 @interface LHIdeaCardViewController ()
 
@@ -76,15 +77,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"shareStorySegue"]) {
+    
+    UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+    if (navigationController.viewControllers.count > 0) {
+      LHPostStoryViewController *postStoryViewController = (LHPostStoryViewController *)navigationController.viewControllers[0];
+      [postStoryViewController setIdeaObject:self.idea];
+
+    }
+  }
 }
-*/
+
 
 @end

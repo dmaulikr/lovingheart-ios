@@ -51,6 +51,11 @@
   
   [self.locationButtonItem setTarget:self];
   [self.locationButtonItem setAction:@selector(getCurrentLocation:)];
+  
+  // Load idea
+  if (self.ideaObject) {
+    NSLog(@"Load from idea :%@", self.ideaObject.Name);
+  }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -24,4 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationButtonItem;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
+@property (nonatomic, strong) LHIdea *ideaObject;
+
 @end
