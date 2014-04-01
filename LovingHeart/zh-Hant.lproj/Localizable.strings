@@ -19,3 +19,5 @@
 "Ask login title" = "需要先登入";
 
 "Ask login message" = "要先登入才能繼續";
+
+"Loading" = "載入中...";

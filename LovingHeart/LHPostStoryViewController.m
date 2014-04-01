@@ -32,12 +32,17 @@
   return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)awakeFromNib {
+  self.storyImageView.clipsToBounds = YES;
+}
+
+- (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   [self.cancelButtonItem setTarget:self];
   [self.cancelButtonItem setAction:@selector(cancelPress:)];
+  
+  [self awakeFromNib];
   
   _doneButtonItem.enabled = NO;
   
@@ -54,7 +59,27 @@
   
   // Load idea
   if (self.ideaObject) {
+    
     NSLog(@"Load from idea :%@", self.ideaObject.Name);
+    [_storyObject setIdeaPointer:self.ideaObject];
+    
+    [self.ideaNameLabel setText:self.ideaObject.Name];
+    
+    if (self.ideaObject.graphicPointer) {
+      [_storyObject setGraphicPointer:self.ideaObject.graphicPointer];
+      
+      PFFile* file = (PFFile*)self.ideaObject.graphicPointer.imageFile;
+      __block UIImageView *__storyImageView = self.storyImageView;
+      [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+          UIImage *image = [UIImage imageWithData:data];
+          __storyImageView.image = image;
+          [__storyImageView setNeedsDisplay];
+        }
+      }];
+    }
+  } else {
+    self.ideaNameLabel.hidden = YES;
   }
 }
 
@@ -139,7 +164,8 @@
 - (void)getCurrentLocation:(id)sender {
   locationmanager.delegate = self;
   locationmanager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-  
+
+  [self.locationLabel setText:NSLocalizedString(@"Loading", @"Loading")];
   [locationmanager startUpdatingLocation];
 }
 

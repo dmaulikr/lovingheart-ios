@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LHUser.h"
 #import "LHGraphicImage.h"
+#import "LHIdea.h"
 
 @interface LHStory : PFObject<PFSubclassing>
 
@@ -22,5 +23,6 @@
 @property (nonatomic, strong) NSString *areaName;
 @property (nonatomic, strong) LHGraphicImage *graphicPointer;
 @property (nonatomic, strong) PFGeoPoint *geoPoint;
+@property (nonatomic, strong) LHIdea *ideaPointer;
 
 @end
