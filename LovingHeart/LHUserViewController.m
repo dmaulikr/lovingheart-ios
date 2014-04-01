@@ -26,7 +26,7 @@
 }
 
 - (void)awakeFromNib {
-  self.avatarImageView.layer.cornerRadius = 40;
+  self.avatarImageView.layer.cornerRadius = self.avatarImageView.width / 2;
   self.avatarImageView.layer.masksToBounds = YES;
   self.avatarImageView.image = [UIImage imageNamed:@"defaultAvatar"];
   
