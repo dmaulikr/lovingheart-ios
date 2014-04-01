@@ -45,25 +45,33 @@
   } else {
     cell = [tableView dequeueReusableCellWithIdentifier:@"storyCell"];
   }
-  
-  cell.nameLabel.text = object.StoryTeller.name;
-  cell.contentLabel.text = object.Content;
   cell.avatarView.image = [UIImage imageNamed:@"defaultAvatar"];
-  
-  if (object.StoryTeller.avatar) {
-    NSURL* imageUrl = [NSURL URLWithString:object.StoryTeller.avatar.imageUrl];
-    NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
-    AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFImageResponseSerializer serializer];
-    [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {     
-    }];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-      StoryCell* cell = (StoryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
-      cell.avatarView.image = responseObject;
-    } failure:nil];
-    
-    [operation start];
+  [cell.avatarView setBackgroundColor:kColorLovingHeartRed];
+  switch (self.storiesType) {
+    case kStories_Anonymous:
+      cell.nameLabel.text = NSLocalizedString(@"Anonymous", @"Anonymous");
+      cell.avatarView.image = [UIImage imageNamed:@"ic_action_emo_cool.png"];
+      break;
+    default:
+      cell.nameLabel.text = object.StoryTeller.name;
+      if (object.StoryTeller.avatar) {
+        NSURL* imageUrl = [NSURL URLWithString:object.StoryTeller.avatar.imageUrl];
+        NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
+        AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.responseSerializer = [AFImageResponseSerializer serializer];
+        [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+        }];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+          StoryCell* cell = (StoryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+          cell.avatarView.image = responseObject;
+        } failure:nil];
+        
+        [operation start];
+      }
+      break;
   }
+  
+  cell.contentLabel.text = object.Content;
   
   if (object.graphicPointer) {
     cell.pictureView.image = [UIImage imageNamed:@"card_default"];

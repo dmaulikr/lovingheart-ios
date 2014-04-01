@@ -11,5 +11,6 @@
 @interface LHAltas : PFObject
 
 #define kColorWithBlue [UIColor colorWithRed:0.169 green:0.471 blue:0.980 alpha:1]
+#define kColorLovingHeartRed [UIColor colorWithRed:0.933 green:0.357 blue:0.365 alpha:1]
 
 @end

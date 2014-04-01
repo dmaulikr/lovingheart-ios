@@ -10,14 +10,7 @@
 
 @interface LHMostTypeStoriesViewController : LHStoriesViewController
 
-typedef enum {
-  kStories_Latest = 0,
-  kStories_Popular = 1,
-  kStories_Anonymous = 2
-} StoriesType;
-
-@property (nonatomic, assign) StoriesType storiesType;
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *switchButtonItem;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *storiesTypeSegmentedControl;
 
 @end

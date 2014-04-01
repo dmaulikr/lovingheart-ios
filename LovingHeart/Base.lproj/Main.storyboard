@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="vHh-gR-hEk">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="W5g-T2-O6Q" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="W5g-T2-O6Q" customClass="LHMainViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="uTx-E5-Q0w"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="MBI-v7-P8i">
@@ -16,6 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabbar" destination="MBI-v7-P8i" id="Ol7-hW-Q7V"/>
                         <segue destination="i24-h4-ybm" kind="relationship" relationship="viewControllers" id="IUX-q0-p81"/>
                         <segue destination="omD-Mg-kLy" kind="relationship" relationship="viewControllers" id="MoP-sh-stm"/>
                         <segue destination="VRk-Jk-By6" kind="relationship" relationship="viewControllers" id="DGB-aL-QMj"/>
@@ -34,9 +35,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ggX-dw-zPu">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AEB-Jw-pp8">
+                                    <rect key="frame" x="20" y="8" width="280" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="Recent"/>
+                                        <segment title="Hot"/>
+                                        <segment title="Anonymous"/>
+                                    </segments>
+                                    <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="AEB-Jw-pp8" firstAttribute="leading" secondItem="ggX-dw-zPu" secondAttribute="leading" constant="20" symbolic="YES" id="8wF-Eh-Ap5"/>
+                                <constraint firstItem="AEB-Jw-pp8" firstAttribute="centerY" secondItem="ggX-dw-zPu" secondAttribute="centerY" id="B13-YB-WO7"/>
+                                <constraint firstAttribute="trailing" secondItem="AEB-Jw-pp8" secondAttribute="trailing" constant="20" symbolic="YES" id="BH4-UQ-Wa4"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="storyImageCell" rowHeight="445" id="2Uz-ef-ONF" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="445"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="445"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" tableViewCell="2Uz-ef-ONF" id="MxA-zd-4Hl">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
@@ -76,6 +99,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-AO-RtL">
                                             <rect key="frame" x="15" y="17" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="hBo-Tq-755"/>
                                                 <constraint firstAttribute="height" constant="50" id="q5U-Lh-jkQ"/>
@@ -117,7 +141,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="storyCell" rowHeight="149" id="VDe-lg-4Xb" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="531" width="320" height="149"/>
+                                <rect key="frame" x="0.0" y="575" width="320" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" tableViewCell="VDe-lg-4Xb" id="xPL-xg-Yrd">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
@@ -156,6 +180,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qn7-ZE-lq7">
                                             <rect key="frame" x="15" y="17" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="eqN-oM-tcb"/>
                                                 <constraint firstAttribute="height" constant="50" id="nmH-dH-EEe"/>
@@ -196,11 +221,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jjG-06-JKx">
-                        <barButtonItem key="leftBarButtonItem" image="1100-list-2.png" id="GwO-0U-vl9">
-                            <connections>
-                                <segue destination="IkS-Qv-nqS" kind="modal" identifier="storiesPicker" id="jPB-8s-ytM"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iqy-jG-jds">
                             <connections>
                                 <segue destination="DO8-TA-zFz" kind="modal" identifier="presentPostViewController" id="nje-1x-q1U"/>
@@ -210,7 +230,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="switchButtonItem" destination="GwO-0U-vl9" id="DLv-a0-nhk"/>
+                        <outlet property="storiesTypeSegmentedControl" destination="AEB-Jw-pp8" id="iJK-IN-JPo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNZ-vE-cCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1223,7 +1243,6 @@
     </scenes>
     <resources>
         <image name="1039-files-box.png" width="28" height="26"/>
-        <image name="1100-list-2.png" width="28" height="22"/>
         <image name="714-camera.png" width="28" height="21"/>
         <image name="723-location-arrow.png" width="28" height="28"/>
         <image name="912-gears.png" width="28" height="28"/>

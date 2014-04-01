@@ -21,6 +21,8 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
+  
+  [_storiesTypeSegmentedControl addTarget:self action:@selector(storiesSegmented:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (PFQuery *)queryForTable {
@@ -91,6 +93,29 @@
         [self loadObjects];
       }
     }];
+  }
+}
+
+- (void)storiesSegmented:(id)sender {
+  UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+  StoriesType newType;
+  switch (segmentedControl.selectedSegmentIndex) {
+    case 0:
+      newType = kStories_Latest;
+      break;
+    case 1:
+      newType = kStories_Popular;
+      break;
+    case 2:
+      newType = kStories_Anonymous;
+      break;
+    default:
+      newType = kStories_Latest;
+      break;
+  }
+  if (newType != self.storiesType) {
+    self.storiesType = newType;
+    [self loadObjects];
   }
 }
 

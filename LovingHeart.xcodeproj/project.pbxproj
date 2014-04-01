@@ -35,6 +35,9 @@
 		1C2D1A6C18E41B22007323B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6A18E41B22007323B1 /* Default@2x.png */; };
 		1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C35813B18E94B750025E259 /* UIView+Frame.m */; };
 		1C35814018E94D3E0025E259 /* LHIdeaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C35813F18E94D3E0025E259 /* LHIdeaListViewController.m */; };
+		1C3D498818EB794000F9C4D7 /* ic_action_emo_cool.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D498618EB794000F9C4D7 /* ic_action_emo_cool.png */; };
+		1C3D498918EB794000F9C4D7 /* ic_action_emo_cool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D498718EB794000F9C4D7 /* ic_action_emo_cool@2x.png */; };
+		1C3D498C18EB7C6B00F9C4D7 /* LHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D498B18EB7C6B00F9C4D7 /* LHMainViewController.m */; };
 		1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */; };
 		1C3D7D8518E2A44100696BBE /* 912-gears.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8318E2A44100696BBE /* 912-gears.png */; };
 		1C3D7D8618E2A44100696BBE /* 912-gears@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7D8418E2A44100696BBE /* 912-gears@2x.png */; };
@@ -138,6 +141,10 @@
 		1C35813B18E94B750025E259 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		1C35813E18E94D3E0025E259 /* LHIdeaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaListViewController.h; sourceTree = "<group>"; };
 		1C35813F18E94D3E0025E259 /* LHIdeaListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaListViewController.m; sourceTree = "<group>"; };
+		1C3D498618EB794000F9C4D7 /* ic_action_emo_cool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_action_emo_cool.png; sourceTree = "<group>"; };
+		1C3D498718EB794000F9C4D7 /* ic_action_emo_cool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_action_emo_cool@2x.png"; sourceTree = "<group>"; };
+		1C3D498A18EB7C6B00F9C4D7 /* LHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMainViewController.h; sourceTree = "<group>"; };
+		1C3D498B18EB7C6B00F9C4D7 /* LHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMainViewController.m; sourceTree = "<group>"; };
 		1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryViewController.h; sourceTree = "<group>"; };
 		1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryViewController.m; sourceTree = "<group>"; };
 		1C3D7D8318E2A44100696BBE /* 912-gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "912-gears.png"; sourceTree = "<group>"; };
@@ -413,6 +420,8 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C3D498618EB794000F9C4D7 /* ic_action_emo_cool.png */,
+				1C3D498718EB794000F9C4D7 /* ic_action_emo_cool@2x.png */,
 				1C7C3F4018EA99C700B900CB /* 722-location-pin.png */,
 				1C7C3F4118EA99C700B900CB /* 722-location-pin@2x.png */,
 				1C7C3F3918EA928B00B900CB /* 714-camera.png */,
@@ -472,6 +481,8 @@
 				1C35813F18E94D3E0025E259 /* LHIdeaListViewController.m */,
 				1C8A96E218E9A7D40093469C /* LHStoryPickViewController.h */,
 				1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */,
+				1C3D498A18EB7C6B00F9C4D7 /* LHMainViewController.h */,
+				1C3D498B18EB7C6B00F9C4D7 /* LHMainViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -565,12 +576,14 @@
 				1C3D7D9318E2B03000696BBE /* card_default.png in Resources */,
 				1C3D7DA618E2C03400696BBE /* ic_action_emo_basic.png in Resources */,
 				1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */,
+				1C3D498818EB794000F9C4D7 /* ic_action_emo_cool.png in Resources */,
 				1CD9F5EC18E134C40089CB4F /* Default@2x.png in Resources */,
 				1C670D8418E1CAE300D422CA /* 1055-ticket.png in Resources */,
 				1C8A96EC18E9B7DD0093469C /* 1099-list-1.png in Resources */,
 				1CD9F5EB18E134C40089CB4F /* 973-user@2x.png in Resources */,
 				1CEF810118DEAD120011F412 /* Localizable.strings in Resources */,
 				1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */,
+				1C3D498918EB794000F9C4D7 /* ic_action_emo_cool@2x.png in Resources */,
 				1C7C3F3C18EA928B00B900CB /* 714-camera@2x.png in Resources */,
 				1801F62A188259080024A832 /* Images.xcassets in Resources */,
 				1C670D8518E1CAE300D422CA /* 1055-ticket@2x.png in Resources */,
@@ -662,6 +675,7 @@
 				1C670D7418E1C2D400D422CA /* LHStory.m in Sources */,
 				1C8A96F718EA2B860093469C /* LHUserImpact.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
+				1C3D498C18EB7C6B00F9C4D7 /* LHMainViewController.m in Sources */,
 				18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */,
 				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,
 				1C3D7D9718E2B18A00696BBE /* LHIdeaFeatureViewCell.m in Sources */,
