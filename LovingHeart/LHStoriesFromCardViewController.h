@@ -1,5 +1,5 @@
 //
-//  LHMainViewController.h
+//  LHStoriesFromCardViewController.h
 //  LovingHeart
 //
 //  Created by Edward Chiang on 2014/4/2.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LHMainViewController : UITabBarController
+@interface LHStoriesFromCardViewController : PFQueryTableViewController
 
-@property (weak, nonatomic) IBOutlet UITabBar *tabbar;
+@property (nonatomic, strong) LHIdea *ideaObject;
 
 @end

@@ -85,6 +85,7 @@
 		1C8A96F118E9B8230093469C /* 1100-list-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EF18E9B8230093469C /* 1100-list-2@2x.png */; };
 		1C8A96F418EA24990093469C /* LHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96F318EA24990093469C /* LHUserViewController.m */; };
 		1C8A96F718EA2B860093469C /* LHUserImpact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96F618EA2B860093469C /* LHUserImpact.m */; };
+		1C8DC02C18EB99DA00262E5A /* LHStoriesFromCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -215,6 +216,8 @@
 		1C8A96F318EA24990093469C /* LHUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserViewController.m; sourceTree = "<group>"; };
 		1C8A96F518EA2B860093469C /* LHUserImpact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserImpact.h; sourceTree = "<group>"; };
 		1C8A96F618EA2B860093469C /* LHUserImpact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserImpact.m; sourceTree = "<group>"; };
+		1C8DC02A18EB99DA00262E5A /* LHStoriesFromCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoriesFromCardViewController.h; sourceTree = "<group>"; };
+		1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoriesFromCardViewController.m; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 				1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */,
 				1C8A96E218E9A7D40093469C /* LHStoryPickViewController.h */,
 				1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */,
+				1C8DC02A18EB99DA00262E5A /* LHStoriesFromCardViewController.h */,
+				1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */,
 			);
 			name = Stories;
 			sourceTree = "<group>";
@@ -701,6 +706,7 @@
 				1C3D7DAD18E2C60F00696BBE /* LHIdeaCardViewController.m in Sources */,
 				1C670D7418E1C2D400D422CA /* LHStory.m in Sources */,
 				1C8A96F718EA2B860093469C /* LHUserImpact.m in Sources */,
+				1C8DC02C18EB99DA00262E5A /* LHStoriesFromCardViewController.m in Sources */,
 				1801F61E188259080024A832 /* main.m in Sources */,
 				1C3D498C18EB7C6B00F9C4D7 /* LHMainViewController.m in Sources */,
 				18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "LHIdeaCardViewController.h"
 #import "UIView+Frame.h"
 #import "LHPostStoryViewController.h"
+#import "LHStoriesFromCardViewController.h"
 
 @interface LHIdeaCardViewController ()
 
@@ -90,6 +91,10 @@
       [postStoryViewController setIdeaObject:self.idea];
 
     }
+  }
+  if ([segue.identifier isEqualToString:@"readStoriesFromCard"]) {
+    LHStoriesFromCardViewController *tableViewController = (LHStoriesFromCardViewController *)segue.destinationViewController;
+    [tableViewController setIdeaObject:self.idea];
   }
 }
 
