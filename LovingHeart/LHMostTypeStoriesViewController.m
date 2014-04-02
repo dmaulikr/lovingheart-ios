@@ -32,8 +32,6 @@
   [query includeKey:@"StoryTeller.avatar"];
   [query includeKey:@"graphicPointer"];
   
-  
-  
   // If no objects are loaded in memory, we look to the cache first to fill the table
   // and then subsequently do a query against the network.
   if (self.objects.count == 0) {
@@ -71,7 +69,6 @@
     [storyPicker setSelected:[NSIndexSet indexSetWithIndex:self.storiesType]];
     [storyPicker setDidSelectedRowAtIndexPath:^(NSIndexPath *indexPath) {
       NSLog(@"Did select %li", (long)indexPath.row);
-      
       
       StoriesType newType;
       switch (indexPath.row) {

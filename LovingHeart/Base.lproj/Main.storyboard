@@ -344,19 +344,31 @@
         <!--Table View Controller - Category-->
         <scene sceneID="CIo-ia-NFC">
             <objects>
-                <tableViewController id="KDL-xL-OQi" userLabel="Table View Controller - Category" sceneMemberID="viewController">
+                <tableViewController id="KDL-xL-OQi" userLabel="Table View Controller - Category" customClass="LHCategoriesPickController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a2g-4W-VTO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ehB-yQ-1h5">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LHPickerTableViewCell" id="ehB-yQ-1h5" customClass="LHPickerTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehB-yQ-1h5" id="8DB-Qk-dxF">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krI-l0-17Z">
+                                            <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="krI-l0-17Z" id="Fk3-Vk-gzT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -364,7 +376,12 @@
                             <outlet property="delegate" destination="KDL-xL-OQi" id="xe0-8z-loP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="OjN-zo-49A"/>
+                    <navigationItem key="navigationItem" title="Categories" id="OjN-zo-49A">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="UQy-Oa-nmF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButtonItem" destination="UQy-Oa-nmF" id="2Uq-yk-NYU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7k-1F-AMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -595,7 +612,7 @@
                     <navigationItem key="navigationItem" title="All" id="c1Z-cJ-tv7">
                         <barButtonItem key="leftBarButtonItem" title="Categories" id="bAH-I1-UJl">
                             <connections>
-                                <segue destination="UfW-z5-sTj" kind="modal" identifier="catgoryPicker" id="A93-ev-ddg"/>
+                                <segue destination="UfW-z5-sTj" kind="modal" identifier="catgoriesPicker" id="A93-ev-ddg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

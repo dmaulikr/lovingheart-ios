@@ -10,4 +10,6 @@
 
 @interface LHIdeaListViewController : PFQueryTableViewController
 
+@property (nonatomic, strong) LHCategory *category;
+
 @end

@@ -1,0 +1,177 @@
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "12B-b9-5Vo"; */
+"12B-b9-5Vo.text" = "Subtitle";
+
+/* Class = "IBUITabBarItem"; title = "My Profile"; ObjectID = "27K-x7-Zr8"; */
+"27K-x7-Zr8.title" = "My Profile";
+
+/* Class = "IBUILabel"; text = "Idea Content"; ObjectID = "31l-SN-4gN"; */
+"31l-SN-4gN.text" = "Idea Content";
+
+/* Class = "IBUILabel"; text = "Location"; ObjectID = "3gq-dx-A0y"; */
+"3gq-dx-A0y.text" = "Location";
+
+/* Class = "IBUILabel"; text = "Location, Area"; ObjectID = "5UI-Hp-AqS"; */
+"5UI-Hp-AqS.text" = "Location, Area";
+
+/* Class = "IBUILabel"; text = "Story Content No Image"; ObjectID = "6Kz-KK-zea"; */
+"6Kz-KK-zea.text" = "Story Content No Image";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "8JU-nn-elV"; */
+"8JU-nn-elV.text" = "Title";
+
+/* Class = "IBUITableViewController"; title = "最新故事"; ObjectID = "9Pk-5c-ho6"; */
+"9Pk-5c-ho6.title" = "最新故事";
+
+/* Class = "IBUISegmentedControl"; AEB-Jw-pp8.segmentTitles[0] = "Recent"; ObjectID = "AEB-Jw-pp8"; */
+"AEB-Jw-pp8.segmentTitles[0]" = "Recent";
+
+/* Class = "IBUISegmentedControl"; AEB-Jw-pp8.segmentTitles[1] = "Hot"; ObjectID = "AEB-Jw-pp8"; */
+"AEB-Jw-pp8.segmentTitles[1]" = "Hot";
+
+/* Class = "IBUISegmentedControl"; AEB-Jw-pp8.segmentTitles[2] = "Anonymous"; ObjectID = "AEB-Jw-pp8"; */
+"AEB-Jw-pp8.segmentTitles[2]" = "Anonymous";
+
+/* Class = "IBUILabel"; text = "000"; ObjectID = "AIE-eg-0Hz"; */
+"AIE-eg-0Hz.text" = "000";
+
+/* Class = "IBUILabel"; text = "Idea Card Title"; ObjectID = "C1d-Rv-zpu"; */
+"C1d-Rv-zpu.text" = "Idea Card Title";
+
+/* Class = "IBUILabel"; text = "User Description"; ObjectID = "Dsi-zl-CTb"; */
+"Dsi-zl-CTb.text" = "User Description";
+
+/* Class = "IBUILabel"; text = "Category"; ObjectID = "Eke-cA-2nD"; */
+"Eke-cA-2nD.text" = "Category";
+
+/* Class = "IBUILabel"; text = "User Name"; ObjectID = "FJA-4q-KDm"; */
+"FJA-4q-KDm.text" = "User Name";
+
+/* Class = "IBUINavigationItem"; title = "Story"; ObjectID = "Gfq-pS-rnB"; */
+"Gfq-pS-rnB.title" = "Story";
+
+/* Class = "IBUILabel"; text = "Category"; ObjectID = "HEw-my-uT1"; */
+"HEw-my-uT1.text" = "Category";
+
+/* Class = "IBUILabel"; text = "Idea done count"; ObjectID = "JCZ-aB-oZz"; */
+"JCZ-aB-oZz.text" = "Idea done count";
+
+/* Class = "IBUINavigationItem"; title = "Action Card"; ObjectID = "KJ9-NI-3rq"; */
+"KJ9-NI-3rq.title" = "Action Card";
+
+/* Class = "IBUILabel"; text = "Idea Content"; ObjectID = "LGX-U8-wK6"; */
+"LGX-U8-wK6.text" = "Idea Content";
+
+/* Class = "IBUILabel"; text = "000"; ObjectID = "Maq-Ye-ZMp"; */
+"Maq-Ye-ZMp.text" = "000";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "OjN-zo-49A"; */
+"OjN-zo-49A.title" = "Categories";
+
+/* Class = "IBUILabel"; text = "User Name"; ObjectID = "PHN-g8-DDD"; */
+"PHN-g8-DDD.text" = "User Name";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "PmF-eS-YLD"; */
+"PmF-eS-YLD.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Story Image Content"; ObjectID = "PpX-rU-caR"; */
+"PpX-rU-caR.text" = "Story Image Content";
+
+/* Class = "IBUIButton"; normalTitle = "Read Stories"; ObjectID = "RXo-df-RKU"; */
+"RXo-df-RKU.normalTitle" = "Read Stories";
+
+/* Class = "IBUILabel"; text = "Location, Area"; ObjectID = "Scw-Az-FNP"; */
+"Scw-Az-FNP.text" = "Location, Area";
+
+/* Class = "IBUILabel"; text = "energy"; ObjectID = "UkZ-Hk-fBI"; */
+"UkZ-Hk-fBI.text" = "energy";
+
+/* Class = "IBUILabel"; text = "posts"; ObjectID = "WwU-mx-3GW"; */
+"WwU-mx-3GW.text" = "posts";
+
+/* Class = "IBUILabel"; text = "Date ago"; ObjectID = "Yg2-M7-8Ur"; */
+"Yg2-M7-8Ur.text" = "Date ago";
+
+/* Class = "IBUINavigationItem"; title = "Post Story"; ObjectID = "Ypa-bz-CI5"; */
+"Ypa-bz-CI5.title" = "Post Story";
+
+/* Class = "IBUILabel"; text = "Idea Title"; ObjectID = "a3g-pg-gbz"; */
+"a3g-pg-gbz.text" = "Idea Title";
+
+/* Class = "IBUILabel"; text = "Days ago"; ObjectID = "aBp-sZ-kbR"; */
+"aBp-sZ-kbR.text" = "Days ago";
+
+/* Class = "IBUIBarButtonItem"; title = "Categories"; ObjectID = "bAH-I1-UJl"; */
+"bAH-I1-UJl.title" = "Categories";
+
+/* Class = "IBUILabel"; text = "新北市, 汐止區"; ObjectID = "bBj-Yu-TGH"; */
+"bBj-Yu-TGH.text" = "新北市, 汐止區";
+
+/* Class = "IBUILabel"; text = "Idea Title"; ObjectID = "bEI-LO-YEe"; */
+"bEI-LO-YEe.text" = "Idea Title";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "bcz-Hl-Ogv"; */
+"bcz-Hl-Ogv.text" = "Subtitle";
+
+/* Class = "IBUINavigationItem"; title = "All"; ObjectID = "c1Z-cJ-tv7"; */
+"c1Z-cJ-tv7.title" = "All";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "cun-qf-v4O"; */
+"cun-qf-v4O.text" = "Label";
+
+/* Class = "IBUILabel"; text = "000"; ObjectID = "dUt-zH-3Vx"; */
+"dUt-zH-3Vx.text" = "000";
+
+/* Class = "IBUILabel"; text = "graphics"; ObjectID = "gmr-Jz-Khg"; */
+"gmr-Jz-Khg.text" = "graphics";
+
+/* Class = "IBUILabel"; text = "Story Content"; ObjectID = "h0G-O5-Pp4"; */
+"h0G-O5-Pp4.text" = "Story Content";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "jOk-wb-qQy"; */
+"jOk-wb-qQy.text" = "Title";
+
+/* Class = "IBUIButton"; normalTitle = "Share Story"; ObjectID = "kZV-Td-Fre"; */
+"kZV-Td-Fre.normalTitle" = "Share Story";
+
+/* Class = "IBUILabel"; text = "Idea description"; ObjectID = "mzx-qU-0gZ"; */
+"mzx-qU-0gZ.text" = "Idea description";
+
+/* Class = "IBUILabel"; text = "Story Content User Name"; ObjectID = "ohH-q6-peZ"; */
+"ohH-q6-peZ.text" = "Story Content User Name";
+
+/* Class = "IBUINavigationItem"; title = "My Profile"; ObjectID = "pEx-2o-rcz"; */
+"pEx-2o-rcz.title" = "My Profile";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "q2r-xl-5Ph"; */
+"q2r-xl-5Ph.text" = "Title";
+
+/* Class = "IBUINavigationItem"; title = "Today"; ObjectID = "qT4-d9-efv"; */
+"qT4-d9-efv.title" = "Today";
+
+/* Class = "IBUITabBarItem"; title = "Action Cards"; ObjectID = "s6D-AR-qJc"; */
+"s6D-AR-qJc.title" = "Action Cards";
+
+/* Class = "IBUILabel"; text = "Idea Name"; ObjectID = "u7Q-jc-SDv"; */
+"u7Q-jc-SDv.text" = "Idea Name";
+
+/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "wQb-Ee-9m6"; */
+"wQb-Ee-9m6.title" = "Settings";
+
+/* Class = "IBUILabel"; text = "Story Image User Name"; ObjectID = "wTL-oP-jic"; */
+"wTL-oP-jic.text" = "Story Image User Name";
+
+/* Class = "IBUINavigationItem"; title = "Stories"; ObjectID = "xFr-wJ-9dE"; */
+"xFr-wJ-9dE.title" = "Stories";
+
+/* Class = "IBUILabel"; text = "Idea title"; ObjectID = "ySL-XE-z1p"; */
+"ySL-XE-z1p.text" = "Idea title";
+
+/* Class = "IBUITextView"; text = "Share your best moment."; ObjectID = "ynq-l3-TkV"; */
+"ynq-l3-TkV.text" = "Share your best moment.";
+
+/* Class = "IBUILabel"; text = "Category Title"; ObjectID = "yww-c0-d9d"; */
+"yww-c0-d9d.text" = "Category Title";
+
+/* Class = "IBUILabel"; text = "一週前"; ObjectID = "zJe-q4-oEo"; */
+"zJe-q4-oEo.text" = "一週前";

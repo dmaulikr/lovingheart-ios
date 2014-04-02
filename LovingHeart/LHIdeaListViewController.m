@@ -13,6 +13,7 @@
 #import <UIAlertView+BlocksKit.h>
 #import "LHLoginViewController.h"
 #import "DAProgressOverlayView.h"
+#import "LHCategoriesPickController.h"
 
 @implementation LHIdeaListViewController
 
@@ -33,6 +34,11 @@
   [query includeKey:@"graphicPointer"];
   [query includeKey:@"categoryPointer"];
   [query whereKey:@"status" notEqualTo:@"close"];
+  
+  if (self.category) {
+    [query whereKey:@"categoryPointer" equalTo:self.category];
+    self.title = self.category.Name;
+  }
   
   // If no objects are loaded in memory, we look to the cache first to fill the table
   // and then subsequently do a query against the network.
@@ -144,6 +150,18 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  if ([segue.identifier isEqualToString:@"catgoriesPicker"]) {
+    UINavigationController *rootViewController = (UINavigationController *)segue.destinationViewController;
+    
+    LHCategoriesPickController *categoriesPick = (LHCategoriesPickController *)rootViewController.viewControllers[0];
+    [categoriesPick setSelectedCategory:self.category];
+
+    [categoriesPick setDidSelectedRowAtIndexPath:^(NSIndexPath *indexPath, LHCategory *category) {
+      self.category = category;
+      [self loadObjects];
+    }];
+  }
   
   if ([segue.identifier isEqual:@"pushIdeaCardViewController"]) {
     LHIdeaCardViewController *viewController = segue.destinationViewController;
