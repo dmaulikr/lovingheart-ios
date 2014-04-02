@@ -21,7 +21,7 @@
   self.parseClassName = @"Category";
   self.pullToRefreshEnabled = YES;
   self.paginationEnabled = YES;
-  self.objectsPerPage = 10;
+  self.objectsPerPage = 20;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -60,7 +60,8 @@
   // If no objects are loaded in memory, we look to the cache first to fill the table
   // and then subsequently do a query against the network.
   if (self.objects.count == 0) {
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    query.cachePolicy = kPFCachePolicyCacheElseNetwork;
+    query.maxCacheAge = 60 * 5;
   }
   
   [query orderByDescending:@"createdAt"];

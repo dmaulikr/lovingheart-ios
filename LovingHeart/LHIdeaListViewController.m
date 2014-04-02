@@ -158,8 +158,11 @@
     [categoriesPick setSelectedCategory:self.category];
 
     [categoriesPick setDidSelectedRowAtIndexPath:^(NSIndexPath *indexPath, LHCategory *category) {
-      self.category = category;
-      [self loadObjects];
+      if (![category.objectId isEqualToString:self.category.objectId]) {
+        self.category = category;
+        [self loadObjects];
+      }
+
     }];
   }
   
