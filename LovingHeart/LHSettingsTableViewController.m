@@ -9,6 +9,7 @@
 #import "LHSettingsTableViewController.h"
 #import <NIWebController.h>
 #import "LHLoginViewController.h"
+#import "LHSignUpViewController.h"
 #import <SVProgressHUD.h>
 #import "LHSettingsSwitcherTableViewCell.h"
 #import <UserVoice.h>
@@ -265,6 +266,7 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
     if ([PFUser currentUser] == nil) {
       LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
       loginViewController.delegate = self;
+      loginViewController.signUpController = [[LHSignUpViewController alloc] init];
       loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
       [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
     } else {

@@ -86,6 +86,11 @@
 		1C8A96F418EA24990093469C /* LHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96F318EA24990093469C /* LHUserViewController.m */; };
 		1C8A96F718EA2B860093469C /* LHUserImpact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96F618EA2B860093469C /* LHUserImpact.m */; };
 		1C8DC02C18EB99DA00262E5A /* LHStoriesFromCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */; };
+		1C8DC02F18EC6B2000262E5A /* background-red-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DC02D18EC6B2000262E5A /* background-red-2.png */; };
+		1C8DC03018EC6B2000262E5A /* background-red-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DC02E18EC6B2000262E5A /* background-red-2@2x.png */; };
+		1C8DC03218EC6CBD00262E5A /* lovingheart_black_red_clear_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DC03118EC6CBD00262E5A /* lovingheart_black_red_clear_logo@2x.png */; };
+		1C8DC03418EC6CEE00262E5A /* lovingheart_black_red_clear_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DC03318EC6CEE00262E5A /* lovingheart_black_red_clear_logo.png */; };
+		1C8DC03718EC6E2D00262E5A /* LHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DC03618EC6E2D00262E5A /* LHSignUpViewController.m */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -218,6 +223,12 @@
 		1C8A96F618EA2B860093469C /* LHUserImpact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserImpact.m; sourceTree = "<group>"; };
 		1C8DC02A18EB99DA00262E5A /* LHStoriesFromCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoriesFromCardViewController.h; sourceTree = "<group>"; };
 		1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoriesFromCardViewController.m; sourceTree = "<group>"; };
+		1C8DC02D18EC6B2000262E5A /* background-red-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red-2.png"; sourceTree = "<group>"; };
+		1C8DC02E18EC6B2000262E5A /* background-red-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red-2@2x.png"; sourceTree = "<group>"; };
+		1C8DC03118EC6CBD00262E5A /* lovingheart_black_red_clear_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lovingheart_black_red_clear_logo@2x.png"; sourceTree = "<group>"; };
+		1C8DC03318EC6CEE00262E5A /* lovingheart_black_red_clear_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lovingheart_black_red_clear_logo.png; sourceTree = "<group>"; };
+		1C8DC03518EC6E2D00262E5A /* LHSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSignUpViewController.h; sourceTree = "<group>"; };
+		1C8DC03618EC6E2D00262E5A /* LHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSignUpViewController.m; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -462,6 +473,10 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C8DC03318EC6CEE00262E5A /* lovingheart_black_red_clear_logo.png */,
+				1C8DC03118EC6CBD00262E5A /* lovingheart_black_red_clear_logo@2x.png */,
+				1C8DC02D18EC6B2000262E5A /* background-red-2.png */,
+				1C8DC02E18EC6B2000262E5A /* background-red-2@2x.png */,
 				1C3D498618EB794000F9C4D7 /* ic_action_emo_cool.png */,
 				1C3D498718EB794000F9C4D7 /* ic_action_emo_cool@2x.png */,
 				1C7C3F4018EA99C700B900CB /* 722-location-pin.png */,
@@ -514,6 +529,8 @@
 				1C3D7D8F18E2AB4100696BBE /* LHPostStoryViewController.m */,
 				1C3D7DB018E3B79700696BBE /* LHLoginViewController.h */,
 				1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */,
+				1C8DC03518EC6E2D00262E5A /* LHSignUpViewController.h */,
+				1C8DC03618EC6E2D00262E5A /* LHSignUpViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -612,14 +629,17 @@
 				1C670D8418E1CAE300D422CA /* 1055-ticket.png in Resources */,
 				1C8A96EC18E9B7DD0093469C /* 1099-list-1.png in Resources */,
 				1CD9F5EB18E134C40089CB4F /* 973-user@2x.png in Resources */,
+				1C8DC03218EC6CBD00262E5A /* lovingheart_black_red_clear_logo@2x.png in Resources */,
 				1CEF810118DEAD120011F412 /* Localizable.strings in Resources */,
 				1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */,
 				1C3D498918EB794000F9C4D7 /* ic_action_emo_cool@2x.png in Resources */,
 				1C7C3F3C18EA928B00B900CB /* 714-camera@2x.png in Resources */,
 				1801F62A188259080024A832 /* Images.xcassets in Resources */,
 				1C670D8518E1CAE300D422CA /* 1055-ticket@2x.png in Resources */,
+				1C8DC03418EC6CEE00262E5A /* lovingheart_black_red_clear_logo.png in Resources */,
 				1CD9F5EA18E134C40089CB4F /* 973-user.png in Resources */,
 				1C2D1A6C18E41B22007323B1 /* Default@2x.png in Resources */,
+				1C8DC03018EC6B2000262E5A /* background-red-2@2x.png in Resources */,
 				1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */,
 				1C3D7DB618E3BA8100696BBE /* background-red@2x.png in Resources */,
 				1C3D7D9418E2B03000696BBE /* card_default@2x.png in Resources */,
@@ -629,6 +649,7 @@
 				1C7C3F3818EA90E600B900CB /* 723-location-arrow@2x.png in Resources */,
 				1C8A96ED18E9B7DD0093469C /* 1099-list-1@2x.png in Resources */,
 				1C3D7DB518E3BA8100696BBE /* background-red.png in Resources */,
+				1C8DC02F18EC6B2000262E5A /* background-red-2.png in Resources */,
 				1801F625188259080024A832 /* Main.storyboard in Resources */,
 				1C3D7DA718E2C03400696BBE /* ic_action_emo_basic@2x.png in Resources */,
 				1C7C3F4218EA99C700B900CB /* 722-location-pin.png in Resources */,
@@ -699,6 +720,7 @@
 				1C8A96F418EA24990093469C /* LHUserViewController.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
 				1C3D499618EB832D00F9C4D7 /* LHCategoriesPickController.m in Sources */,
+				1C8DC03718EC6E2D00262E5A /* LHSignUpViewController.m in Sources */,
 				1C3D7D8A18E2A66C00696BBE /* LHSettingsTableViewController.m in Sources */,
 				1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */,
 				1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */,

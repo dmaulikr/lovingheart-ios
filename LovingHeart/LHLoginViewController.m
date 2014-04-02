@@ -14,21 +14,20 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-//  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red"]];
-//  UILabel *logoLabel = [[UILabel alloc] init];
-//  [logoLabel setText:@"LovingHeart"];
-//  [logoLabel setFont:[UIFont boldSystemFontOfSize:44]];
-//  logoLabel.shadowOffset = CGSizeMake(1, 1);
-//  logoLabel.shadowColor = [UIColor grayColor];
-//  [logoLabel sizeToFit];
-//  [logoLabel setTextColor:[UIColor colorWithHue:0.026 saturation:0.966 brightness:0.922 alpha:1]];
-//  self.logInView.logo = logoLabel;
+  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red"]];
+  self.logInView.usernameField.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red-2"]];
+  self.logInView.passwordField.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red-2"]];
   
-  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wordpress-logo-red-text"]];
+  
+  
+  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lovingheart_black_red_clear_logo"]];
   self.logInView.logo = imageView;
   if (!self.delegate) {
       self.delegate = self;
   }
+  
+  self.logInView.passwordForgottenButton.hidden = YES;
+  
 }
 
 #pragma mark - PFLogInViewControllerDelegate
