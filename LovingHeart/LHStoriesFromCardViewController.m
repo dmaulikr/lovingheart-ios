@@ -83,6 +83,7 @@
       if (!error) {
         UIImage *image = [UIImage imageWithData:data];
         StoryCell* cell = (StoryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+
         cell.pictureView.image = image;
         [cell setNeedsDisplay];
       }
@@ -106,6 +107,7 @@
         
       }
     }];
+  } else {
   }
   
   cell.locationLabel.text = storyObject.areaName;
