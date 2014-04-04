@@ -9,6 +9,8 @@
 #import "LHStoryViewController.h"
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 #import <AFNetworking/AFNetworking.h>
+#import <UIGestureRecognizer+BlocksKit.h>
+#import "LHUserProfileViewController.h"
 
 @interface LHStoryViewController ()
 
@@ -47,8 +49,21 @@
     
     [operation start];
   }
+  UITapGestureRecognizer *singleTap =  [UITapGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+    if (state == UIGestureRecognizerStateEnded) {
+      
+      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+      
+      LHUserProfileViewController *profileViewController = [sb instantiateViewControllerWithIdentifier:@"LHUserProfileViewController"];
+      [profileViewController setUser:self.story.StoryTeller];
+      [self.navigationController pushViewController:profileViewController animated:YES];
+    }
+  }];
+  [singleTap setNumberOfTapsRequired:1];
+  [self.avatarImageView addGestureRecognizer:singleTap];
   
   self.storyImageView.clipsToBounds = YES;
+  
   if (self.story.graphicPointer) {
     PFFile* file = (PFFile*)self.story.graphicPointer.imageFile;
     __block UIImageView *__storyImageView = self.storyImageView;
@@ -72,6 +87,7 @@
   self.storyDateLabel.text = [self.story.createdAt timeAgo];
   
 }
+
 
 - (void)didReceiveMemoryWarning
 {

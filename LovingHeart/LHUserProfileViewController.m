@@ -7,12 +7,15 @@
 //
 
 #import "LHUserProfileViewController.h"
+#import "LHPickerTableViewCell.h"
 
 @interface LHUserProfileViewController ()
 
 @end
 
-@implementation LHUserProfileViewController
+@implementation LHUserProfileViewController {
+  int tableViewContentHeight;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,15 +26,22 @@
 }
 
 - (void)awakeFromNib {
+  
+  self.title = NSLocalizedString(@"User Profile", @"User Profile");
+  
+  _userReportTableView = [[UITableView alloc] init];
+  self.userReportTableView.delegate = self;
+  self.userReportTableView.dataSource = self;
+  
   self.avatarImageView.layer.cornerRadius = self.avatarImageView.width / 2;
   self.avatarImageView.layer.masksToBounds = YES;
   self.avatarImageView.image = [UIImage imageNamed:@"defaultAvatar"];
   
-  self.userProfileScrollView.contentSize = CGSizeMake(self.userProfileScrollView.width, 1000);
-  
   _refreshControl = [[UIRefreshControl alloc] init];
   [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
   [self.userProfileScrollView addSubview:_refreshControl];
+  
+    [self.userProfileScrollView addSubview:self.userReportTableView];
 }
 
 - (void)viewDidLoad {
@@ -39,7 +49,26 @@
   // Do any additional setup after loading the view.
   [self awakeFromNib];
   
+  self.userTableView.hidden = YES;
   [self queryUserInfo];
+}
+
+- (void)viewDidLayoutSubviews {
+  [super viewDidLayoutSubviews];
+  
+  self.userReportTableView.frame = CGRectMake(self.avatarImageView.left, self.userTableView.top, self.userTableView.width, tableViewContentHeight);
+  
+  self.userProfileScrollView.contentSize = CGSizeMake(self.userProfileScrollView.width, self.userReportTableView.bottom + 10);
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,5 +145,32 @@
   }
 }
 
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *identifier = @"uitableviewcell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+  if (!cell) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+  }
+  [cell.textLabel setText:[NSString stringWithFormat:@"Report %li", (long)indexPath.row]];
+  return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  int height = 48;
+  if (indexPath.row == 0) {
+    tableViewContentHeight = height;
+  } else {
+    tableViewContentHeight += height;
+  }
+  
+  return height;
+  
+}
 
 @end

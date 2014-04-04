@@ -11,6 +11,10 @@
 #import <AFNetworking/AFNetworking.h>
 
 @interface LHUserProfileViewController : UIViewController
+<
+  UITableViewDataSource,
+  UITableViewDelegate
+>
 
 @property (nonatomic, strong) LHUser *user;
 
@@ -20,7 +24,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *numbersOfGraphicsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numbersOfEnergyLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *userProfileScrollView;
+@property (nonatomic, strong) UITableView *userReportTableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UITableView *userTableView;
 
 - (void)resetUser;
 - (void)queryUserInfo;
