@@ -1,28 +1,25 @@
 //
-//  LHUserViewController.m
+//  LHUserProfileViewController.m
 //  LovingHeart
 //
-//  Created by Edward Chiang on 2014/4/1.
+//  Created by Edward Chiang on 2014/4/4.
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "LHUserViewController.h"
-#import "LHUser.h"
-#import <AFNetworking/AFNetworking.h>
+#import "LHUserProfileViewController.h"
 
-@interface LHUserViewController ()
+@interface LHUserProfileViewController ()
 
 @end
 
-@implementation LHUserViewController
+@implementation LHUserProfileViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    // Custom initialization
-  }
-  return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
 
 - (void)awakeFromNib {
@@ -30,11 +27,11 @@
   self.avatarImageView.layer.masksToBounds = YES;
   self.avatarImageView.image = [UIImage imageNamed:@"defaultAvatar"];
   
-  self.scrollView.contentSize = CGSizeMake(self.scrollView.width, 1000);
+  self.userProfileScrollView.contentSize = CGSizeMake(self.userProfileScrollView.width, 1000);
   
   _refreshControl = [[UIRefreshControl alloc] init];
   [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-  [self.scrollView addSubview:_refreshControl];
+  [self.userProfileScrollView addSubview:_refreshControl];
 }
 
 - (void)viewDidLoad {
@@ -43,7 +40,6 @@
   [self awakeFromNib];
   
   [self queryUserInfo];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,15 +60,19 @@
  */
 
 - (void)refresh:(id)sender {
+  [self resetUser];
   [self queryUserInfo];
+}
+
+- (void)resetUser {
 }
 
 - (void)queryUserInfo {
   // Query current User
-  if ([PFUser currentUser]) {
+  if (self.user) {
     PFQuery *currentUserQuery = [LHUser query];
     [currentUserQuery includeKey:@"avatar"];
-    [currentUserQuery whereKey:@"objectId" equalTo:[PFUser currentUser].objectId];
+    [currentUserQuery whereKey:@"objectId" equalTo:self.user.objectId];
     currentUserQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [currentUserQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
       if (!error) {
@@ -100,7 +100,7 @@
     }];
     
     PFQuery *userImpactQuery = [LHUserImpact query];
-    [userImpactQuery whereKey:@"User" equalTo:[PFUser currentUser]];
+    [userImpactQuery whereKey:@"User" equalTo:self.user];
     userImpactQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [userImpactQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
       if (!error) {
@@ -115,5 +115,6 @@
     }];
   }
 }
+
 
 @end

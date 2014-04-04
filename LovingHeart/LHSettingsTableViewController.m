@@ -14,6 +14,7 @@
 #import "LHSettingsSwitcherTableViewCell.h"
 #import <UserVoice.h>
 #import <BlocksKit+UIKit.h>
+#import "LHCurrentUserViewController.h"
 
 @interface LHSettingsTableViewController ()
 
@@ -272,7 +273,10 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
     } else {
       [PFUser logOut];
       [self.tableView reloadData];
+      
+      [[NSNotificationCenter defaultCenter] postNotificationName:kUserProfileRefreshNotification object:nil];
     }
+    
   }
   else if (indexPath.section == 2 && indexPath.row == 0) {
     // Call this wherever you want to launch UserVoice
@@ -309,6 +313,8 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
   __block UITableView *tempTableView = self.tableView;
   [logInController dismissViewControllerAnimated:YES completion:^{
     [tempTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserProfileRefreshNotification object:nil];
   }];
 }
 

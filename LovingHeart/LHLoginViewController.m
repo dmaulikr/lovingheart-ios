@@ -8,17 +8,25 @@
 
 #import "LHLoginViewController.h"
 #import <SVProgressHUD.h>
+#import "LHSignUpViewController.h"
 
 @implementation LHLoginViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+      self.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+  }
+  return self;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.signUpController = [[LHSignUpViewController alloc] init];
+  
   self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red"]];
   self.logInView.usernameField.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red-2"]];
   self.logInView.passwordField.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-red-2"]];
-  
-  
   
   UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lovingheart_black_red_clear_logo"]];
   self.logInView.logo = imageView;
