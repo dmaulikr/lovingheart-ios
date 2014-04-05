@@ -28,9 +28,6 @@ static NSString *kWebAcknowledgementUrl = @"http://support.lovingheartapp.com/kn
 static NSString *kWebTermsOfUseUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/334311-terms-and-conditions-of-use#anchor";
 static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333113-privacy-policy#anchor";
 
-static NSString *kUserDefaultSupportEnglish = @"kUserDefaultSupportEnglish";
-static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -41,6 +38,11 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   [self.doneButtonItem setTarget:self];
   [self.doneButtonItem setAction:@selector(donePress:)];
+  
+  __block LHSettingsTableViewController *__self = self;
+  [[NSNotificationCenter defaultCenter] addObserverForName:kUserProfileRefreshNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    [__self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+  }];
 }
 
 - (void)donePress:(id)selector {
@@ -266,7 +268,6 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
   if (indexPath.section == 0 && indexPath.row == 0) {
     if ([PFUser currentUser] == nil) {
       LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
-      loginViewController.delegate = self;
       loginViewController.signUpController = [[LHSignUpViewController alloc] init];
       loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
       [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
@@ -301,32 +302,6 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
       [webController openURL:[NSURL URLWithString:kPrivacyPolicyUrl]];
     }
   }
-}
-
-#pragma mark - PFLogInViewControllerDelegate
-
-/*! @name Responding to Actions */
-/// Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-  [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Login Success. %@", user.email]];
-  
-  __block UITableView *tempTableView = self.tableView;
-  [logInController dismissViewControllerAnimated:YES completion:^{
-    [tempTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kUserProfileRefreshNotification object:nil];
-  }];
-}
-
-/// Sent to the delegate when the log in attempt fails.
-- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
-  NSLog(@"didFailToLogInWithError: %@", error);
-  
-  [SVProgressHUD showErrorWithStatus:[error.userInfo objectForKey:@"error"]];
-}
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-  [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

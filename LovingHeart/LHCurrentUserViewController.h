@@ -19,5 +19,3 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginActionButton;
 
 @end
-
-extern NSString* const kUserProfileRefreshNotification;

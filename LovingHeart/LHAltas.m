@@ -10,4 +10,6 @@
 
 @implementation LHAltas
 
+NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotification";
+
 @end

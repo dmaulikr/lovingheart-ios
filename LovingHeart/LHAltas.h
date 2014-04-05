@@ -14,3 +14,10 @@
 #define kColorLovingHeartRed [UIColor colorWithRed:0.933 green:0.357 blue:0.365 alpha:1]
 
 @end
+
+static NSString *kUserDefaultSupportEnglish = @"kUserDefaultSupportEnglish";
+static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
+static NSString *kUserDefaultHasBeenAskUser = @"kUserDefaultHasBeenAskUser";
+
+
+extern NSString* const kUserProfileRefreshNotification;

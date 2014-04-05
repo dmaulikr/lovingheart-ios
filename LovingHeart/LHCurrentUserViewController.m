@@ -18,8 +18,6 @@
 
 @implementation LHCurrentUserViewController
 
-NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotification";
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,7 +37,6 @@ NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotificat
   
   [self.loginActionButton bk_addEventHandler:^(id sender) {
     LHLoginViewController *loginViewController = [[LHLoginViewController alloc] init];
-    loginViewController.delegate = self;
     loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;;
 
     [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
@@ -63,28 +60,6 @@ NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotificat
     self.userProfileScrollView.hidden = YES;
     self.askUserLoginView.hidden = NO;
   }
-}
-
-#pragma mark - PFLogInViewControllerDelegate
-
-/*! @name Responding to Actions */
-/// Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-  [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Login Success. %@", user.email]];
-  [logInController dismissViewControllerAnimated:YES completion:nil];
-  [self resetUser];
-  [self queryUserInfo];
-}
-
-/// Sent to the delegate when the log in attempt fails.
-- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
-  NSLog(@"didFailToLogInWithError: %@", error);
-  
-  [SVProgressHUD showErrorWithStatus:[error.userInfo objectForKey:@"error"]];
-}
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-  [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 

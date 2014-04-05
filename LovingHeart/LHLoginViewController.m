@@ -9,6 +9,7 @@
 #import "LHLoginViewController.h"
 #import <SVProgressHUD.h>
 #import "LHSignUpViewController.h"
+#import <UIAlertView+BlocksKit.h>
 
 @implementation LHLoginViewController
 
@@ -43,8 +44,29 @@
 /*! @name Responding to Actions */
 /// Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:kUserProfileRefreshNotification object:nil];
+  
   [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Login Success. %@", user.email]];
   [logInController dismissViewControllerAnimated:YES completion:nil];
+  
+  // Check and ask user to sign up
+  BOOL hasAskUserNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultHasBeenAskUser];
+  if (!hasAskUserNotification) {
+    [UIAlertView bk_showAlertViewWithTitle:@"Send message" message:@"Let LovingHeart can push message to me." cancelButtonTitle:@"Cancel" otherButtonTitles:[NSArray arrayWithObjects:@"OK", @"No", nil] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+      NSLog(@"Ask and click: %i", buttonIndex);
+      switch (buttonIndex) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+        default:
+          break;
+      }
+    }];
+  }
 }
 
 /// Sent to the delegate when the log in attempt fails.
