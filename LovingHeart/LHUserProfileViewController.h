@@ -17,6 +17,8 @@
 >
 
 @property (nonatomic, strong) LHUser *user;
+@property (nonatomic, strong) NSMutableArray *stories;
+@property (nonatomic, strong) NSMutableArray *reportWords;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;

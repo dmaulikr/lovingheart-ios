@@ -29,6 +29,9 @@
   
   self.title = NSLocalizedString(@"User Profile", @"User Profile");
   
+  _stories = [[NSMutableArray alloc] init];
+  _reportWords = [[NSMutableArray alloc] init];
+  
   _userReportTableView = [[UITableView alloc] init];
   self.userReportTableView.delegate = self;
   self.userReportTableView.dataSource = self;
@@ -51,6 +54,7 @@
   
   self.userTableView.hidden = YES;
   [self queryUserInfo];
+  [self queryUserStories];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -94,6 +98,45 @@
 }
 
 - (void)resetUser {
+}
+
+- (void)queryUserStories {
+  if (self.user) {
+    PFQuery *query = [LHStory query];
+    
+    [query includeKey:@"StoryTeller"];
+    [query includeKey:@"StoryTeller.avatar"];
+    [query includeKey:@"graphicPointer"];
+    [query includeKey:@"ideaPointer"];
+    
+    [query whereKey:@"StoryTeller" equalTo:self.user];
+    
+    // If no objects are loaded in memory, we look to the cache first to fill the table
+    // and then subsequently do a query against the network.
+    if (self.stories.count == 0) {
+      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+      if (!error) {
+        [self.stories removeAllObjects];
+        [self.stories addObjectsFromArray:objects];
+        
+        NSMutableArray *tags = [[NSMutableArray alloc] init];
+        // Add to report
+        for(LHStory *eachStory in objects) {
+          [tags addObjectsFromArray:[eachStory.Tags componentsSeparatedByString:@","]];
+          [tags addObjectsFromArray:[eachStory.ideaPointer.Tags componentsSeparatedByString:@","]];
+        }
+        NSLog(@"Tags: %@", tags);
+        [_reportWords removeAllObjects];
+        [_reportWords addObjectsFromArray:tags];
+        
+        [self.userReportTableView reloadData];
+      }
+      
+    }];
+  }
 }
 
 - (void)queryUserInfo {
@@ -148,7 +191,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 30;
+  return _reportWords.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -157,7 +200,8 @@
   if (!cell) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
   }
-  [cell.textLabel setText:[NSString stringWithFormat:@"Report %li", (long)indexPath.row]];
+  NSString *reportWord = [_reportWords objectAtIndex:indexPath.row];
+  [cell.textLabel setText:[reportWord stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
   return cell;
 }
 
