@@ -52,15 +52,21 @@
   
   // Check and ask user to sign up
   BOOL hasAskUserNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultHasBeenAskUser];
-  if (!hasAskUserNotification) {
+  if (hasAskUserNotification) {
     [UIAlertView bk_showAlertViewWithTitle:@"Send message" message:@"Let LovingHeart can push message to me." cancelButtonTitle:@"Cancel" otherButtonTitles:[NSArray arrayWithObjects:@"OK", @"No", nil] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-      NSLog(@"Ask and click: %i", buttonIndex);
+      NSLog(@"Ask and click: %i", (int)buttonIndex);
       switch (buttonIndex) {
         case 0:
           break;
         case 1:
+          [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+          [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultHasBeenAskUser];
+          [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultUserWantPushNotification];
+          [[NSUserDefaults standardUserDefaults] synchronize];
           break;
         case 2:
+          [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultHasBeenAskUser];
+          [[NSUserDefaults standardUserDefaults] synchronize];
           break;
         default:
           break;

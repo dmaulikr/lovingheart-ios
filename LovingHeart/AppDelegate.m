@@ -36,6 +36,12 @@
   
   [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
   
+  BOOL hasAskUserNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultHasBeenAskUser];
+  BOOL userWantPushNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultUserWantPushNotification];
+  if (hasAskUserNotification && userWantPushNotification) {
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+  }
+  
   [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
   [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
   [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -77,7 +83,16 @@
   // Store the deviceToken in the current Installation and save it to Parse.
   PFInstallation *currentInstallation = [PFInstallation currentInstallation];
   [currentInstallation setDeviceTokenFromData:deviceToken];
+  if ([PFUser currentUser]) {
+    [currentInstallation setObject:[PFUser currentUser] forKey:@"user"];
+  }
+  if ([NSLocale preferredLanguages]) {
+    [currentInstallation setObject:[[NSLocale preferredLanguages] objectAtIndex:0] forKey:@"language"];
+  }
   [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *) error {
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
