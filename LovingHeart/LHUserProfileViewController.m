@@ -9,6 +9,7 @@
 #import "LHUserProfileViewController.h"
 #import "LHPickerTableViewCell.h"
 #import <BlocksKit/UIView+BlocksKit.h>
+#import "LHReportManager.h"
 
 @interface LHUserProfileViewController ()
 
@@ -123,15 +124,20 @@
         [self.stories removeAllObjects];
         [self.stories addObjectsFromArray:objects];
         
+        [_reportWords removeAllObjects];
+        
         NSMutableArray *tags = [[NSMutableArray alloc] init];
         // Add to report
         for(LHStory *eachStory in objects) {
           [tags addObjectsFromArray:[eachStory.Tags componentsSeparatedByString:@","]];
           [tags addObjectsFromArray:[eachStory.ideaPointer.Tags componentsSeparatedByString:@","]];
         }
-        NSLog(@"Tags: %@", tags);
-        [_reportWords removeAllObjects];
-        [_reportWords addObjectsFromArray:tags];
+
+        LHReportManager *reportManager = [[LHReportManager alloc] init];
+        NSString *reportOne = [reportManager analyzeStoriesTags:tags withUser:self.user];
+        if (reportOne) {
+          [_reportWords addObject:reportOne];
+        }
         
         [self.userReportTableView reloadData];
       }
@@ -212,6 +218,8 @@
   }
   NSString *reportWord = [_reportWords objectAtIndex:indexPath.row];
   [cell.textLabel setText:[reportWord stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+  [cell.textLabel setFont:[UIFont systemFontOfSize:17.f]];
+  cell.textLabel.numberOfLines = 0;
   return cell;
 }
 
@@ -221,6 +229,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   int height = 48;
+  
+  NSString *reportText = [self.reportWords objectAtIndex:indexPath.row];
+  
+  CGSize maximumIdeaContentLabelSize = CGSizeMake(100.f, FLT_MAX);
+  
+  NSDictionary *stringArrtibutes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:17.f] forKey:NSFontAttributeName];
+  
+  CGSize expectedIdeaContentLabelSize = [reportText boundingRectWithSize:maximumIdeaContentLabelSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:stringArrtibutes context:nil].size;
+  
+  height = expectedIdeaContentLabelSize.height;
   if (indexPath.row == 0) {
     tableViewContentHeight = height;
   } else {

@@ -31,6 +31,7 @@
 		1801F659188263900024A832 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F658188263900024A832 /* SystemConfiguration.framework */; };
 		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
 		18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */; };
+		1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C033FE418F3F85400C86955 /* LHReportManager.m */; };
 		1C2D1A6B18E41B22007323B1 /* Default_R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6918E41B22007323B1 /* Default_R4.png */; };
 		1C2D1A6C18E41B22007323B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6A18E41B22007323B1 /* Default@2x.png */; };
 		1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C35813B18E94B750025E259 /* UIView+Frame.m */; };
@@ -144,6 +145,8 @@
 		18F78B19188B6C68001491D5 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		18F78B1B188B6D2F001491D5 /* LHMostTypeStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMostTypeStoriesViewController.h; sourceTree = "<group>"; };
 		18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMostTypeStoriesViewController.m; sourceTree = "<group>"; };
+		1C033FE318F3F85400C86955 /* LHReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHReportManager.h; sourceTree = "<group>"; };
+		1C033FE418F3F85400C86955 /* LHReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHReportManager.m; sourceTree = "<group>"; };
 		1C2D1A6918E41B22007323B1 /* Default_R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_R4.png; sourceTree = "<group>"; };
 		1C2D1A6A18E41B22007323B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1C35813A18E94B750025E259 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				18F78B17188B6C52001491D5 /* View */,
 				1801F620188259080024A832 /* AppDelegate.h */,
 				1801F621188259080024A832 /* AppDelegate.m */,
+				1C033FE318F3F85400C86955 /* LHReportManager.h */,
+				1C033FE418F3F85400C86955 /* LHReportManager.m */,
 				1C7C3F3D18EA97FE00B900CB /* LHAltas.h */,
 				1C7C3F3E18EA97FE00B900CB /* LHAltas.m */,
 				1801F623188259080024A832 /* Main.storyboard */,
@@ -731,6 +736,7 @@
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
 				1C7C3F3F18EA97FE00B900CB /* LHAltas.m in Sources */,
 				1C8A96F418EA24990093469C /* LHCurrentUserViewController.m in Sources */,
+				1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
 				1C3D499618EB832D00F9C4D7 /* LHCategoriesPickController.m in Sources */,
 				1C8DC03718EC6E2D00262E5A /* LHSignUpViewController.m in Sources */,
