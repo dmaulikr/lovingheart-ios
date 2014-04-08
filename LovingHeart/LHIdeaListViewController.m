@@ -141,9 +141,7 @@
     
     CGSize expectedIdeaTitleSize = [currentIdea.Name boundingRectWithSize:maximumIdeaContentLabelSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:stringArrtibutes context:nil].size;
     
-    CGSize expectedIdeaDescriptionSize = [currentIdea.Description boundingRectWithSize:maximumIdeaContentLabelSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:stringArrtibutes context:nil].size;
-    
-    return expectedIdeaTitleSize.height + expectedIdeaDescriptionSize.height + 320 + 140;
+    return expectedIdeaTitleSize.height + 320 + 120;
   }
   
   return 140.f;

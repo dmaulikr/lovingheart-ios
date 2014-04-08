@@ -12,4 +12,19 @@
 
 NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotification";
 
++ (NSArray *)supportLanguageList {
+  // Load preference
+  BOOL isSupportEnglish = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportEnglish];
+  BOOL isSupportChinese = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportChinese];
+  
+  NSMutableArray *languageSupportList = [[NSMutableArray alloc] initWithCapacity:2];
+  if (isSupportChinese) {
+    [languageSupportList addObject:@"zh"];
+  }
+  if (isSupportEnglish) {
+    [languageSupportList addObject:@"en"];
+  }
+  return languageSupportList;
+}
+
 @end

@@ -51,8 +51,19 @@
   UVConfig *config = [UVConfig configWithSite:@"lovingheart.uservoice.com"];
   config.topicId = 51969;
   config.forumId = 244037;
-  // [config identifyUserWithEmail:@"email@example.com" name:@"User Name", guid:@"USER_ID");
   [UserVoice initialize:config];
+  
+  // Initialize preference
+  if ([NSLocale preferredLanguages] && [NSLocale preferredLanguages].count > 0) {
+    NSString *userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([userLanguage hasPrefix:@"en"] && ![[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultSupportEnglish]) {
+      [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultSupportEnglish];
+    }
+    if ([userLanguage hasPrefix:@"zh"] && ![[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultSupportChinese]) {
+      [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultSupportChinese];
+    }
+  }
+  
   
   return YES;
 }

@@ -94,7 +94,7 @@
   [cell.ideaCardTitleLabel setText:NSLocalizedString(todayObject.type, @"Feature")
    ];
   [cell.ideaContentLabel setText:todayObject.ideaPointer.Description];
-  [cell.ideaContentLabel sizeToFit];
+
   [cell.categoryTitleLabel setText:todayObject.ideaPointer.categoryPointer.Name];
   return cell;
 }
