@@ -8,6 +8,7 @@
 
 #import "LHUserProfileViewController.h"
 #import "LHPickerTableViewCell.h"
+#import <BlocksKit/UIView+BlocksKit.h>
 
 @interface LHUserProfileViewController ()
 
@@ -178,8 +179,17 @@
       if (!error) {
         LHUserImpact *userImpact = (LHUserImpact *)object;
         [self.numbersOfPostsLabel setText:[NSString stringWithFormat:@"%i", userImpact.sharedStoriesCount.intValue]];
-        [self.numbersOfGraphicsLabel setText:[NSString stringWithFormat:@"%i", userImpact.graphicsEarnedCount.intValue]];
-        [self.numbersOfEnergyLabel setText:[NSString stringWithFormat:@"%i", userImpact.reviewStarsImpact.intValue]];
+        [self.numbersOfPostsButton setTitle:[NSString stringWithFormat:@"%i\nposts", userImpact.sharedStoriesCount.intValue] forState:UIControlStateNormal];
+        [self.numbersOfPostsButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        self.numbersOfPostsButton.enabled = (userImpact.sharedStoriesCount.intValue > 0);
+
+        [self.numbersOfGraphicsButton setTitle:[NSString stringWithFormat:@"%i\ngraphics", userImpact.graphicsEarnedCount.intValue] forState:UIControlStateNormal];
+        [self.numbersOfGraphicsButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        self.numbersOfGraphicsButton.enabled = (userImpact.graphicsEarnedCount.intValue > 0);
+
+        [self.numbersOfEnergyButton setTitle:[NSString stringWithFormat:@"%i\nenergy", userImpact.reviewStarsImpact.intValue] forState:UIControlStateNormal];
+        [self.numbersOfEnergyButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        self.numbersOfEnergyButton.enabled = (userImpact.reviewStarsImpact.intValue > 0);
       }
       if ([self.refreshControl isRefreshing]) {
         [self.refreshControl endRefreshing];
@@ -205,6 +215,10 @@
   return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self.userReportTableView setNeedsLayout];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   int height = 48;
   if (indexPath.row == 0) {
@@ -212,9 +226,7 @@
   } else {
     tableViewContentHeight += height;
   }
-  
   return height;
-  
 }
 
 @end

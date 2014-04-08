@@ -21,10 +21,13 @@
 @property (nonatomic, strong) NSMutableArray *reportWords;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UIButton *numbersOfPostsButton;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numbersOfPostsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numbersOfGraphicsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *numbersOfGraphicsButton;
 @property (weak, nonatomic) IBOutlet UILabel *numbersOfEnergyLabel;
+@property (weak, nonatomic) IBOutlet UIButton *numbersOfEnergyButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *userProfileScrollView;
 @property (nonatomic, strong) UITableView *userReportTableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
