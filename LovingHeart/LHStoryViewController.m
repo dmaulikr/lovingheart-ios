@@ -11,6 +11,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import <UIGestureRecognizer+BlocksKit.h>
 #import "LHUserProfileViewController.h"
+#import <BlocksKit/UIActionSheet+BlocksKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface LHStoryViewController ()
 
@@ -86,6 +88,8 @@
   self.storyLocationLabel.text = self.story.areaName;
   self.storyDateLabel.text = [self.story.createdAt timeAgo];
   
+  self.shareButton.target = self;
+  self.shareButton.action = @selector(shareButtonClicked:);
 }
 
 
@@ -93,6 +97,102 @@
 {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)shareButtonClicked:(id)sender {
+  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Share"];
+  __block UIActionSheet *__actionSheet = actionSheet;
+  [actionSheet bk_addButtonWithTitle:@"Share to Facebook" handler:^{
+    FBRequest *fbRequest = [FBRequest requestForMe];
+    FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
+    params.link = [NSURL URLWithString:[NSString stringWithFormat:@"http://tw.lovingheartapp.com/story/%@", self.story.objectId]];
+    if ([self.story.status isEqualToString:@"anonymous"]) {
+      params.name = @"Anonymous";
+    } else {
+      params.name = self.story.StoryTeller.name;
+    }
+    if (self.story.ideaPointer) {
+      PFObject *idea = [self.story.ideaPointer fetchIfNeeded];
+      params.caption = idea[@"Name"];
+    } else {
+      params.caption = @"This story has inspired me.";
+    }
+    if ([self.story.graphicPointer.imageType isEqualToString:@"file"]) {
+      params.picture = [NSURL URLWithString:self.story.graphicPointer.imageFile.url];
+    } else if (self.story.graphicPointer.imageUrl) {
+      params.picture = [NSURL URLWithString:self.story.graphicPointer.imageUrl];
+    }
+    
+    params.description = self.story.Content;
+    
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+      [FBDialogs presentShareDialogWithLink:params.link name:params.name caption:params.caption description:params.description picture:params.picture clientState:nil handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+        if (error) {
+          NSLog(@"Error publishing story: %@", error.description);
+        } else {
+          NSLog(@"result %@", results);
+          [SVProgressHUD showSuccessWithStatus:@"Share to Facebook successfully."];
+        }
+      }];
+    } else {
+      // Put together the dialog parameters
+      NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                     params.name, @"name",
+                                     params.caption, @"caption",
+                                     params.description, @"description",
+                                     [params.link absoluteString], @"link",
+                                     [params.picture absoluteString], @"picture",
+                                     nil];
+      
+      // Show the feed dialog
+      [FBWebDialogs presentFeedDialogModallyWithSession:fbRequest.session
+                                             parameters:paramsDictionary
+                                                handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                  if (error) {
+                                                    // An error occurred, we need to handle the error
+                                                    // See: https://developers.facebook.com/docs/ios/errors
+                                                    NSLog(@"Error publishing story: %@", error.description);
+                                                  } else {
+                                                    if (result == FBWebDialogResultDialogNotCompleted) {
+                                                      // User cancelled.
+                                                      NSLog(@"User cancelled.");
+                                                    } else {
+                                                      // Handle the publish feed callback
+                                                      NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                      
+                                                      if (![urlParams valueForKey:@"post_id"]) {
+                                                        // User cancelled.
+                                                        NSLog(@"User cancelled.");
+                                                        
+                                                      } else {
+                                                        // User clicked the Share button
+                                                        NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                        NSLog(@"result %@", result);
+                                                        [SVProgressHUD showSuccessWithStatus:@"Share to Facebook successfully."];
+                                                      }
+                                                    }
+                                                  }
+                                                }];
+    }
+  }];
+  [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
+    [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+  }];
+  [actionSheet showInView:self.view];
+  
+}
+
+// A function for parsing URL parameters returned by the Feed Dialog.
+- (NSDictionary*)parseURLParams:(NSString *)query {
+  NSArray *pairs = [query componentsSeparatedByString:@"&"];
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+  for (NSString *pair in pairs) {
+    NSArray *kv = [pair componentsSeparatedByString:@"="];
+    NSString *val =
+    [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    params[kv[0]] = val;
+  }
+  return params;
 }
 
 @end

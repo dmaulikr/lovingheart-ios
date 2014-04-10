@@ -10,6 +10,8 @@
 #import "LHParseObject.h"
 #import <UVConfig.h>
 #import <uservoice-iphone-sdk/UserVoice.h>
+#import "LHStoryViewController.h"
+#import "LHMainViewController.h"
 
 @implementation AppDelegate
 
@@ -107,11 +109,53 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
+  
+  return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session] fallbackHandler:^(FBAppCall *call) {
+    // Incoming link processing goes here
+    // Retrieve the link associated with the post
+    NSURL *targetURL = [[call appLinkData] targetURL];
+    
+    if (targetURL && [targetURL.absoluteString hasPrefix:@"http://tw.lovingheartapp.com"]) {
+      NSArray *urlArray = [targetURL.absoluteString componentsSeparatedByString:@"/"];
+      if (urlArray.count >= 4) {
+        NSString *objectId = [urlArray objectAtIndex:(urlArray.count - 1)];
+        NSString *object = [urlArray objectAtIndex:(urlArray.count - 2)];
+        if ([object isEqualToString:@"story"]) {
+          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+          LHStoryViewController *storyViewController = (LHStoryViewController *)[storyboard instantiateViewControllerWithIdentifier:@"StoryViewController"];
+          
+          LHStory *story = [[LHStory alloc] init];
+          [story setObjectId:objectId];
+          storyViewController.story = story;
+          
+          LHMainViewController *mainViewController = (LHMainViewController *)self.window.rootViewController;
+          [mainViewController setSelectedIndex:2];
+          
+          [((UINavigationController *)mainViewController.selectedViewController) pushViewController:storyViewController animated:YES];
+        }
+      }
+    }
+ 
+  }];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
+
+/**
+ * A function for parsing URL parameters.
+ */
+- (NSDictionary*)parseURLParams:(NSString *)query {
+  NSArray *pairs = [query componentsSeparatedByString:@"&"];
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+  for (NSString *pair in pairs) {
+    NSArray *kv = [pair componentsSeparatedByString:@"="];
+    NSString *val = [[kv objectAtIndex:1]
+                     stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [params setObject:val forKey:[kv objectAtIndex:0]];
+  }
+  return params;
 }
 
 @end

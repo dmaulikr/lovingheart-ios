@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *storyImageView;
 @property (weak, nonatomic) IBOutlet UILabel *storyLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *storyDateLabel;
-
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 
 @end
