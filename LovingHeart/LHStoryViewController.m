@@ -30,11 +30,7 @@
 }
 
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view.
-  NSLog(@"Story Content: %@", self.story.Content);
-  
+- (void)loadViewFromObject {
   self.avatarImageView.layer.cornerRadius = 25;
   self.avatarImageView.layer.masksToBounds = YES;
   self.avatarImageView.image = [UIImage imageNamed:@"defaultAvatar"];
@@ -71,6 +67,7 @@
     __block UIImageView *__storyImageView = self.storyImageView;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
       if (!error) {
+        self.storyImageView.hidden = NO;
         UIImage *image = [UIImage imageWithData:data];
         __storyImageView.image = image;
         [__storyImageView setNeedsDisplay];
@@ -87,9 +84,32 @@
   
   self.storyLocationLabel.text = self.story.areaName;
   self.storyDateLabel.text = [self.story.createdAt timeAgo];
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  NSLog(@"Story Content: %@", self.story.Content);
   
+  [self loadViewFromObject];
   self.shareButton.target = self;
   self.shareButton.action = @selector(shareButtonClicked:);
+  
+  if (!self.story.Content) {
+    
+    __block LHStoryViewController *__self = self;
+    PFQuery *query = [LHStory query];
+    [query includeKey:@"StoryTeller"];
+    [query includeKey:@"StoryTeller.avatar"];
+    [query includeKey:@"graphicPointer"];
+    [query includeKey:@"ideaPointer"];
+    [query getObjectInBackgroundWithId:self.story.objectId block:^(PFObject *object, NSError *error) {
+      if (!error) {
+        __self.story = (LHStory *)object;
+        [__self loadViewFromObject];
+      }
+    }];
+  }
 }
 
 
@@ -137,12 +157,12 @@
     } else {
       // Put together the dialog parameters
       NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                     params.name, @"name",
-                                     params.caption, @"caption",
-                                     params.description, @"description",
-                                     [params.link absoluteString], @"link",
-                                     [params.picture absoluteString], @"picture",
-                                     nil];
+                                               params.name, @"name",
+                                               params.caption, @"caption",
+                                               params.description, @"description",
+                                               [params.link absoluteString], @"link",
+                                               [params.picture absoluteString], @"picture",
+                                               nil];
       
       // Show the feed dialog
       [FBWebDialogs presentFeedDialogModallyWithSession:fbRequest.session
