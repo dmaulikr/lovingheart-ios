@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 @property (weak, nonatomic) IBOutlet UILabel *ideaCategoryNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ideaCategoryContentLabel;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

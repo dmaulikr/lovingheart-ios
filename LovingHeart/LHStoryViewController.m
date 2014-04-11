@@ -55,6 +55,7 @@
   } else {
       [self loadViewFromObject];
   }
+  
 }
 
 
@@ -222,6 +223,10 @@
     self.ideaCategoryNameLabel.text = category.Name;
     self.ideaCategoryContentLabel.text = self.story.ideaPointer.Name;
   }
+  
+  self.containerView.frame = CGRectMake(self.containerView.left, self.containerView.top, self.containerView.width, self.ideaCategoryContentLabel.bottom + 10);
+  
+  self.scrollView.contentSize = self.containerView.frame.size;
 }
 
 @end
