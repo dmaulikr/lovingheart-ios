@@ -29,69 +29,11 @@
   return self;
 }
 
-
-- (void)loadViewFromObject {
-  self.avatarImageView.layer.cornerRadius = 25;
-  self.avatarImageView.layer.masksToBounds = YES;
-  self.avatarImageView.image = [UIImage imageNamed:@"defaultAvatar"];
-  if (self.story.StoryTeller.avatar) {
-    NSURL* imageUrl = [NSURL URLWithString:self.story.StoryTeller.avatar.imageUrl];
-    NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
-    AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFImageResponseSerializer serializer];
-    
-    __block UIImageView *__avatarImageView = self.avatarImageView;
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-      __avatarImageView.image = responseObject;
-    } failure:nil];
-    
-    [operation start];
-  }
-  UITapGestureRecognizer *singleTap =  [UITapGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
-    if (state == UIGestureRecognizerStateEnded) {
-      
-      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-      
-      LHUserProfileViewController *profileViewController = [sb instantiateViewControllerWithIdentifier:@"LHUserProfileViewController"];
-      [profileViewController setUser:self.story.StoryTeller];
-      [self.navigationController pushViewController:profileViewController animated:YES];
-    }
-  }];
-  [singleTap setNumberOfTapsRequired:1];
-  [self.avatarImageView addGestureRecognizer:singleTap];
-  
-  self.storyImageView.clipsToBounds = YES;
-  
-  if (self.story.graphicPointer) {
-    PFFile* file = (PFFile*)self.story.graphicPointer.imageFile;
-    __block UIImageView *__storyImageView = self.storyImageView;
-    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-      if (!error) {
-        self.storyImageView.hidden = NO;
-        UIImage *image = [UIImage imageWithData:data];
-        __storyImageView.image = image;
-        [__storyImageView setNeedsDisplay];
-      }
-    }];
-  } else {
-    self.storyImageView.hidden = YES;
-  }
-  
-  [self.userNameLabel setText:self.story.StoryTeller.name];
-  [self.storyContentLabel setText:self.story.Content];
-  [self.storyContentLabel setNumberOfLines:0];
-  [self.storyContentLabel sizeToFit];
-  
-  self.storyLocationLabel.text = self.story.areaName;
-  self.storyDateLabel.text = [self.story.createdAt timeAgo];
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   NSLog(@"Story Content: %@", self.story.Content);
   
-  [self loadViewFromObject];
   self.shareButton.target = self;
   self.shareButton.action = @selector(shareButtonClicked:);
   
@@ -103,12 +45,15 @@
     [query includeKey:@"StoryTeller.avatar"];
     [query includeKey:@"graphicPointer"];
     [query includeKey:@"ideaPointer"];
+    [query includeKey:@"ideaPointer.categoryPointer"];
     [query getObjectInBackgroundWithId:self.story.objectId block:^(PFObject *object, NSError *error) {
       if (!error) {
         __self.story = (LHStory *)object;
         [__self loadViewFromObject];
       }
     }];
+  } else {
+      [self loadViewFromObject];
   }
 }
 
@@ -213,6 +158,70 @@
     params[kv[0]] = val;
   }
   return params;
+}
+
+#pragma mark - private
+
+- (void)loadViewFromObject {
+  self.avatarImageView.layer.cornerRadius = 25;
+  self.avatarImageView.layer.masksToBounds = YES;
+  self.avatarImageView.image = [UIImage imageNamed:@"defaultAvatar"];
+  if (self.story.StoryTeller.avatar) {
+    NSURL* imageUrl = [NSURL URLWithString:self.story.StoryTeller.avatar.imageUrl];
+    NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
+    AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFImageResponseSerializer serializer];
+    
+    __block UIImageView *__avatarImageView = self.avatarImageView;
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+      __avatarImageView.image = responseObject;
+    } failure:nil];
+    
+    [operation start];
+  }
+  UITapGestureRecognizer *singleTap =  [UITapGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+    if (state == UIGestureRecognizerStateEnded) {
+      
+      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+      
+      LHUserProfileViewController *profileViewController = [sb instantiateViewControllerWithIdentifier:@"LHUserProfileViewController"];
+      [profileViewController setUser:self.story.StoryTeller];
+      [self.navigationController pushViewController:profileViewController animated:YES];
+    }
+  }];
+  [singleTap setNumberOfTapsRequired:1];
+  [self.avatarImageView addGestureRecognizer:singleTap];
+  
+  self.storyImageView.clipsToBounds = YES;
+  
+  if (self.story.graphicPointer) {
+    PFFile* file = (PFFile*)self.story.graphicPointer.imageFile;
+    __block UIImageView *__storyImageView = self.storyImageView;
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+      if (!error) {
+        self.storyImageView.hidden = NO;
+        UIImage *image = [UIImage imageWithData:data];
+        __storyImageView.image = image;
+        [__storyImageView setNeedsDisplay];
+      }
+    }];
+  } else {
+    self.storyImageView.hidden = YES;
+  }
+  
+  [self.userNameLabel setText:self.story.StoryTeller.name];
+  [self.storyContentLabel setText:self.story.Content];
+  [self.storyContentLabel setNumberOfLines:0];
+  [self.storyContentLabel sizeToFit];
+  
+  self.storyLocationLabel.text = self.story.areaName;
+  self.storyDateLabel.text = [self.story.createdAt timeAgo];
+  
+  if (self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
+    LHCategory *category = (LHCategory *)[self.story.ideaPointer.categoryPointer fetchIfNeeded];
+    self.ideaCategoryNameLabel.text = category.Name;
+    self.ideaCategoryContentLabel.text = self.story.ideaPointer.Name;
+  }
 }
 
 @end

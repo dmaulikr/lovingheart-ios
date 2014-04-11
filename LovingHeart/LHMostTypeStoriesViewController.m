@@ -32,6 +32,7 @@
   [query includeKey:@"StoryTeller.avatar"];
   [query includeKey:@"graphicPointer"];
   [query includeKey:@"ideaPointer"];
+  [query includeKey:@"ideaPointer.categoryPointer"];
   
   [query whereKey:@"language" containedIn:[LHAltas supportLanguageList]];
   

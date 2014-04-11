@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *storyLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *storyDateLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+@property (weak, nonatomic) IBOutlet UILabel *ideaCategoryNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ideaCategoryContentLabel;
 
 @end
