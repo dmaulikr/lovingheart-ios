@@ -275,12 +275,17 @@
   self.storyDateLabel.text = [self.story.createdAt timeAgo];
   
   if (self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
+    self.ideaCategoryContentLabel.hidden = NO;
+    self.ideaCategoryNameLabel.hidden = NO;
     LHCategory *category = (LHCategory *)[self.story.ideaPointer.categoryPointer fetchIfNeeded];
     self.ideaCategoryNameLabel.text = category.Name;
     self.ideaCategoryContentLabel.text = self.story.ideaPointer.Name;
+  } else {
+    self.ideaCategoryContentLabel.hidden = YES;
+    self.ideaCategoryNameLabel.hidden = YES;
   }
   
-  self.containerView.frame = CGRectMake(self.containerView.left, self.containerView.top, self.containerView.width, self.ideaCategoryContentLabel.bottom + 10);
+  self.containerView.frame = CGRectMake(self.containerView.left, self.containerView.top, self.containerView.width, self.encourageButton.bottom + 50);
   
   self.scrollView.contentSize = self.containerView.frame.size;
 }

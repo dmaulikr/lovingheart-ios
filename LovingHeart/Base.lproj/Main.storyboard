@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="W5g-T2-O6Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="W5g-T2-O6Q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -318,6 +318,16 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwK-uZ-bdv">
+                                                <rect key="frame" x="123" y="527" width="74" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Encourage">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="RIr-jQ-apS" kind="modal" id="8m1-CL-5nI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
@@ -329,6 +339,7 @@
                                             <constraint firstItem="AjX-Rh-GIv" firstAttribute="trailing" secondItem="jKk-lQ-vFA" secondAttribute="trailing" id="8nT-mx-3Bw"/>
                                             <constraint firstItem="VMh-xh-fXG" firstAttribute="leading" secondItem="uxW-zk-ijZ" secondAttribute="leading" id="B2o-n3-VqU"/>
                                             <constraint firstItem="VMh-xh-fXG" firstAttribute="top" secondItem="xh4-wR-53U" secondAttribute="bottom" constant="8" symbolic="YES" id="BWj-T0-aUN"/>
+                                            <constraint firstItem="AwK-uZ-bdv" firstAttribute="centerX" secondItem="AjX-Rh-GIv" secondAttribute="centerX" id="CLz-Nv-mf3"/>
                                             <constraint firstItem="Vta-gv-ejb" firstAttribute="top" secondItem="7iI-CO-cSZ" secondAttribute="bottom" constant="8" symbolic="YES" id="L4i-fb-c9C"/>
                                             <constraint firstItem="AjX-Rh-GIv" firstAttribute="leading" secondItem="xh4-wR-53U" secondAttribute="leading" id="MRO-33-aNw"/>
                                             <constraint firstItem="jKk-lQ-vFA" firstAttribute="top" secondItem="Vta-gv-ejb" secondAttribute="bottom" constant="8" symbolic="YES" id="OAg-vd-eHm"/>
@@ -340,6 +351,7 @@
                                             <constraint firstItem="AjX-Rh-GIv" firstAttribute="top" secondItem="Rhg-0r-bOs" secondAttribute="bottom" constant="8" symbolic="YES" id="jLp-y8-drl"/>
                                             <constraint firstItem="7iI-CO-cSZ" firstAttribute="top" secondItem="uxW-zk-ijZ" secondAttribute="top" constant="20" symbolic="YES" id="mtx-zC-eRj"/>
                                             <constraint firstItem="xh4-wR-53U" firstAttribute="leading" secondItem="Vta-gv-ejb" secondAttribute="leading" id="tkX-Qg-wl5"/>
+                                            <constraint firstItem="AwK-uZ-bdv" firstAttribute="top" secondItem="AjX-Rh-GIv" secondAttribute="bottom" constant="8" symbolic="YES" id="u85-LP-PcQ"/>
                                             <constraint firstItem="Rhg-0r-bOs" firstAttribute="leading" secondItem="VMh-xh-fXG" secondAttribute="leading" id="vGK-VX-4uC"/>
                                             <constraint firstItem="Az7-uw-1wR" firstAttribute="leading" secondItem="7iI-CO-cSZ" secondAttribute="trailing" constant="8" symbolic="YES" id="wh8-CN-zos"/>
                                         </constraints>
@@ -353,26 +365,11 @@
                                     <constraint firstAttribute="bottom" secondItem="uxW-zk-ijZ" secondAttribute="bottom" constant="-70" id="gYR-Ev-sT5"/>
                                 </constraints>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPF-aJ-SDG">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem image="726-star.png" id="W3c-EI-pgr">
-                                        <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="RIr-jQ-apS" kind="modal" id="BMM-2d-dE9"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="QPF-aJ-SDG" secondAttribute="bottom" id="0VH-vF-4Sg"/>
                             <constraint firstAttribute="bottom" secondItem="YD4-gJ-uis" secondAttribute="bottom" constant="-62" id="HLQ-m8-w1K"/>
-                            <constraint firstItem="YD4-gJ-uis" firstAttribute="trailing" secondItem="QPF-aJ-SDG" secondAttribute="trailing" id="WvF-vK-O3O"/>
                             <constraint firstItem="YD4-gJ-uis" firstAttribute="top" secondItem="AnF-ve-Qdp" secondAttribute="top" id="XBk-Im-2j6"/>
-                            <constraint firstItem="YD4-gJ-uis" firstAttribute="leading" secondItem="QPF-aJ-SDG" secondAttribute="leading" id="f62-tw-3J1"/>
                             <constraint firstItem="YD4-gJ-uis" firstAttribute="leading" secondItem="AnF-ve-Qdp" secondAttribute="leading" id="heX-Ec-Jkk"/>
                         </constraints>
                     </view>
@@ -382,12 +379,11 @@
                     <connections>
                         <outlet property="avatarImageView" destination="7iI-CO-cSZ" id="C4h-bf-nBa"/>
                         <outlet property="containerView" destination="uxW-zk-ijZ" id="P3g-AX-e2V"/>
-                        <outlet property="encourageButtonItem" destination="W3c-EI-pgr" id="amp-5R-CbG"/>
+                        <outlet property="encourageButton" destination="AwK-uZ-bdv" id="jCH-3K-Vv5"/>
                         <outlet property="ideaCategoryContentLabel" destination="AjX-Rh-GIv" id="IQe-Zg-iXz"/>
                         <outlet property="ideaCategoryNameLabel" destination="Rhg-0r-bOs" id="Blp-Sn-vO8"/>
                         <outlet property="scrollView" destination="YD4-gJ-uis" id="h3o-C8-8aO"/>
                         <outlet property="shareButton" destination="ksm-3q-k7Y" id="ena-EH-ikB"/>
-                        <outlet property="storyBottomToolbar" destination="QPF-aJ-SDG" id="mqj-kW-tcE"/>
                         <outlet property="storyContentLabel" destination="Vta-gv-ejb" id="QyA-EZ-Ztx"/>
                         <outlet property="storyDateLabel" destination="jKk-lQ-vFA" id="dFh-b7-RyR"/>
                         <outlet property="storyImageView" destination="VMh-xh-fXG" id="zVk-wv-YEA"/>
@@ -1546,7 +1542,6 @@
         <image name="1039-files-box.png" width="28" height="26"/>
         <image name="714-camera.png" width="28" height="21"/>
         <image name="723-location-arrow.png" width="28" height="28"/>
-        <image name="726-star.png" width="28" height="26"/>
         <image name="912-gears.png" width="28" height="28"/>
         <image name="973-user.png" width="28" height="24"/>
         <image name="card_default.png" width="512" height="512"/>
@@ -1558,8 +1553,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nje-1x-q1U"/>
+        <segue reference="rPm-lU-hyR"/>
+        <segue reference="yFf-jA-AlC"/>
         <segue reference="dna-LH-9MD"/>
-        <segue reference="SmJ-FX-iAz"/>
     </inferredMetricsTieBreakers>
 </document>
