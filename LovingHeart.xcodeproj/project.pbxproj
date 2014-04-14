@@ -58,6 +58,11 @@
 		1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */; };
 		1C3D7DB518E3BA8100696BBE /* background-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7DB318E3BA8100696BBE /* background-red.png */; };
 		1C3D7DB618E3BA8100696BBE /* background-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D7DB418E3BA8100696BBE /* background-red@2x.png */; };
+		1C52FF0F18FBDDBE007B7262 /* LHUserCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF0E18FBDDBE007B7262 /* LHUserCollectionsViewController.m */; };
+		1C52FF1318FBDE1E007B7262 /* LHUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1218FBDE1E007B7262 /* LHUserInfoCell.m */; };
+		1C52FF1618FBE5AB007B7262 /* LHReportViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1518FBE5AB007B7262 /* LHReportViewCell.m */; };
+		1C52FF1918FC2D52007B7262 /* LHStateInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1818FC2D52007B7262 /* LHStateInfoCell.m */; };
+		1C52FF1C18FC3077007B7262 /* LHStateGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1B18FC3077007B7262 /* LHStateGroupCell.m */; };
 		1C5FB47D18E95ADA004F7FCE /* LHIdeaActionCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */; };
 		1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */; };
 		1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */; };
@@ -195,6 +200,16 @@
 		1C3D7DB118E3B79700696BBE /* LHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLoginViewController.m; sourceTree = "<group>"; };
 		1C3D7DB318E3BA8100696BBE /* background-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red.png"; sourceTree = "<group>"; };
 		1C3D7DB418E3BA8100696BBE /* background-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-red@2x.png"; sourceTree = "<group>"; };
+		1C52FF0D18FBDDBE007B7262 /* LHUserCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserCollectionsViewController.h; sourceTree = "<group>"; };
+		1C52FF0E18FBDDBE007B7262 /* LHUserCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserCollectionsViewController.m; sourceTree = "<group>"; };
+		1C52FF1118FBDE1E007B7262 /* LHUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserInfoCell.h; sourceTree = "<group>"; };
+		1C52FF1218FBDE1E007B7262 /* LHUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserInfoCell.m; sourceTree = "<group>"; };
+		1C52FF1418FBE5AB007B7262 /* LHReportViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHReportViewCell.h; sourceTree = "<group>"; };
+		1C52FF1518FBE5AB007B7262 /* LHReportViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHReportViewCell.m; sourceTree = "<group>"; };
+		1C52FF1718FC2D52007B7262 /* LHStateInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStateInfoCell.h; sourceTree = "<group>"; };
+		1C52FF1818FC2D52007B7262 /* LHStateInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStateInfoCell.m; sourceTree = "<group>"; };
+		1C52FF1A18FC3077007B7262 /* LHStateGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStateGroupCell.h; sourceTree = "<group>"; };
+		1C52FF1B18FC3077007B7262 /* LHStateGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStateGroupCell.m; sourceTree = "<group>"; };
 		1C5FB47B18E95ADA004F7FCE /* LHIdeaActionCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaActionCardCell.h; sourceTree = "<group>"; };
 		1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaActionCardCell.m; sourceTree = "<group>"; };
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
@@ -447,10 +462,13 @@
 		1C3D498F18EB824300F9C4D7 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				1C52FF1018FBDDFF007B7262 /* CollectionView */,
 				1C992A7618EE439F000415B4 /* LHUserProfileViewController.h */,
 				1C992A7718EE439F000415B4 /* LHUserProfileViewController.m */,
 				1C8A96F218EA24990093469C /* LHCurrentUserViewController.h */,
 				1C8A96F318EA24990093469C /* LHCurrentUserViewController.m */,
+				1C52FF0D18FBDDBE007B7262 /* LHUserCollectionsViewController.h */,
+				1C52FF0E18FBDDBE007B7262 /* LHUserCollectionsViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -472,6 +490,21 @@
 				1C75980418F7BAEE003E6BA6 /* LHStoryReviewViewController.m */,
 			);
 			name = Stories;
+			sourceTree = "<group>";
+		};
+		1C52FF1018FBDDFF007B7262 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1C52FF1118FBDE1E007B7262 /* LHUserInfoCell.h */,
+				1C52FF1218FBDE1E007B7262 /* LHUserInfoCell.m */,
+				1C52FF1418FBE5AB007B7262 /* LHReportViewCell.h */,
+				1C52FF1518FBE5AB007B7262 /* LHReportViewCell.m */,
+				1C52FF1718FC2D52007B7262 /* LHStateInfoCell.h */,
+				1C52FF1818FC2D52007B7262 /* LHStateInfoCell.m */,
+				1C52FF1A18FC3077007B7262 /* LHStateGroupCell.h */,
+				1C52FF1B18FC3077007B7262 /* LHStateGroupCell.m */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		1CD9F5DA18E02CC50089CB4F /* Objects */ = {
@@ -750,11 +783,14 @@
 			files = (
 				1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */,
 				1C3D7D9D18E2B6DC00696BBE /* LHToday.m in Sources */,
+				1C52FF1C18FC3077007B7262 /* LHStateGroupCell.m in Sources */,
 				1CEF810D18DEB23C0011F412 /* LHStoriesViewController.m in Sources */,
 				1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */,
 				1C8A96E518E9A7D40093469C /* LHStoryPickViewController.m in Sources */,
 				1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */,
+				1C52FF0F18FBDDBE007B7262 /* LHUserCollectionsViewController.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
+				1C52FF1618FBE5AB007B7262 /* LHReportViewCell.m in Sources */,
 				1C7C3F3F18EA97FE00B900CB /* LHAltas.m in Sources */,
 				1C8A96F418EA24990093469C /* LHCurrentUserViewController.m in Sources */,
 				1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */,
@@ -777,8 +813,10 @@
 				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,
 				1C3D7D9718E2B18A00696BBE /* LHIdeaFeatureViewCell.m in Sources */,
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,
+				1C52FF1918FC2D52007B7262 /* LHStateInfoCell.m in Sources */,
 				1C35814018E94D3E0025E259 /* LHIdeaListViewController.m in Sources */,
 				1C670D7718E1C45100D422CA /* LHUser.m in Sources */,
+				1C52FF1318FBDE1E007B7262 /* LHUserInfoCell.m in Sources */,
 				1C3D7D9A18E2B65F00696BBE /* LHFeaturesTableViewController.m in Sources */,
 				1C5FB47D18E95ADA004F7FCE /* LHIdeaActionCardCell.m in Sources */,
 				1C3D7D9018E2AB4100696BBE /* LHPostStoryViewController.m in Sources */,
