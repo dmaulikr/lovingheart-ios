@@ -14,7 +14,6 @@
 #import <UIAlertView+BlocksKit.h>
 #import "LHLoginViewController.h"
 #import "DAProgressOverlayView.h"
-#import "LHStoryPickViewController.h"
 
 @interface LHStoriesViewController ()
 

@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5w-O7-i8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="481"/>
+            <point key="canvasLocation" x="2191" y="13"/>
         </scene>
         <!--Table View Controller - Category-->
         <scene sceneID="CIo-ia-NFC">
@@ -440,7 +440,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7k-1F-AMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469" y="-255"/>
+            <point key="canvasLocation" x="2589" y="-1935"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xsi-S6-EOy">
@@ -455,7 +455,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWM-EZ-W0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="-255"/>
+            <point key="canvasLocation" x="2191" y="-1935"/>
         </scene>
         <!--Navigation Controller - Post Story-->
         <scene sceneID="Ssp-DK-5wy">
@@ -1390,7 +1390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a61-Tw-nRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="1165"/>
+            <point key="canvasLocation" x="2049" y="945"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="05t-CM-DsU">
@@ -1405,7 +1405,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZ0-7a-BwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="1165"/>
+            <point key="canvasLocation" x="3011" y="501"/>
         </scene>
         <!--Story Review View Controller - Encourage-->
         <scene sceneID="J1S-Et-cAc">
@@ -1430,68 +1430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4D-wv-kaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2779" y="1165"/>
-        </scene>
-        <!--Story Pick View Controller - Stories-->
-        <scene sceneID="dko-oD-cvO">
-            <objects>
-                <tableViewController id="FX0-Fs-8ya" customClass="LHStoryPickViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0q6-DG-idl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LHPickerTableViewCell" id="1LJ-1a-yI6" customClass="LHPickerTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1LJ-1a-yI6" id="HH3-Eb-XCw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cun-qf-v4O">
-                                            <rect key="frame" x="20" y="11" width="280" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="titleLabel" destination="cun-qf-v4O" id="Rb0-KY-8lB"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="FX0-Fs-8ya" id="o9c-H2-6x2"/>
-                            <outlet property="delegate" destination="FX0-Fs-8ya" id="12O-dd-fh9"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Stories" id="xFr-wJ-9dE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="aVL-aj-PpT"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButtonItem" destination="aVL-aj-PpT" id="9Lt-nm-hEW"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tNL-u4-n3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2787" y="481"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="y1B-M8-UwS">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="IkS-Qv-nqS" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zpw-Kd-3Ez"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dsb-EM-AKP">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FX0-Fs-8ya" kind="relationship" relationship="rootViewController" id="wLo-as-dqU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4zK-U0-Khp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2376" y="481"/>
+            <point key="canvasLocation" x="3397" y="501"/>
         </scene>
         <!--Settings Table View Controller - Settings-->
         <scene sceneID="ky7-h4-H46">

@@ -86,7 +86,6 @@
 		1C7C3F4318EA99C700B900CB /* 722-location-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C3F4118EA99C700B900CB /* 722-location-pin@2x.png */; };
 		1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */; };
 		1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */; };
-		1C8A96E518E9A7D40093469C /* LHStoryPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */; };
 		1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */; };
 		1C8A96EC18E9B7DD0093469C /* 1099-list-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EA18E9B7DD0093469C /* 1099-list-1.png */; };
 		1C8A96ED18E9B7DD0093469C /* 1099-list-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A96EB18E9B7DD0093469C /* 1099-list-1@2x.png */; };
@@ -235,8 +234,6 @@
 		1C7C3F4118EA99C700B900CB /* 722-location-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "722-location-pin@2x.png"; sourceTree = "<group>"; };
 		1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text.png"; sourceTree = "<group>"; };
 		1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text@2x.png"; sourceTree = "<group>"; };
-		1C8A96E218E9A7D40093469C /* LHStoryPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryPickViewController.h; sourceTree = "<group>"; };
-		1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryPickViewController.m; sourceTree = "<group>"; };
 		1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPickerTableViewCell.h; sourceTree = "<group>"; };
 		1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHPickerTableViewCell.m; sourceTree = "<group>"; };
 		1C8A96EA18E9B7DD0093469C /* 1099-list-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1.png"; sourceTree = "<group>"; };
@@ -476,8 +473,6 @@
 				18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */,
 				1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */,
 				1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */,
-				1C8A96E218E9A7D40093469C /* LHStoryPickViewController.h */,
-				1C8A96E318E9A7D40093469C /* LHStoryPickViewController.m */,
 				1C8DC02A18EB99DA00262E5A /* LHStoriesFromCardViewController.h */,
 				1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */,
 				1C75980318F7BAEE003E6BA6 /* LHStoryReviewViewController.h */,
@@ -775,7 +770,6 @@
 				1C3D7D9D18E2B6DC00696BBE /* LHToday.m in Sources */,
 				1CEF810D18DEB23C0011F412 /* LHStoriesViewController.m in Sources */,
 				1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */,
-				1C8A96E518E9A7D40093469C /* LHStoryPickViewController.m in Sources */,
 				1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */,
 				1C52FF0F18FBDDBE007B7262 /* LHUserCollectionsViewController.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
