@@ -9,6 +9,7 @@
 #import "LHUserCollectionsViewController.h"
 #import "LHUserInfoCell.h"
 #import "LHReportViewCell.h"
+#import "LHStateInfoCell.h"
 
 @interface LHUserCollectionsViewController ()
 
@@ -38,7 +39,6 @@
   [self.collectionView addSubview:_refreshControl];
   self.collectionView.alwaysBounceVertical = YES;
   
-  _user = [LHUser currentUser];
   [self queryUserInfo];
 }
 
@@ -56,12 +56,26 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row == 0) {
-    LHUserInfoCell *userInfoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userInfoCell" forIndexPath:indexPath];
-    userInfoCell.stateLabel.text = @"10 posts, 5 energy.";
+    LHUserInfoCell *userInfoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UserInfoCell" forIndexPath:indexPath];
     return userInfoCell;
   }
-  if (indexPath.row >= 2) {
-    LHReportViewCell *reportCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"textReportCell" forIndexPath:indexPath];
+  if (indexPath.row == 1) {
+    LHStateInfoCell *stateInfoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StateInfoCell" forIndexPath:indexPath];
+    stateInfoCell.stateLabel.text = @"5 posts";
+    return stateInfoCell;
+  }
+  if (indexPath.row == 2) {
+    LHStateInfoCell *stateInfoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StateInfoCell" forIndexPath:indexPath];
+    stateInfoCell.stateLabel.text = @"6 graphics";
+    return stateInfoCell;
+  }
+  if (indexPath.row == 3) {
+    LHStateInfoCell *stateInfoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StateInfoCell" forIndexPath:indexPath];
+    stateInfoCell.stateLabel.text = @"50 energy";
+    return stateInfoCell;
+  }
+  if (indexPath.row >= 4) {
+    LHReportViewCell *reportCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TextReportCell" forIndexPath:indexPath];
     reportCell.textLabel.text = @"Report text show that";
     return reportCell;
   }
@@ -147,6 +161,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  NSLog(@"didSelectItemAtIndexPath %@", indexPath);
+}
 
 - (void)refresh:(id)sender {
   [self queryUserInfo];

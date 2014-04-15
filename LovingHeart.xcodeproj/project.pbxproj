@@ -61,6 +61,10 @@
 		1C52FF0F18FBDDBE007B7262 /* LHUserCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF0E18FBDDBE007B7262 /* LHUserCollectionsViewController.m */; };
 		1C52FF1318FBDE1E007B7262 /* LHUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1218FBDE1E007B7262 /* LHUserInfoCell.m */; };
 		1C52FF1618FBE5AB007B7262 /* LHReportViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1518FBE5AB007B7262 /* LHReportViewCell.m */; };
+		1C52FF1F18FCDBC0007B7262 /* LHStateInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF1E18FCDBC0007B7262 /* LHStateInfoCell.m */; };
+		1C52FF2318FD00FA007B7262 /* LHUserInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF2218FD00FA007B7262 /* LHUserInfoTableViewCell.m */; };
+		1C52FF2618FD0949007B7262 /* LHUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF2518FD0949007B7262 /* LHUserTableViewController.m */; };
+		1C52FF2918FD1074007B7262 /* LHUserStateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52FF2818FD1074007B7262 /* LHUserStateTableViewCell.m */; };
 		1C5FB47D18E95ADA004F7FCE /* LHIdeaActionCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */; };
 		1C670D6B18E1B33F00D422CA /* 1012-sticky-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */; };
 		1C670D6C18E1B33F00D422CA /* 1012-sticky-note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C670D6A18E1B33F00D422CA /* 1012-sticky-note@2x.png */; };
@@ -203,6 +207,14 @@
 		1C52FF1218FBDE1E007B7262 /* LHUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserInfoCell.m; sourceTree = "<group>"; };
 		1C52FF1418FBE5AB007B7262 /* LHReportViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHReportViewCell.h; sourceTree = "<group>"; };
 		1C52FF1518FBE5AB007B7262 /* LHReportViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHReportViewCell.m; sourceTree = "<group>"; };
+		1C52FF1D18FCDBC0007B7262 /* LHStateInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStateInfoCell.h; sourceTree = "<group>"; };
+		1C52FF1E18FCDBC0007B7262 /* LHStateInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStateInfoCell.m; sourceTree = "<group>"; };
+		1C52FF2118FD00FA007B7262 /* LHUserInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserInfoTableViewCell.h; sourceTree = "<group>"; };
+		1C52FF2218FD00FA007B7262 /* LHUserInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserInfoTableViewCell.m; sourceTree = "<group>"; };
+		1C52FF2418FD0949007B7262 /* LHUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserTableViewController.h; sourceTree = "<group>"; };
+		1C52FF2518FD0949007B7262 /* LHUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserTableViewController.m; sourceTree = "<group>"; };
+		1C52FF2718FD1074007B7262 /* LHUserStateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserStateTableViewCell.h; sourceTree = "<group>"; };
+		1C52FF2818FD1074007B7262 /* LHUserStateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserStateTableViewCell.m; sourceTree = "<group>"; };
 		1C5FB47B18E95ADA004F7FCE /* LHIdeaActionCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaActionCardCell.h; sourceTree = "<group>"; };
 		1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaActionCardCell.m; sourceTree = "<group>"; };
 		1C670D6918E1B33F00D422CA /* 1012-sticky-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1012-sticky-note.png"; sourceTree = "<group>"; };
@@ -402,19 +414,10 @@
 		18F78B17188B6C52001491D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18F78B18188B6C68001491D5 /* StoryCell.h */,
-				18F78B19188B6C68001491D5 /* StoryCell.m */,
+				1C52FF2018FD005D007B7262 /* TableViewCell */,
 				1CD9F5DE18E034370089CB4F /* LHIdeaCardView.h */,
 				1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */,
 				1C670D6D18E1B54C00D422CA /* LHIdeaCardView.xib */,
-				1C3D7D9518E2B18A00696BBE /* LHIdeaFeatureViewCell.h */,
-				1C3D7D9618E2B18A00696BBE /* LHIdeaFeatureViewCell.m */,
-				1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */,
-				1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */,
-				1C5FB47B18E95ADA004F7FCE /* LHIdeaActionCardCell.h */,
-				1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */,
-				1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */,
-				1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -460,6 +463,8 @@
 				1C8A96F318EA24990093469C /* LHCurrentUserViewController.m */,
 				1C52FF0D18FBDDBE007B7262 /* LHUserCollectionsViewController.h */,
 				1C52FF0E18FBDDBE007B7262 /* LHUserCollectionsViewController.m */,
+				1C52FF2418FD0949007B7262 /* LHUserTableViewController.h */,
+				1C52FF2518FD0949007B7262 /* LHUserTableViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -467,12 +472,12 @@
 		1C3D7DAA18E2C5D200696BBE /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */,
+				1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */,
 				1CEF810B18DEB23C0011F412 /* LHStoriesViewController.h */,
 				1CEF810C18DEB23C0011F412 /* LHStoriesViewController.m */,
 				18F78B1B188B6D2F001491D5 /* LHMostTypeStoriesViewController.h */,
 				18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */,
-				1C3D7D7E18E1D80300696BBE /* LHStoryViewController.h */,
-				1C3D7D7F18E1D80300696BBE /* LHStoryViewController.m */,
 				1C8DC02A18EB99DA00262E5A /* LHStoriesFromCardViewController.h */,
 				1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */,
 				1C75980318F7BAEE003E6BA6 /* LHStoryReviewViewController.h */,
@@ -488,8 +493,31 @@
 				1C52FF1218FBDE1E007B7262 /* LHUserInfoCell.m */,
 				1C52FF1418FBE5AB007B7262 /* LHReportViewCell.h */,
 				1C52FF1518FBE5AB007B7262 /* LHReportViewCell.m */,
+				1C52FF1D18FCDBC0007B7262 /* LHStateInfoCell.h */,
+				1C52FF1E18FCDBC0007B7262 /* LHStateInfoCell.m */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		1C52FF2018FD005D007B7262 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */,
+				1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */,
+				1C5FB47B18E95ADA004F7FCE /* LHIdeaActionCardCell.h */,
+				1C5FB47C18E95ADA004F7FCE /* LHIdeaActionCardCell.m */,
+				1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */,
+				1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */,
+				1C3D7D9518E2B18A00696BBE /* LHIdeaFeatureViewCell.h */,
+				1C3D7D9618E2B18A00696BBE /* LHIdeaFeatureViewCell.m */,
+				18F78B18188B6C68001491D5 /* StoryCell.h */,
+				18F78B19188B6C68001491D5 /* StoryCell.m */,
+				1C52FF2118FD00FA007B7262 /* LHUserInfoTableViewCell.h */,
+				1C52FF2218FD00FA007B7262 /* LHUserInfoTableViewCell.m */,
+				1C52FF2718FD1074007B7262 /* LHUserStateTableViewCell.h */,
+				1C52FF2818FD1074007B7262 /* LHUserStateTableViewCell.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		1CD9F5DA18E02CC50089CB4F /* Objects */ = {
@@ -798,12 +826,16 @@
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,
 				1C35814018E94D3E0025E259 /* LHIdeaListViewController.m in Sources */,
 				1C670D7718E1C45100D422CA /* LHUser.m in Sources */,
+				1C52FF2918FD1074007B7262 /* LHUserStateTableViewCell.m in Sources */,
 				1C52FF1318FBDE1E007B7262 /* LHUserInfoCell.m in Sources */,
+				1C52FF2618FD0949007B7262 /* LHUserTableViewController.m in Sources */,
 				1C3D7D9A18E2B65F00696BBE /* LHFeaturesTableViewController.m in Sources */,
 				1C5FB47D18E95ADA004F7FCE /* LHIdeaActionCardCell.m in Sources */,
 				1C3D7D9018E2AB4100696BBE /* LHPostStoryViewController.m in Sources */,
 				18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */,
+				1C52FF1F18FCDBC0007B7262 /* LHStateInfoCell.m in Sources */,
 				1C3D7DA018E2B8F700696BBE /* LHParseObject.m in Sources */,
+				1C52FF2318FD00FA007B7262 /* LHUserInfoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
