@@ -9,8 +9,6 @@
 #import "LHUserCollectionsViewController.h"
 #import "LHUserInfoCell.h"
 #import "LHReportViewCell.h"
-#import "LHStateInfoCell.h"
-#import "LHStateGroupCell.h"
 
 @interface LHUserCollectionsViewController ()
 
@@ -59,15 +57,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row == 0) {
     LHUserInfoCell *userInfoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userInfoCell" forIndexPath:indexPath];
+    userInfoCell.stateLabel.text = @"10 posts, 5 energy.";
     return userInfoCell;
-  }
-  if (indexPath.row == 1) {
-    LHStateGroupCell *stateGroupCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UserStateGroupCell" forIndexPath:indexPath];
-    LHStateInfoCell *infoCell =  [stateGroupCell.collectionsView dequeueReusableCellWithReuseIdentifier:@"StateInfoCell" forIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-    infoCell.numberOfLabel.text = [NSString stringWithFormat:@"%i", 100];
-    infoCell.titleLabel.text = @"Posts";
-    
-    return stateGroupCell;
   }
   if (indexPath.row >= 2) {
     LHReportViewCell *reportCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"textReportCell" forIndexPath:indexPath];
