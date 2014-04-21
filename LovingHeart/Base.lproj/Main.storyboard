@@ -658,7 +658,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-3Q-M33">
-                                        <rect key="frame" x="165" y="426" width="135" height="30"/>
+                                        <rect key="frame" x="20" y="426" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Call to Action">
                                             <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -697,7 +697,7 @@
                                     <constraint firstItem="yww-c0-d9d" firstAttribute="top" secondItem="5ys-NS-FJ4" secondAttribute="bottom" constant="8" symbolic="YES" id="05H-Yr-bnj"/>
                                     <constraint firstItem="bEI-LO-YEe" firstAttribute="top" secondItem="yww-c0-d9d" secondAttribute="bottom" constant="8" symbolic="YES" id="8jx-t3-5pB"/>
                                     <constraint firstItem="RXo-df-RKU" firstAttribute="leading" secondItem="LGX-U8-wK6" secondAttribute="leading" id="Bm9-Av-S3G"/>
-                                    <constraint firstItem="gGB-3Q-M33" firstAttribute="leading" secondItem="kZV-Td-Fre" secondAttribute="leading" id="I1V-k6-e5D"/>
+                                    <constraint firstItem="gGB-3Q-M33" firstAttribute="leading" secondItem="kZV-Td-Fre" secondAttribute="leading" constant="-145" id="I1V-k6-e5D"/>
                                     <constraint firstItem="kZV-Td-Fre" firstAttribute="leading" secondItem="RXo-df-RKU" secondAttribute="trailing" constant="10" id="KOc-ef-KPm"/>
                                     <constraint firstItem="bEI-LO-YEe" firstAttribute="top" secondItem="Rj3-m5-53F" secondAttribute="top" constant="368" id="LjA-PL-AMk"/>
                                     <constraint firstItem="LGX-U8-wK6" firstAttribute="leading" secondItem="bEI-LO-YEe" secondAttribute="leading" id="Sba-QL-GkB"/>
