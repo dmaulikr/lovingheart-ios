@@ -16,6 +16,8 @@
 #import "LHCategoryLabelCell.h"
 #import "LHEvent.h"
 #import "LHReviewStarsTableViewCell.h"
+#import <BlocksKit/UIActionSheet+BlocksKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface LHStoryViewTableViewController ()
 
@@ -42,6 +44,8 @@
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
+  self.shareButton.target = self;
+  self.shareButton.action = @selector(shareButtonClicked:);
 
     __block LHStoryViewTableViewController *__self = self;
     PFQuery *query = [LHStory query];
@@ -271,53 +275,100 @@
   return 44.f;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+- (void)shareButtonClicked:(id)sender {
+  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Share Actions"];
+  __block UIActionSheet *__actionSheet = actionSheet;
+  [actionSheet bk_addButtonWithTitle:@"Share to Facebook" handler:^{
+    FBRequest *fbRequest = [FBRequest requestForMe];
+    FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
+    params.link = [NSURL URLWithString:[NSString stringWithFormat:@"http://tw.lovingheartapp.com/story/%@", self.story.objectId]];
+    if ([self.story.status isEqualToString:@"anonymous"]) {
+      params.name = @"Anonymous";
+    } else {
+      params.name = self.story.StoryTeller.name;
+    }
+    if (self.story.ideaPointer) {
+      PFObject *idea = [self.story.ideaPointer fetchIfNeeded];
+      params.caption = idea[@"Name"];
+    } else {
+      params.caption = @"This story has inspired me.";
+    }
+    if ([self.story.graphicPointer.imageType isEqualToString:@"file"]) {
+      params.picture = [NSURL URLWithString:self.story.graphicPointer.imageFile.url];
+    } else if (self.story.graphicPointer.imageUrl) {
+      params.picture = [NSURL URLWithString:self.story.graphicPointer.imageUrl];
+    }
+    
+    params.description = self.story.Content;
+    
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+      [FBDialogs presentShareDialogWithLink:params.link name:params.name caption:params.caption description:params.description picture:params.picture clientState:nil handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+        if (error) {
+          NSLog(@"Error publishing story: %@", error.description);
+        } else {
+          NSLog(@"result %@", results);
+          [SVProgressHUD showSuccessWithStatus:@"Share to Facebook successfully."];
+        }
+      }];
+    } else {
+      // Put together the dialog parameters
+      NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                               params.name, @"name",
+                                               params.caption, @"caption",
+                                               params.description, @"description",
+                                               [params.link absoluteString], @"link",
+                                               [params.picture absoluteString], @"picture",
+                                               nil];
+      
+      // Show the feed dialog
+      [FBWebDialogs presentFeedDialogModallyWithSession:fbRequest.session
+                                             parameters:paramsDictionary
+                                                handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                  if (error) {
+                                                    // An error occurred, we need to handle the error
+                                                    // See: https://developers.facebook.com/docs/ios/errors
+                                                    NSLog(@"Error publishing story: %@", error.description);
+                                                  } else {
+                                                    if (result == FBWebDialogResultDialogNotCompleted) {
+                                                      // User cancelled.
+                                                      NSLog(@"User cancelled.");
+                                                    } else {
+                                                      // Handle the publish feed callback
+                                                      NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                      
+                                                      if (![urlParams valueForKey:@"post_id"]) {
+                                                        // User cancelled.
+                                                        NSLog(@"User cancelled.");
+                                                        
+                                                      } else {
+                                                        // User clicked the Share button
+                                                        NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                        NSLog(@"result %@", result);
+                                                        [SVProgressHUD showSuccessWithStatus:@"Share to Facebook successfully."];
+                                                      }
+                                                    }
+                                                  }
+                                                }];
+    }
+  }];
+  [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
+    [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+  }];
+  [actionSheet showInView:self.view];
+  
+}
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+// A function for parsing URL parameters returned by the Feed Dialog.
+- (NSDictionary*)parseURLParams:(NSString *)query {
+  NSArray *pairs = [query componentsSeparatedByString:@"&"];
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+  for (NSString *pair in pairs) {
+    NSArray *kv = [pair componentsSeparatedByString:@"="];
+    NSString *val =
+    [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    params[kv[0]] = val;
+  }
+  return params;
+}
 
 @end
