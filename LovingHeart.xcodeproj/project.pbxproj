@@ -32,6 +32,8 @@
 		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
 		18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */; };
 		1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C033FE418F3F85400C86955 /* LHReportManager.m */; };
+		1C03A4671904FE6C00E6C992 /* LHReviewStarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C03A4661904FE6C00E6C992 /* LHReviewStarsTableViewCell.m */; };
+		1C03A46A1904FFB500E6C992 /* LHEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C03A4691904FFB500E6C992 /* LHEvent.m */; };
 		1C2D1A6B18E41B22007323B1 /* Default_R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6918E41B22007323B1 /* Default_R4.png */; };
 		1C2D1A6C18E41B22007323B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1A6A18E41B22007323B1 /* Default@2x.png */; };
 		1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C35813B18E94B750025E259 /* UIView+Frame.m */; };
@@ -163,6 +165,10 @@
 		18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMostTypeStoriesViewController.m; sourceTree = "<group>"; };
 		1C033FE318F3F85400C86955 /* LHReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHReportManager.h; sourceTree = "<group>"; };
 		1C033FE418F3F85400C86955 /* LHReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHReportManager.m; sourceTree = "<group>"; };
+		1C03A4651904FE6C00E6C992 /* LHReviewStarsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHReviewStarsTableViewCell.h; sourceTree = "<group>"; };
+		1C03A4661904FE6C00E6C992 /* LHReviewStarsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHReviewStarsTableViewCell.m; sourceTree = "<group>"; };
+		1C03A4681904FFB500E6C992 /* LHEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHEvent.h; sourceTree = "<group>"; };
+		1C03A4691904FFB500E6C992 /* LHEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHEvent.m; sourceTree = "<group>"; };
 		1C2D1A6918E41B22007323B1 /* Default_R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_R4.png; sourceTree = "<group>"; };
 		1C2D1A6A18E41B22007323B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1C35813A18E94B750025E259 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -549,6 +555,8 @@
 				1CB39F9D1904F13A004A97E9 /* LHStoryImageTableViewCell.m */,
 				1CB39F9F1904F4AA004A97E9 /* LHCategoryLabelCell.h */,
 				1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */,
+				1C03A4651904FE6C00E6C992 /* LHReviewStarsTableViewCell.h */,
+				1C03A4661904FE6C00E6C992 /* LHReviewStarsTableViewCell.m */,
 			);
 			name = Story;
 			sourceTree = "<group>";
@@ -572,6 +580,8 @@
 				1C3D7DA218E2BEA000696BBE /* LHCategory.m */,
 				1C8A96F518EA2B860093469C /* LHUserImpact.h */,
 				1C8A96F618EA2B860093469C /* LHUserImpact.m */,
+				1C03A4681904FFB500E6C992 /* LHEvent.h */,
+				1C03A4691904FFB500E6C992 /* LHEvent.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -840,6 +850,7 @@
 				1C7C3F3F18EA97FE00B900CB /* LHAltas.m in Sources */,
 				1C8A96F418EA24990093469C /* LHCurrentUserViewController.m in Sources */,
 				1CB39F981904D05F004A97E9 /* LHStoryContentTableViewCell.m in Sources */,
+				1C03A4671904FE6C00E6C992 /* LHReviewStarsTableViewCell.m in Sources */,
 				1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */,
 				1C75980518F7BAEE003E6BA6 /* LHStoryReviewViewController.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
@@ -872,6 +883,7 @@
 				18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */,
 				1C52FF1F18FCDBC0007B7262 /* LHStateInfoCell.m in Sources */,
 				1CB39FA11904F4AA004A97E9 /* LHCategoryLabelCell.m in Sources */,
+				1C03A46A1904FFB500E6C992 /* LHEvent.m in Sources */,
 				1C3D7DA018E2B8F700696BBE /* LHParseObject.m in Sources */,
 				1C52FF2318FD00FA007B7262 /* LHUserInfoTableViewCell.m in Sources */,
 			);

@@ -11,5 +11,6 @@
 @interface LHStoryViewTableViewController : UITableViewController
 
 @property (nonatomic, strong) LHStory *story;
+@property (nonatomic, strong) NSArray *events;
 
 @end

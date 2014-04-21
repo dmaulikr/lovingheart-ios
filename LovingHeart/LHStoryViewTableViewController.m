@@ -14,6 +14,8 @@
 #import "LHLocationAreaTableViewCell.h"
 #import "LHStoryImageTableViewCell.h"
 #import "LHCategoryLabelCell.h"
+#import "LHEvent.h"
+#import "LHReviewStarsTableViewCell.h"
 
 @interface LHStoryViewTableViewController ()
 
@@ -40,8 +42,7 @@
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
-  if (!self.story.Content) {
-    
+
     __block LHStoryViewTableViewController *__self = self;
     PFQuery *query = [LHStory query];
     [query includeKey:@"StoryTeller"];
@@ -55,7 +56,21 @@
         [__self.tableView reloadData];
       }
     }];
-  }
+    
+    PFQuery *eventQuery = [LHEvent query];
+    [eventQuery whereKey:@"story" equalTo:self.story];
+    [eventQuery whereKey:@"action" equalTo:@"review_story"];
+    [eventQuery includeKey:@"user"];
+    [eventQuery includeKey:@"user.avatar"];
+    [eventQuery orderByDescending:@"createdAt"];
+    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+      if (objects) {
+        __self.events = objects;
+        [__self.tableView reloadData];
+      }
+
+    }];
+  
 
 }
 
@@ -82,7 +97,7 @@
     }
     return numbersOfRow;
   } else if (section == 1) {
-    return 1;
+    return 1 + self.events.count;
   }
   return 0;
 }
@@ -183,9 +198,41 @@
   // Configure the cell...
   cell.userInteractionEnabled = NO;
   
-  if (indexPath.section == 1 && indexPath.row == 0) {
+  if (indexPath.section == 1 && indexPath.row == self.events.count) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"actionButtonCell" forIndexPath:indexPath];
     cell.userInteractionEnabled = YES;
+  } else if (indexPath.section == 1 && indexPath.row < self.events.count) {
+    cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewStarsTableViewCell" forIndexPath:indexPath];
+    cell.userInteractionEnabled = NO;
+    
+    LHEvent *currentEvent = [self.events objectAtIndex:indexPath.row];
+    
+    NSMutableString *starsText = [[NSMutableString alloc] init];
+    for (int i= 0; i < currentEvent.value.integerValue; i++) {
+      [starsText appendString:@"★"];
+    }
+    
+    LHReviewStarsTableViewCell *reviewStarsCell = (LHReviewStarsTableViewCell *)cell;
+    reviewStarsCell.commentLabel.text = currentEvent[@"description"];
+    reviewStarsCell.starsLabel.text = starsText;
+    reviewStarsCell.dayAgoLabel.text = [currentEvent.createdAt timeAgo];
+    reviewStarsCell.userNameLabel.text = currentEvent.user.name;
+    
+    if (currentEvent.user.avatar) {
+      NSURL* imageUrl = [NSURL URLWithString:currentEvent.user.avatar.imageUrl];
+      NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
+      AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+      operation.responseSerializer = [AFImageResponseSerializer serializer];
+      
+      __block UIImageView *__avatarImageView = reviewStarsCell.avatarImageView;
+      [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __avatarImageView.image = responseObject;
+      } failure:nil];
+      
+      [operation start];
+    }
+
+
   }
   
   if (!cell) {
@@ -217,6 +264,9 @@
       return 320;
     }
     numberOfRow += 1;
+  }
+  if (indexPath.section == 1 && indexPath.row < self.events.count) {
+    return 84.f;
   }
   return 44.f;
 }
