@@ -1331,15 +1331,15 @@
                                     <outlet property="ideaLabel" destination="NjI-PP-2Lp" id="lW8-xM-X3R"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyEncouragementCell" rowHeight="54" id="YzK-fc-DY0">
-                                <rect key="frame" x="0.0" y="302" width="320" height="54"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyEncouragementCell" id="YzK-fc-DY0">
+                                <rect key="frame" x="0.0" y="302" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YzK-fc-DY0" id="Liv-na-r1S">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No encouragement points yet, be the first to Encourage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="75d-FS-e16">
-                                            <rect key="frame" x="20" y="-2" width="280" height="58"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Be the first to Encourage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="75d-FS-e16">
+                                            <rect key="frame" x="20" y="-7" width="280" height="58"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1349,7 +1349,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewStarsTableViewCell" rowHeight="84" id="cJi-Jr-YYf" userLabel="Table View Cell - Comments" customClass="LHReviewStarsTableViewCell">
-                                <rect key="frame" x="0.0" y="356" width="320" height="84"/>
+                                <rect key="frame" x="0.0" y="346" width="320" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJi-Jr-YYf" id="9oS-eT-HUa">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
@@ -1416,7 +1416,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="actionButtonCell" id="FVO-Mw-1lQ" userLabel="Table View Cell - Action Button">
-                                <rect key="frame" x="0.0" y="440" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="430" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FVO-Mw-1lQ" id="XOh-IN-tMF">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1436,7 +1436,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryImageTableViewCell" rowHeight="320" id="3Sx-PM-zKN" userLabel="Table View Cell - Image" customClass="LHStoryImageTableViewCell">
-                                <rect key="frame" x="0.0" y="484" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="474" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Sx-PM-zKN" id="Uqi-zD-MXk">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>

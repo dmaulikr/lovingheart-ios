@@ -22,6 +22,11 @@
   self.title = NSLocalizedString(@"Latest Stories", @"Latest Stories");
   
   [_storiesTypeSegmentedControl addTarget:self action:@selector(storiesSegmented:) forControlEvents:UIControlEventValueChanged];
+  
+  __block LHStoriesViewController *__self = self;
+  [[NSNotificationCenter defaultCenter] addObserverForName:kUserStoriesRefreshNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    [__self loadObjects];
+  }];
 }
 
 - (PFQuery *)queryForTable {

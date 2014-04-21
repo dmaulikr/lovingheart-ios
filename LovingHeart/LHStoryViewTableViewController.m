@@ -18,6 +18,7 @@
 #import "LHReviewStarsTableViewCell.h"
 #import <BlocksKit/UIActionSheet+BlocksKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <BlocksKit/UIAlertView+BlocksKit.h>
 
 @interface LHStoryViewTableViewController ()
 
@@ -289,14 +290,17 @@
   }
   if (self.events.count == 0) {
     if (indexPath.section == 1 && indexPath.row == 0) {
-      return 54.f;
+      return 44.f;
     }
   }
   return 44.f;
 }
 
 - (void)shareButtonClicked:(id)sender {
-  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Share Actions"];
+  
+  __block LHStoryViewTableViewController *__self = self;
+  
+  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Actions"];
   __block UIActionSheet *__actionSheet = actionSheet;
   [actionSheet bk_addButtonWithTitle:@"Share to Facebook" handler:^{
     FBRequest *fbRequest = [FBRequest requestForMe];
@@ -371,10 +375,37 @@
                                                 }];
     }
   }];
+  if ([LHUser currentUser] && [self.story.StoryTeller.objectId isEqualToString:[LHUser currentUser].objectId]) {
+    [actionSheet bk_setDestructiveButtonWithTitle:@"Delete this story" handler:^{
+      
+      [UIAlertView bk_showAlertViewWithTitle:@"Delete" message:@"Sure to delete this story?" cancelButtonTitle:@"Cancel" otherButtonTitles:[NSArray arrayWithObject:@"Delete"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+        
+        if (buttonIndex == 1) {
+          // Remove story
+          [SVProgressHUD showWithStatus:@"Deleting"];
+          [self.story deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+              [SVProgressHUD showSuccessWithStatus:@"Removed"];
+              // Ask to reload
+              [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
+              [__self.navigationController popViewControllerAnimated:YES];
+            } else {
+              [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+            }
+          }];
+          
+
+        }
+        
+      }];
+      
+    }];
+  }
+  
   [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
     [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
   }];
-  [actionSheet showInView:self.view];
+  [actionSheet showInView:[self.view window]];
   
 }
 

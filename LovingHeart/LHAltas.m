@@ -11,6 +11,7 @@
 @implementation LHAltas
 
 NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotification";
+NSString* const kUserStoriesRefreshNotification = @"kUserStoriesRefreshNotification";
 
 + (NSArray *)supportLanguageList {
   // Load preference

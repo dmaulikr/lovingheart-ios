@@ -192,7 +192,7 @@
   [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
     [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
   }];
-  [actionSheet showInView:self.view];
+  [actionSheet showInView:[self.view window]];
 
 }
 
@@ -231,7 +231,7 @@
   [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
     [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
   }];
-  [actionSheet showInView:self.view];
+  [actionSheet showInView:[self.view window]];
   
   
   
@@ -271,6 +271,7 @@
   [SVProgressHUD showWithStatus:@"Posting" maskType:SVProgressHUDMaskTypeGradient];
   [_storyObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (!error) {
+      [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
       [SVProgressHUD showSuccessWithStatus:@"Done"];
       [self dismissViewControllerAnimated:YES completion:^{
         // Open to that story

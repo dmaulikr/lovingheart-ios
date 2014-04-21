@@ -25,5 +25,5 @@ static NSString *kUserDefaultUserWantPushNotification = @"kUserDefaultUserWantPu
 static NSString *kAviaryAPIKey = @"d6fc6eb5fdda7a79";
 static NSString *kAviarySecret = @"883fbc85c2e70208";
 
-
+extern NSString* const kUserStoriesRefreshNotification;
 extern NSString* const kUserProfileRefreshNotification;

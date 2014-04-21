@@ -202,7 +202,7 @@
   [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
     [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
   }];
-  [actionSheet showInView:self.view];
+  [actionSheet showInView:[self.view window]];
   
 }
 
