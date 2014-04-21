@@ -135,6 +135,23 @@
   
   [self.doneButtonItem setTarget:self];
   [self.doneButtonItem setAction:@selector(post:)];
+  
+  BOOL isSupportEnglish = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportEnglish];
+  BOOL isSupportChinese = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportChinese];
+  // Default
+  self.storyObject.language = @"zh";
+  self.languageButtonItem.title = @"中文";
+  
+  if (isSupportEnglish) {
+    self.storyObject.language = @"en";
+    self.languageButtonItem.title = @"English";
+  }
+  if (isSupportChinese) {
+    self.storyObject.language = @"zh";
+    self.languageButtonItem.title = @"中文";
+  }
+  self.languageButtonItem.target = self;
+  self.languageButtonItem.action = @selector(languageButtonPressed:);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -161,6 +178,24 @@
  }
  */
 
+- (void)languageButtonPressed:(id)sender {
+  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Langauge"];
+  __block UIActionSheet *__actionSheet = actionSheet;
+  [actionSheet bk_addButtonWithTitle:@"English" handler:^{
+    _storyObject.language = @"en";
+    self.languageButtonItem.title = @"English";
+  }];
+  [actionSheet bk_addButtonWithTitle:@"中文" handler:^{
+    _storyObject.language = @"zh";
+    self.languageButtonItem.title = @"中文";
+  }];
+  [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
+    [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+  }];
+  [actionSheet showInView:self.view];
+
+}
+
 - (void)openCameraPressed:(id)sender {
   if (!([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera] || [UIImagePickerController isSourceTypeAvailable:
@@ -180,7 +215,6 @@
       
       [self presentViewController:cameraController animated:YES completion:nil];
       
-      [__actionSheet dismissWithClickedButtonIndex:2 animated:YES];
     }];
   }
   if ([UIImagePickerController isSourceTypeAvailable:
@@ -192,8 +226,6 @@
       cameraController.delegate = self;
       
       [self presentViewController:cameraController animated:YES completion:nil];
-      
-      [__actionSheet dismissWithClickedButtonIndex:1 animated:YES];
     }];
   }
   [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{

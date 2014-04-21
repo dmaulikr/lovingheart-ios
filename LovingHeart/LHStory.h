@@ -24,5 +24,6 @@
 @property (nonatomic, strong) LHGraphicImage *graphicPointer;
 @property (nonatomic, strong) PFGeoPoint *geoPoint;
 @property (nonatomic, strong) LHIdea *ideaPointer;
+@property (nonatomic, strong) NSString *language;
 
 @end

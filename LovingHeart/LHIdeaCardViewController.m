@@ -57,6 +57,7 @@
     _readStoriesButton.enabled = NO;
   }
   
+  self.callToActionButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
   if (self.idea.webUrl && self.idea.webUrlActionCall ) {
     [self.callToActionButton setTitle:self.idea.webUrlActionCall forState:UIControlStateNormal];
     self.callToActionButton.enabled = YES;

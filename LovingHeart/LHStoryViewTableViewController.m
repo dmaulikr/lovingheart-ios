@@ -101,7 +101,11 @@
     }
     return numbersOfRow;
   } else if (section == 1) {
-    return 1 + self.events.count;
+    if (self.events.count > 0) {
+      return 1 + self.events.count;
+    } else if (self.events.count == 0) {
+      return 1 + 1;
+    }
   }
   return 0;
 }
@@ -202,42 +206,53 @@
   // Configure the cell...
   cell.userInteractionEnabled = NO;
   
-  if (indexPath.section == 1 && indexPath.row == self.events.count) {
-    cell = [tableView dequeueReusableCellWithIdentifier:@"actionButtonCell" forIndexPath:indexPath];
-    cell.userInteractionEnabled = YES;
-  } else if (indexPath.section == 1 && indexPath.row < self.events.count) {
-    cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewStarsTableViewCell" forIndexPath:indexPath];
-    cell.userInteractionEnabled = NO;
-    
-    LHEvent *currentEvent = [self.events objectAtIndex:indexPath.row];
-    
-    NSMutableString *starsText = [[NSMutableString alloc] init];
-    for (int i= 0; i < currentEvent.value.integerValue; i++) {
-      [starsText appendString:@"★"];
-    }
-    
-    LHReviewStarsTableViewCell *reviewStarsCell = (LHReviewStarsTableViewCell *)cell;
-    reviewStarsCell.commentLabel.text = currentEvent[@"description"];
-    reviewStarsCell.starsLabel.text = starsText;
-    reviewStarsCell.dayAgoLabel.text = [currentEvent.createdAt timeAgo];
-    reviewStarsCell.userNameLabel.text = currentEvent.user.name;
-    
-    if (currentEvent.user.avatar) {
-      NSURL* imageUrl = [NSURL URLWithString:currentEvent.user.avatar.imageUrl];
-      NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
-      AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-      operation.responseSerializer = [AFImageResponseSerializer serializer];
+  if (self.events.count > 0) {
+    if (indexPath.section == 1 && indexPath.row == self.events.count) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"actionButtonCell" forIndexPath:indexPath];
+      cell.userInteractionEnabled = YES;
+    } else if (indexPath.section == 1 && indexPath.row < self.events.count) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewStarsTableViewCell" forIndexPath:indexPath];
+      cell.userInteractionEnabled = NO;
       
-      __block UIImageView *__avatarImageView = reviewStarsCell.avatarImageView;
-      [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        __avatarImageView.image = responseObject;
-      } failure:nil];
+      LHEvent *currentEvent = [self.events objectAtIndex:indexPath.row];
       
-      [operation start];
+      NSMutableString *starsText = [[NSMutableString alloc] init];
+      for (int i= 0; i < currentEvent.value.integerValue; i++) {
+        [starsText appendString:@"★"];
+      }
+      
+      LHReviewStarsTableViewCell *reviewStarsCell = (LHReviewStarsTableViewCell *)cell;
+      reviewStarsCell.commentLabel.text = currentEvent[@"description"];
+      reviewStarsCell.starsLabel.text = starsText;
+      reviewStarsCell.dayAgoLabel.text = [currentEvent.createdAt timeAgo];
+      reviewStarsCell.userNameLabel.text = currentEvent.user.name;
+      
+      if (currentEvent.user.avatar) {
+        NSURL* imageUrl = [NSURL URLWithString:currentEvent.user.avatar.imageUrl];
+        NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
+        AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.responseSerializer = [AFImageResponseSerializer serializer];
+        
+        __block UIImageView *__avatarImageView = reviewStarsCell.avatarImageView;
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+          __avatarImageView.image = responseObject;
+        } failure:nil];
+        
+        [operation start];
+      }
+      
+      
     }
-
-
+  } else {
+    if (indexPath.section == 1 && indexPath.row == 1) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"actionButtonCell" forIndexPath:indexPath];
+      cell.userInteractionEnabled = YES;
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyEncouragementCell" forIndexPath:indexPath];
+      cell.userInteractionEnabled = NO;
+    }
   }
+  
   
   if (!cell) {
     cell = [[UITableViewCell alloc] init];
@@ -271,6 +286,11 @@
   }
   if (indexPath.section == 1 && indexPath.row < self.events.count) {
     return 84.f;
+  }
+  if (self.events.count == 0) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
+      return 54.f;
+    }
   }
   return 44.f;
 }

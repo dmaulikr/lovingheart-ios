@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *userInputTextView;
 @property (weak, nonatomic) IBOutlet UIToolbar *additionalToolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *languageButtonItem;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationButtonItem;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
