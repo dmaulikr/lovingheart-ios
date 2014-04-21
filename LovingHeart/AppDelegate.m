@@ -10,7 +10,7 @@
 #import "LHParseObject.h"
 #import <UVConfig.h>
 #import <uservoice-iphone-sdk/UserVoice.h>
-#import "LHStoryViewController.h"
+#import "LHStoryViewTableViewController.h"
 #import "LHMainViewController.h"
 
 @implementation AppDelegate
@@ -122,7 +122,7 @@
         NSString *object = [urlArray objectAtIndex:(urlArray.count - 2)];
         if ([object isEqualToString:@"story"]) {
           UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-          LHStoryViewController *storyViewController = (LHStoryViewController *)[storyboard instantiateViewControllerWithIdentifier:@"StoryViewController"];
+          LHStoryViewTableViewController *storyViewController = (LHStoryViewTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"StoryViewTableViewController"];
           
           LHStory *story = [[LHStory alloc] init];
           [story setObjectId:objectId];

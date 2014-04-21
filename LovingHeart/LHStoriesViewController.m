@@ -10,7 +10,7 @@
 #import "StoryCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
-#import "LHStoryViewController.h"
+#import "LHStoryViewTableViewController.h"
 #import <UIAlertView+BlocksKit.h>
 #import "LHLoginViewController.h"
 #import "DAProgressOverlayView.h"
@@ -105,8 +105,12 @@
       }
     }];
   }
+  if (object.areaName) {
+    cell.locationLabel.text = object.areaName;
+  } else {
+    cell.locationLabel.text = @"Some where";
+  }
   
-  cell.locationLabel.text = object.areaName;
   cell.timeLabel.text = [object.createdAt timeAgo];
   
   return cell;
@@ -140,7 +144,7 @@
                                                 context:nil];
     
     if (object[@"graphicPointer"]) {
-      return CGRectGetHeight(r) + 420;
+      return CGRectGetHeight(r) + 350;
     } else {
       return CGRectGetHeight(r) + 110;
     }
@@ -154,7 +158,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqual:@"pushStoryContent"] || [segue.identifier isEqual:@"pushStoryImageContent"]) {
-    LHStoryViewController *storyViewController = segue.destinationViewController;
+    LHStoryViewTableViewController *storyViewController = segue.destinationViewController;
     NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
     LHStory *story = (LHStory *)[self objectAtIndexPath:selectedPath];
     [storyViewController setStory:story];

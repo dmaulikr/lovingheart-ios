@@ -106,6 +106,8 @@
 		1C992A7818EE439F000415B4 /* LHUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C992A7718EE439F000415B4 /* LHUserProfileViewController.m */; };
 		1C992A7B18EE4F27000415B4 /* cup_25_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C992A7918EE4F27000415B4 /* cup_25_clear.png */; };
 		1C992A7C18EE4F27000415B4 /* cup_25_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C992A7A18EE4F27000415B4 /* cup_25_clear@2x.png */; };
+		1CB39F941904C38A004A97E9 /* LHStoryViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F931904C38A004A97E9 /* LHStoryViewTableViewController.m */; };
+		1CB39F981904D05F004A97E9 /* LHStoryContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F971904D05F004A97E9 /* LHStoryContentTableViewCell.m */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -268,6 +270,10 @@
 		1C992A7718EE439F000415B4 /* LHUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUserProfileViewController.m; sourceTree = "<group>"; };
 		1C992A7918EE4F27000415B4 /* cup_25_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup_25_clear.png; sourceTree = "<group>"; };
 		1C992A7A18EE4F27000415B4 /* cup_25_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cup_25_clear@2x.png"; sourceTree = "<group>"; };
+		1CB39F921904C38A004A97E9 /* LHStoryViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryViewTableViewController.h; sourceTree = "<group>"; };
+		1CB39F931904C38A004A97E9 /* LHStoryViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryViewTableViewController.m; sourceTree = "<group>"; };
+		1CB39F961904D05F004A97E9 /* LHStoryContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryContentTableViewCell.h; sourceTree = "<group>"; };
+		1CB39F971904D05F004A97E9 /* LHStoryContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryContentTableViewCell.m; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -482,6 +488,8 @@
 				1C8DC02B18EB99DA00262E5A /* LHStoriesFromCardViewController.m */,
 				1C75980318F7BAEE003E6BA6 /* LHStoryReviewViewController.h */,
 				1C75980418F7BAEE003E6BA6 /* LHStoryReviewViewController.m */,
+				1CB39F921904C38A004A97E9 /* LHStoryViewTableViewController.h */,
+				1CB39F931904C38A004A97E9 /* LHStoryViewTableViewController.m */,
 			);
 			name = Stories;
 			sourceTree = "<group>";
@@ -502,6 +510,7 @@
 		1C52FF2018FD005D007B7262 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				1CB39F951904D017004A97E9 /* Story */,
 				1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */,
 				1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */,
 				1C5FB47B18E95ADA004F7FCE /* LHIdeaActionCardCell.h */,
@@ -512,12 +521,21 @@
 				1C3D7D9618E2B18A00696BBE /* LHIdeaFeatureViewCell.m */,
 				18F78B18188B6C68001491D5 /* StoryCell.h */,
 				18F78B19188B6C68001491D5 /* StoryCell.m */,
-				1C52FF2118FD00FA007B7262 /* LHUserInfoTableViewCell.h */,
-				1C52FF2218FD00FA007B7262 /* LHUserInfoTableViewCell.m */,
 				1C52FF2718FD1074007B7262 /* LHUserStateTableViewCell.h */,
 				1C52FF2818FD1074007B7262 /* LHUserStateTableViewCell.m */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		1CB39F951904D017004A97E9 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				1C52FF2118FD00FA007B7262 /* LHUserInfoTableViewCell.h */,
+				1C52FF2218FD00FA007B7262 /* LHUserInfoTableViewCell.m */,
+				1CB39F961904D05F004A97E9 /* LHStoryContentTableViewCell.h */,
+				1CB39F971904D05F004A97E9 /* LHStoryContentTableViewCell.m */,
+			);
+			name = Story;
 			sourceTree = "<group>";
 		};
 		1CD9F5DA18E02CC50089CB4F /* Objects */ = {
@@ -794,6 +812,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB39F941904C38A004A97E9 /* LHStoryViewTableViewController.m in Sources */,
 				1C35813C18E94B750025E259 /* UIView+Frame.m in Sources */,
 				1C3D7D9D18E2B6DC00696BBE /* LHToday.m in Sources */,
 				1CEF810D18DEB23C0011F412 /* LHStoriesViewController.m in Sources */,
@@ -804,6 +823,7 @@
 				1C52FF1618FBE5AB007B7262 /* LHReportViewCell.m in Sources */,
 				1C7C3F3F18EA97FE00B900CB /* LHAltas.m in Sources */,
 				1C8A96F418EA24990093469C /* LHCurrentUserViewController.m in Sources */,
+				1CB39F981904D05F004A97E9 /* LHStoryContentTableViewCell.m in Sources */,
 				1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */,
 				1C75980518F7BAEE003E6BA6 /* LHStoryReviewViewController.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
