@@ -11,6 +11,9 @@
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 #import <AFNetworking/AFNetworking.h>
 #import "LHStoryContentTableViewCell.h"
+#import "LHLocationAreaTableViewCell.h"
+#import "LHStoryImageTableViewCell.h"
+#import "LHCategoryLabelCell.h"
 
 @interface LHStoryViewTableViewController ()
 
@@ -36,6 +39,24 @@
   
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
+  if (!self.story.Content) {
+    
+    __block LHStoryViewTableViewController *__self = self;
+    PFQuery *query = [LHStory query];
+    [query includeKey:@"StoryTeller"];
+    [query includeKey:@"StoryTeller.avatar"];
+    [query includeKey:@"graphicPointer"];
+    [query includeKey:@"ideaPointer"];
+    [query includeKey:@"ideaPointer.categoryPointer"];
+    [query getObjectInBackgroundWithId:self.story.objectId block:^(PFObject *object, NSError *error) {
+      if (!error) {
+        __self.story = (LHStory *)object;
+        [__self.tableView reloadData];
+      }
+    }];
+  }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,9 +73,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (section == 0) {
-    return 2;
+    int numbersOfRow = 3;
+    if (self.story.graphicPointer) {
+      numbersOfRow += 1;
+    }
+    if (self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
+      numbersOfRow += 1;
+    }
+    return numbersOfRow;
   } else if (section == 1) {
-    return 0;
+    return 1;
   }
   return 0;
 }
@@ -70,6 +98,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell;
   
+  int numbersOfRow = 3;
   if (indexPath.section == 0 && indexPath.row == 0) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell" forIndexPath:indexPath];
     LHUserInfoTableViewCell *userInfoCell = (LHUserInfoTableViewCell*)cell;
@@ -95,9 +124,69 @@
     storyContentCell.storyContentLabel.text = self.story.Content;
     storyContentCell.storyContentLabel.numberOfLines = 0;
     [storyContentCell.storyContentLabel sizeToFit];
+  } else if (indexPath.section == 0 && indexPath.row == 2) {
+    cell = [tableView dequeueReusableCellWithIdentifier:@"LocationAreaTableViewCell" forIndexPath:indexPath];
+    
+    LHLocationAreaTableViewCell *locationAreaCell = (LHLocationAreaTableViewCell *)cell;
+    locationAreaCell.locationLabel.text = self.story.areaName;
+    locationAreaCell.dayAgoLabel.text = [self.story.createdAt timeAgo];
   }
+  if (self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
+    if (indexPath.section == 0 && indexPath.row == numbersOfRow) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryLabelCell" forIndexPath:indexPath];
+      
+      LHCategoryLabelCell *categoryCell = (LHCategoryLabelCell *)cell;
+      categoryCell.categoryLabel.text = self.story.ideaPointer.categoryPointer.Name;
+      categoryCell.ideaLabel.text = self.story.ideaPointer.Name;
+    }
+    numbersOfRow += 1;
+  }
+  if (self.story.graphicPointer) {
+    if (indexPath.section == 0 && indexPath.row == numbersOfRow) {
+      cell = [tableView dequeueReusableCellWithIdentifier:@"StoryImageTableViewCell" forIndexPath:indexPath];
+      
+      __block LHStoryImageTableViewCell *storyImageCell = (LHStoryImageTableViewCell *)cell;
+      storyImageCell.pictureView.image = [UIImage imageNamed:@"card_default"];
+      storyImageCell.progressOverlayView.frame = storyImageCell.pictureView.bounds;
+      
+      PFFile* file = (PFFile*)self.story.graphicPointer.imageFile;
+      [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+          UIImage *image = [UIImage imageWithData:data];
+          storyImageCell.pictureView.image = image;
+          [cell setNeedsDisplay];
+        }
+      } progressBlock:^(int percentDone) {
+        float perenctDownFloat = (float)percentDone / 100.f;
+        NSLog(@"Download %@ progress: %f", file.url, perenctDownFloat);
+        if (perenctDownFloat == 0) {
+          [storyImageCell.progressOverlayView displayOperationWillTriggerAnimation];
+          storyImageCell.progressOverlayView.hidden = NO;
+        }
+        if (perenctDownFloat < 1) {
+          storyImageCell.progressOverlayView.progress = perenctDownFloat;
+        } else {
+          [storyImageCell.progressOverlayView displayOperationDidFinishAnimation];
+          double delayInSeconds = storyImageCell.progressOverlayView.stateChangeAnimationDuration;
+          dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+          dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            storyImageCell.progressOverlayView.progress = 0.;
+            storyImageCell.progressOverlayView.hidden = YES;
+          });
+          
+        }
+      }];
+      numbersOfRow += 1;
+    }
+  }
+  
   // Configure the cell...
   cell.userInteractionEnabled = NO;
+  
+  if (indexPath.section == 1 && indexPath.row == 0) {
+    cell = [tableView dequeueReusableCellWithIdentifier:@"actionButtonCell" forIndexPath:indexPath];
+    cell.userInteractionEnabled = YES;
+  }
   
   if (!cell) {
     cell = [[UITableViewCell alloc] init];
@@ -114,7 +203,20 @@
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:@{NSFontAttributeName: cell.storyContentLabel.font}
                                                 context:nil];
-    return r.size.height + 40.f;
+    return r.size.height + 20.f;
+  }
+  int numberOfRow = 3;
+  if (self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
+    if (indexPath.section == 0 && indexPath.row == numberOfRow) {
+      return 84.f;
+    }
+    numberOfRow += 1;
+  }
+  if (self.story.graphicPointer) {
+    if (indexPath.section == 0 && indexPath.row == numberOfRow) {
+      return 320;
+    }
+    numberOfRow += 1;
   }
   return 44.f;
 }

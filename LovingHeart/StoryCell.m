@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     self.contentLabel.numberOfLines = 0;
     self.contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    self.avatarView.layer.cornerRadius = 25;
+    self.avatarView.layer.cornerRadius = self.avatarView.width / 2;
     self.avatarView.layer.masksToBounds = YES;
     self.pictureView.clipsToBounds = YES;
   

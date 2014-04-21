@@ -108,6 +108,9 @@
 		1C992A7C18EE4F27000415B4 /* cup_25_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C992A7A18EE4F27000415B4 /* cup_25_clear@2x.png */; };
 		1CB39F941904C38A004A97E9 /* LHStoryViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F931904C38A004A97E9 /* LHStoryViewTableViewController.m */; };
 		1CB39F981904D05F004A97E9 /* LHStoryContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F971904D05F004A97E9 /* LHStoryContentTableViewCell.m */; };
+		1CB39F9B1904EC49004A97E9 /* LHLocationAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F9A1904EC49004A97E9 /* LHLocationAreaTableViewCell.m */; };
+		1CB39F9E1904F13A004A97E9 /* LHStoryImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F9D1904F13A004A97E9 /* LHStoryImageTableViewCell.m */; };
+		1CB39FA11904F4AA004A97E9 /* LHCategoryLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -274,6 +277,12 @@
 		1CB39F931904C38A004A97E9 /* LHStoryViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryViewTableViewController.m; sourceTree = "<group>"; };
 		1CB39F961904D05F004A97E9 /* LHStoryContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryContentTableViewCell.h; sourceTree = "<group>"; };
 		1CB39F971904D05F004A97E9 /* LHStoryContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryContentTableViewCell.m; sourceTree = "<group>"; };
+		1CB39F991904EC49004A97E9 /* LHLocationAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLocationAreaTableViewCell.h; sourceTree = "<group>"; };
+		1CB39F9A1904EC49004A97E9 /* LHLocationAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLocationAreaTableViewCell.m; sourceTree = "<group>"; };
+		1CB39F9C1904F13A004A97E9 /* LHStoryImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStoryImageTableViewCell.h; sourceTree = "<group>"; };
+		1CB39F9D1904F13A004A97E9 /* LHStoryImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryImageTableViewCell.m; sourceTree = "<group>"; };
+		1CB39F9F1904F4AA004A97E9 /* LHCategoryLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCategoryLabelCell.h; sourceTree = "<group>"; };
+		1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHCategoryLabelCell.m; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -534,6 +543,12 @@
 				1C52FF2218FD00FA007B7262 /* LHUserInfoTableViewCell.m */,
 				1CB39F961904D05F004A97E9 /* LHStoryContentTableViewCell.h */,
 				1CB39F971904D05F004A97E9 /* LHStoryContentTableViewCell.m */,
+				1CB39F991904EC49004A97E9 /* LHLocationAreaTableViewCell.h */,
+				1CB39F9A1904EC49004A97E9 /* LHLocationAreaTableViewCell.m */,
+				1CB39F9C1904F13A004A97E9 /* LHStoryImageTableViewCell.h */,
+				1CB39F9D1904F13A004A97E9 /* LHStoryImageTableViewCell.m */,
+				1CB39F9F1904F4AA004A97E9 /* LHCategoryLabelCell.h */,
+				1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */,
 			);
 			name = Story;
 			sourceTree = "<group>";
@@ -819,6 +834,7 @@
 				1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */,
 				1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */,
 				1C52FF0F18FBDDBE007B7262 /* LHUserCollectionsViewController.m in Sources */,
+				1CB39F9B1904EC49004A97E9 /* LHLocationAreaTableViewCell.m in Sources */,
 				1801F622188259080024A832 /* AppDelegate.m in Sources */,
 				1C52FF1618FBE5AB007B7262 /* LHReportViewCell.m in Sources */,
 				1C7C3F3F18EA97FE00B900CB /* LHAltas.m in Sources */,
@@ -843,6 +859,7 @@
 				18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */,
 				1C3D7DB218E3B79700696BBE /* LHLoginViewController.m in Sources */,
 				1C3D7D9718E2B18A00696BBE /* LHIdeaFeatureViewCell.m in Sources */,
+				1CB39F9E1904F13A004A97E9 /* LHStoryImageTableViewCell.m in Sources */,
 				1C3D7D8018E1D80300696BBE /* LHStoryViewController.m in Sources */,
 				1C35814018E94D3E0025E259 /* LHIdeaListViewController.m in Sources */,
 				1C670D7718E1C45100D422CA /* LHUser.m in Sources */,
@@ -854,6 +871,7 @@
 				1C3D7D9018E2AB4100696BBE /* LHPostStoryViewController.m in Sources */,
 				18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */,
 				1C52FF1F18FCDBC0007B7262 /* LHStateInfoCell.m in Sources */,
+				1CB39FA11904F4AA004A97E9 /* LHCategoryLabelCell.m in Sources */,
 				1C3D7DA018E2B8F700696BBE /* LHParseObject.m in Sources */,
 				1C52FF2318FD00FA007B7262 /* LHUserInfoTableViewCell.m in Sources */,
 			);
