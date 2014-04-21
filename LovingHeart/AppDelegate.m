@@ -10,7 +10,7 @@
 #import "LHParseObject.h"
 #import <UVConfig.h>
 #import <uservoice-iphone-sdk/UserVoice.h>
-#import "LHStoryViewController.h"
+#import "LHStoryViewTableViewController.h"
 #import "LHMainViewController.h"
 
 @implementation AppDelegate
@@ -26,6 +26,7 @@
   [LHIdea registerSubclass];
   [LHCategory registerSubclass];
   [LHGraphicImage registerSubclass];
+  [LHEvent registerSubclass];
   
   [Parse setApplicationId:@"5mqwxaAsD0xCUb8dh9HgFu4FM6bQOycBqx4XrdFL"
                 clientKey:@"SX6e4Gd86Fq3vil6XOT4UHvrsfaBqvIJJ99vPkDV"];
@@ -122,7 +123,7 @@
         NSString *object = [urlArray objectAtIndex:(urlArray.count - 2)];
         if ([object isEqualToString:@"story"]) {
           UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-          LHStoryViewController *storyViewController = (LHStoryViewController *)[storyboard instantiateViewControllerWithIdentifier:@"StoryViewController"];
+          LHStoryViewTableViewController *storyViewController = (LHStoryViewTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"StoryViewTableViewController"];
           
           LHStory *story = [[LHStory alloc] init];
           [story setObjectId:objectId];

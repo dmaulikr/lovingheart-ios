@@ -9,7 +9,6 @@
 #import "LHMostTypeStoriesViewController.h"
 #import <BlocksKit/BlocksKit.h>
 #import <UIBarButtonItem+BlocksKit.h>
-#import "LHStoryPickViewController.h"
 
 @interface LHMostTypeStoriesViewController ()
 
@@ -62,39 +61,6 @@
   
   
   return query;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  [super prepareForSegue:segue sender:sender];
-  if ([segue.identifier isEqualToString:@"storiesPicker"]) {
-    UINavigationController *rootViewController = (UINavigationController *)segue.destinationViewController;
-    
-    LHStoryPickViewController *storyPicker = (LHStoryPickViewController *)rootViewController.viewControllers[0];
-    [storyPicker setSelected:[NSIndexSet indexSetWithIndex:self.storiesType]];
-    [storyPicker setDidSelectedRowAtIndexPath:^(NSIndexPath *indexPath) {
-      NSLog(@"Did select %li", (long)indexPath.row);
-      
-      StoriesType newType;
-      switch (indexPath.row) {
-        case 0:
-          newType = kStories_Latest;
-          break;
-        case 1:
-          newType = kStories_Popular;
-          break;
-        case 2:
-          newType = kStories_Anonymous;
-          break;
-        default:
-          newType = kStories_Latest;
-          break;
-      }
-      if (newType != self.storiesType) {
-        self.storiesType = newType;
-        [self loadObjects];
-      }
-    }];
-  }
 }
 
 - (void)storiesSegmented:(id)sender {

@@ -13,6 +13,8 @@
 #import "LHUserProfileViewController.h"
 #import <BlocksKit/UIActionSheet+BlocksKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "LHUserCollectionsViewController.h"
+#import "LHUserTableViewController.h"
 
 @interface LHStoryViewController ()
 
@@ -241,7 +243,7 @@
       
       UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
       
-      LHUserProfileViewController *profileViewController = [sb instantiateViewControllerWithIdentifier:@"LHUserProfileViewController"];
+      LHUserTableViewController *profileViewController = [sb instantiateViewControllerWithIdentifier:@"UserTableViewController"];
       [profileViewController setUser:self.story.StoryTeller];
       [self.navigationController pushViewController:profileViewController animated:YES];
     }

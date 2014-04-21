@@ -14,6 +14,7 @@
 #import "LHGraphicImage.h"
 #import "LHToday.h"
 #import "LHCategory.h"
+#import "LHEvent.h"
 #import "LHUserImpact.h"
 
 @interface LHParseObject : PFObject

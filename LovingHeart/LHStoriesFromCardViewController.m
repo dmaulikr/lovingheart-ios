@@ -11,7 +11,7 @@
 #import "LHStoriesViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
-#import "LHStoryViewController.h"
+#import "LHStoryViewTableViewController.h"
 
 @implementation LHStoriesFromCardViewController
 
@@ -32,7 +32,8 @@
   PFQuery *query = [LHStory query];
   
   [query includeKey:@"graphicPointer"];
-  [query includeKey:@"categoryPointer"];
+  [query includeKey:@"ideaPointer"];
+  [query includeKey:@"ideaPointer.categoryPointer"];
   [query includeKey:@"StoryTeller"];
   [query includeKey:@"StoryTeller.avatar"];
   [query whereKey:@"status" notEqualTo:@"close"];
@@ -130,7 +131,7 @@
     NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
     LHStory *story = (LHStory *)[self objectAtIndexPath:selectedPath];
     
-    LHStoryViewController *storyViewController = (LHStoryViewController *)segue.destinationViewController;
+    LHStoryViewTableViewController *storyViewController = (LHStoryViewTableViewController *)segue.destinationViewController;
     [storyViewController setStory:story];
   }
 }
