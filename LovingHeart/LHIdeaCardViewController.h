@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UIButton *readStoriesButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareStoryButton;
+@property (weak, nonatomic) IBOutlet UIButton *callToActionButton;
 
 @end

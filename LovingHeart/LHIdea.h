@@ -19,5 +19,7 @@
 @property (nonatomic, strong) NSNumber *doneCount;
 @property (nonatomic, strong) LHGraphicImage *graphicPointer;
 @property (nonatomic, strong) LHCategory *categoryPointer;
+@property (nonatomic, strong) NSString *webUrl;
+@property (nonatomic, strong) NSString *webUrlActionCall;
 
 @end

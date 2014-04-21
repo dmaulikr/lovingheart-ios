@@ -10,6 +10,7 @@
 #import "UIView+Frame.h"
 #import "LHPostStoryViewController.h"
 #import "LHStoriesFromCardViewController.h"
+#import "NIWebController.h"
 
 @interface LHIdeaCardViewController ()
 
@@ -55,6 +56,14 @@
   } else {
     _readStoriesButton.enabled = NO;
   }
+  
+  if (self.idea.webUrl && self.idea.webUrlActionCall ) {
+    [self.callToActionButton setTitle:self.idea.webUrlActionCall forState:UIControlStateNormal];
+    self.callToActionButton.enabled = YES;
+  } else {
+    self.callToActionButton.enabled = NO;
+    self.callToActionButton.hidden = YES;
+  }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -98,6 +107,11 @@
   if ([segue.identifier isEqualToString:@"readStoriesFromCard"]) {
     LHStoriesFromCardViewController *tableViewController = (LHStoriesFromCardViewController *)segue.destinationViewController;
     [tableViewController setIdeaObject:self.idea];
+  }
+  if ([segue.identifier isEqualToString:@"CallToAction"]) {
+    NIWebController *webController = segue.destinationViewController;
+    webController.edgesForExtendedLayout = UIRectEdgeNone;
+    [webController openURL:[NSURL URLWithString:self.idea.webUrl]];
   }
 }
 

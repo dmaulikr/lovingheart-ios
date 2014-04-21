@@ -57,6 +57,11 @@
   [self.locationButtonItem setTarget:self];
   [self.locationButtonItem setAction:@selector(getCurrentLocation:)];
   
+  [self performSelector:@selector(getCurrentLocation:) withObject:nil];
+  
+  [self.cameraButtonItem setTarget:self];
+  [self.cameraButtonItem setAction:@selector(openCameraPressed:)];
+  
   // Load idea
   if (self.ideaObject) {
     
@@ -65,7 +70,7 @@
     
     [self.ideaNameLabel setText:self.ideaObject.Name];
     
-    if (self.ideaObject.graphicPointer) {
+    if (!_storyObject.graphicPointer && self.ideaObject.graphicPointer) {
       [_storyObject setGraphicPointer:self.ideaObject.graphicPointer];
       
       PFFile* file = (PFFile*)self.ideaObject.graphicPointer.imageFile;
@@ -155,6 +160,34 @@
  }
  */
 
+- (void)openCameraPressed:(id)sender {
+  if (([UIImagePickerController isSourceTypeAvailable:
+        UIImagePickerControllerSourceTypeCamera]) == NO) {
+    return;
+  }
+  UIImagePickerController *cameraController = [[UIImagePickerController alloc] init];
+  cameraController.sourceType = UIImagePickerControllerSourceTypeCamera;
+  
+  cameraController.delegate = self;
+  
+  [self presentViewController:cameraController animated:YES completion:nil];
+      
+}
+
+- (void)displayEditorForImage:(UIImage *)imageToEdit {
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    [AFPhotoEditorController setAPIKey:kAviaryAPIKey secret:kAviarySecret];
+  });
+  [AFOpenGLManager beginOpenGLLoad];
+  
+  AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
+  [editorController setDelegate:self];
+  [self.navigationController presentViewController:editorController animated:YES completion:^{
+    
+  }];
+}
+
 - (void)cancelPress:(id)selector {
   [self.navigationController dismissViewControllerAnimated:YES completion:^{
     // Complete dismiss
@@ -170,7 +203,7 @@
 }
 
 - (void)post:(id)sender {
-  [_storyObject setStoryTeller:[PFUser currentUser]];
+  [_storyObject setStoryTeller:[LHUser currentUser]];
   [_storyObject setContent:self.userInputTextView.text];
   [SVProgressHUD showWithStatus:@"Posting" maskType:SVProgressHUDMaskTypeGradient];
   [_storyObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -230,6 +263,82 @@
 
     }];
   }
+}
+
+#pragma mark - AFPhotoEditorControllerDelegate
+
+- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
+{
+  // Handle the result image here// Handle cancellation here
+  [editor dismissViewControllerAnimated:YES completion:^{
+    
+    
+    // Upload here
+    NSData *imageData = UIImagePNGRepresentation(image);
+    PFFile *imageFile = [PFFile fileWithData:imageData];
+    
+    LHGraphicImage *graphicImage = [[LHGraphicImage alloc] init];
+    graphicImage.imageType = @"file";
+    graphicImage.imageFile = imageFile;
+    [SVProgressHUD showWithStatus:@"Uploading Photo"];
+    [graphicImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+      if (succeeded) {
+        _storyImageView.image = image;
+        [SVProgressHUD showSuccessWithStatus:@"Done"];
+        _storyObject.graphicPointer = graphicImage;
+        
+        [_cameraButtonItem setTintColor:kColorWithBlue];
+      } else {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+      }
+    }];
+  }];
+}
+
+- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
+{
+  // Handle cancellation here
+  [editor dismissViewControllerAnimated:YES completion:^{
+    
+  }];
+}
+
+#pragma mark -
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+  
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *originalImage, *editedImage, *imageToSave;
+  
+
+    
+    editedImage = (UIImage *) [info objectForKey:
+                               UIImagePickerControllerEditedImage];
+    originalImage = (UIImage *) [info objectForKey:
+                                 UIImagePickerControllerOriginalImage];
+    
+    if (editedImage) {
+      imageToSave = editedImage;
+    } else {
+      imageToSave = originalImage;
+    }
+    
+    // Save the new image (original or edited) to the Camera Roll
+    UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+  __block LHPostStoryViewController *__self = self;
+  [picker dismissViewControllerAnimated:YES completion:^{
+    
+      [__self displayEditorForImage:imageToSave];
+    
+  }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+  [picker dismissViewControllerAnimated:YES completion:^{
+    
+  }];
 }
 
 @end

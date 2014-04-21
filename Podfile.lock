@@ -17,6 +17,7 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
+  - AviarySDK (4.0.1)
   - BlocksKit/Core (2.2.2)
   - BlocksKit/DynamicDelegate (2.2.2)
   - BlocksKit/UIKit (2.2.2):
@@ -41,6 +42,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
+  - AviarySDK
   - BlocksKit/Core
   - BlocksKit/UIKit
   - DAProgressOverlayView
@@ -55,10 +57,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  AviarySDK: d6dc7371ae6ef6a6b06de5c9b7c50c26e61d5ad7
   BlocksKit: 125e4e69a62e3b85bacc5175737dae000b00b9fb
   DAProgressOverlayView: abfd16f70476496e34176eeb94b139fc5e6d5f6b
-  Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
-  GCPlaceholderTextView: 5eeef8d07a1dece8fdcd7762dfc21b8e89800838
+  Facebook-iOS-SDK: 07805d0a07ca19ffeb98e1a5d7d6ef042d1f51ba
+  GCPlaceholderTextView: 8f0e4cb4b93827c9ec8d9bf9e850bbd328d1db0b
   Nimbus: bbde56c7e845d3c38c1f484018ef1bb3259c0507
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
@@ -66,4 +69,4 @@ SPEC CHECKSUMS:
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   uservoice-iphone-sdk: 547ef35f8db7ad9975cada6f39e39dc972d87c33
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

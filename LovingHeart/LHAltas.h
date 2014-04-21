@@ -22,5 +22,8 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
 static NSString *kUserDefaultHasBeenAskUser = @"kUserDefaultHasBeenAskUser";
 static NSString *kUserDefaultUserWantPushNotification = @"kUserDefaultUserWantPushNotification";
 
+static NSString *kAviaryAPIKey = @"d6fc6eb5fdda7a79";
+static NSString *kAviarySecret = @"883fbc85c2e70208";
+
 
 extern NSString* const kUserProfileRefreshNotification;

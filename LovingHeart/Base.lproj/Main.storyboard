@@ -400,6 +400,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="additionalToolbar" destination="mqS-8l-h0l" id="uYU-y1-qBR"/>
+                        <outlet property="cameraButtonItem" destination="ako-nr-46l" id="hQF-L5-QTE"/>
                         <outlet property="cancelButtonItem" destination="hpZ-ud-37w" id="BvJ-qv-dSE"/>
                         <outlet property="doneButtonItem" destination="3De-xd-K0M" id="I7R-AI-fyE"/>
                         <outlet property="ideaNameLabel" destination="u7Q-jc-SDv" id="vDR-Xv-HY9"/>
@@ -656,8 +657,19 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-3Q-M33">
+                                        <rect key="frame" x="165" y="426" width="135" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Call to Action">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="R52-iB-rBX" kind="push" identifier="CallToAction" id="QfK-Fs-fda"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXo-df-RKU">
-                                        <rect key="frame" x="20" y="446" width="135" height="30"/>
+                                        <rect key="frame" x="20" y="464" width="135" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Read Stories">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -667,7 +679,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZV-Td-Fre">
-                                        <rect key="frame" x="165" y="446" width="135" height="30"/>
+                                        <rect key="frame" x="165" y="464" width="135" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="135" id="irY-ud-zHj"/>
@@ -685,6 +697,7 @@
                                     <constraint firstItem="yww-c0-d9d" firstAttribute="top" secondItem="5ys-NS-FJ4" secondAttribute="bottom" constant="8" symbolic="YES" id="05H-Yr-bnj"/>
                                     <constraint firstItem="bEI-LO-YEe" firstAttribute="top" secondItem="yww-c0-d9d" secondAttribute="bottom" constant="8" symbolic="YES" id="8jx-t3-5pB"/>
                                     <constraint firstItem="RXo-df-RKU" firstAttribute="leading" secondItem="LGX-U8-wK6" secondAttribute="leading" id="Bm9-Av-S3G"/>
+                                    <constraint firstItem="gGB-3Q-M33" firstAttribute="leading" secondItem="kZV-Td-Fre" secondAttribute="leading" id="I1V-k6-e5D"/>
                                     <constraint firstItem="kZV-Td-Fre" firstAttribute="leading" secondItem="RXo-df-RKU" secondAttribute="trailing" constant="10" id="KOc-ef-KPm"/>
                                     <constraint firstItem="bEI-LO-YEe" firstAttribute="top" secondItem="Rj3-m5-53F" secondAttribute="top" constant="368" id="LjA-PL-AMk"/>
                                     <constraint firstItem="LGX-U8-wK6" firstAttribute="leading" secondItem="bEI-LO-YEe" secondAttribute="leading" id="Sba-QL-GkB"/>
@@ -695,11 +708,13 @@
                                     <constraint firstItem="kZV-Td-Fre" firstAttribute="trailing" secondItem="LGX-U8-wK6" secondAttribute="trailing" id="dM0-ar-Vaq"/>
                                     <constraint firstAttribute="bottom" secondItem="bEI-LO-YEe" secondAttribute="bottom" constant="130" id="egx-Od-skU"/>
                                     <constraint firstItem="LGX-U8-wK6" firstAttribute="leading" secondItem="Rj3-m5-53F" secondAttribute="leading" constant="20" symbolic="YES" id="h6t-sd-0ux"/>
+                                    <constraint firstItem="gGB-3Q-M33" firstAttribute="trailing" secondItem="LGX-U8-wK6" secondAttribute="trailing" id="k91-8F-Lgm"/>
                                     <constraint firstAttribute="trailing" secondItem="bEI-LO-YEe" secondAttribute="trailing" constant="20" symbolic="YES" id="l6N-kM-Zba"/>
                                     <constraint firstItem="5ys-NS-FJ4" firstAttribute="leading" secondItem="Rj3-m5-53F" secondAttribute="leading" id="nWv-iJ-owF"/>
                                     <constraint firstItem="bEI-LO-YEe" firstAttribute="centerX" secondItem="5ys-NS-FJ4" secondAttribute="centerX" id="na8-nD-40m"/>
+                                    <constraint firstItem="gGB-3Q-M33" firstAttribute="top" secondItem="LGX-U8-wK6" secondAttribute="bottom" constant="8" symbolic="YES" id="ono-ya-KhP"/>
                                     <constraint firstItem="kZV-Td-Fre" firstAttribute="baseline" secondItem="RXo-df-RKU" secondAttribute="baseline" id="rv2-h0-7zX"/>
-                                    <constraint firstItem="RXo-df-RKU" firstAttribute="top" secondItem="LGX-U8-wK6" secondAttribute="bottom" constant="28" id="yDQ-5l-Dap"/>
+                                    <constraint firstItem="RXo-df-RKU" firstAttribute="top" secondItem="LGX-U8-wK6" secondAttribute="bottom" constant="46" id="yDQ-5l-Dap"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -712,6 +727,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Action Card" id="KJ9-NI-3rq"/>
                     <connections>
+                        <outlet property="callToActionButton" destination="gGB-3Q-M33" id="b6d-N0-FWe"/>
                         <outlet property="categoryTitleLabel" destination="yww-c0-d9d" id="rgm-0y-UgY"/>
                         <outlet property="contentScrollView" destination="Rj3-m5-53F" id="EoD-vW-zyP"/>
                         <outlet property="ideaCardImageView" destination="5ys-NS-FJ4" id="Vdw-Ku-bY2"/>
@@ -1178,7 +1194,7 @@
             </objects>
             <point key="canvasLocation" x="3447" y="1748"/>
         </scene>
-        <!--Story View Table View Controller - Title-->
+        <!--Story View Table View Controller - Story-->
         <scene sceneID="2L7-mb-5Ij">
             <objects>
                 <tableViewController storyboardIdentifier="StoryViewTableViewController" id="v24-J0-JnY" customClass="LHStoryViewTableViewController" sceneMemberID="viewController">
@@ -1423,7 +1439,7 @@
                             <outlet property="delegate" destination="v24-J0-JnY" id="afN-Lu-I2D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="9nB-Ki-Nkb">
+                    <navigationItem key="navigationItem" title="Story" id="9nB-Ki-Nkb">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="m8G-iR-MNJ"/>
                     </navigationItem>
                     <connections>
@@ -1652,13 +1668,13 @@
         <!--Web Controller-->
         <scene sceneID="9U8-WE-z9F">
             <objects>
-                <viewController id="R52-iB-rBX" customClass="NIWebController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="R52-iB-rBX" customClass="NIWebController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vmc-yA-RMM"/>
                         <viewControllerLayoutGuide type="bottom" id="Djl-c0-KuT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aie-Oi-6yI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1685,8 +1701,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nje-1x-q1U"/>
         <segue reference="SmJ-FX-iAz"/>
+        <segue reference="QfK-Fs-fda"/>
+        <segue reference="o51-Ne-ShS"/>
         <segue reference="8nF-Tf-eH1"/>
     </inferredMetricsTieBreakers>
 </document>
