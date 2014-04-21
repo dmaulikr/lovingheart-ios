@@ -32,7 +32,8 @@
   PFQuery *query = [LHStory query];
   
   [query includeKey:@"graphicPointer"];
-  [query includeKey:@"categoryPointer"];
+  [query includeKey:@"ideaPointer"];
+  [query includeKey:@"ideaPointer.categoryPointer"];
   [query includeKey:@"StoryTeller"];
   [query includeKey:@"StoryTeller.avatar"];
   [query whereKey:@"status" notEqualTo:@"close"];

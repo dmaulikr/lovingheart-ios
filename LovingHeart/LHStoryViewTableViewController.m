@@ -257,7 +257,7 @@
     return r.size.height + 20.f;
   }
   int numberOfRow = 3;
-  if (self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
+  if (self.story.ideaPointer && self.story.ideaPointer && self.story.ideaPointer.categoryPointer) {
     if (indexPath.section == 0 && indexPath.row == numberOfRow) {
       return 84.f;
     }
