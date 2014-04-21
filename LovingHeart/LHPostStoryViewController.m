@@ -9,6 +9,7 @@
 #import "LHPostStoryViewController.h"
 #import <BlocksKit/UITextField+BlocksKit.h>
 #import <SVProgressHUD.h>
+#import <BlocksKit/UIActionSheet+BlocksKit.h>
 
 @interface LHPostStoryViewController ()
 
@@ -57,6 +58,11 @@
   [self.locationButtonItem setTarget:self];
   [self.locationButtonItem setAction:@selector(getCurrentLocation:)];
   
+  [self performSelector:@selector(getCurrentLocation:) withObject:nil];
+  
+  [self.cameraButtonItem setTarget:self];
+  [self.cameraButtonItem setAction:@selector(openCameraPressed:)];
+  
   // Load idea
   if (self.ideaObject) {
     
@@ -65,7 +71,7 @@
     
     [self.ideaNameLabel setText:self.ideaObject.Name];
     
-    if (self.ideaObject.graphicPointer) {
+    if (!_storyObject.graphicPointer && self.ideaObject.graphicPointer) {
       [_storyObject setGraphicPointer:self.ideaObject.graphicPointer];
       
       PFFile* file = (PFFile*)self.ideaObject.graphicPointer.imageFile;
@@ -96,14 +102,14 @@
     [[userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-
-      [UIView beginAnimations:nil context:nil];
-      [UIView setAnimationDuration:animationDuration];
-      [UIView setAnimationCurve:animationCurve];
-      
-      [self.view setFrame:CGRectMake(self.view.left, self.view.top, self.view.frame.size.width, screenRect.size.height  - keyboardFrame.size.height)];
-      self.userInputTextView.frame = CGRectMake(self.userInputTextView.left, self.userInputTextView.top, self.userInputTextView.width, self.additionalToolbar.top);
-
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    [self.view setFrame:CGRectMake(self.view.left, self.view.top, self.view.frame.size.width, screenRect.size.height  - keyboardFrame.size.height)];
+    self.userInputTextView.frame = CGRectMake(self.userInputTextView.left, self.userInputTextView.top, self.userInputTextView.width, self.additionalToolbar.top);
+    
     
     [UIView commitAnimations];
   }];
@@ -119,11 +125,11 @@
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     if (screenRect.size.height - keyboardFrame.size.height > self.view.height) {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    [UIView setAnimationCurve:animationCurve];
-    [self.view setFrame:CGRectMake(self.view.left, self.view.top, self.view.frame.size.width, self.view.frame.size.height  + keyboardFrame.size.height)];
-    [UIView commitAnimations];
+      [UIView beginAnimations:nil context:nil];
+      [UIView setAnimationDuration:animationDuration];
+      [UIView setAnimationCurve:animationCurve];
+      [self.view setFrame:CGRectMake(self.view.left, self.view.top, self.view.frame.size.width, self.view.frame.size.height  + keyboardFrame.size.height)];
+      [UIView commitAnimations];
     }
   }];
   
@@ -155,6 +161,64 @@
  }
  */
 
+- (void)openCameraPressed:(id)sender {
+  if (!([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeCamera] || [UIImagePickerController isSourceTypeAvailable:
+                                                      UIImagePickerControllerSourceTypePhotoLibrary])) {
+    return;
+  }
+  
+  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Photo Actions"];
+  __block UIActionSheet *__actionSheet = actionSheet;
+  if ([UIImagePickerController isSourceTypeAvailable:
+       UIImagePickerControllerSourceTypeCamera]) {
+    [actionSheet bk_addButtonWithTitle:@"Take Photo" handler:^{
+      UIImagePickerController *cameraController = [[UIImagePickerController alloc] init];
+      cameraController.sourceType = UIImagePickerControllerSourceTypeCamera;
+      
+      cameraController.delegate = self;
+      
+      [self presentViewController:cameraController animated:YES completion:nil];
+      
+      [__actionSheet dismissWithClickedButtonIndex:2 animated:YES];
+    }];
+  }
+  if ([UIImagePickerController isSourceTypeAvailable:
+       UIImagePickerControllerSourceTypePhotoLibrary]) {
+    [actionSheet bk_addButtonWithTitle:@"Photo Library" handler:^{
+      UIImagePickerController *cameraController = [[UIImagePickerController alloc] init];
+      cameraController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+      
+      cameraController.delegate = self;
+      
+      [self presentViewController:cameraController animated:YES completion:nil];
+      
+      [__actionSheet dismissWithClickedButtonIndex:1 animated:YES];
+    }];
+  }
+  [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
+    [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+  }];
+  [actionSheet showInView:self.view];
+  
+  
+  
+}
+
+- (void)displayEditorForImage:(UIImage *)imageToEdit {
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    [AFPhotoEditorController setAPIKey:kAviaryAPIKey secret:kAviarySecret];
+  });
+  [AFOpenGLManager beginOpenGLLoad];
+  
+  AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
+  [editorController setDelegate:self];
+  [self.navigationController presentViewController:editorController animated:YES completion:^{
+    
+  }];
+}
+
 - (void)cancelPress:(id)selector {
   [self.navigationController dismissViewControllerAnimated:YES completion:^{
     // Complete dismiss
@@ -164,13 +228,13 @@
 - (void)getCurrentLocation:(id)sender {
   locationmanager.delegate = self;
   locationmanager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-
+  
   [self.locationLabel setText:NSLocalizedString(@"Loading", @"Loading")];
   [locationmanager startUpdatingLocation];
 }
 
 - (void)post:(id)sender {
-  [_storyObject setStoryTeller:[PFUser currentUser]];
+  [_storyObject setStoryTeller:[LHUser currentUser]];
   [_storyObject setContent:self.userInputTextView.text];
   [SVProgressHUD showWithStatus:@"Posting" maskType:SVProgressHUDMaskTypeGradient];
   [_storyObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -220,16 +284,92 @@
       if (placemarks.count > 0) {
         CLPlacemark *placemark = [placemarks lastObject];
         NSString *areaName = [NSString stringWithFormat:@"%@, %@",
-        placemark.locality,
-        placemark.administrativeArea];
+                              placemark.locality,
+                              placemark.administrativeArea];
         [_locationLabel setText:areaName];
         [_locationLabel setTextColor:[UIColor grayColor]];
         [_storyObject setAreaName:areaName];
         [_locationButtonItem setTintColor:kColorWithBlue];
       }
-
+      
     }];
   }
+}
+
+#pragma mark - AFPhotoEditorControllerDelegate
+
+- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
+{
+  // Handle the result image here// Handle cancellation here
+  [editor dismissViewControllerAnimated:YES completion:^{
+    
+    
+    // Upload here
+    NSData *imageData = UIImagePNGRepresentation(image);
+    PFFile *imageFile = [PFFile fileWithData:imageData];
+    
+    LHGraphicImage *graphicImage = [[LHGraphicImage alloc] init];
+    graphicImage.imageType = @"file";
+    graphicImage.imageFile = imageFile;
+    [SVProgressHUD showWithStatus:@"Uploading Photo"];
+    [graphicImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+      if (succeeded) {
+        _storyImageView.image = image;
+        [SVProgressHUD showSuccessWithStatus:@"Done"];
+        _storyObject.graphicPointer = graphicImage;
+        
+        [_cameraButtonItem setTintColor:kColorWithBlue];
+      } else {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+      }
+    }];
+  }];
+}
+
+- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
+{
+  // Handle cancellation here
+  [editor dismissViewControllerAnimated:YES completion:^{
+    
+  }];
+}
+
+#pragma mark -
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+  
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+  UIImage *originalImage, *editedImage, *imageToSave;
+  
+  
+  
+  editedImage = (UIImage *) [info objectForKey:
+                             UIImagePickerControllerEditedImage];
+  originalImage = (UIImage *) [info objectForKey:
+                               UIImagePickerControllerOriginalImage];
+  
+  if (editedImage) {
+    imageToSave = editedImage;
+  } else {
+    imageToSave = originalImage;
+  }
+  
+  // Save the new image (original or edited) to the Camera Roll
+  UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+  __block LHPostStoryViewController *__self = self;
+  [picker dismissViewControllerAnimated:YES completion:^{
+    
+    [__self displayEditorForImage:imageToSave];
+    
+  }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+  [picker dismissViewControllerAnimated:YES completion:^{
+    
+  }];
 }
 
 @end

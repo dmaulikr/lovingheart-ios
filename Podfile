@@ -8,6 +8,7 @@ pod 'SVProgressHUD'
 pod 'uservoice-iphone-sdk'
 pod 'DAProgressOverlayView'
 pod 'GCPlaceholderTextView'
+pod 'AviarySDK'
 
 # Basics
 pod 'AFNetworking', '~> 2.1.0'
