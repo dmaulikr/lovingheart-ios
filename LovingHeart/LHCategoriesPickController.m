@@ -8,6 +8,7 @@
 
 #import "LHCategoriesPickController.h"
 #import "LHPickerTableViewCell.h"
+#import <BlocksKit/UIControl+BlocksKit.h>
 
 @interface LHCategoriesPickController ()
 
@@ -15,6 +16,7 @@
 
 @implementation LHCategoriesPickController {
   CategoryPickDidSelectRowAtIndexPath _categoryPickDidSelectRowAtIndexPath;
+  CategoryPickClearSelectRowAtIndexPath _categoryPickClearSelectRowAtIndexPath;
 }
 
 - (void)awakeFromNib {
@@ -38,6 +40,13 @@
     
   [self.cancelButtonItem setTarget:self];
   [self.cancelButtonItem setAction:@selector(cancel:)];
+  
+  self.allButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+  self.allButton.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
+  [self.allButton bk_addEventHandler:^(id sender) {
+    _categoryPickClearSelectRowAtIndexPath();
+    [self performSelector:@selector(cancel:) withObject:nil];
+  } forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +118,10 @@
     }
     
   }];
+}
+
+- (void)clearSelectedRowAtIndexPath:(CategoryPickClearSelectRowAtIndexPath)clearSelect {
+  _categoryPickClearSelectRowAtIndexPath = clearSelect;
 }
 
 - (void)setDidSelectedRowAtIndexPath:(CategoryPickDidSelectRowAtIndexPath)didSelectRowAtIndexPath {

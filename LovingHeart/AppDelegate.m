@@ -12,6 +12,7 @@
 #import <uservoice-iphone-sdk/UserVoice.h>
 #import "LHStoryViewTableViewController.h"
 #import "LHMainViewController.h"
+#import <QbonWidget/Qbon.h>
 
 @implementation AppDelegate
 
@@ -71,6 +72,8 @@
       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultSupportChinese];
     }
   }
+  
+  [Qbon connectAppKey:@"f4238a0dba513f78fcc1d0d2b7ccbcb8" debug:YES];
   
   
   return YES;

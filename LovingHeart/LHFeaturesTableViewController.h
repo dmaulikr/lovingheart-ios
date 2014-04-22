@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QbonWidget/Qbon.h>
 
 @interface LHFeaturesTableViewController : PFQueryTableViewController
+<
+  QbonDelegate
+>
+
+@property (nonatomic, strong) Qbon *qbon;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *qbonButtonItem;
 
 @end

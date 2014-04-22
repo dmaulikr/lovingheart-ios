@@ -38,6 +38,8 @@
   if (self.category) {
     [query whereKey:@"categoryPointer" equalTo:self.category];
     self.title = self.category.Name;
+  } else {
+    self.title = @"Action Cards";
   }
   
   // If no objects are loaded in memory, we look to the cache first to fill the table
@@ -161,6 +163,10 @@
         [self loadObjects];
       }
 
+    }];
+    [categoriesPick clearSelectedRowAtIndexPath:^{
+      self.category = nil;
+      [self loadObjects];
     }];
   }
   
