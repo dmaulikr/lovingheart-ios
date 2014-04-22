@@ -29,6 +29,7 @@
 		1801F655188263830024A832 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F654188263830024A832 /* Security.framework */; };
 		1801F657188263890024A832 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F656188263890024A832 /* StoreKit.framework */; };
 		1801F659188263900024A832 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1801F658188263900024A832 /* SystemConfiguration.framework */; };
+		18B91B1D190674650075F1CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18B91B1F190674650075F1CE /* InfoPlist.strings */; };
 		18F78B1A188B6C68001491D5 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B19188B6C68001491D5 /* StoryCell.m */; };
 		18F78B1D188B6D2F001491D5 /* LHMostTypeStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F78B1C188B6D2F001491D5 /* LHMostTypeStoriesViewController.m */; };
 		1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C033FE418F3F85400C86955 /* LHReportManager.m */; };
@@ -389,6 +390,9 @@
 		1801F654188263830024A832 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1801F656188263890024A832 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1801F658188263900024A832 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18B91B1E190674650075F1CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18B91B201906746B0075F1CE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		18B91B211906746D0075F1CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18F78B18188B6C68001491D5 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		18F78B19188B6C68001491D5 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		18F78B1B188B6D2F001491D5 /* LHMostTypeStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMostTypeStoriesViewController.h; sourceTree = "<group>"; };
@@ -894,6 +898,7 @@
 			children = (
 				1CD9F5E618E134C40089CB4F /* Images */,
 				1801F619188259080024A832 /* LovingHeart-Info.plist */,
+				18B91B1F190674650075F1CE /* InfoPlist.strings */,
 				1801F61D188259080024A832 /* main.m */,
 				1801F61F188259080024A832 /* LovingHeart-Prefix.pch */,
 				1CEF810318DEAD120011F412 /* Localizable.strings */,
@@ -1515,6 +1520,7 @@
 				1CAE0E1D19064B9E00732240 /* qbon_popupsdk_border@2x.png in Resources */,
 				1CAE0DF419064B9E00732240 /* qbon_icon_password.png in Resources */,
 				1C992A7B18EE4F27000415B4 /* cup_25_clear.png in Resources */,
+				18B91B1D190674650075F1CE /* InfoPlist.strings in Resources */,
 				1C3D7D9318E2B03000696BBE /* card_default.png in Resources */,
 				1CAE0D7F19064B9E00732240 /* qbon_bg_list_border@2x.png in Resources */,
 				1CAE0D8219064B9E00732240 /* qbon_bg_list_wallet.png in Resources */,
@@ -1886,6 +1892,16 @@
 				1C3D499318EB82C300F9C4D7 /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18B91B1F190674650075F1CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B91B1E190674650075F1CE /* Base */,
+				18B91B201906746B0075F1CE /* zh-Hant */,
+				18B91B211906746D0075F1CE /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		1CEF810318DEAD120011F412 /* Localizable.strings */ = {
