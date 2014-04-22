@@ -57,7 +57,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
                         object:(LHIdea *)ideaObject {
   
-  LHIdeaActionCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ideaCardViewCell"];
+  LHIdeaActionCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdeaCardViewCell"];
   
   if (ideaObject.graphicPointer) {
     

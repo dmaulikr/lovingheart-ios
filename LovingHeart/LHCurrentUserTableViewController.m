@@ -61,6 +61,7 @@
   }
   
   [query whereKey:@"language" containedIn:[LHAltas supportLanguageList]];
+  [query orderByDescending:@"createdAt"];
   
   // If no objects are loaded in memory, we look to the cache first to fill the table
   // and then subsequently do a query against the network.
@@ -74,7 +75,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  if (section == 0) {
+  if (section == 0 && [LHUser currentUser]) {
     return 1;
   }
   else if (section == 1) {
@@ -195,6 +196,23 @@
     return 100.f;
   }
   return 44.f;
+}
+
+- (PFTableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
+  PFTableViewCell *cell  = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                                  reuseIdentifier:@"loadCell"];
+  UIActivityIndicatorView* spinner = [[UIActivityIndicatorView alloc] initWithFrame:cell.bounds];
+  spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+  [spinner startAnimating];
+  [cell addSubview:spinner];
+  return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSLog(@"indexPath.row %i" , indexPath.row);
+  if (indexPath.section == 1 && indexPath.row >= self.objects.count -1) {
+    [self loadNextPage];
+  }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

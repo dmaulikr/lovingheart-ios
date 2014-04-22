@@ -1447,8 +1447,16 @@
                                     <outlet property="userNameLabel" destination="eeC-zm-2GR" id="lS4-1T-uPA"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JEW-js-K1C">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEW-js-K1C" id="fFN-QE-TYH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileStoryImageCell" rowHeight="100" id="7J4-FU-mVN" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="130" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="174" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7J4-FU-mVN" id="wAd-Ml-4sE">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -1524,7 +1532,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileStoryCell" rowHeight="100" id="sNH-08-uIP" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="230" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="274" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sNH-08-uIP" id="Ila-eF-6zx">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
