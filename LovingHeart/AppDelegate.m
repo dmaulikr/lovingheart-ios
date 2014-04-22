@@ -57,6 +57,11 @@
   [UserVoice initialize:config];
   
   // Initialize preference
+  // Default Chinese is on.
+  if (![[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultSupportChinese]) {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultSupportChinese];
+  }
+  
   if ([NSLocale preferredLanguages] && [NSLocale preferredLanguages].count > 0) {
     NSString *userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
     if ([userLanguage hasPrefix:@"en"] && ![[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultSupportEnglish]) {

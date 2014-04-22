@@ -21,6 +21,7 @@
 #import <BlocksKit/UIAlertView+BlocksKit.h>
 #import "NSString+Extra.h"
 #import "LHStoryReviewViewController.h"
+#import "LHLoginViewController.h"
 
 @interface LHStoryViewTableViewController ()
 
@@ -442,10 +443,30 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"EncourageStory"]) {
-    UINavigationController *storyReviewNavigationController = (UINavigationController *)segue.destinationViewController;
-    LHStoryReviewViewController *storyReviewController = [storyReviewNavigationController.viewControllers objectAtIndex:0];
-    storyReviewController.story = self.story;
-    storyReviewController.encourageList = self.events;
+    
+    if (![PFUser currentUser]) {
+      
+      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share a story"];
+      [alertView bk_addButtonWithTitle:@"Go" handler:^{
+        [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
+          LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
+          loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+          [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+        }];
+        
+      }];
+      [alertView bk_setCancelBlock:^{
+        [segue.destinationViewController dismissModalViewControllerAnimated:YES];
+      }];
+      [alertView show];
+    } else {
+      NSLog(@"Login User Name: %@", [[PFUser currentUser] username]);
+      
+      UINavigationController *storyReviewNavigationController = (UINavigationController *)segue.destinationViewController;
+      LHStoryReviewViewController *storyReviewController = [storyReviewNavigationController.viewControllers objectAtIndex:0];
+      storyReviewController.story = self.story;
+      storyReviewController.encourageList = self.events;
+    }
   }
 }
 

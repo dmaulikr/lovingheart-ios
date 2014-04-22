@@ -52,24 +52,27 @@
   self.fiveStarButtonItem.target = self;
   self.fiveStarButtonItem.action = @selector(fiveStarButtonItemPressed:);
   
-  PFQuery *eventQUery = [LHEvent query];
-  [eventQUery whereKey:@"user" equalTo:[LHUser currentUser]];
-  [eventQUery whereKey:@"action" equalTo:@"review_story"];
-  [eventQUery whereKey:@"story" equalTo:self.story];
-  __block LHStoryReviewViewController *__self = self;
-  [SVProgressHUD showWithStatus:@"Loading"];
-  [eventQUery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-    [SVProgressHUD dismiss];
-    if (!error && object) {
-      LHEvent *foundEvent = (LHEvent *)object;
-      __self.reviewTextField.text = foundEvent[@"description"];
-      [__self multiButtonPressed:foundEvent.value];
-      
-      __self.encourage = foundEvent;
-    }
-  }];
-  
+  if (self.story && [LHUser currentUser]) {
+    PFQuery *eventQUery = [LHEvent query];
+    [eventQUery whereKey:@"user" equalTo:[LHUser currentUser]];
+    [eventQUery whereKey:@"action" equalTo:@"review_story"];
+    [eventQUery whereKey:@"story" equalTo:self.story];
+    __block LHStoryReviewViewController *__self = self;
+    [SVProgressHUD showWithStatus:@"Loading"];
+    [eventQUery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+      [SVProgressHUD dismiss];
+      if (!error && object) {
+        LHEvent *foundEvent = (LHEvent *)object;
+        __self.reviewTextField.text = foundEvent[@"description"];
+        [__self multiButtonPressed:foundEvent.value];
+        
+        __self.encourage = foundEvent;
+      }
+    }];
   [self.reviewTextField becomeFirstResponder];
+  }
+  
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -130,13 +133,16 @@
       PFQuery *pushQuery = [PFInstallation query];
       
       NSMutableArray *pushToUsers = [[NSMutableArray alloc] init];
+      if (![self.story.StoryTeller.objectId isEqualToString:[LHUser currentUser].objectId]) {
+        [pushToUsers addObject:self.story.StoryTeller];
+      }
       for (LHEvent *hasEncourage in self.encourageList) {
-        [pushToUsers addObject:hasEncourage.user];
+        if (![hasEncourage.user.objectId isEqualToString:[LHUser currentUser].objectId]) {
+          [pushToUsers addObject:hasEncourage.user];
+        }
       }
       
-      [pushQuery whereKey:@"user" containsAllObjectsInArray:pushToUsers];
-      [pushQuery whereKey:@"user" equalTo:self.story.StoryTeller];
-      [pushQuery whereKey:@"user" notEqualTo:[LHUser currentUser]];
+      [pushQuery whereKey:@"user" containedIn:pushToUsers];
       
       PFPush *push = [[PFPush alloc] init];
       [push setQuery:pushQuery];
@@ -149,7 +155,7 @@
       
       NSMutableDictionary *pushInfo = [[NSMutableDictionary alloc] init];
       [pushInfo setObject:@"com.lovingheart.app.PUSH_STORY" forKey:@"action"];
-      [pushInfo setObject:@"StroyContentActivity" forKey:@"intent"];
+      [pushInfo setObject:@"StoryContentActivity" forKey:@"intent"];
       [pushInfo setObject:message forKey:@"alert"];
       [pushInfo setObject:self.story.objectId forKey:@"objectId"];
       

@@ -52,7 +52,7 @@
   
   // Check and ask user to sign up
   BOOL hasAskUserNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultHasBeenAskUser];
-  if (hasAskUserNotification) {
+  if (!hasAskUserNotification) {
     [UIAlertView bk_showAlertViewWithTitle:@"Send message" message:@"Let LovingHeart can push message to me." cancelButtonTitle:@"Cancel" otherButtonTitles:[NSArray arrayWithObjects:@"OK", @"No", nil] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
       NSLog(@"Ask and click: %i", (int)buttonIndex);
       switch (buttonIndex) {
