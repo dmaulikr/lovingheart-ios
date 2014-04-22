@@ -24,6 +24,10 @@
   self.objectsPerPage = 10;
 }
 
+- (void)objectsWillLoad {
+
+}
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   if (![LHUser currentUser]) {
@@ -95,7 +99,7 @@
   if (indexPath.section == 0 && indexPath.row == 0) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell" forIndexPath:indexPath];
     LHUserInfoTableViewCell *userInfoCell = (LHUserInfoTableViewCell*)cell;
-    
+    userInfoCell.userInteractionEnabled = NO;
     
     userInfoCell.userNameLabel.text = [LHUser currentUser].name;
     
@@ -183,7 +187,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
   if (section == 0) {
-    return @"User";
+    return nil;
   } else if (section == 1) {
     return @"Stories";
   }

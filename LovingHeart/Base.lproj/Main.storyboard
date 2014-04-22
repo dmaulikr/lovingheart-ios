@@ -907,11 +907,11 @@
             </objects>
             <point key="canvasLocation" x="1128" y="-255"/>
         </scene>
-        <!--Navigation Controller - My Profile-->
+        <!--Navigation Controller - Me-->
         <scene sceneID="j3U-jN-3b6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="hLr-aw-eF9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Profile" image="973-user.png" id="27K-x7-Zr8"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="973-user.png" id="27K-x7-Zr8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z88-LO-P9F">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1401,7 +1401,7 @@
             </objects>
             <point key="canvasLocation" x="1596" y="1931"/>
         </scene>
-        <!--Current User Table View Controller - My Profile-->
+        <!--Current User Table View Controller - Me-->
         <scene sceneID="iOs-df-1ZN">
             <objects>
                 <tableViewController id="UXZ-Ku-jf8" customClass="LHCurrentUserTableViewController" sceneMemberID="viewController">
@@ -1447,16 +1447,8 @@
                                     <outlet property="userNameLabel" destination="eeC-zm-2GR" id="lS4-1T-uPA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JEW-js-K1C">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEW-js-K1C" id="fFN-QE-TYH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileStoryImageCell" rowHeight="100" id="7J4-FU-mVN" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="174" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7J4-FU-mVN" id="wAd-Ml-4sE">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -1532,7 +1524,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileStoryCell" rowHeight="100" id="sNH-08-uIP" customClass="StoryCell">
-                                <rect key="frame" x="0.0" y="274" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="230" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sNH-08-uIP" id="Ila-eF-6zx">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -1601,7 +1593,7 @@
                             <outlet property="delegate" destination="UXZ-Ku-jf8" id="YOT-12-8AH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Profile" id="dr8-m3-FOP">
+                    <navigationItem key="navigationItem" title="Me" id="dr8-m3-FOP">
                         <barButtonItem key="leftBarButtonItem" image="912-gears.png" id="ahh-oA-QaD">
                             <connections>
                                 <segue destination="CfY-zV-fy4" kind="modal" id="DkY-Di-ADq"/>

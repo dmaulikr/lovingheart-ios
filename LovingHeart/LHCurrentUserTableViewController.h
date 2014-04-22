@@ -10,4 +10,6 @@
 
 @interface LHCurrentUserTableViewController : PFQueryTableViewController
 
+@property (nonatomic, strong) LHUserImpact *userImpact;
+
 @end
