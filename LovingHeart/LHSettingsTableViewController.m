@@ -14,7 +14,6 @@
 #import "LHSettingsSwitcherTableViewCell.h"
 #import <UserVoice.h>
 #import <BlocksKit+UIKit.h>
-#import "LHCurrentUserViewController.h"
 
 @interface LHSettingsTableViewController ()
 

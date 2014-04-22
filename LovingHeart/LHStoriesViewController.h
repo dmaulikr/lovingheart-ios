@@ -2,7 +2,7 @@
 //  StoryTimelineViewController.h
 //  LovingHeart
 //
-//  Created by Edward Chiang on 2014/3/23.
+//  Created by zeta on 2014/1/19.
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
@@ -15,8 +15,11 @@ typedef enum {
   kStories_Anonymous = 2
 } StoriesType;
 
+
 @interface LHStoriesViewController : PFQueryTableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *switchButtonItem;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *storiesTypeSegmentedControl;
 
 @property (nonatomic, assign) StoriesType storiesType;
 
