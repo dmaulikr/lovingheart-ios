@@ -24,7 +24,6 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - DAProgressOverlayView (1.0.2)
-  - Facebook-iOS-SDK (3.11.0)
   - GCPlaceholderTextView (1.0.1)
   - Nimbus/Core (1.2.0)
   - Nimbus/WebController (1.2.0):
@@ -46,7 +45,6 @@ DEPENDENCIES:
   - BlocksKit/Core
   - BlocksKit/UIKit
   - DAProgressOverlayView
-  - Facebook-iOS-SDK (~> 3.11.0)
   - GCPlaceholderTextView
   - Nimbus/WebController
   - NSDate+TimeAgo (~> 1.0.2)
@@ -60,7 +58,6 @@ SPEC CHECKSUMS:
   AviarySDK: d6dc7371ae6ef6a6b06de5c9b7c50c26e61d5ad7
   BlocksKit: 125e4e69a62e3b85bacc5175737dae000b00b9fb
   DAProgressOverlayView: abfd16f70476496e34176eeb94b139fc5e6d5f6b
-  Facebook-iOS-SDK: 07805d0a07ca19ffeb98e1a5d7d6ef042d1f51ba
   GCPlaceholderTextView: 8f0e4cb4b93827c9ec8d9bf9e850bbd328d1db0b
   Nimbus: bbde56c7e845d3c38c1f484018ef1bb3259c0507
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6

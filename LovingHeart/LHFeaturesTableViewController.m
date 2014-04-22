@@ -13,6 +13,7 @@
 #import <UIAlertView+BlocksKit.h>
 #import "LHLoginViewController.h"
 #import "DAProgressOverlayView.h"
+#import "LHQbonViewController.h"
 
 @interface LHFeaturesTableViewController ()
 
@@ -25,6 +26,12 @@
   self.pullToRefreshEnabled = YES;
   self.paginationEnabled = YES;
   self.objectsPerPage = 5;
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  self.qbon = [[Qbon alloc] initWithFrame:self.view.frame];
+  [self.view addSubview:self.qbon];
 }
 
 - (PFQuery *)queryForTable {
@@ -133,6 +140,11 @@
     [viewController setIdea:today.ideaPointer];
   }
   
+  if  ([segue.identifier isEqualToString:@"PresendQbonWall"]) {
+    LHQbonViewController *qbonViewController = segue.destinationViewController;
+    qbonViewController.qbon.delegate = self;
+  }
+  
   if ([segue.identifier isEqual:@"presentPostViewController"]) {
       
       if (![PFUser currentUser]) {
@@ -157,6 +169,18 @@
     }
   
   
+}
+
+#pragma mark - QbonDelegate
+
+- (void)qbon:(id)qbon loginResult:(NSDictionary *)userData {
+  
+}
+
+- (void)qbon:(id)qbon close:(BOOL)complete {
+  if (complete) {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+  }
 }
 
 @end
