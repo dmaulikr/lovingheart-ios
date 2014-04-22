@@ -80,7 +80,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="Story Image Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="PpX-rU-caR">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Story Image Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="PpX-rU-caR">
                                             <rect key="frame" x="20" y="78" width="267" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -115,7 +115,7 @@
                                         <constraint firstItem="xGf-AO-RtL" firstAttribute="leading" secondItem="MxA-zd-4Hl" secondAttribute="leading" constant="20" symbolic="YES" id="9kl-m0-d1d"/>
                                         <constraint firstItem="aBp-sZ-kbR" firstAttribute="top" secondItem="PpX-rU-caR" secondAttribute="bottom" constant="8" symbolic="YES" id="A9Z-GX-bXs"/>
                                         <constraint firstItem="wTL-oP-jic" firstAttribute="top" secondItem="MxA-zd-4Hl" secondAttribute="top" constant="33" id="HVr-R2-FzT"/>
-                                        <constraint firstAttribute="trailing" secondItem="PpX-rU-caR" secondAttribute="trailing" constant="20" id="LJp-lv-g90"/>
+                                        <constraint firstAttribute="trailing" secondItem="PpX-rU-caR" secondAttribute="trailing" id="LJp-lv-g90"/>
                                         <constraint firstItem="evf-2X-clp" firstAttribute="top" secondItem="aBp-sZ-kbR" secondAttribute="bottom" constant="8" symbolic="YES" id="ST1-GM-e7x"/>
                                         <constraint firstItem="PpX-rU-caR" firstAttribute="top" secondItem="xGf-AO-RtL" secondAttribute="bottom" constant="8" symbolic="YES" id="UEj-Hf-5d1"/>
                                         <constraint firstAttribute="trailing" secondItem="Scw-Az-FNP" secondAttribute="trailing" id="V3S-1w-p6g"/>
@@ -1201,7 +1201,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="StoryViewTableViewController" id="v24-J0-JnY" customClass="LHStoryViewTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4wt-8m-IiQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1212,9 +1212,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1E4-jV-9RY">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="1E4-jV-9RY">
                                             <rect key="frame" x="20" y="6" width="32" height="33"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="32" id="eIM-B4-EzA"/>
                                             </constraints>
@@ -1341,7 +1342,7 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Be the first to Encourage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="75d-FS-e16">
                                             <rect key="frame" x="20" y="-7" width="280" height="58"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1355,9 +1356,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4S-eX-1er">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="X4S-eX-1er">
                                             <rect key="frame" x="20" y="6" width="32" height="33"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScO-IX-oi7">
                                             <rect key="frame" x="60" y="11" width="240" height="21"/>
@@ -1429,7 +1431,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="RIr-jQ-apS" kind="modal" id="HZ0-R5-aeJ"/>
+                                                <segue destination="RIr-jQ-apS" kind="modal" identifier="EncourageStory" id="HZ0-R5-aeJ"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1510,6 +1512,36 @@
                     <view key="view" contentMode="scaleToFill" id="j6I-e8-VsW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give encourage!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgU-Un-Gi7">
+                                <rect key="frame" x="20" y="135" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap a Star to Encourage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7i-VO-n6k">
+                                <rect key="frame" x="86" y="106" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDn-WK-OgP">
+                                <rect key="frame" x="0.0" y="62" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="726-star.png" id="8tg-hZ-F1v"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Amr-Xe-BHS"/>
+                                    <barButtonItem image="726-star.png" id="sVM-5o-1Fg"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FYb-O7-dKl"/>
+                                    <barButtonItem image="726-star.png" id="24l-AW-vYk"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fQE-Eg-VAm"/>
+                                    <barButtonItem image="726-star.png" id="hRg-Sc-EGz"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="67M-bb-EjS"/>
+                                    <barButtonItem image="726-star.png" id="VEy-Wt-tDy"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Encourage" id="Ud0-za-6vj">
@@ -1518,6 +1550,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButtonItem" destination="jce-8o-zIY" id="GnR-l9-K1W"/>
+                        <outlet property="fiveStarButtonItem" destination="VEy-Wt-tDy" id="O6q-iK-SHD"/>
+                        <outlet property="fourStarButtonItem" destination="hRg-Sc-EGz" id="U6S-EM-fa6"/>
+                        <outlet property="oneStarButtonItem" destination="8tg-hZ-F1v" id="5K8-Lq-Cyy"/>
+                        <outlet property="postButtonItem" destination="ABU-zJ-Hu3" id="udx-Ki-WDX"/>
+                        <outlet property="reviewTextField" destination="qgU-Un-Gi7" id="7rN-Ei-49n"/>
+                        <outlet property="threeStarButtonItem" destination="24l-AW-vYk" id="Vzb-8B-i0T"/>
+                        <outlet property="twoStarButtonItem" destination="sVM-5o-1Fg" id="GJe-W8-vHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4D-wv-kaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1709,10 +1748,12 @@
         <image name="1039-files-box.png" width="28" height="26"/>
         <image name="714-camera.png" width="28" height="21"/>
         <image name="723-location-arrow.png" width="28" height="28"/>
+        <image name="726-star.png" width="28" height="26"/>
         <image name="912-gears.png" width="28" height="28"/>
         <image name="973-user.png" width="28" height="24"/>
         <image name="card_default.png" width="512" height="512"/>
         <image name="cup_25_clear.png" width="256" height="256"/>
+        <image name="defaultAvatar" width="48" height="48"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1720,9 +1761,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8nF-Tf-eH1"/>
+        <segue reference="iWw-1X-Lp4"/>
         <segue reference="SmJ-FX-iAz"/>
-        <segue reference="nje-1x-q1U"/>
         <segue reference="QfK-Fs-fda"/>
+        <segue reference="nje-1x-q1U"/>
     </inferredMetricsTieBreakers>
 </document>

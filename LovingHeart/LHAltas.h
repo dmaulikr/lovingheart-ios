@@ -27,3 +27,4 @@ static NSString *kAviarySecret = @"883fbc85c2e70208";
 
 extern NSString* const kUserStoriesRefreshNotification;
 extern NSString* const kUserProfileRefreshNotification;
+extern NSString* const kUserStoryRefreshNotification;

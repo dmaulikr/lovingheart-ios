@@ -19,6 +19,8 @@
 #import <BlocksKit/UIActionSheet+BlocksKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <BlocksKit/UIAlertView+BlocksKit.h>
+#import "NSString+Extra.h"
+#import "LHStoryReviewViewController.h"
 
 @interface LHStoryViewTableViewController ()
 
@@ -47,42 +49,49 @@
   
   self.shareButton.target = self;
   self.shareButton.action = @selector(shareButtonClicked:);
-
-    __block LHStoryViewTableViewController *__self = self;
-    PFQuery *query = [LHStory query];
-    [query includeKey:@"StoryTeller"];
-    [query includeKey:@"StoryTeller.avatar"];
-    [query includeKey:@"graphicPointer"];
-    [query includeKey:@"ideaPointer"];
-    [query includeKey:@"ideaPointer.categoryPointer"];
-    [query getObjectInBackgroundWithId:self.story.objectId block:^(PFObject *object, NSError *error) {
-      if (!error) {
-        __self.story = (LHStory *)object;
-        [__self.tableView reloadData];
-      }
-    }];
-    
-    PFQuery *eventQuery = [LHEvent query];
-    [eventQuery whereKey:@"story" equalTo:self.story];
-    [eventQuery whereKey:@"action" equalTo:@"review_story"];
-    [eventQuery includeKey:@"user"];
-    [eventQuery includeKey:@"user.avatar"];
-    [eventQuery orderByDescending:@"createdAt"];
-    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-      if (objects) {
-        __self.events = objects;
-        [__self.tableView reloadData];
-      }
-
-    }];
   
+  __block LHStoryViewTableViewController *__self = self;
+  [[NSNotificationCenter defaultCenter] addObserverForName:kUserStoryRefreshNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    [__self loadObjects];
+  }];
 
+  [self loadObjects];
 }
 
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)loadObjects {
+  __block LHStoryViewTableViewController *__self = self;
+  PFQuery *query = [LHStory query];
+  [query includeKey:@"StoryTeller"];
+  [query includeKey:@"StoryTeller.avatar"];
+  [query includeKey:@"graphicPointer"];
+  [query includeKey:@"ideaPointer"];
+  [query includeKey:@"ideaPointer.categoryPointer"];
+  [query getObjectInBackgroundWithId:self.story.objectId block:^(PFObject *object, NSError *error) {
+    if (!error) {
+      __self.story = (LHStory *)object;
+      [__self.tableView reloadData];
+    }
+  }];
+  
+  PFQuery *eventQuery = [LHEvent query];
+  [eventQuery whereKey:@"story" equalTo:self.story];
+  [eventQuery whereKey:@"action" equalTo:@"review_story"];
+  [eventQuery includeKey:@"user"];
+  [eventQuery includeKey:@"user.avatar"];
+  [eventQuery orderByDescending:@"createdAt"];
+  [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    if (objects) {
+      __self.events = objects;
+      [__self.tableView reloadData];
+    }
+    
+  }];
 }
 
 #pragma mark - Table view data source
@@ -126,21 +135,30 @@
   if (indexPath.section == 0 && indexPath.row == 0) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell" forIndexPath:indexPath];
     LHUserInfoTableViewCell *userInfoCell = (LHUserInfoTableViewCell*)cell;
-    userInfoCell.userNameLabel.text = self.story.StoryTeller.name;
     
-    if (self.story.StoryTeller.avatar) {
-      NSURL* imageUrl = [NSURL URLWithString:self.story.StoryTeller.avatar.imageUrl];
-      NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
-      AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-      operation.responseSerializer = [AFImageResponseSerializer serializer];
+    if ([self.story.status contains:@"anonymous"]) {
+      userInfoCell.userNameLabel.text = NSLocalizedString(@"Anonymous", @"Anonymous");
+      userInfoCell.userAvatarImageView.image = [UIImage imageNamed:@"ic_action_emo_cool.png"];
+      [userInfoCell.userAvatarImageView setNeedsLayout];
+    } else {
+      userInfoCell.userNameLabel.text = self.story.StoryTeller.name;
       
-      __block UIImageView *__avatarImageView = userInfoCell.userAvatarImageView;
-      [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        __avatarImageView.image = responseObject;
-      } failure:nil];
+      if (self.story.StoryTeller.avatar) {
+        NSURL* imageUrl = [NSURL URLWithString:self.story.StoryTeller.avatar.imageUrl];
+        NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
+        AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.responseSerializer = [AFImageResponseSerializer serializer];
+        
+        __block UIImageView *__avatarImageView = userInfoCell.userAvatarImageView;
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+          __avatarImageView.image = responseObject;
+        } failure:nil];
+        
+        [operation start];
+      }
       
-      [operation start];
     }
+    
   } else if (indexPath.section == 0 && indexPath.row == 1) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"StoryContentTableViewCell" forIndexPath:indexPath];
     
@@ -264,7 +282,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.section == 0 && indexPath.row == 1) {
     LHStoryContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryContentTableViewCell"];
-
+    
     CGFloat labelWidth = 320;
     CGRect r = [self.story.Content boundingRectWithSize:CGSizeMake(labelWidth, 0)
                                                 options:NSStringDrawingUsesLineFragmentOrigin
@@ -394,7 +412,7 @@
             }
           }];
           
-
+          
         }
         
       }];
@@ -420,6 +438,15 @@
     params[kv[0]] = val;
   }
   return params;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"EncourageStory"]) {
+    UINavigationController *storyReviewNavigationController = (UINavigationController *)segue.destinationViewController;
+    LHStoryReviewViewController *storyReviewController = [storyReviewNavigationController.viewControllers objectAtIndex:0];
+    storyReviewController.story = self.story;
+    storyReviewController.encourageList = self.events;
+  }
 }
 
 @end

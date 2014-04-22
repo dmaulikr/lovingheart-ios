@@ -12,6 +12,7 @@
 
 NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotification";
 NSString* const kUserStoriesRefreshNotification = @"kUserStoriesRefreshNotification";
+NSString* const kUserStoryRefreshNotification = @"kUserStoryRefreshNotification";
 
 + (NSArray *)supportLanguageList {
   // Load preference

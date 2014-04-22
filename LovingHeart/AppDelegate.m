@@ -93,6 +93,26 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+  if (userInfo) {
+    NSString *action = [userInfo valueForKey:@"action"];
+    NSString *objectId = [userInfo valueForKey:@"objectId"];
+    if ([action isEqualToString:@"com.lovingheart.app.PUSH_STORY"]) {
+      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+      LHStoryViewTableViewController *storyViewController = (LHStoryViewTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"StoryViewTableViewController"];
+      
+      LHStory *story = [[LHStory alloc] init];
+      [story setObjectId:objectId];
+      storyViewController.story = story;
+      
+      LHMainViewController *mainViewController = (LHMainViewController *)self.window.rootViewController;
+      [mainViewController setSelectedIndex:2];
+      
+      [((UINavigationController *)mainViewController.selectedViewController) pushViewController:storyViewController animated:YES];
+    }
+  }
+}
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   // Store the deviceToken in the current Installation and save it to Parse.
   PFInstallation *currentInstallation = [PFInstallation currentInstallation];

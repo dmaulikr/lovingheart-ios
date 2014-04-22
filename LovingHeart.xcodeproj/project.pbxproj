@@ -90,6 +90,7 @@
 		1C7C3F3F18EA97FE00B900CB /* LHAltas.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C3F3E18EA97FE00B900CB /* LHAltas.m */; };
 		1C7C3F4218EA99C700B900CB /* 722-location-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C3F4018EA99C700B900CB /* 722-location-pin.png */; };
 		1C7C3F4318EA99C700B900CB /* 722-location-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C3F4118EA99C700B900CB /* 722-location-pin@2x.png */; };
+		1C82FF761905EF9E00AD4179 /* NSString+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF751905EF9E00AD4179 /* NSString+Extra.m */; };
 		1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */; };
 		1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */; };
 		1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */; };
@@ -255,6 +256,8 @@
 		1C7C3F3E18EA97FE00B900CB /* LHAltas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHAltas.m; sourceTree = "<group>"; };
 		1C7C3F4018EA99C700B900CB /* 722-location-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "722-location-pin.png"; sourceTree = "<group>"; };
 		1C7C3F4118EA99C700B900CB /* 722-location-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "722-location-pin@2x.png"; sourceTree = "<group>"; };
+		1C82FF741905EF9E00AD4179 /* NSString+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extra.h"; sourceTree = "<group>"; };
+		1C82FF751905EF9E00AD4179 /* NSString+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extra.m"; sourceTree = "<group>"; };
 		1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text.png"; sourceTree = "<group>"; };
 		1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text@2x.png"; sourceTree = "<group>"; };
 		1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPickerTableViewCell.h; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 		1C35813D18E94CB40025E259 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1C82FF741905EF9E00AD4179 /* NSString+Extra.h */,
+				1C82FF751905EF9E00AD4179 /* NSString+Extra.m */,
 				1C35813A18E94B750025E259 /* UIView+Frame.h */,
 				1C35813B18E94B750025E259 /* UIView+Frame.m */,
 			);
@@ -851,6 +856,7 @@
 				1C8A96F418EA24990093469C /* LHCurrentUserViewController.m in Sources */,
 				1CB39F981904D05F004A97E9 /* LHStoryContentTableViewCell.m in Sources */,
 				1C03A4671904FE6C00E6C992 /* LHReviewStarsTableViewCell.m in Sources */,
+				1C82FF761905EF9E00AD4179 /* NSString+Extra.m in Sources */,
 				1C033FE518F3F85400C86955 /* LHReportManager.m in Sources */,
 				1C75980518F7BAEE003E6BA6 /* LHStoryReviewViewController.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
