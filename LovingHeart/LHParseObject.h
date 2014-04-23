@@ -16,6 +16,9 @@
 #import "LHCategory.h"
 #import "LHEvent.h"
 #import "LHUserImpact.h"
+#import "LHOrganizer.h"
+#import "LHIdeaGroup.h"
+#import "LHIdeaGroupMapping.h"
 
 @interface LHParseObject : PFObject
 

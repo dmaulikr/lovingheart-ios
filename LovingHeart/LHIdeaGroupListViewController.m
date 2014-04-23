@@ -1,12 +1,12 @@
 //
-//  LHIdeaListViewController.m
+//  LHIdeaGroupListViewController.m
 //  LovingHeart
 //
-//  Created by Edward Chiang on 2014/3/31.
+//  Created by Edward Chiang on 2014/4/23.
 //  Copyright (c) 2014年 LovineHeart. All rights reserved.
 //
 
-#import "LHIdeaListViewController.h"
+#import "LHIdeaGroupListViewController.h"
 #import "LHIdea.h"
 #import "LHIdeaActionCardCell.h"
 #import "LHIdeaCardViewController.h"
@@ -15,10 +15,10 @@
 #import "DAProgressOverlayView.h"
 #import "LHCategoriesPickController.h"
 
-@implementation LHIdeaListViewController
+@implementation LHIdeaGroupListViewController
 
 - (void)awakeFromNib {
-  self.parseClassName = @"Idea";
+  self.parseClassName = @"IdeaGroupMapping";
   self.pullToRefreshEnabled = YES;
   self.paginationEnabled = YES;
   self.objectsPerPage = 10;
@@ -29,19 +29,14 @@
 }
 
 - (PFQuery *)queryForTable {
-  PFQuery *query = [LHIdea query];
-
-  [query includeKey:@"graphicPointer"];
-  [query includeKey:@"categoryPointer"];
-  [query whereKey:@"status" notEqualTo:@"close"];
-  [query whereKey:@"language" containedIn:[LHAltas supportLanguageList]];
+  PFQuery *query = [LHIdeaGroupMapping query];
   
-  if (self.category) {
-    [query whereKey:@"categoryPointer" equalTo:self.category];
-    self.title = self.category.Name;
-  } else {
-    self.title = @"Action Cards";
-  }
+  [query includeKey:@"Idea"];
+  [query includeKey:@"Idea.categoryPointer"];
+  [query includeKey:@"Idea.graphicPointer"];
+  [query includeKey:@"IdeaGroup"];
+  [query whereKey:@"IdeaGroup" equalTo:self.ideaGroup];
+  [query whereKey:@"status" notEqualTo:@"close"];
   
   // If no objects are loaded in memory, we look to the cache first to fill the table
   // and then subsequently do a query against the network.
@@ -56,16 +51,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
-                        object:(LHIdea *)ideaObject {
+                        object:(LHIdeaGroupMapping *)ideaMappingObject {
   
   LHIdeaActionCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdeaCardViewCell"];
   
-  if (ideaObject.graphicPointer) {
+  if (ideaMappingObject.Idea.graphicPointer) {
     
     cell.ideaImageView.image = [UIImage imageNamed:@"card_default"];
     cell.progressOverlayView.frame = cell.ideaImageView.bounds;
     
-    PFFile* file = (PFFile*)ideaObject.graphicPointer.imageFile;
+    PFFile* file = (PFFile*)ideaMappingObject.Idea.graphicPointer.imageFile;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
       if (!error) {
         UIImage *image = [UIImage imageWithData:data];
@@ -95,19 +90,19 @@
     }];
     
   }
-
-  [cell.categoryTitleLabel setText:ideaObject.categoryPointer.Name];
-  [cell.ideaTitleLabel setText:ideaObject.Name];
+  
+  [cell.categoryTitleLabel setText:ideaMappingObject.Idea.categoryPointer.Name];
+  [cell.ideaTitleLabel setText:ideaMappingObject.Idea.Name];
   [cell.ideaTitleLabel sizeToFit];
   
-  [cell.ideaDescriptionLabel setText:ideaObject.Description];
+  [cell.ideaDescriptionLabel setText:ideaMappingObject.Idea.Description];
   [cell.ideaDescriptionLabel sizeToFit];
   
-  if (ideaObject.doneCount.intValue > 1) {
-    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:@"Done %i times", ideaObject.doneCount.intValue]];
+  if (ideaMappingObject.Idea.doneCount.intValue > 1) {
+    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:@"Done %i times", ideaMappingObject.Idea.doneCount.intValue]];
     cell.ideaDoneCountLabel.hidden = NO;
-  } else if (ideaObject.doneCount.intValue == 1) {
-    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:@"Done %i time", ideaObject.doneCount.intValue]];
+  } else if (ideaMappingObject.Idea.doneCount.intValue == 1) {
+    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:@"Done %i time", ideaMappingObject.Idea.doneCount.intValue]];
     cell.ideaDoneCountLabel.hidden = NO;
   } else {
     cell.ideaDoneCountLabel.hidden = YES;
@@ -152,55 +147,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
-  if ([segue.identifier isEqualToString:@"catgoriesPicker"]) {
-    UINavigationController *rootViewController = (UINavigationController *)segue.destinationViewController;
-    
-    LHCategoriesPickController *categoriesPick = (LHCategoriesPickController *)rootViewController.viewControllers[0];
-    [categoriesPick setSelectedCategory:self.category];
-
-    [categoriesPick setDidSelectedRowAtIndexPath:^(NSIndexPath *indexPath, LHCategory *category) {
-      if (![category.objectId isEqualToString:self.category.objectId]) {
-        self.category = category;
-        [self loadObjects];
-      }
-
-    }];
-    [categoriesPick clearSelectedRowAtIndexPath:^{
-      self.category = nil;
-      [self loadObjects];
-    }];
-  }
-  
   if ([segue.identifier isEqual:@"pushIdeaCardViewController"]) {
     LHIdeaCardViewController *viewController = segue.destinationViewController;
     NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
-    LHIdea *idea = (LHIdea *)[self objectAtIndexPath:selectedPath];
-    [viewController setIdea:idea];
+    LHIdeaGroupMapping *ideaMapping = (LHIdeaGroupMapping *)[self objectAtIndexPath:selectedPath];
+    [viewController setIdea:ideaMapping.Idea];
   }
-  
-  if ([segue.identifier isEqual:@"presentPostViewController"]) {
-    
-    if (![PFUser currentUser]) {
-      
-      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share a story"];
-      [alertView bk_addButtonWithTitle:@"Go" handler:^{
-        [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
-          LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
-          loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
-          [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
-        }];
-        
-      }];
-      [alertView bk_setCancelBlock:^{
-        [segue.destinationViewController dismissModalViewControllerAnimated:YES];
-      }];
-      [alertView show];
-    } else {
-      NSLog(@"Login User Name: %@", [[PFUser currentUser] username]);
-    }
-    
-  }
-  
   
 }
 
