@@ -33,7 +33,8 @@
   if (![LHUser currentUser]) {
     // Ask to login
     
-    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share a story"];
+    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:
+                              NSLocalizedString(@"Need to login", nil) message:NSLocalizedString(@"Please login before share a story", nil)];
     [alertView bk_addButtonWithTitle:@"Go" handler:^{
       
       LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
@@ -189,7 +190,7 @@
   if (section == 0) {
     return nil;
   } else if (section == 1) {
-    return @"Stories";
+    return NSLocalizedString(@"Stories", @"Stories");
   }
   return nil;
 }

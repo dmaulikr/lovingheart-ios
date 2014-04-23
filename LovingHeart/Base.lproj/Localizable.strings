@@ -20,8 +20,12 @@
 
 "Share Story" = "Share Your Story";
 
-"Ask login title" = "Need to login";
+"Need to login" = "Need to login";
 
-"Ask login message" = "Please login before share a story";
+"Please login before share a story" = "Please login before share a story";
 
 "Loading" = "Loading...";
+
+"Partners" = "Partners";
+
+"Action Cards" = "Action Cards";

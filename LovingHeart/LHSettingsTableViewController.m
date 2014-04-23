@@ -116,7 +116,7 @@ static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowled
       if ([PFUser currentUser]) {
         [cell.textLabel setText:[NSString stringWithFormat:@"Logout: %@", [PFUser currentUser].email]];
       } else {
-        [cell.textLabel setText:@"Login"];
+        [cell.textLabel setText:NSLocalizedString(@"Login", @"Login")];
       }
     }
   }
@@ -179,7 +179,7 @@ static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowled
       if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsPlain"];
       }
-      [cell.textLabel setText:@"Support center"];
+      [cell.textLabel setText:NSLocalizedString(@"Support Center", @"Support Center")];
     }
   }
   else if (indexPath.section == kIndextOfSectionAbout) {

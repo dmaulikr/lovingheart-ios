@@ -40,7 +40,7 @@
     [query whereKey:@"categoryPointer" equalTo:self.category];
     self.title = self.category.Name;
   } else {
-    self.title = @"Action Cards";
+    self.title = NSLocalizedString(@"Action Cards", @"Action Cards");
   }
   
   // If no objects are loaded in memory, we look to the cache first to fill the table
@@ -182,7 +182,7 @@
     
     if (![PFUser currentUser]) {
       
-      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"Need to login" message:@"Please login before share a story"];
+      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:NSLocalizedString(@"Need to login",nil) message:NSLocalizedString(@"Please login before share a story",nil)];
       [alertView bk_addButtonWithTitle:@"Go" handler:^{
         [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
           LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];

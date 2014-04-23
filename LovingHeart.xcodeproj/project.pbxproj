@@ -415,8 +415,6 @@
 		1C3D498718EB794000F9C4D7 /* ic_action_emo_cool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_action_emo_cool@2x.png"; sourceTree = "<group>"; };
 		1C3D498A18EB7C6B00F9C4D7 /* LHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMainViewController.h; sourceTree = "<group>"; };
 		1C3D498B18EB7C6B00F9C4D7 /* LHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHMainViewController.m; sourceTree = "<group>"; };
-		1C3D499118EB82B600F9C4D7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
-		1C3D499318EB82C300F9C4D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1C3D499418EB832D00F9C4D7 /* LHCategoriesPickController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCategoriesPickController.h; sourceTree = "<group>"; };
 		1C3D499518EB832D00F9C4D7 /* LHCategoriesPickController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHCategoriesPickController.m; sourceTree = "<group>"; };
 		1C3D7D8318E2A44100696BBE /* 912-gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "912-gears.png"; sourceTree = "<group>"; };
@@ -493,6 +491,8 @@
 		1C86EB5C190767520026BB8A /* LHIdeaGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaGroupListViewController.m; sourceTree = "<group>"; };
 		1C86EB5E1907689E0026BB8A /* LHIdeaGroupMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdeaGroupMapping.h; sourceTree = "<group>"; };
 		1C86EB5F1907689E0026BB8A /* LHIdeaGroupMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaGroupMapping.m; sourceTree = "<group>"; };
+		1C86EB64190770700026BB8A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		1C86EB66190770760026BB8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text.png"; sourceTree = "<group>"; };
 		1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text@2x.png"; sourceTree = "<group>"; };
 		1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPickerTableViewCell.h; sourceTree = "<group>"; };
@@ -1904,8 +1904,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				1801F624188259080024A832 /* Base */,
-				1C3D499118EB82B600F9C4D7 /* zh-Hant */,
-				1C3D499318EB82C300F9C4D7 /* en */,
+				1C86EB64190770700026BB8A /* zh-Hant */,
+				1C86EB66190770760026BB8A /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
