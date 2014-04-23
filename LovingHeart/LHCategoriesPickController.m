@@ -26,26 +26,17 @@
   self.objectsPerPage = 20;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
   [self.cancelButtonItem setTarget:self];
-  [self.cancelButtonItem setAction:@selector(cancel:)];
+  [self.cancelButtonItem setAction:@selector(cancelPressed:)];
   
   self.allButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
   self.allButton.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
   [self.allButton bk_addEventHandler:^(id sender) {
     _categoryPickClearSelectRowAtIndexPath();
-    [self performSelector:@selector(cancel:) withObject:nil];
+    [self performSelector:@selector(cancelPressed:) withObject:nil];
   } forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -57,7 +48,7 @@
 
 #pragma mark - private
 
-- (void)cancel:(id)select {
+- (void)cancelPressed:(id)select {
   [self dismissViewControllerAnimated:YES completion:^{
     
   }];

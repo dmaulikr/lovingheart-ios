@@ -134,7 +134,7 @@
   }];
   
   [self.doneButtonItem setTarget:self];
-  [self.doneButtonItem setAction:@selector(post:)];
+  [self.doneButtonItem setAction:@selector(postPressed:)];
   
   BOOL isSupportEnglish = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportEnglish];
   BOOL isSupportChinese = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultSupportChinese];
@@ -265,7 +265,7 @@
   [locationmanager startUpdatingLocation];
 }
 
-- (void)post:(id)sender {
+- (void)postPressed:(id)sender {
   [_storyObject setStoryTeller:[LHUser currentUser]];
   [_storyObject setContent:self.userInputTextView.text];
   [SVProgressHUD showWithStatus:@"Posting" maskType:SVProgressHUDMaskTypeGradient];

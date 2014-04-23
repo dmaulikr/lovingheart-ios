@@ -182,7 +182,7 @@
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:@{NSFontAttributeName: cell.descriptionLabel.font}
                                                 context:nil];
-    return r.size.height + 50.f;
+    return r.size.height + 60.f;
 
   }
   return 44.f;
