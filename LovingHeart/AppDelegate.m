@@ -13,6 +13,7 @@
 #import "LHStoryViewTableViewController.h"
 #import "LHMainViewController.h"
 #import <QbonWidget/Qbon.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -35,6 +36,8 @@
   [Parse setApplicationId:@"5mqwxaAsD0xCUb8dh9HgFu4FM6bQOycBqx4XrdFL"
                 clientKey:@"SX6e4Gd86Fq3vil6XOT4UHvrsfaBqvIJJ99vPkDV"];
   [PFFacebookUtils initializeFacebook];
+  
+  [Crashlytics startWithAPIKey:@"15a403fd2391de122a3a65c20eda2464f96342de"];
   
   PFACL *defaultACL = [PFACL ACL];
   [defaultACL setPublicReadAccess:YES];

@@ -92,6 +92,7 @@
 		1C86EB5A190761A50026BB8A /* LHIdeaGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86EB59190761A50026BB8A /* LHIdeaGroup.m */; };
 		1C86EB5D190767520026BB8A /* LHIdeaGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86EB5C190767520026BB8A /* LHIdeaGroupListViewController.m */; };
 		1C86EB601907689E0026BB8A /* LHIdeaGroupMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86EB5F1907689E0026BB8A /* LHIdeaGroupMapping.m */; };
+		1C86EB691907E02F0026BB8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C86EB681907E02F0026BB8A /* Crashlytics.framework */; };
 		1C8A7B5518E3D77000343870 /* wordpress-logo-red-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */; };
 		1C8A7B5618E3D77000343870 /* wordpress-logo-red-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */; };
 		1C8A96E918E9AC900093469C /* LHPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A96E818E9AC900093469C /* LHPickerTableViewCell.m */; };
@@ -493,6 +494,7 @@
 		1C86EB5F1907689E0026BB8A /* LHIdeaGroupMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHIdeaGroupMapping.m; sourceTree = "<group>"; };
 		1C86EB64190770700026BB8A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1C86EB66190770760026BB8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1C86EB681907E02F0026BB8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		1C8A7B5318E3D77000343870 /* wordpress-logo-red-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text.png"; sourceTree = "<group>"; };
 		1C8A7B5418E3D77000343870 /* wordpress-logo-red-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordpress-logo-red-text@2x.png"; sourceTree = "<group>"; };
 		1C8A96E718E9AC900093469C /* LHPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPickerTableViewCell.h; sourceTree = "<group>"; };
@@ -805,6 +807,7 @@
 				1801F64F1882636B0024A832 /* libz.1.1.3.dylib in Frameworks */,
 				1CAE0D6D19064B9E00732240 /* SOLOMOSDK.framework in Frameworks */,
 				1801F64D188263600024A832 /* CoreLocation.framework in Frameworks */,
+				1C86EB691907E02F0026BB8A /* Crashlytics.framework in Frameworks */,
 				1801F614188259080024A832 /* CoreGraphics.framework in Frameworks */,
 				1801F64B1882634D0024A832 /* CFNetwork.framework in Frameworks */,
 				1801F649188263410024A832 /* AudioToolbox.framework in Frameworks */,
@@ -851,6 +854,7 @@
 		1801F610188259080024A832 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C86EB681907E02F0026BB8A /* Crashlytics.framework */,
 				1CAE0E4B19064ED200732240 /* FacebookSDK.framework */,
 				1CAE0E4519064BF600732240 /* ImageIO.framework */,
 				1CAE0E4319064BE400732240 /* MapKit.framework */,
@@ -1434,6 +1438,7 @@
 				1801F60B188259080024A832 /* Frameworks */,
 				1801F60C188259080024A832 /* Resources */,
 				D2FFF2042C7740FBA2318276 /* Copy Pods Resources */,
+				1C86EB671907DEB60026BB8A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1794,6 +1799,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		1C86EB671907DEB60026BB8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 15a403fd2391de122a3a65c20eda2464f96342de";
 		};
 		D2FFF2042C7740FBA2318276 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
