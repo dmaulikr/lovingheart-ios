@@ -52,6 +52,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
   }
   
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
   [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xEC3D40, 1.0)];
   [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
   [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
