@@ -396,12 +396,16 @@
     
     [__self displayEditorForImage:imageToSave];
     
+    // Hack to turn back
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
   }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
   [picker dismissViewControllerAnimated:YES completion:^{
-    
+    // Hack to turn back
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
   }];
 }
 

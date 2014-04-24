@@ -121,7 +121,7 @@
       storyViewController.story = story;
       
       LHMainViewController *mainViewController = (LHMainViewController *)self.window.rootViewController;
-      [mainViewController setSelectedIndex:2];
+      [mainViewController setSelectedIndex:kTabStoriesIndex];
       
       [((UINavigationController *)mainViewController.selectedViewController) pushViewController:storyViewController animated:YES];
     }
@@ -165,7 +165,7 @@
           storyViewController.story = story;
           
           LHMainViewController *mainViewController = (LHMainViewController *)self.window.rootViewController;
-          [mainViewController setSelectedIndex:2];
+          [mainViewController setSelectedIndex:kTabStoriesIndex];
           
           [((UINavigationController *)mainViewController.selectedViewController) pushViewController:storyViewController animated:YES];
         }

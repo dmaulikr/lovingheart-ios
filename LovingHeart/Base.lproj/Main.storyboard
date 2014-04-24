@@ -440,7 +440,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Share your best moment." translatesAutoresizingMaskIntoConstraints="NO" id="ynq-l3-TkV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
+                                <rect key="frame" x="20" y="0.0" width="280" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -495,13 +495,13 @@
                             <constraint firstItem="mqS-8l-h0l" firstAttribute="top" secondItem="3gq-dx-A0y" secondAttribute="bottom" constant="10" id="CP9-me-1Jy"/>
                             <constraint firstItem="mqS-8l-h0l" firstAttribute="leading" secondItem="TDm-1u-VAK" secondAttribute="leading" id="JP5-q2-E6a"/>
                             <constraint firstItem="u7Q-jc-SDv" firstAttribute="trailing" secondItem="3gq-dx-A0y" secondAttribute="trailing" id="L3S-lw-ddq"/>
-                            <constraint firstItem="3gq-dx-A0y" firstAttribute="leading" secondItem="ynq-l3-TkV" secondAttribute="leading" constant="20" id="Lh9-Zc-P9M"/>
+                            <constraint firstItem="3gq-dx-A0y" firstAttribute="leading" secondItem="ynq-l3-TkV" secondAttribute="leading" id="Lh9-Zc-P9M"/>
                             <constraint firstAttribute="bottom" secondItem="mqS-8l-h0l" secondAttribute="bottom" id="Owu-tc-QN6"/>
                             <constraint firstAttribute="trailing" secondItem="mqS-8l-h0l" secondAttribute="trailing" id="RNV-mI-xad"/>
                             <constraint firstItem="3gq-dx-A0y" firstAttribute="leading" secondItem="TDm-1u-VAK" secondAttribute="leading" constant="20" symbolic="YES" id="cmN-9d-cX1"/>
                             <constraint firstItem="3gq-dx-A0y" firstAttribute="centerX" secondItem="mqS-8l-h0l" secondAttribute="centerX" id="gNB-WZ-BgX"/>
                             <constraint firstItem="3gq-dx-A0y" firstAttribute="top" secondItem="XOj-9m-cNy" secondAttribute="bottom" constant="8" id="hBj-jE-7fo"/>
-                            <constraint firstItem="3gq-dx-A0y" firstAttribute="trailing" secondItem="ynq-l3-TkV" secondAttribute="trailing" constant="-20" id="i8r-ji-3SV"/>
+                            <constraint firstItem="3gq-dx-A0y" firstAttribute="trailing" secondItem="ynq-l3-TkV" secondAttribute="trailing" id="i8r-ji-3SV"/>
                             <constraint firstItem="u7Q-jc-SDv" firstAttribute="leading" secondItem="XOj-9m-cNy" secondAttribute="leading" constant="58" id="jWr-wg-Kvk"/>
                             <constraint firstItem="XOj-9m-cNy" firstAttribute="leading" secondItem="3gq-dx-A0y" secondAttribute="leading" id="jiv-m3-xRH"/>
                             <constraint firstItem="ynq-l3-TkV" firstAttribute="bottom" secondItem="mqS-8l-h0l" secondAttribute="top" constant="-97" id="mvG-gp-Vz7"/>
@@ -1501,7 +1501,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-A8-Mhx">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-A8-Mhx">
                                             <rect key="frame" x="20" y="6" width="32" height="32"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1945,9 +1945,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8nF-Tf-eH1"/>
-        <segue reference="mO8-ap-Gtp"/>
+        <segue reference="a3G-ux-8bX"/>
         <segue reference="MK4-PJ-ePw"/>
+        <segue reference="mO8-ap-Gtp"/>
         <segue reference="QfK-Fs-fda"/>
         <segue reference="o51-Ne-ShS"/>
     </inferredMetricsTieBreakers>
