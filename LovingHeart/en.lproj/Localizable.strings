@@ -12,10 +12,26 @@
 
 "Most Rated" = "Most Rated";
 
-"Random Idea" = "Random";
+"Random Idea" = "Random of Kindness";
 
-"Ask login title" = "Need to login";
+"Feature Idea" = "Feature of Kindness";
 
-"Ask login message" = "Please login before share a story";
+"Read Stories" = "Read Stories";
+
+"Share Story" = "Share Your Story";
+
+"Need to login" = "Need to login";
+
+"Please login before share a story" = "Please login before share a story";
 
 "Loading" = "Loading...";
+
+"Partners" = "Partners";
+
+"Action Cards" = "Action Cards";
+
+"From location" = "From %@";
+
+"Some where" = "From somewhere";
+
+"Anonymous" = "Anonymous";

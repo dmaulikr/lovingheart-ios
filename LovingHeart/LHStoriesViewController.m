@@ -180,7 +180,7 @@
   if (object.areaName) {
     cell.locationLabel.text = object.areaName;
   } else {
-    cell.locationLabel.text = @"Some where";
+    cell.locationLabel.text = NSLocalizedString(@"Some where", @"Some where");
   }
   
   cell.timeLabel.text = [object.createdAt timeAgo];

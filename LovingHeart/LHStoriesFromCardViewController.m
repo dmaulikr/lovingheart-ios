@@ -11,6 +11,7 @@
 #import "LHStoriesViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <NSDate+TimeAgo/NSDate+TimeAgo.h>
+#import "StoryCell.h"
 #import "LHStoryViewTableViewController.h"
 
 @implementation LHStoriesFromCardViewController
@@ -86,6 +87,7 @@
         StoryCell* cell = (StoryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
 
         cell.pictureView.image = image;
+        
         [cell setNeedsDisplay];
       }
     } progressBlock:^(int percentDone) {
@@ -111,14 +113,27 @@
   } else {
   }
   
-  cell.locationLabel.text = storyObject.areaName;
+  if  (storyObject.areaName) {
+    cell.locationLabel.text = [NSString stringWithFormat:NSLocalizedString(@"From location", @"From"), storyObject.areaName];
+  } else {
+    cell.locationLabel.text = NSLocalizedString(@"Some where", @"Some where");
+  }
+  
   cell.timeLabel.text = [storyObject.createdAt timeAgo];
   
   return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 100.f;
+  
+  StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"storyImageCell"];
+  
+  LHStory *currentStory = [self.objects objectAtIndex:indexPath.row];
+  CGRect r = [currentStory.Content boundingRectWithSize:CGSizeMake(cell.contentLabel.width, 0)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:@{NSFontAttributeName: cell.contentLabel.font}
+                                                    context:nil];
+  return r.size.height + 210.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

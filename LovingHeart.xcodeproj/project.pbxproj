@@ -422,7 +422,6 @@
 		1C3D7D8418E2A44100696BBE /* 912-gears@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "912-gears@2x.png"; sourceTree = "<group>"; };
 		1C3D7D8718E2A66C00696BBE /* LHSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsTableViewController.h; sourceTree = "<group>"; };
 		1C3D7D8818E2A66C00696BBE /* LHSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsTableViewController.m; sourceTree = "<group>"; };
-		1C3D7D8D18E2AA3E00696BBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1C3D7D8E18E2AB4100696BBE /* LHPostStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPostStoryViewController.h; sourceTree = "<group>"; };
 		1C3D7D8F18E2AB4100696BBE /* LHPostStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHPostStoryViewController.m; sourceTree = "<group>"; };
 		1C3D7D9118E2B03000696BBE /* card_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_default.png; sourceTree = "<group>"; };
@@ -774,6 +773,7 @@
 		1CB39F9D1904F13A004A97E9 /* LHStoryImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStoryImageTableViewCell.m; sourceTree = "<group>"; };
 		1CB39F9F1904F4AA004A97E9 /* LHCategoryLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCategoryLabelCell.h; sourceTree = "<group>"; };
 		1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHCategoryLabelCell.m; sourceTree = "<group>"; };
+		1CC0A0191908BC8D00C3A5AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -1951,7 +1951,7 @@
 			children = (
 				1CEF810218DEAD120011F412 /* Base */,
 				1CEF810A18DEB0B00011F412 /* zh-Hant */,
-				1C3D7D8D18E2AA3E00696BBE /* en */,
+				1CC0A0191908BC8D00C3A5AE /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
