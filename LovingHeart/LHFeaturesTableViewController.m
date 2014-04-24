@@ -30,8 +30,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.qbon = [[Qbon alloc] initWithFrame:self.view.frame];
-  [self.view addSubview:self.qbon];
 }
 
 - (PFQuery *)queryForTable {
@@ -172,10 +170,6 @@
 }
 
 #pragma mark - QbonDelegate
-
-- (void)qbon:(id)qbon loginResult:(NSDictionary *)userData {
-  
-}
 
 - (void)qbon:(id)qbon close:(BOOL)complete {
   if (complete) {

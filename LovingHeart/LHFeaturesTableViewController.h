@@ -14,8 +14,6 @@
   QbonDelegate
 >
 
-@property (nonatomic, strong) Qbon *qbon;
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *qbonButtonItem;
 
 @end

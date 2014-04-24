@@ -1019,6 +1019,19 @@
 			name = TableViewCell;
 			sourceTree = "<group>";
 		};
+		1C86EB6A1908075A0026BB8A /* Partners */ = {
+			isa = PBXGroup;
+			children = (
+				1CA9565A190747D800CDDFAD /* LHOrgViewController.h */,
+				1CA9565B190747D800CDDFAD /* LHOrgViewController.m */,
+				1C86EB521907556B0026BB8A /* LHEventsTableViewController.h */,
+				1C86EB531907556B0026BB8A /* LHEventsTableViewController.m */,
+				1C86EB5B190767520026BB8A /* LHIdeaGroupListViewController.h */,
+				1C86EB5C190767520026BB8A /* LHIdeaGroupListViewController.m */,
+			);
+			name = Partners;
+			sourceTree = "<group>";
+		};
 		1CA9564B1906D74100CDDFAD /* Story */ = {
 			isa = PBXGroup;
 			children = (
@@ -1406,6 +1419,7 @@
 				1C3D498D18EB81D400F9C4D7 /* Cards */,
 				1CA9564B1906D74100CDDFAD /* Story */,
 				1C3D7DAA18E2C5D200696BBE /* Stories */,
+				1C86EB6A1908075A0026BB8A /* Partners */,
 				1C3D498F18EB824300F9C4D7 /* User */,
 				1CA9564C1906D77900CDDFAD /* Settings */,
 				1C3D7D8E18E2AB4100696BBE /* LHPostStoryViewController.h */,
@@ -1416,12 +1430,6 @@
 				1C8DC03618EC6E2D00262E5A /* LHSignUpViewController.m */,
 				1C86A9211906516F008F8785 /* LHQbonViewController.h */,
 				1C86A9221906516F008F8785 /* LHQbonViewController.m */,
-				1CA9565A190747D800CDDFAD /* LHOrgViewController.h */,
-				1CA9565B190747D800CDDFAD /* LHOrgViewController.m */,
-				1C86EB521907556B0026BB8A /* LHEventsTableViewController.h */,
-				1C86EB531907556B0026BB8A /* LHEventsTableViewController.m */,
-				1C86EB5B190767520026BB8A /* LHIdeaGroupListViewController.h */,
-				1C86EB5C190767520026BB8A /* LHIdeaGroupListViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";

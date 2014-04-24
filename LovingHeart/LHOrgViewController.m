@@ -9,6 +9,7 @@
 #import "LHOrgViewController.h"
 #import "LHOrgCollectionViewCell.h"
 #import "LHEventsTableViewController.h"
+#import "LHQbonViewController.h"
 
 @interface LHOrgViewController ()
 
@@ -102,6 +103,19 @@
     
     LHOrgCollectionViewCell *selectedCell = (LHOrgCollectionViewCell *)sender;
     eventsTableViewController.organizer = selectedCell.organizer;
+  }
+  
+  if  ([segue.identifier isEqualToString:@"PresendQbonWall"]) {
+    LHQbonViewController *qbonViewController = segue.destinationViewController;
+    qbonViewController.qbon.delegate = self;
+  }
+}
+
+#pragma mark - QbonDelegate
+
+- (void)qbon:(id)qbon close:(BOOL)complete {
+  if (complete) {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   }
 }
 

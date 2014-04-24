@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QbonWidget/Qbon.h>
 
 @interface LHOrgViewController : UICollectionViewController
+<
+QbonDelegate
+>
 
 @property (nonatomic, strong) NSMutableArray *orgLists;
 
