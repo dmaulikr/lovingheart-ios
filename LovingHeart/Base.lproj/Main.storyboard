@@ -440,7 +440,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Share your best moment." translatesAutoresizingMaskIntoConstraints="NO" id="ynq-l3-TkV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -504,7 +504,7 @@
                             <constraint firstItem="3gq-dx-A0y" firstAttribute="trailing" secondItem="ynq-l3-TkV" secondAttribute="trailing" constant="-20" id="i8r-ji-3SV"/>
                             <constraint firstItem="u7Q-jc-SDv" firstAttribute="leading" secondItem="XOj-9m-cNy" secondAttribute="leading" constant="58" id="jWr-wg-Kvk"/>
                             <constraint firstItem="XOj-9m-cNy" firstAttribute="leading" secondItem="3gq-dx-A0y" secondAttribute="leading" id="jiv-m3-xRH"/>
-                            <constraint firstItem="ynq-l3-TkV" firstAttribute="bottom" secondItem="mqS-8l-h0l" secondAttribute="top" id="mvG-gp-Vz7"/>
+                            <constraint firstItem="ynq-l3-TkV" firstAttribute="bottom" secondItem="mqS-8l-h0l" secondAttribute="top" constant="-97" id="mvG-gp-Vz7"/>
                             <constraint firstItem="ynq-l3-TkV" firstAttribute="top" secondItem="TDm-1u-VAK" secondAttribute="top" id="nyK-81-l7D"/>
                             <constraint firstItem="XOj-9m-cNy" firstAttribute="top" secondItem="u7Q-jc-SDv" secondAttribute="bottom" constant="-35" id="wz2-9l-bvD"/>
                         </constraints>
