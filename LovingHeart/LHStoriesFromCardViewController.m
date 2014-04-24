@@ -128,12 +128,15 @@
   
   StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"storyImageCell"];
   
-  LHStory *currentStory = [self.objects objectAtIndex:indexPath.row];
-  CGRect r = [currentStory.Content boundingRectWithSize:CGSizeMake(cell.contentLabel.width, 0)
-                                                    options:NSStringDrawingUsesLineFragmentOrigin
-                                                 attributes:@{NSFontAttributeName: cell.contentLabel.font}
-                                                    context:nil];
-  return r.size.height + 210.f;
+  if (indexPath.row < self.objects.count) {
+    LHStory *currentStory = [self.objects objectAtIndex:indexPath.row];
+    CGRect r = [currentStory.Content boundingRectWithSize:CGSizeMake(cell.contentLabel.width, 0)
+                                                  options:NSStringDrawingUsesLineFragmentOrigin
+                                               attributes:@{NSFontAttributeName: cell.contentLabel.font}
+                                                  context:nil];
+    return r.size.height + 120.f;
+  }
+  return 44.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

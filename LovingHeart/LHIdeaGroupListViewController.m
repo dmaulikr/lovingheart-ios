@@ -99,10 +99,10 @@
   [cell.ideaDescriptionLabel sizeToFit];
   
   if (ideaMappingObject.Idea.doneCount.intValue > 1) {
-    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:@"Done %i times", ideaMappingObject.Idea.doneCount.intValue]];
+    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i times", @"Done Times"), ideaMappingObject.Idea.doneCount.intValue]];
     cell.ideaDoneCountLabel.hidden = NO;
   } else if (ideaMappingObject.Idea.doneCount.intValue == 1) {
-    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:@"Done %i time", ideaMappingObject.Idea.doneCount.intValue]];
+    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i times", @"Done Times"), ideaMappingObject.Idea.doneCount.intValue]];
     cell.ideaDoneCountLabel.hidden = NO;
   } else {
     cell.ideaDoneCountLabel.hidden = YES;
