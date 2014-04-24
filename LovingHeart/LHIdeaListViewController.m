@@ -144,10 +144,10 @@
     
     CGSize expectedIdeaTitleSize = [currentIdea.Name boundingRectWithSize:maximumIdeaContentLabelSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:stringArrtibutes context:nil].size;
     
-    return expectedIdeaTitleSize.height + 120;
+    return expectedIdeaTitleSize.height + 110;
   }
   
-  return 120.f;
+  return 110.f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
