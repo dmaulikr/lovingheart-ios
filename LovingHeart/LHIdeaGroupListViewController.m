@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.title = self.ideaGroup.name;
 }
 
 - (PFQuery *)queryForTable {

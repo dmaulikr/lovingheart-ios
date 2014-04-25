@@ -348,6 +348,8 @@
 		1CB39F9B1904EC49004A97E9 /* LHLocationAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F9A1904EC49004A97E9 /* LHLocationAreaTableViewCell.m */; };
 		1CB39F9E1904F13A004A97E9 /* LHStoryImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39F9D1904F13A004A97E9 /* LHStoryImageTableViewCell.m */; };
 		1CB39FA11904F4AA004A97E9 /* LHCategoryLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */; };
+		1CC0A01C190A6DD200C3A5AE /* 724-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CC0A01A190A6DD200C3A5AE /* 724-info.png */; };
+		1CC0A01D190A6DD200C3A5AE /* 724-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CC0A01B190A6DD200C3A5AE /* 724-info@2x.png */; };
 		1CD34B1118E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */; };
 		1CD9F5DD18E02CDD0089CB4F /* LHIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DC18E02CDD0089CB4F /* LHIdea.m */; };
 		1CD9F5E018E034370089CB4F /* LHIdeaCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9F5DF18E034370089CB4F /* LHIdeaCardView.m */; };
@@ -774,6 +776,8 @@
 		1CB39F9F1904F4AA004A97E9 /* LHCategoryLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCategoryLabelCell.h; sourceTree = "<group>"; };
 		1CB39FA01904F4AA004A97E9 /* LHCategoryLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHCategoryLabelCell.m; sourceTree = "<group>"; };
 		1CC0A0191908BC8D00C3A5AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1CC0A01A190A6DD200C3A5AE /* 724-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "724-info.png"; sourceTree = "<group>"; };
+		1CC0A01B190A6DD200C3A5AE /* 724-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "724-info@2x.png"; sourceTree = "<group>"; };
 		1CD34B0F18E4085F005209A6 /* LHSettingsSwitcherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettingsSwitcherTableViewCell.h; sourceTree = "<group>"; };
 		1CD34B1018E4085F005209A6 /* LHSettingsSwitcherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSettingsSwitcherTableViewCell.m; sourceTree = "<group>"; };
 		1CD9F5DB18E02CDD0089CB4F /* LHIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHIdea.h; sourceTree = "<group>"; };
@@ -1359,6 +1363,8 @@
 		1CD9F5E618E134C40089CB4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1CC0A01A190A6DD200C3A5AE /* 724-info.png */,
+				1CC0A01B190A6DD200C3A5AE /* 724-info@2x.png */,
 				1CA956531906F05600CDDFAD /* 758-megaphone.png */,
 				1CA956541906F05600CDDFAD /* 758-megaphone@2x.png */,
 				1CAE0E4919064E0900732240 /* gift03.png */,
@@ -1731,6 +1737,7 @@
 				1CAE0DD419064B9E00732240 /* qbon_btn_nav_edit.png in Resources */,
 				1CAE0E1419064B9E00732240 /* qbon_img_redeem_number.png in Resources */,
 				1CAE0DE019064B9E00732240 /* qbon_btn_offerdetail_coupon.png in Resources */,
+				1CC0A01C190A6DD200C3A5AE /* 724-info.png in Resources */,
 				1CAE0D9019064B9E00732240 /* qbon_bg_redeem_expired.png in Resources */,
 				1CAE0DC519064B9E00732240 /* qbon_btn_meun_profile_on@2x.png in Resources */,
 				1C8DC02F18EC6B2000262E5A /* background-red-2.png in Resources */,
@@ -1759,6 +1766,7 @@
 				1CAE0E1519064B9E00732240 /* qbon_img_redeem_number@2x.png in Resources */,
 				1CAE0E1B19064B9E00732240 /* qbon_list_tag_voucher@2x.png in Resources */,
 				1CAE0DE519064B9E00732240 /* qbon_btn_offerdetail_mission@2x.png in Resources */,
+				1CC0A01D190A6DD200C3A5AE /* 724-info@2x.png in Resources */,
 				1CAE0DD219064B9E00732240 /* qbon_btn_nav_close.png in Resources */,
 				1CAE0DC819064B9E00732240 /* qbon_btn_meun_qbon_on.png in Resources */,
 				1CAE0DC619064B9E00732240 /* qbon_btn_meun_qbon.png in Resources */,

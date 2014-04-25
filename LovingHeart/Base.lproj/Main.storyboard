@@ -1696,7 +1696,7 @@
             </objects>
             <point key="canvasLocation" x="1136" y="2507"/>
         </scene>
-        <!--Events Table View Controller - Event-->
+        <!--Events Table View Controller - Events-->
         <scene sceneID="xpT-gc-YPs">
             <objects>
                 <tableViewController storyboardIdentifier="EventsTableViewController" id="oNP-9R-5ic" customClass="LHEventsTableViewController" sceneMemberID="viewController">
@@ -1788,7 +1788,13 @@
                             <outlet property="delegate" destination="oNP-9R-5ic" id="mEQ-qv-Wi7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Event" id="ByD-tM-hrP"/>
+                    <navigationItem key="navigationItem" title="Events" id="ByD-tM-hrP">
+                        <barButtonItem key="rightBarButtonItem" image="724-info.png" id="DEV-22-thq">
+                            <connections>
+                                <segue destination="R52-iB-rBX" kind="push" identifier="OpenPartnerInfo" id="cac-o5-LaQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeA-0e-WUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1923,6 +1929,7 @@
         <image name="1039-files-box.png" width="28" height="26"/>
         <image name="714-camera.png" width="28" height="21"/>
         <image name="723-location-arrow.png" width="28" height="28"/>
+        <image name="724-info.png" width="28" height="28"/>
         <image name="726-star.png" width="28" height="26"/>
         <image name="758-megaphone.png" width="28" height="22"/>
         <image name="912-gears.png" width="28" height="28"/>
@@ -1938,9 +1945,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="MK4-PJ-ePw"/>
+        <segue reference="cac-o5-LaQ"/>
         <segue reference="mO8-ap-Gtp"/>
         <segue reference="o51-Ne-ShS"/>
-        <segue reference="QfK-Fs-fda"/>
         <segue reference="8nF-Tf-eH1"/>
     </inferredMetricsTieBreakers>
 </document>

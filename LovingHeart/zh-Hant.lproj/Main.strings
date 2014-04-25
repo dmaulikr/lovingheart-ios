@@ -57,7 +57,7 @@
 "AEB-Jw-pp8.segmentTitles[2]" = "匿名";
 
 /* Class = "IBUINavigationItem"; title = "Event"; ObjectID = "ByD-tM-hrP"; */
-"ByD-tM-hrP.title" = "Event";
+"ByD-tM-hrP.title" = "活動";
 
 /* Class = "IBUILabel"; text = "Idea Card Title"; ObjectID = "C1d-Rv-zpu"; */
 "C1d-Rv-zpu.text" = "Idea Card Title";
@@ -75,7 +75,7 @@
 "JCZ-aB-oZz.text" = "Idea done count";
 
 /* Class = "IBUINavigationItem"; title = "Idea Call"; ObjectID = "JN4-UF-ACS"; */
-"JN4-UF-ACS.title" = "Idea Call";
+"JN4-UF-ACS.title" = "號召";
 
 /* Class = "IBUINavigationItem"; title = "Action Card"; ObjectID = "KJ9-NI-3rq"; */
 "KJ9-NI-3rq.title" = "Action Card";

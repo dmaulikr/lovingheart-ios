@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LHEventsTableViewController : UITableViewController
+@interface LHEventsTableViewController : PFQueryTableViewController
 
 @property (nonatomic, strong) LHOrganizer *organizer;
-
-@property (nonatomic, strong) NSMutableArray *ideaGroups;
 
 @end

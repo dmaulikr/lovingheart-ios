@@ -29,32 +29,34 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)awakeFromNib {
+  self.parseClassName = @"IdeaGroup";
+  self.pullToRefreshEnabled = YES;
+  self.paginationEnabled = YES;
+  self.objectsPerPage = 10;
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
   
-  _ideaGroups = [[NSMutableArray alloc] init];
+  self.title = self.organizer.name;
+}
+
+- (PFQuery *)queryForTable {
+  PFQuery *query = [LHIdeaGroup query];
   
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-  if (self.organizer) {
-    self.title = self.organizer.name;
-    
-    __block LHEventsTableViewController *__self = self;
-    PFQuery *ideaGroupQuery = [LHIdeaGroup query];
-    [ideaGroupQuery whereKey:@"Organizer" equalTo:self.organizer];
-    [ideaGroupQuery whereKey:@"status" notEqualTo:@"close"];
-    [ideaGroupQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-      [__self.ideaGroups removeAllObjects];
-      [__self.ideaGroups addObjectsFromArray:objects];
-      
-      [__self.tableView reloadData];
-    }];
+  [query whereKey:@"Organizer" equalTo:self.organizer];
+  [query whereKey:@"status" notEqualTo:@"close"];
+  
+  // If no objects are loaded in memory, we look to the cache first to fill the table
+  // and then subsequently do a query against the network.
+  if (self.objects.count == 0) {
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
   }
   
+  [query orderByDescending:@"Sequence"];
+  
+  return query;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,127 +67,50 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  if (section == 0) {
-    return 1;
-  }
-  if  (section == 1) {
-    return self.ideaGroups.count;
-  }
-  return 0;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(LHIdeaGroup *)ideaGroupObject
 {
   UITableViewCell *cell;
-  
-  if (indexPath.section == 0 && indexPath.row == 0) {
-    cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell" forIndexPath:indexPath];
-    
-    LHUserInfoTableViewCell *infoCell = (LHUserInfoTableViewCell *)cell;
-    
-    infoCell.userNameLabel.text = self.organizer.name;
-    
-    if (self.organizer.graphicPointer) {
-      NSURL* imageUrl;
-      
-      if (self.organizer.graphicPointer.imageUrl) {
-        imageUrl = [NSURL URLWithString:self.organizer.graphicPointer.imageUrl];
-      }
-      if (self.organizer.graphicPointer.imageFile) {
-        imageUrl = [NSURL URLWithString:self.organizer.graphicPointer.imageFile.url];
-      }
-      NSURLRequest* request = [NSURLRequest requestWithURL:imageUrl];
-      AFHTTPRequestOperation* operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-      operation.responseSerializer = [AFImageResponseSerializer serializer];
-      
-      __block UIImageView *__avatarImageView = infoCell.userAvatarImageView;
-      [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        __avatarImageView.image = responseObject;
-      } failure:nil];
-      
-      [operation start];
-    }
-    
-  }
-  if (indexPath.section == 1) {
+
     cell = [tableView dequeueReusableCellWithIdentifier:@"IdeaGroupCell" forIndexPath:indexPath];
     
     LHIdeaGroupCell *ideaGroupCell = (LHIdeaGroupCell *)cell;
-    LHIdeaGroup *currentGroup = [self.ideaGroups objectAtIndex:indexPath.row];
     
-    ideaGroupCell.titleLabel.text = currentGroup.name;
-    ideaGroupCell.descriptionLabel.text = currentGroup.Description;
-  }
-  
-  if (!cell) {
-    cell = [[UITableViewCell alloc] init];
-  }
+    ideaGroupCell.titleLabel.text = ideaGroupObject.name;
+    ideaGroupCell.descriptionLabel.text = ideaGroupObject.Description;
   
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (PFTableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
+  PFTableViewCell *cell  = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                                  reuseIdentifier:@"loadCell"];
+  UIActivityIndicatorView* spinner = [[UIActivityIndicatorView alloc] initWithFrame:cell.bounds];
+  spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+  [spinner startAnimating];
+  [cell addSubview:spinner];
+  return cell;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == self.objects.count) {
+    [self loadNextPage];
+  }
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.section == 1) {
+
     LHIdeaGroupCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdeaGroupCell"];
     
-    CGFloat labelWidth = 320;
-    LHIdeaGroup *currentGroup = [self.ideaGroups objectAtIndex:indexPath.row];
+    CGFloat labelWidth = cell.descriptionLabel.width;
+    LHIdeaGroup *currentGroup = [self.objects objectAtIndex:indexPath.row];
     CGRect r = [currentGroup.Description boundingRectWithSize:CGSizeMake(labelWidth, 0)
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:@{NSFontAttributeName: cell.descriptionLabel.font}
                                                 context:nil];
     return r.size.height + 60.f;
 
-  }
-  return 44.f;
+
 }
 
 
@@ -194,18 +119,16 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  if ([segue.identifier isEqualToString:@"pushWebController"]) {
-    
+  
+  if  ([segue.identifier isEqualToString:@"OpenPartnerInfo"]) {
     NIWebController *webController = segue.destinationViewController;
     webController.edgesForExtendedLayout = UIRectEdgeNone;
-    
     [webController openURL:[NSURL URLWithString:self.organizer.webUrl]];
-    
   }
   
   if ([segue.identifier isEqualToString:@"PushToIdeaCall"]) {
     LHIdeaGroupListViewController *ideaGroupViewController = (LHIdeaGroupListViewController*)segue.destinationViewController;
-    ideaGroupViewController.ideaGroup = [self.ideaGroups objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    ideaGroupViewController.ideaGroup = [self.objects objectAtIndex:[self.tableView indexPathForSelectedRow].row];
   }
 }
 
