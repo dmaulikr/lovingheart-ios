@@ -8,7 +8,7 @@
 
 "Today" = "Today";
 
-"Latest Stories" = "Latest Stories";
+"Latest Stories" = "Latest Actions";
 
 "Most Rated" = "Most Rated";
 
@@ -37,3 +37,9 @@
 "Anonymous" = "Anonymous";
 
 "Done %i times" = "Done %i times";
+
+"Stories" = "Actions";
+
+"Anonymous Stories" = "Anonymous Actions";
+
+"Popular Stories" = "Popular Actions";

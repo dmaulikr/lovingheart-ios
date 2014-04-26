@@ -8,9 +8,9 @@
 
 "Today" = "本日精選";
 
-"Latest Stories" = "最新故事";
+"Latest Stories" = "最新行動";
 
-"Most Rated" = "熱門故事";
+"Most Rated" = "熱門行動";
 
 "Random Idea" = "隨機挑選";
 
@@ -26,9 +26,9 @@
 
 "Action Cards" = "友善行動卡";
 
-"Anonymous Stories" = "匿名故事";
+"Anonymous Stories" = "匿名行動";
 
-"Popluar Stories" = "熱門故事";
+"Popluar Stories" = "熱門行動";
 
 "Stories" = "故事";
 
@@ -45,3 +45,13 @@
 "Done %i times" = "完成 %i 次";
 
 "Done %i time" = "完成 %i 次";
+
+"Read %i Action" = "閱讀 %i 個行動";
+
+"Read %i Actions" = "閱讀 %i 個行動";
+
+"Stories" = "行動";
+
+"Anonymous Stories" = "匿名行動";
+
+"Popular Stories" = "熱門行動";

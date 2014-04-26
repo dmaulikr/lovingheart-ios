@@ -50,9 +50,9 @@
   
   _readStoriesButton.enabled = YES;
   if (self.idea.doneCount.intValue == 1) {
-    [_readStoriesButton setTitle:[NSString stringWithFormat:@"Read %i Story", self.idea.doneCount.intValue] forState:UIControlStateNormal];
+    [_readStoriesButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Read %i Action", nil), self.idea.doneCount.intValue] forState:UIControlStateNormal];
   } else if (self.idea.doneCount.intValue > 1) {
-    [_readStoriesButton setTitle:[NSString stringWithFormat:@"Read %i Stories", self.idea.doneCount.intValue] forState:UIControlStateNormal];
+    [_readStoriesButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Read %i Actions", nil), self.idea.doneCount.intValue] forState:UIControlStateNormal];
   } else {
     _readStoriesButton.enabled = NO;
   }

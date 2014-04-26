@@ -69,7 +69,7 @@
     case 1:
       [query whereKey:@"status" notEqualTo:@"anonymous"];
       [query orderByDescending:@"reviewImpact"];
-      self.title = NSLocalizedString(@"Popluar Stories", @"Popluar Stories");
+      self.title = NSLocalizedString(@"Popular Stories", @"Popular Stories");
       break;
     case 0:
     default:

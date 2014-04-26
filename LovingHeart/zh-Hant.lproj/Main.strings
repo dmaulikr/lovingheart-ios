@@ -36,7 +36,7 @@
 "9Pk-5c-ho6.title" = "最新故事";
 
 /* Class = "IBUINavigationItem"; title = "Story"; ObjectID = "9nB-Ki-Nkb"; */
-"9nB-Ki-Nkb.title" = "Story";
+"9nB-Ki-Nkb.title" = "行動";
 
 /* Class = "IBUILabel"; text = "Idea done count"; ObjectID = "A3t-qy-Ifc"; */
 "A3t-qy-Ifc.text" = "Idea done count";
@@ -144,7 +144,7 @@
 "YNh-zO-qGw.normalTitle" = "Encourage";
 
 /* Class = "IBUINavigationItem"; title = "Post Story"; ObjectID = "Ypa-bz-CI5"; */
-"Ypa-bz-CI5.title" = "分享故事";
+"Ypa-bz-CI5.title" = "分享行動心得";
 
 /* Class = "IBUILabel"; text = "Location"; ObjectID = "ZE6-tW-FQD"; */
 "ZE6-tW-FQD.text" = "Location";
@@ -195,7 +195,7 @@
 "jOk-wb-qQy.text" = "Title";
 
 /* Class = "IBUIButton"; normalTitle = "Share Story"; ObjectID = "kZV-Td-Fre"; */
-"kZV-Td-Fre.normalTitle" = "Share Story";
+"kZV-Td-Fre.normalTitle" = "分享行動";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "krI-l0-17Z"; */
 "krI-l0-17Z.text" = "Title";
@@ -255,7 +255,7 @@
 "yl3-8K-Ste.text" = "Ago";
 
 /* Class = "IBUITextView"; text = "Share your best moment."; ObjectID = "ynq-l3-TkV"; */
-"ynq-l3-TkV.text" = "分享感動的一刻";
+"ynq-l3-TkV.text" = "分享你的心得";
 
 /* Class = "IBUILabel"; text = "Category Title"; ObjectID = "yww-c0-d9d"; */
 "yww-c0-d9d.text" = "Category Title";

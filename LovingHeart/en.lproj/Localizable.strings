@@ -8,7 +8,7 @@
 
 "Today" = "Today";
 
-"Latest Stories" = "Latest Stories";
+"Latest Stories" = "Latest Actions";
 
 "Most Rated" = "Most Rated";
 
@@ -16,7 +16,7 @@
 
 "Feature Idea" = "Feature of Kindness";
 
-"Read Stories" = "Read Stories";
+"Read Stories" = "Read Actions";
 
 "Share Story" = "Share Your Story";
 
@@ -39,3 +39,9 @@
 "Done %i times" = "Done with %i times";
 
 "Done %i time" = "Done with %i time";
+
+"Stories" = "Actions";
+
+"Anonymous Stories" = "Anonymous Actions";
+
+"Popular Stories" = "Popular Actions";
