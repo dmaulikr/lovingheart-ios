@@ -284,7 +284,7 @@
   if (indexPath.section == 0 && indexPath.row == 1) {
     LHStoryContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryContentTableViewCell"];
     
-    CGFloat labelWidth = 320;
+    CGFloat labelWidth = cell.storyContentLabel.width;
     CGRect r = [self.story.Content boundingRectWithSize:CGSizeMake(labelWidth, 0)
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:@{NSFontAttributeName: cell.storyContentLabel.font}
@@ -343,6 +343,16 @@
     }
     
     params.description = self.story.Content;
+    
+    // Save sharing
+    LHEvent *event = [[LHEvent alloc] init];
+    if ([LHUser currentUser]) {
+      [event setUser:[LHUser currentUser]];
+    }
+    event.action = @"share_to_facebook";
+    event.story = self.story;
+    event.value = [NSNumber numberWithInt:1];
+    [event saveInBackground];
     
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
       [FBDialogs presentShareDialogWithLink:params.link name:params.name caption:params.caption description:params.description picture:params.picture clientState:nil handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {

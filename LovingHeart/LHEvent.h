@@ -14,5 +14,8 @@
 
 @property (nonatomic, strong) NSNumber *value;
 @property (nonatomic, strong) LHUser *user;
+@property (nonatomic, strong) NSString *action;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) LHStory *story;
 
 @end

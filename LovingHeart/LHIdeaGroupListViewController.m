@@ -104,7 +104,7 @@
     [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i times", @"Done Times"), ideaMappingObject.Idea.doneCount.intValue]];
     cell.ideaDoneCountLabel.hidden = NO;
   } else if (ideaMappingObject.Idea.doneCount.intValue == 1) {
-    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i times", @"Done Times"), ideaMappingObject.Idea.doneCount.intValue]];
+    [cell.ideaDoneCountLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i time", @"Done Time"), ideaMappingObject.Idea.doneCount.intValue]];
     cell.ideaDoneCountLabel.hidden = NO;
   } else {
     cell.ideaDoneCountLabel.hidden = YES;

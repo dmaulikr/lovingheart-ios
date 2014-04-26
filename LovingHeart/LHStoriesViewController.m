@@ -209,7 +209,7 @@
   else {
     StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"storyImageCell"];
     PFObject* object = self.objects[indexPath.row];
-    CGFloat labelWidth = 294;
+    CGFloat labelWidth = cell.contentLabel.width;
     CGRect r = [object[@"Content"] boundingRectWithSize:CGSizeMake(labelWidth, 0)
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:@{NSFontAttributeName: cell.contentLabel.font}
