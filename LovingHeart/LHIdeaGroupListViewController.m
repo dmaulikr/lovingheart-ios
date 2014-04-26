@@ -131,20 +131,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  if (indexPath.row < self.objects.count) {
-    LHIdea *currentIdea = (LHIdea *)[self.objects objectAtIndex:indexPath.row];
-    
-    //Calculate the expected size based on the font and linebreak mode of your label
-    CGSize maximumIdeaContentLabelSize = CGSizeMake(320.f, FLT_MAX);
-    
-    NSDictionary *stringArrtibutes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:17.f] forKey:NSFontAttributeName];
-    
-    CGSize expectedIdeaTitleSize = [currentIdea.Name boundingRectWithSize:maximumIdeaContentLabelSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:stringArrtibutes context:nil].size;
-    
-    return expectedIdeaTitleSize.height + 120;
-  }
+  LHIdeaActionCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdeaCardViewCell"];
   
-  return 120.f;
+  CGFloat labelWidth = cell.ideaTitleLabel.width;
+
+  CGRect r = [cell.ideaTitleLabel.text boundingRectWithSize:CGSizeMake(labelWidth, 0)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:@{NSFontAttributeName: cell.ideaTitleLabel.font}
+                                                    context:nil];
+
+    return r.size.height + 130;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

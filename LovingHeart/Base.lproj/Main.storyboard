@@ -571,7 +571,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea done count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-aB-oZz">
-                                            <rect key="frame" x="-17" y="78" width="284" height="21"/>
+                                            <rect key="frame" x="-17" y="78" width="304" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="jxR-Ea-cOz"/>
@@ -583,7 +583,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="JCZ-aB-oZz" firstAttribute="leading" secondItem="ySL-XE-z1p" secondAttribute="leading" constant="-125" id="Edk-Tl-VTg"/>
-                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="trailing" secondItem="JCZ-aB-oZz" secondAttribute="trailing" constant="20" id="IzP-hq-Eg4"/>
+                                        <constraint firstItem="ySL-XE-z1p" firstAttribute="trailing" secondItem="JCZ-aB-oZz" secondAttribute="trailing" id="IzP-hq-Eg4"/>
                                         <constraint firstItem="Eke-cA-2nD" firstAttribute="top" secondItem="4mZ-f5-CRe" secondAttribute="bottom" constant="-80" id="MBP-mM-td9"/>
                                         <constraint firstItem="ySL-XE-z1p" firstAttribute="top" secondItem="Eke-cA-2nD" secondAttribute="bottom" constant="-3" id="QwZ-XG-fQd"/>
                                         <constraint firstItem="JCZ-aB-oZz" firstAttribute="top" secondItem="ySL-XE-z1p" secondAttribute="bottom" constant="8" symbolic="YES" id="XGP-gT-OMD"/>
@@ -1860,7 +1860,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea done count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3t-qy-Ifc">
-                                            <rect key="frame" x="-17" y="78" width="284" height="21"/>
+                                            <rect key="frame" x="-17" y="78" width="304" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="C1P-Wa-x2P"/>
@@ -1880,7 +1880,7 @@
                                         <constraint firstItem="TGq-Yn-m1u" firstAttribute="top" secondItem="aaL-Pj-dVR" secondAttribute="bottom" constant="-3" id="dqD-2Y-AJ3"/>
                                         <constraint firstItem="aaL-Pj-dVR" firstAttribute="top" secondItem="Jfz-cA-FGS" secondAttribute="bottom" constant="-80" id="lE0-3o-0IQ"/>
                                         <constraint firstItem="aaL-Pj-dVR" firstAttribute="leading" secondItem="Jfz-cA-FGS" secondAttribute="leading" constant="88" id="lY9-XV-iaa"/>
-                                        <constraint firstItem="TGq-Yn-m1u" firstAttribute="trailing" secondItem="A3t-qy-Ifc" secondAttribute="trailing" constant="20" id="nmD-gT-l2d"/>
+                                        <constraint firstItem="TGq-Yn-m1u" firstAttribute="trailing" secondItem="A3t-qy-Ifc" secondAttribute="trailing" id="nmD-gT-l2d"/>
                                         <constraint firstItem="TGq-Yn-m1u" firstAttribute="centerX" secondItem="Jfz-cA-FGS" secondAttribute="centerX" constant="137.5" id="xUI-FA-GxC"/>
                                     </constraints>
                                 </tableViewCellContentView>
