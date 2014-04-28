@@ -70,10 +70,10 @@
                                             <rect key="frame" x="30" y="20" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-dz-5xY">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-dz-5xY">
                                             <rect key="frame" x="20" y="128" width="120" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -82,12 +82,13 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="nJB-RQ-4aG" firstAttribute="top" secondItem="zjf-v0-h6N" secondAttribute="top" constant="20" id="5Mi-uK-VDt"/>
-                                    <constraint firstItem="Q3z-dz-5xY" firstAttribute="leading" secondItem="zjf-v0-h6N" secondAttribute="leading" constant="20" id="FqH-N1-uYf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q3z-dz-5xY" secondAttribute="bottom" constant="11" id="BtR-CG-eRD"/>
+                                    <constraint firstItem="Q3z-dz-5xY" firstAttribute="centerX" secondItem="nJB-RQ-4aG" secondAttribute="centerX" id="SQC-yi-B6E"/>
                                     <constraint firstItem="nJB-RQ-4aG" firstAttribute="centerY" secondItem="zjf-v0-h6N" secondAttribute="centerY" constant="-10" id="XSc-Wg-GX7"/>
                                     <constraint firstItem="nJB-RQ-4aG" firstAttribute="centerX" secondItem="zjf-v0-h6N" secondAttribute="centerX" id="ch8-l4-q3S"/>
-                                    <constraint firstItem="Q3z-dz-5xY" firstAttribute="centerX" secondItem="nJB-RQ-4aG" secondAttribute="centerX" id="kae-d9-QOa"/>
+                                    <constraint firstItem="Q3z-dz-5xY" firstAttribute="top" secondItem="nJB-RQ-4aG" secondAttribute="bottom" constant="8" symbolic="YES" id="hfr-8V-tD0"/>
+                                    <constraint firstItem="Q3z-dz-5xY" firstAttribute="leading" secondItem="zjf-v0-h6N" secondAttribute="leading" constant="20" id="huD-ZV-XLe"/>
                                     <constraint firstItem="nJB-RQ-4aG" firstAttribute="leading" secondItem="zjf-v0-h6N" secondAttribute="leading" constant="30" id="roO-lm-1T6"/>
-                                    <constraint firstItem="Q3z-dz-5xY" firstAttribute="top" secondItem="nJB-RQ-4aG" secondAttribute="bottom" constant="8" symbolic="YES" id="tWC-yn-E3Q"/>
                                 </constraints>
                                 <size key="customSize" width="160" height="160"/>
                                 <connections>

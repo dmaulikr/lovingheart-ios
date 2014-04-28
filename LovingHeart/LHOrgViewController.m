@@ -10,6 +10,7 @@
 #import "LHOrgCollectionViewCell.h"
 #import "LHEventsTableViewController.h"
 #import "LHQbonViewController.h"
+#import <BlocksKit/UIControl+BlocksKit.h>
 
 @interface LHOrgViewController ()
 
@@ -33,12 +34,27 @@
   
   _orgLists = [[NSMutableArray alloc] init];
   
+  __block LHOrgViewController *__self = self;
+  _refreshControl = [[UIRefreshControl alloc] init];
+  [self.refreshControl bk_addEventHandler:^(id sender) {
+    [__self query];
+  } forControlEvents:UIControlEventValueChanged];
+  [self.collectionView addSubview:self.refreshControl];
+  
+  self.collectionView.alwaysBounceVertical = YES;
+  
+  [self query];
+}
+
+- (void)query {
   PFQuery *orgQuery = [LHOrganizer query];
   [orgQuery includeKey:@"graphicPointer"];
   [orgQuery orderByAscending:@"createdAt"];
   [orgQuery whereKey:@"status" notEqualTo:@"close"];
   __block LHOrgViewController *__self = self;
+
   [orgQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [_refreshControl endRefreshing];
     if (objects && !error) {
       [__self.orgLists removeAllObjects];
       [__self.orgLists addObjectsFromArray:objects];

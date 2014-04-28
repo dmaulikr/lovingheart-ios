@@ -16,4 +16,6 @@ QbonDelegate
 
 @property (nonatomic, strong) NSMutableArray *orgLists;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
