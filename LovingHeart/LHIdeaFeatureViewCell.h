@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ideaTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ideaContentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *actionsLabel;
 
 @property (nonatomic, strong) DAProgressOverlayView *progressOverlayView;
 

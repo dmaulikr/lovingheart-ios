@@ -36,9 +36,9 @@
 
 "Anonymous" = "Anonymous";
 
-"Done %i times" = "Done with %i times";
+"Done %i times" = "Done with %i actions";
 
-"Done %i time" = "Done with %i time";
+"Done %i time" = "Done with %i action";
 
 "Stories" = "Actions";
 

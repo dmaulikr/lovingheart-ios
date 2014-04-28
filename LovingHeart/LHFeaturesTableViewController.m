@@ -99,8 +99,19 @@
   [cell.ideaCardTitleLabel setText:NSLocalizedString(todayObject.type, @"Feature")
    ];
   [cell.ideaContentLabel setText:todayObject.ideaPointer.Description];
-
+  [cell.ideaContentLabel sizeToFit];
   [cell.categoryTitleLabel setText:todayObject.ideaPointer.categoryPointer.Name];
+  
+  if (todayObject.ideaPointer.doneCount.intValue > 1) {
+    [cell.actionsLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i times", @"Done Times"), todayObject.ideaPointer.doneCount.intValue]];
+    cell.actionsLabel.hidden = NO;
+  } else if (todayObject.ideaPointer.doneCount.intValue == 1) {
+    [cell.actionsLabel setText:[NSString stringWithFormat:NSLocalizedString(@"Done %i time", @"Done Time"), todayObject.ideaPointer.doneCount.intValue]];
+    cell.actionsLabel.hidden = NO;
+  } else {
+    cell.actionsLabel.hidden = YES;
+  }
+  
   return cell;
 }
 
@@ -121,12 +132,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 620.f;
+  return 640.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 620.0f;
+  return 640.0f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
