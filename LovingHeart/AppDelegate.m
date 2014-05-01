@@ -33,6 +33,8 @@
   [LHIdeaGroup registerSubclass];
   [LHIdeaGroupMapping registerSubclass];
   
+  NSLog( @"Running FB sdk version: %@", [FBSettings sdkVersion] );
+  
   [Parse setApplicationId:@"5mqwxaAsD0xCUb8dh9HgFu4FM6bQOycBqx4XrdFL"
                 clientKey:@"SX6e4Gd86Fq3vil6XOT4UHvrsfaBqvIJJ99vPkDV"];
   [PFFacebookUtils initializeFacebook];
