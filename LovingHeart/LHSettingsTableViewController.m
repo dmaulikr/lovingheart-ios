@@ -23,10 +23,6 @@
 
 static const int kIndextOfSectionAbout = 3;
 
-static NSString *kWebAcknowledgementUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333115-acknowledgement#anchor";
-static NSString *kWebTermsOfUseUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/334311-terms-and-conditions-of-use#anchor";
-static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333113-privacy-policy#anchor";
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   

@@ -968,6 +968,43 @@
             <point key="canvasLocation" x="2675" y="-957"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="jwz-1g-Iga">
+            <objects>
+                <navigationController storyboardIdentifier="NavConformWeb" definesPresentationContext="YES" id="B3f-yc-int" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hEX-aI-GkT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zjf-et-Ysm" kind="relationship" relationship="rootViewController" id="WKb-Ct-jZC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4V-jh-86q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="-784"/>
+        </scene>
+        <!--Web Controller-->
+        <scene sceneID="cWV-YX-Q6C">
+            <objects>
+                <viewController storyboardIdentifier="ConformWeb" id="Zjf-et-Ysm" customClass="NIWebController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ix3-tR-T1G"/>
+                        <viewControllerLayoutGuide type="bottom" id="mfw-3s-xKw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ohk-7V-UZx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TXx-oy-Z8J">
+                        <barButtonItem key="leftBarButtonItem" title="No" id="YiW-8v-0hf"/>
+                        <barButtonItem key="rightBarButtonItem" title="I agree" id="ocV-HX-Xmu"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQp-pM-wte" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="507" y="-778"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Oqq-R3-Rwu">
             <objects>
                 <navigationController definesPresentationContext="YES" id="i24-h4-ybm" sceneMemberID="viewController">

@@ -14,6 +14,7 @@
 #import "LHLoginViewController.h"
 #import "DAProgressOverlayView.h"
 #import "LHQbonViewController.h"
+#import <Nimbus/NIWebController.h>
 
 @interface LHFeaturesTableViewController ()
 
@@ -30,6 +31,13 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+//  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//  UINavigationController *niWebViewController = (UINavigationController *)[storyboard instantiateViewControllerWithIdentifier:@"NavConformWeb"];
+//  NIWebController *webController = (NIWebController *)niWebViewController.viewControllers[0];
+//  [webController openURL:[NSURL URLWithString:kWebTermsOfUseUrl]];
+//  
+//  [self.navigationController presentViewController:niWebViewController animated:NO completion:nil];
 }
 
 - (PFQuery *)queryForTable {

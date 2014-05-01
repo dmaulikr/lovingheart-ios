@@ -22,6 +22,10 @@ static NSString *kUserDefaultSupportChinese = @"kUserDefaultSupportChinese";
 static NSString *kUserDefaultHasBeenAskUser = @"kUserDefaultHasBeenAskUser";
 static NSString *kUserDefaultUserWantPushNotification = @"kUserDefaultUserWantPushNotification";
 
+static NSString *kWebAcknowledgementUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333115-acknowledgement#anchor";
+static NSString *kWebTermsOfUseUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/334311-terms-and-conditions-of-use#anchor";
+static NSString *kPrivacyPolicyUrl = @"http://support.lovingheartapp.com/knowledgebase/articles/333113-privacy-policy#anchor";
+
 static NSString *kAviaryAPIKey = @"d6fc6eb5fdda7a79";
 static NSString *kAviarySecret = @"883fbc85c2e70208";
 
