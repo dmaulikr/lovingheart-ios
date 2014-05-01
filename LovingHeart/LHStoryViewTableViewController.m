@@ -17,6 +17,7 @@
 #import "LHEvent.h"
 #import "LHReviewStarsTableViewCell.h"
 #import <BlocksKit/UIActionSheet+BlocksKit.h>
+#import <BlocksKit/UIAlertView+BlocksKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <BlocksKit/UIAlertView+BlocksKit.h>
 #import "NSString+Extra.h"
@@ -405,7 +406,7 @@
     }
   }];
   if ([LHUser currentUser] && [self.story.StoryTeller.objectId isEqualToString:[LHUser currentUser].objectId]) {
-    [actionSheet bk_setDestructiveButtonWithTitle:@"Delete this story" handler:^{
+    [actionSheet bk_setDestructiveButtonWithTitle:NSLocalizedString(@"Delete this story", nil) handler:^{
       
       [UIAlertView bk_showAlertViewWithTitle:@"Delete" message:@"Sure to delete this story?" cancelButtonTitle:@"Cancel" otherButtonTitles:[NSArray arrayWithObject:@"Delete"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
         
@@ -432,21 +433,27 @@
   }
   [actionSheet bk_setDestructiveButtonWithTitle:NSLocalizedString(@"Flag inappropriate content", @"Flag inappropriate content") handler:^{
     
-    LHFlag *flag = [[LHFlag alloc] init];
-    flag.Status = @"Close";
-    flag.Reason = @"Flag and remove inappropriate content";
-    flag.object = @"Story";
-    flag.ObjID = _story.objectId;
-    [SVProgressHUD showWithStatus:@"Flaging..."];
-    [flag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-      if (succeeded) {
-        [SVProgressHUD showSuccessWithStatus:@"Thank you! We will check on that."];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
-        [self.navigationController popViewControllerAnimated:YES];
-      } else if (error) {
-        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Flag inappropriate content", @"Flag inappropriate content") message:NSLocalizedString(@"Report and flag the content", nil) cancelButtonTitle:@"No" otherButtonTitles:[NSArray arrayWithObject:@"YES"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+      if (buttonIndex == 1) {
+        LHFlag *flag = [[LHFlag alloc] init];
+        flag.Status = @"Close";
+        flag.Reason = @"Flag and remove inappropriate content";
+        flag.object = @"Story";
+        flag.ObjID = _story.objectId;
+        [SVProgressHUD showWithStatus:@"Flaging..."];
+        [flag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+          if (succeeded) {
+            [SVProgressHUD showSuccessWithStatus:@"Thank you! We will check on that."];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+          } else if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+          }
+        }];
       }
     }];
+    
+    
 
   }];
   
