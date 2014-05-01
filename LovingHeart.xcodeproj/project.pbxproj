@@ -109,6 +109,7 @@
 		1C8DC03718EC6E2D00262E5A /* LHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DC03618EC6E2D00262E5A /* LHSignUpViewController.m */; };
 		1C992A7B18EE4F27000415B4 /* cup_25_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C992A7918EE4F27000415B4 /* cup_25_clear.png */; };
 		1C992A7C18EE4F27000415B4 /* cup_25_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C992A7A18EE4F27000415B4 /* cup_25_clear@2x.png */; };
+		1CA79BD91912CA6300134B49 /* LHFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA79BD81912CA6300134B49 /* LHFlag.m */; };
 		1CA9564F1906D84700CDDFAD /* LHCurrentUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA9564E1906D84700CDDFAD /* LHCurrentUserTableViewController.m */; };
 		1CA956551906F05600CDDFAD /* 758-megaphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CA956531906F05600CDDFAD /* 758-megaphone.png */; };
 		1CA956561906F05600CDDFAD /* 758-megaphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CA956541906F05600CDDFAD /* 758-megaphone@2x.png */; };
@@ -516,6 +517,8 @@
 		1C8DC03618EC6E2D00262E5A /* LHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSignUpViewController.m; sourceTree = "<group>"; };
 		1C992A7918EE4F27000415B4 /* cup_25_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup_25_clear.png; sourceTree = "<group>"; };
 		1C992A7A18EE4F27000415B4 /* cup_25_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cup_25_clear@2x.png"; sourceTree = "<group>"; };
+		1CA79BD71912CA6300134B49 /* LHFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHFlag.h; sourceTree = "<group>"; };
+		1CA79BD81912CA6300134B49 /* LHFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHFlag.m; sourceTree = "<group>"; };
 		1CA9564D1906D84700CDDFAD /* LHCurrentUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCurrentUserTableViewController.h; sourceTree = "<group>"; };
 		1CA9564E1906D84700CDDFAD /* LHCurrentUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHCurrentUserTableViewController.m; sourceTree = "<group>"; };
 		1CA956531906F05600CDDFAD /* 758-megaphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "758-megaphone.png"; sourceTree = "<group>"; };
@@ -1356,6 +1359,8 @@
 				1C86EB59190761A50026BB8A /* LHIdeaGroup.m */,
 				1C86EB5E1907689E0026BB8A /* LHIdeaGroupMapping.h */,
 				1C86EB5F1907689E0026BB8A /* LHIdeaGroupMapping.m */,
+				1CA79BD71912CA6300134B49 /* LHFlag.h */,
+				1CA79BD81912CA6300134B49 /* LHFlag.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -1878,6 +1883,7 @@
 				1CAE0D6819064B9E00732240 /* SDWebImageDownloaderOperation.m in Sources */,
 				1C75980518F7BAEE003E6BA6 /* LHStoryReviewViewController.m in Sources */,
 				1C670D7A18E1C57600D422CA /* LHGraphicImage.m in Sources */,
+				1CA79BD91912CA6300134B49 /* LHFlag.m in Sources */,
 				1C3D499618EB832D00F9C4D7 /* LHCategoriesPickController.m in Sources */,
 				1C8DC03718EC6E2D00262E5A /* LHSignUpViewController.m in Sources */,
 				1C3D7D8A18E2A66C00696BBE /* LHSettingsTableViewController.m in Sources */,

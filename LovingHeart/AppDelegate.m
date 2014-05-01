@@ -31,6 +31,7 @@
   [LHEvent registerSubclass];
   [LHOrganizer registerSubclass];
   [LHIdeaGroup registerSubclass];
+  [LHFlag registerSubclass];
   [LHIdeaGroupMapping registerSubclass];
   
   NSLog( @"Running FB sdk version: %@", [FBSettings sdkVersion] );

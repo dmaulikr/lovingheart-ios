@@ -10,6 +10,7 @@
 #import "LHUser.h"
 #import "LHGraphicImage.h"
 #import "LHIdea.h"
+#import "LHFlag.h"
 
 @interface LHStory : PFObject<PFSubclassing>
 
@@ -25,5 +26,6 @@
 @property (nonatomic, strong) PFGeoPoint *geoPoint;
 @property (nonatomic, strong) LHIdea *ideaPointer;
 @property (nonatomic, strong) NSString *language;
+@property (nonatomic, strong) LHFlag *Flag;
 
 @end

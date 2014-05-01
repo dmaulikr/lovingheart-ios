@@ -19,6 +19,7 @@
 #import "LHOrganizer.h"
 #import "LHIdeaGroup.h"
 #import "LHIdeaGroupMapping.h"
+#import "LHFlag.h"
 
 @interface LHParseObject : PFObject
 

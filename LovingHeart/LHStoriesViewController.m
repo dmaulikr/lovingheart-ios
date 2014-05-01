@@ -53,7 +53,13 @@
   [query includeKey:@"ideaPointer"];
   [query includeKey:@"ideaPointer.categoryPointer"];
   
+  PFQuery *flagQuery = [LHFlag query];
+  [flagQuery whereKey:@"Object" equalTo:@"Story"];
+  [flagQuery whereKey:@"Status" equalTo:@"Close"];
+  
+  [query whereKey:@"objectId" doesNotMatchKey:@"ObjID" inQuery:flagQuery];
   [query whereKey:@"language" containedIn:[LHAltas supportLanguageList]];
+  [query whereKeyDoesNotExist:@"Flag"];
   
   // If no objects are loaded in memory, we look to the cache first to fill the table
   // and then subsequently do a query against the network.

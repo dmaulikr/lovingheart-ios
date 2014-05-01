@@ -319,9 +319,9 @@
   
   __block LHStoryViewTableViewController *__self = self;
   
-  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"Actions"];
+  UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:NSLocalizedString(@"Actions", nil)];
   __block UIActionSheet *__actionSheet = actionSheet;
-  [actionSheet bk_addButtonWithTitle:@"Share to Facebook" handler:^{
+  [actionSheet bk_addButtonWithTitle:NSLocalizedString(@"Share to Facebook", nil) handler:^{
     FBRequest *fbRequest = [FBRequest requestForMe];
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
     params.link = [NSURL URLWithString:[NSString stringWithFormat:@"http://tw.lovingheartapp.com/story/%@", self.story.objectId]];
@@ -430,8 +430,27 @@
       
     }];
   }
+  [actionSheet bk_setDestructiveButtonWithTitle:NSLocalizedString(@"Flag inappropriate content", @"Flag inappropriate content") handler:^{
+    
+    LHFlag *flag = [[LHFlag alloc] init];
+    flag.Status = @"Close";
+    flag.Reason = @"Flag and remove inappropriate content";
+    flag.object = @"Story";
+    flag.ObjID = _story.objectId;
+    [SVProgressHUD showWithStatus:@"Flaging..."];
+    [flag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+      if (succeeded) {
+        [SVProgressHUD showSuccessWithStatus:@"Thank you! We will check on that."];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+      } else if (error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+      }
+    }];
+
+  }];
   
-  [actionSheet bk_setCancelButtonWithTitle:@"Cancel" handler:^{
+  [actionSheet bk_setCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) handler:^{
     [__actionSheet dismissWithClickedButtonIndex:0 animated:YES];
   }];
   [actionSheet showInView:[self.view window]];
