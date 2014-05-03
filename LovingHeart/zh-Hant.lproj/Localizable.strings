@@ -42,13 +42,13 @@
 
 "Some where" = "來自 某個地方";
 
-"Done %i times" = "閱讀 %i 個行動";
+"Done %i times" = "已有 %i 個響應行動";
 
-"Done %i time" = "閱讀 %i 個行動";
+"Done %i time" = "已有 %i 個響應行動";
 
-"Read %i Action" = "閱讀 %i 個行動";
+"Read %i Action" = "%i 個響應行動";
 
-"Read %i Actions" = "閱讀 %i 個行動";
+"Read %i Actions" = "%i 個響應行動";
 
 "Stories" = "行動";
 

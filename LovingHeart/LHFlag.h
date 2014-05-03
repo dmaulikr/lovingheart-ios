@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *Reason;
 @property (nonatomic, strong) NSString *Object;
 @property (nonatomic, strong) NSString *ObjID;
+@property (nonatomic, strong) LHUser *User;
 
 @end

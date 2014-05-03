@@ -433,25 +433,44 @@
   }
   [actionSheet bk_setDestructiveButtonWithTitle:NSLocalizedString(@"Flag inappropriate content", @"Flag inappropriate content") handler:^{
     
-    [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Flag inappropriate content", @"Flag inappropriate content") message:NSLocalizedString(@"Report and flag the content", nil) cancelButtonTitle:@"No" otherButtonTitles:[NSArray arrayWithObject:@"YES"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-      if (buttonIndex == 1) {
-        LHFlag *flag = [[LHFlag alloc] init];
-        flag.Status = @"Close";
-        flag.Reason = @"Flag and remove inappropriate content";
-        flag.object = @"Story";
-        flag.ObjID = _story.objectId;
-        [SVProgressHUD showWithStatus:@"Flaging..."];
-        [flag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-          if (succeeded) {
-            [SVProgressHUD showSuccessWithStatus:@"Thank you! We will check on that."];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
-            [self.navigationController popViewControllerAnimated:YES];
-          } else if (error) {
-            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-          }
-        }];
-      }
-    }];
+    if (![LHUser currentUser]) {
+      
+      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:NSLocalizedString(@"Need to login",nil) message:NSLocalizedString(@"Please login before share a story", nil)];
+      [alertView bk_addButtonWithTitle:@"Go" handler:^{
+        LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
+          loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+          [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+        
+      }];
+      [alertView bk_setCancelBlock:^{
+      }];
+      [alertView show];
+    } else {
+      NSLog(@"Login User Name: %@", [[PFUser currentUser] username]);
+      
+      [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Flag inappropriate content", @"Flag inappropriate content") message:NSLocalizedString(@"Report and flag the content", nil) cancelButtonTitle:@"No" otherButtonTitles:[NSArray arrayWithObject:@"YES"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex == 1) {
+          LHFlag *flag = [[LHFlag alloc] init];
+          flag.User = [LHUser currentUser];
+          flag.Status = @"Close";
+          flag.Reason = @"Flag and remove inappropriate content";
+          flag.object = @"Story";
+          flag.ObjID = _story.objectId;
+          [SVProgressHUD showWithStatus:@"Flaging..."];
+          [flag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+              [SVProgressHUD showSuccessWithStatus:@"Thank you! We will check on that."];
+              [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
+              [self.navigationController popViewControllerAnimated:YES];
+            } else if (error) {
+              [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+            }
+          }];
+        }
+      }];
+    }
+    
+    
     
     
 

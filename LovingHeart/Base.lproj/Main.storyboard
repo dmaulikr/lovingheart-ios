@@ -466,7 +466,6 @@
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </barButtonItem>
                                     <barButtonItem title="Language" id="eCj-x9-efh"/>
-                                    <barButtonItem title="Anonymous" id="Ows-ua-Ql5"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5Yw-Oh-Z4o"/>
                                     <barButtonItem image="723-location-arrow.png" id="W2t-7M-4U8">
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
