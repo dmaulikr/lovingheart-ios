@@ -9,6 +9,7 @@ pod 'uservoice-iphone-sdk'
 pod 'DAProgressOverlayView'
 pod 'GCPlaceholderTextView'
 pod 'AviarySDK'
+pod 'FlurrySDK'
 
 # Basics
 pod 'AFNetworking', '~> 2.1.0'

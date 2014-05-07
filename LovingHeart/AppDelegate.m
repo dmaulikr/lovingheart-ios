@@ -14,6 +14,7 @@
 #import "LHMainViewController.h"
 #import <QbonWidget/Qbon.h>
 #import <Crashlytics/Crashlytics.h>
+#import <FlurrySDK/Flurry.h>
 
 @implementation AppDelegate
 
@@ -66,6 +67,10 @@
   config.topicId = 51969;
   config.forumId = 244037;
   [UserVoice initialize:config];
+  
+  // Flurry
+  [Flurry setCrashReportingEnabled:YES];
+  [Flurry startSession:@"WM7GJQK65KJKKWYY2N9M"];
   
   // Initialize preference
   // Default Chinese is on.
