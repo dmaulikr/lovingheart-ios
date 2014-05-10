@@ -10,6 +10,7 @@
 #import <SVProgressHUD.h>
 #import "LHSignUpViewController.h"
 #import <UIAlertView+BlocksKit.h>
+#import "LHGraphicImage.h"
 
 @implementation LHLoginViewController
 
@@ -43,12 +44,48 @@
 
 /*! @name Responding to Actions */
 /// Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(LHUser *)user {
   
   [[NSNotificationCenter defaultCenter] postNotificationName:kUserProfileRefreshNotification object:nil];
   
   [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Login Success. %@", user.email]];
   [logInController dismissViewControllerAnimated:YES completion:nil];
+  
+  if (![user objectForKey:@"name"] || ![user objectForKey:@"avatar"]) {
+    // Create request for user's Facebook data
+    FBRequest *request = [FBRequest requestForMe];
+    
+    // Send request to Facebook
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+      if (!error) {
+        // result is a dictionary with the user's Facebook data
+        NSDictionary *userData = (NSDictionary *)result;
+        
+        NSString *facebookID = userData[@"id"];
+        NSString *name = userData[@"name"];
+        NSString *location = userData[@"location"][@"name"];
+        NSString *gender = userData[@"gender"];
+        NSString *birthday = userData[@"birthday"];
+        NSString *relationship = userData[@"relationship_status"];
+        
+        [user setObject:name forKey:@"name"];
+        
+        LHGraphicImage *graphicImage = [[LHGraphicImage alloc] init];
+        graphicImage.imageType = @"url";
+        graphicImage.imageUrl = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", facebookID];
+        [graphicImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+          if (succeeded) {
+            [user setObject:graphicImage forKey:@"avatar"];
+            [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+              NSLog(@"User Object Facebook name, image updated.");
+            }];
+          }
+        }];
+      }
+    }];
+  }
+  
+  
   
   // Check and ask user to sign up
   BOOL hasAskUserNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultHasBeenAskUser];

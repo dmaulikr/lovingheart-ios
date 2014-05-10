@@ -10,6 +10,7 @@ pod 'DAProgressOverlayView'
 pod 'GCPlaceholderTextView'
 pod 'AviarySDK'
 pod 'FlurrySDK'
+pod 'GoogleAnalytics-iOS-SDK'
 
 # Basics
 pod 'AFNetworking', '~> 2.1.0'

@@ -14,7 +14,8 @@
 #import "LHMainViewController.h"
 #import <QbonWidget/Qbon.h>
 #import <Crashlytics/Crashlytics.h>
-#import <FlurrySDK/Flurry.h>
+#import <Flurry.h>
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
 
 @implementation AppDelegate
 
@@ -75,6 +76,18 @@
   // Flurry
   [Flurry setCrashReportingEnabled:YES];
   [Flurry startSession:@"WM7GJQK65KJKKWYY2N9M"];
+  
+  // Optional: automatically send uncaught exceptions to Google Analytics.
+  [GAI sharedInstance].trackUncaughtExceptions = YES;
+  
+  // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+  [GAI sharedInstance].dispatchInterval = 20;
+  
+  // Optional: set Logger to VERBOSE for debug information.
+  [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelWarning];
+  
+  // Initialize tracker. Replace with your tracking ID.
+  [[GAI sharedInstance] trackerWithTrackingId:@"UA-48042327-7"];
   
   // Initialize preference
   // Default Chinese is on.
