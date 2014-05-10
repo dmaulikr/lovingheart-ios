@@ -68,6 +68,10 @@
   config.forumId = 244037;
   [UserVoice initialize:config];
   
+  // Facebook
+  [FBSettings setDefaultAppID:@"778772072139128"];
+  [FBAppEvents activateApp];
+  
   // Flurry
   [Flurry setCrashReportingEnabled:YES];
   [Flurry startSession:@"WM7GJQK65KJKKWYY2N9M"];
