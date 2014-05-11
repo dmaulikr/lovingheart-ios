@@ -1056,7 +1056,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="StoryViewTableViewController" id="v24-J0-JnY" customClass="LHStoryViewTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4wt-8m-IiQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1996,10 +1996,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="nje-1x-q1U"/>
+        <segue reference="iWw-1X-Lp4"/>
+        <segue reference="cac-o5-LaQ"/>
         <segue reference="yFf-jA-AlC"/>
         <segue reference="fWl-xr-IaN"/>
-        <segue reference="rPm-lU-hyR"/>
-        <segue reference="8nF-Tf-eH1"/>
-        <segue reference="cac-o5-LaQ"/>
     </inferredMetricsTieBreakers>
 </document>
