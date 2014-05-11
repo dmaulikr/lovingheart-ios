@@ -1,0 +1,69 @@
+/* 
+  Localizable.strings
+  LovingHeart
+
+  Created by Edward Chiang on 2014/3/23.
+  Copyright (c) 2014年 LovineHeart. All rights reserved.
+*/
+
+"Today" = "本日精選";
+
+"Latest Stories" = "最新行動";
+
+"Most Rated" = "熱門行動";
+
+"Random Idea" = "隨機挑選";
+
+"Feature Idea" = "本日推薦";
+
+"Need to login" = "需要先登入";
+
+"Please login before share a story" = "要先登入才能繼續";
+
+"Loading" = "載入中...";
+
+"Partners" = "號召夥伴";
+
+"Action Cards" = "友善行動卡";
+
+"Anonymous Stories" = "匿名行動";
+
+"Popluar Stories" = "熱門行動";
+
+"Stories" = "故事";
+
+"Support Center" = "意見與回饋";
+
+"Login" = "登入";
+
+"Anonymous" = "匿名";
+
+"From location" = "來自 %@";
+
+"Some where" = "來自 某個地方";
+
+"Done %i times" = "已有 %i 個響應行動";
+
+"Done %i time" = "已有 %i 個響應行動";
+
+"Read %i Action" = "%i 個響應行動";
+
+"Read %i Actions" = "%i 個響應行動";
+
+"Stories" = "行動";
+
+"Anonymous Stories" = "匿名行動";
+
+"Popular Stories" = "熱門行動";
+
+"Flag inappropriate content" = "標記不妥當內容";
+
+"Cancel" = "取消";
+
+"Share to Facebook" = "分享到臉書";
+
+"Actions" = "進階";
+
+"Delete this story" = "刪除這則行動";
+
+"Report and flag the content" = "回報並且標記不妥當內容？";

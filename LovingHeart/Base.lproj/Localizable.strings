@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  LovingHeart
+
+  Created by Edward Chiang on 2014/3/23.
+  Copyright (c) 2014年 LovineHeart. All rights reserved.
+*/
+
+"Today" = "Today";
+
+"Latest Stories" = "Latest Actions";
+
+"Most Rated" = "Most Rated";
+
+"Random Idea" = "Random of Kindness";
+
+"Feature Idea" = "Feature of Kindness";
+
+"Read Stories" = "Read Stories";
+
+"Share Story" = "Share Your Story";
+
+"Need to login" = "Need to login";
+
+"Please login before share a story" = "Please login before share a story";
+
+"Loading" = "Loading...";
+
+"Partners" = "Partners";
+
+"Action Cards" = "Action Cards";
+
+"From location" = "From %@";
+
+"Some where" = "From somewhere";
+
+"Anonymous" = "Anonymous";
+
+"Done %i times" = "Done %i times";
+
+"Stories" = "Actions";
+
+"Anonymous Stories" = "Anonymous Actions";
+
+"Popular Stories" = "Popular Actions";
