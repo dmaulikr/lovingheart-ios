@@ -611,7 +611,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All" id="c1Z-cJ-tv7">
-                        <barButtonItem key="leftBarButtonItem" title="Categories" id="bAH-I1-UJl">
+                        <barButtonItem key="leftBarButtonItem" image="1100-list-2.png" id="bAH-I1-UJl">
                             <connections>
                                 <segue destination="UfW-z5-sTj" kind="modal" identifier="catgoriesPicker" id="A93-ev-ddg"/>
                             </connections>
@@ -1979,6 +1979,7 @@
     </scenes>
     <resources>
         <image name="1039-files-box.png" width="28" height="26"/>
+        <image name="1100-list-2.png" width="28" height="22"/>
         <image name="714-camera.png" width="28" height="21"/>
         <image name="723-location-arrow.png" width="28" height="28"/>
         <image name="724-info.png" width="28" height="28"/>
@@ -1996,10 +1997,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="SmJ-FX-iAz"/>
         <segue reference="nje-1x-q1U"/>
         <segue reference="iWw-1X-Lp4"/>
-        <segue reference="cac-o5-LaQ"/>
-        <segue reference="yFf-jA-AlC"/>
         <segue reference="fWl-xr-IaN"/>
+        <segue reference="cac-o5-LaQ"/>
     </inferredMetricsTieBreakers>
 </document>

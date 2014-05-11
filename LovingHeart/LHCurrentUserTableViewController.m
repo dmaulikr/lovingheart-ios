@@ -190,7 +190,7 @@
   if (section == 0) {
     return nil;
   } else if (section == 1) {
-    return NSLocalizedString(@"Stories", @"Stories");
+    return nil;
   }
   return nil;
 }
