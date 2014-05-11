@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) LHCategory *category;
 
+
+@property (nonatomic, assign) CGFloat previousScrollViewYOffset;
+
 @end

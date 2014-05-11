@@ -16,4 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *qbonButtonItem;
 
+
+@property (nonatomic, assign) CGFloat previousScrollViewYOffset;
+
 @end

@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) LHUserImpact *userImpact;
 
+@property (nonatomic, assign) CGFloat previousScrollViewYOffset;
+
 @end

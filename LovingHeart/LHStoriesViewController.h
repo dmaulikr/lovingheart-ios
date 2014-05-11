@@ -23,4 +23,7 @@ typedef enum {
 
 @property (nonatomic, assign) StoriesType storiesType;
 
+
+@property (nonatomic, assign) CGFloat previousScrollViewYOffset;
+
 @end
