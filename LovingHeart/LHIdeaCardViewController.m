@@ -11,6 +11,8 @@
 #import "LHPostStoryViewController.h"
 #import "LHStoriesFromCardViewController.h"
 #import "NIWebController.h"
+#import "LHLoginViewController.h"
+#import <BlocksKit/UIAlertView+BlocksKit.h>
 
 @interface LHIdeaCardViewController ()
 
@@ -98,12 +100,33 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"shareStorySegue"]) {
     
-    UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
-    if (navigationController.viewControllers.count > 0) {
-      LHPostStoryViewController *postStoryViewController = (LHPostStoryViewController *)navigationController.viewControllers[0];
-      [postStoryViewController setIdeaObject:self.idea];
-
+    if (![PFUser currentUser]) {
+      
+      UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:NSLocalizedString(@"Need to login",nil) message:NSLocalizedString(@"Please login before share a story",nil)];
+      [alertView bk_addButtonWithTitle:NSLocalizedString(@"Go", nil) handler:^{
+        [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
+          LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
+          loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;
+          [self.navigationController presentViewController:loginViewController animated:YES completion:nil];
+        }];
+        
+      }];
+      [alertView bk_setCancelBlock:^{
+        [segue.destinationViewController dismissModalViewControllerAnimated:YES];
+      }];
+      [alertView show];
+    } else {
+      NSLog(@"Login User Name: %@", [[PFUser currentUser] username]);
+      
+      UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+      if (navigationController.viewControllers.count > 0) {
+        LHPostStoryViewController *postStoryViewController = (LHPostStoryViewController *)navigationController.viewControllers[0];
+        [postStoryViewController setIdeaObject:self.idea];
+        
+      }
     }
+    
+
   }
   if ([segue.identifier isEqualToString:@"readStoriesFromCard"]) {
     LHStoriesFromCardViewController *tableViewController = (LHStoriesFromCardViewController *)segue.destinationViewController;
