@@ -51,6 +51,8 @@
   
   [self.userInputTextView setDelegate:self];
   
+  self.userInputTextView.text = NSLocalizedString(@"Share your best moment", @"Share your best moment.");
+  
   locationmanager = [[CLLocationManager alloc] init];
   
   geocoder = [[CLGeocoder alloc] init];

@@ -183,7 +183,7 @@
     if (![PFUser currentUser]) {
       
       UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:NSLocalizedString(@"Need to login",nil) message:NSLocalizedString(@"Please login before share a story",nil)];
-      [alertView bk_addButtonWithTitle:@"Go" handler:^{
+      [alertView bk_addButtonWithTitle:NSLocalizedString(@"Go", nil) handler:^{
         [segue.destinationViewController dismissViewControllerAnimated:YES completion:^{
           LHLoginViewController *loginViewController =[[LHLoginViewController alloc] init];
           loginViewController.fields = PFLogInFieldsDefault | PFLogInFieldsFacebook;

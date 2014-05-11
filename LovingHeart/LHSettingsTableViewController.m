@@ -83,16 +83,16 @@ static const int kIndextOfSectionAbout = 3;
   NSString *title;
   switch (section) {
     case 0:
-      title = @"Account";
+      title = NSLocalizedString(@"Account", @"Account");
       break;
     case 1:
-      title = @"Support Language";
+      title = NSLocalizedString(@"Support Language", @"Support Language");
       break;
     case 2:
-      title = @"Feedback";
+      title = NSLocalizedString(@"Feedback", @"Feedback");
       break;
     case 3:
-      title = @"About";
+      title = NSLocalizedString(@"About", @"About");
       break;
     default:
       break;
