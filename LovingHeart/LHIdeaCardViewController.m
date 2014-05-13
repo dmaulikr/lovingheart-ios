@@ -29,10 +29,7 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-  
+- (void)objectToViews {
   self.ideaCardImageView.clipsToBounds = YES;
   if (self.idea.graphicPointer) {
     PFFile* file = (PFFile*)self.idea.graphicPointer.imageFile;
@@ -67,6 +64,24 @@
     self.callToActionButton.enabled = NO;
     self.callToActionButton.hidden = YES;
   }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+  
+  __block LHIdeaCardViewController *__self = self;
+  PFQuery *query = [LHIdea query];
+  [query includeKey:@"categoryPointer"];
+  [query includeKey:@"graphicPointer"];
+  [query getObjectInBackgroundWithId:self.idea.objectId block:^(PFObject *object, NSError *error) {
+    if (!error) {
+      __self.idea = (LHIdea *)object;
+      [__self objectToViews];
+      [__self viewDidLayoutSubviews];
+    }
+  }];
+//  [self objectToViews];
 }
 
 - (void)viewDidLayoutSubviews {

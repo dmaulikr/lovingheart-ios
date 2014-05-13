@@ -19,8 +19,8 @@
                         <outlet property="tabbar" destination="MBI-v7-P8i" id="Ol7-hW-Q7V"/>
                         <segue destination="i24-h4-ybm" kind="relationship" relationship="viewControllers" id="IUX-q0-p81"/>
                         <segue destination="omD-Mg-kLy" kind="relationship" relationship="viewControllers" id="MoP-sh-stm"/>
-                        <segue destination="VRk-Jk-By6" kind="relationship" relationship="viewControllers" id="DGB-aL-QMj"/>
                         <segue destination="Wgi-96-GcF" kind="relationship" relationship="viewControllers" id="ZgM-h1-NF6"/>
+                        <segue destination="VRk-Jk-By6" kind="relationship" relationship="viewControllers" id="DGB-aL-QMj"/>
                         <segue destination="hLr-aw-eF9" kind="relationship" relationship="viewControllers" id="q36-Xf-fwz"/>
                     </connections>
                 </tabBarController>
@@ -751,7 +751,7 @@
         <!--Idea Card View Controller - Action Card-->
         <scene sceneID="usc-Ac-GtF">
             <objects>
-                <viewController id="TMd-Mt-9q4" customClass="LHIdeaCardViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IdeaCardViewController" id="TMd-Mt-9q4" customClass="LHIdeaCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="peP-eh-T05"/>
                         <viewControllerLayoutGuide type="bottom" id="Fr9-27-g9M"/>
@@ -1997,10 +1997,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SmJ-FX-iAz"/>
-        <segue reference="nje-1x-q1U"/>
         <segue reference="iWw-1X-Lp4"/>
         <segue reference="MK4-PJ-ePw"/>
-        <segue reference="cac-o5-LaQ"/>
+        <segue reference="SmJ-FX-iAz"/>
+        <segue reference="QfK-Fs-fda"/>
+        <segue reference="o51-Ne-ShS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -33,4 +33,5 @@ extern NSString* const kUserStoriesRefreshNotification;
 extern NSString* const kUserProfileRefreshNotification;
 extern NSString* const kUserStoryRefreshNotification;
 
+extern int const kTabIdeasIndex;
 extern int const kTabStoriesIndex;

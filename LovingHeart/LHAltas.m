@@ -13,6 +13,7 @@
 NSString* const kUserProfileRefreshNotification = @"kUserProfileRefreshNotification";
 NSString* const kUserStoriesRefreshNotification = @"kUserStoriesRefreshNotification";
 NSString* const kUserStoryRefreshNotification = @"kUserStoryRefreshNotification";
+int  const kTabIdeasIndex = 1;
 int  const kTabStoriesIndex = 3;
 
 + (NSArray *)supportLanguageList {

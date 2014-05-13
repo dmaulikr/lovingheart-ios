@@ -16,6 +16,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <Flurry.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import "LHIdeaCardViewController.h"
 
 @implementation AppDelegate
 
@@ -194,6 +195,20 @@
           
           [((UINavigationController *)mainViewController.selectedViewController) pushViewController:storyViewController animated:YES];
         }
+        if ([object isEqualToString:@"deed"]) {
+          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+          LHIdeaCardViewController *ideaCardViewController = (LHIdeaCardViewController *)[storyboard instantiateViewControllerWithIdentifier:@"IdeaCardViewController"];
+          
+          LHIdea *idea = [[LHIdea alloc] init];
+          [idea setObjectId:objectId];
+          ideaCardViewController.idea = idea;
+          
+          LHMainViewController *mainViewController = (LHMainViewController *)self.window.rootViewController;
+          [mainViewController setSelectedIndex:kTabIdeasIndex];
+          
+          [((UINavigationController *)mainViewController.selectedViewController) pushViewController:ideaCardViewController animated:YES];
+        }
+
       }
     }
  
