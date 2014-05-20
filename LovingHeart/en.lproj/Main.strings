@@ -9,7 +9,7 @@
 "27K-x7-Zr8.title" = "Me";
 
 /* Class = "IBUILabel"; text = "Idea Content"; ObjectID = "31l-SN-4gN"; */
-"31l-SN-4gN.text" = "Idea Content";
+"31l-SN-4gN.text" = "Content";
 
 /* Class = "IBUILabel"; text = "Description"; ObjectID = "328-FD-Axy"; */
 "328-FD-Axy.text" = "Description";
@@ -81,7 +81,7 @@
 "KJ9-NI-3rq.title" = "Action Card";
 
 /* Class = "IBUILabel"; text = "Idea Content"; ObjectID = "LGX-U8-wK6"; */
-"LGX-U8-wK6.text" = "Idea Content";
+"LGX-U8-wK6.text" = "Content";
 
 /* Class = "IBUILabel"; text = "Category"; ObjectID = "Lxs-YJ-uWd"; */
 "Lxs-YJ-uWd.text" = "Category";
@@ -150,7 +150,7 @@
 "ZE6-tW-FQD.text" = "Location";
 
 /* Class = "IBUILabel"; text = "Idea Title"; ObjectID = "a3g-pg-gbz"; */
-"a3g-pg-gbz.text" = "Idea Title";
+"a3g-pg-gbz.text" = "Title";
 
 /* Class = "IBUILabel"; text = "Days ago"; ObjectID = "aBp-sZ-kbR"; */
 "aBp-sZ-kbR.text" = "Days ago";
@@ -165,7 +165,7 @@
 "bBj-Yu-TGH.text" = "新北市, 汐止區";
 
 /* Class = "IBUILabel"; text = "Idea Title"; ObjectID = "bEI-LO-YEe"; */
-"bEI-LO-YEe.text" = "Idea Title";
+"bEI-LO-YEe.text" = "Title";
 
 /* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "bcz-Hl-Ogv"; */
 "bcz-Hl-Ogv.text" = "Subtitle";

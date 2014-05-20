@@ -81,7 +81,7 @@
       [__self viewDidLayoutSubviews];
     }
   }];
-//  [self objectToViews];
+  [self objectToViews];
 }
 
 - (void)viewDidLayoutSubviews {

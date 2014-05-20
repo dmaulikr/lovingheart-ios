@@ -273,6 +273,13 @@
   [SVProgressHUD showWithStatus:@"Posting" maskType:SVProgressHUDMaskTypeGradient];
   [_storyObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (!error) {
+      
+      [PFCloud callFunctionInBackground:@"UpdateUserStoriesCount" withParameters:@{} block:^(id object, NSError *error) {
+        if (!error) {
+          NSLog(@"Success with cloud code.");
+        }
+      }];
+      
       [[NSNotificationCenter defaultCenter] postNotificationName:kUserStoriesRefreshNotification object:nil];
       [SVProgressHUD showSuccessWithStatus:@"Done"];
       [self dismissViewControllerAnimated:YES completion:^{
