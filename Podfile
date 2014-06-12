@@ -11,8 +11,7 @@ pod 'GCPlaceholderTextView'
 pod 'AviarySDK'
 pod 'FlurrySDK'
 pod 'GoogleAnalytics-iOS-SDK'
-
-# Basics
+pod 'BorderButton'
 pod 'AFNetworking', '~> 2.1.0'
 pod 'NSDate+TimeAgo', '~> 1.0.2'
 pod 'BlocksKit/Core'

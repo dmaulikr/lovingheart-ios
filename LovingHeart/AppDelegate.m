@@ -108,6 +108,8 @@
   
   [Qbon connectAppKey:@"f4238a0dba513f78fcc1d0d2b7ccbcb8" debug:YES];
   
+  [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+  [[UIApplication sharedApplication] cancelAllLocalNotifications];
   
   return YES;
 }

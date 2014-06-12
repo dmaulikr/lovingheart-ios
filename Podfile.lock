@@ -23,6 +23,7 @@ PODS:
   - BlocksKit/UIKit (2.2.2):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - BorderButton (0.1.1)
   - DAProgressOverlayView (1.0.2)
   - FlurrySDK (4.4.0):
     - FlurrySDK/FlurrySDK
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - AviarySDK
   - BlocksKit/Core
   - BlocksKit/UIKit
+  - BorderButton
   - DAProgressOverlayView
   - FlurrySDK
   - GCPlaceholderTextView
@@ -60,18 +62,19 @@ DEPENDENCIES:
   - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
-  AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
-  AviarySDK: d6dc7371ae6ef6a6b06de5c9b7c50c26e61d5ad7
-  BlocksKit: 125e4e69a62e3b85bacc5175737dae000b00b9fb
-  DAProgressOverlayView: abfd16f70476496e34176eeb94b139fc5e6d5f6b
-  FlurrySDK: 2cd8f2ce2383ca152c5d96fa34cb9ef29706feda
-  GCPlaceholderTextView: 8f0e4cb4b93827c9ec8d9bf9e850bbd328d1db0b
-  GoogleAnalytics-iOS-SDK: 594702aaf93e6ee497140fd31e758c2e2fa44315
-  Nimbus: bbde56c7e845d3c38c1f484018ef1bb3259c0507
-  NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
-  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
-  RMErrorRecoveryAttempter: 6e71707a9c7c7b44adbf3585cf37054d38fcbed9
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
-  uservoice-iphone-sdk: 547ef35f8db7ad9975cada6f39e39dc972d87c33
+  AFNetworking: 7c33510b46f994bc75b75c6e63c1d83414ca40f2
+  AviarySDK: 3afdc76551f2f46cda2a20e15bb8c21ee48add04
+  BlocksKit: 49fda17cbd628f3d6683f62de57edeaa315b386c
+  BorderButton: e85f77c49b417588b2919f5ec3006b055f8c67a5
+  DAProgressOverlayView: 66f743e4bbbb0b5fe241670b9156d948cc228fc1
+  FlurrySDK: abaedafc350afa41b004236b67ae14f7d3748b68
+  GCPlaceholderTextView: d48f3558c8d71daaae65679275075592ca13e1c8
+  GoogleAnalytics-iOS-SDK: bb285d8eef15a682f1b82971becd0d22edd0e53b
+  Nimbus: 14fd6f034c5f53d3dccef6cfd5763959497289a9
+  NSDate+TimeAgo: c01d6ac0b81add41f77f264fa4276d355723fcde
+  ReactiveCocoa: 399d3ad0c8ac73d79bed5bcd076a04f46ec635fc
+  RMErrorRecoveryAttempter: 6d470332bb4441d9c2c52c2c2f06ff7f0c2b287f
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  uservoice-iphone-sdk: 23f1d1e5a4ce279165de746436d044a4d1f3da26
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
