@@ -54,9 +54,30 @@
   return query;
 }
 
+- (void)objectsDidLoad:(NSError *)error {
+  [super objectsDidLoad:error];
+  for (LHStory *currentStory in self.objects) {
+    // Caculate story share
+    PFQuery *eventQuery = [LHEvent query];
+    [eventQuery whereKey:@"story" equalTo:currentStory];
+    [eventQuery whereKey:@"action" equalTo:@"share_to_facebook"];
+    __block LHStory *__storyObject = currentStory;
+    [eventQuery countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+      if (__storyObject.Content.length >= 10) {
+        NSLog(@"%@ share to facebook count: %i", [__storyObject.Content substringToIndex:9], number);
+      } else {
+        NSLog(@"%@ share to facebook count: %i", __storyObject.Content, number);
+      }
+      
+    }];
+
+  }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
                         object:(LHStory *)storyObject {
+  
   
   StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"storyImageCell"];
 
@@ -92,7 +113,7 @@
       }
     } progressBlock:^(int percentDone) {
       float perenctDownFloat = (float)percentDone / 100.f;
-      NSLog(@"Download %@ progress: %f", file.url, perenctDownFloat);
+      
       if (perenctDownFloat == 0) {
         [cell.progressOverlayView displayOperationWillTriggerAnimation];
         cell.progressOverlayView.hidden = NO;

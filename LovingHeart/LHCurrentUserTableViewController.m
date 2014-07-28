@@ -145,7 +145,7 @@
         }
       } progressBlock:^(int percentDone) {
         float perenctDownFloat = (float)percentDone / 100.f;
-        NSLog(@"Download %@ progress: %f", file.url, perenctDownFloat);
+        
         if (perenctDownFloat == 0) {
           [storyCell.progressOverlayView displayOperationWillTriggerAnimation];
           storyCell.progressOverlayView.hidden = NO;
